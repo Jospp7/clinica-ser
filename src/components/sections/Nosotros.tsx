@@ -1,55 +1,46 @@
+const DOC_IMG = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80";
+
 const Nosotros = () => {
   return (
-    <section className="about-sec" id="nosotros">
-      <div className="about-sec__container">
-        <div className="about-sec__grid">
-          <div className="about-sec__content" data-anim="fade-right">
-            <span className="about-sec__tag">NUESTRO PROPÓSITO</span>
-            <h2 className="about-sec__title">No estás solo en este proceso</h2>
-            <p className="about-sec__text">
-              En Clínica SER entendemos que la adicción no es una falta de voluntad, sino una enfermedad tratable. Durante más de 5 décadas, hemos acompañado a miles de familias poblanas y de todo México hacia una recuperación real y duradera.
+    <section className="nosotros-v2" id="nosotros">
+      <div className="nosotros-v2__container">
+        <h2 className="nosotros-v2__heading" data-anim="fade-up">
+          Bienvenido a SER:<br />Clínica para tratamiento de adicciones
+        </h2>
+        <div className="nosotros-v2__dot" data-anim="fade-up" />
+
+        <div className="nosotros-v2__grid">
+          <div className="nosotros-v2__text-col" data-anim="fade-right">
+            <p className="nosotros-v2__text">
+              SER® es una clínica de adicciones que forma parte del grupo hospitalario más importante y reconocido de la región: Casa de Salud, S.A. de C.V., fundado en la ciudad de Puebla el 29 de septiembre de 1967.
             </p>
-            <p className="about-sec__text">
-              Nuestro enfoque clínico-humanista aborda no solo el consumo, sino las causas profundas emocionales y psicológicas, involucrando a la familia como pilar fundamental de sanación.
+            <p className="nosotros-v2__text">
+              En esta importante trayectoria llena de calidad y trato humano destacan nuestros resultados. El profesionalismo y la calidez son valores que nos distinguen. En más de cinco décadas de servicio son miles los pacientes y familias que se han visto beneficiados por nuestra atención.
             </p>
-            <div className="about-sec__stats">
-              <div className="about-stat">
-                <span className="about-stat__num">58+</span>
-                <span className="about-stat__label">Años de exp.</span>
-              </div>
-              <div className="about-stat">
-                <span className="about-stat__num">CENADIC</span>
-                <span className="about-stat__label">Clínica certificada</span>
-              </div>
-            </div>
+            <p className="nosotros-v2__highlight">
+              Somos expertos en Rehabilitación de Adicciones.
+            </p>
           </div>
 
-          <div className="about-sec__img-wrap" data-anim="fade-left">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80" alt="Equipo médico SER" className="about-sec__img" loading="lazy" />
-            <div className="about-sec__badge">
-              <span>Atención 24/7</span>
-            </div>
+          <div className="nosotros-v2__img-col" data-anim="fade-left">
+            <img src={DOC_IMG} alt="Doctor con teléfono" className="nosotros-v2__img" loading="lazy" />
           </div>
         </div>
       </div>
 
       <style>{`
-        .about-sec { padding: clamp(80px, 10vw, 140px) 24px; background: #FFFFFF; }
-        .about-sec__container { max-width: 1200px; margin: 0 auto; }
-        .about-sec__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
-        .about-sec__tag { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #8AB83A; display: block; margin-bottom: 16px; }
-        .about-sec__title { font-family: 'Inter', sans-serif; font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: #1A1A2E; line-height: 1.1; margin: 0 0 24px; letter-spacing: -0.02em; }
-        .about-sec__text { font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: #555; margin: 0 0 20px; }
-        .about-sec__stats { display: flex; gap: 40px; margin-top: 40px; padding-top: 40px; border-top: 1px solid #E8E8E8; }
-        .about-stat__num { display: block; font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 800; color: #1A1A2E; margin-bottom: 4px; }
-        .about-stat__label { font-family: 'Inter', sans-serif; font-size: 12px; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-        .about-sec__img-wrap { position: relative; border-radius: 24px; overflow: hidden; }
-        .about-sec__img { width: 100%; height: auto; display: block; border-radius: 24px; }
-        .about-sec__badge { position: absolute; bottom: 32px; left: -20px; background: #C8E64A; color: #1A1A2E; padding: 16px 24px; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+        .nosotros-v2 { padding: clamp(80px, 10vw, 140px) 24px; background: #FFFFFF; }
+        .nosotros-v2__container { max-width: 1200px; margin: 0 auto; }
+        .nosotros-v2__heading { font-family: 'Inter', sans-serif; font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; color: #1A1A2E; text-align: center; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+        .nosotros-v2__dot { width: 12px; height: 12px; border-radius: 50%; background: #C8E64A; margin: 0 auto 60px; }
+        .nosotros-v2__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+        .nosotros-v2__text { font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: #555; margin: 0 0 24px; }
+        .nosotros-v2__highlight { font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.5vw, 17px); font-weight: 600; color: #8AB83A; margin: 0; }
+        .nosotros-v2__img-col { border-radius: 16px; overflow: hidden; }
+        .nosotros-v2__img { width: 100%; height: auto; display: block; border-radius: 16px; }
 
         @media (max-width: 900px) {
-          .about-sec__grid { grid-template-columns: 1fr; }
-          .about-sec__badge { left: 24px; }
+          .nosotros-v2__grid { grid-template-columns: 1fr; }
         }
       `}</style>
     </section>
