@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import logoSer from "@/assets/logo-ser.svg";
+import logoSer from "@/assets/logo-ser.png";
 
 const NAV = [
   { label: "Dashboard", icon: "📊", path: "/admin/dashboard" },

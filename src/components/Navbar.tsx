@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { trackCTAClick } from "@/hooks/useTracking";
-import logoSer from "@/assets/logo-ser.svg";
+import logoSer from "@/assets/logo-ser.png";
 
 const NAV_LINKS = [
   { label: "INICIO", href: "/" },
