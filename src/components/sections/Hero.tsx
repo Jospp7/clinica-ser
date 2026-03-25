@@ -5,7 +5,10 @@ import logoSer from "@/assets/logo-ser.png";
 
 const HERO_BG = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80";
 const DOC_1 = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80";
-const DOC_2 = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80";
+const DOC_2 = "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80";
+const DOC_3 = "https://images.unsplash.com/photo-1551190822-a9ce113ac100?w=600&q=80";
+
+const RING_TEXT = "CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·  PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·  ";
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,55 +27,75 @@ const Hero = () => {
         <img src={HERO_BG} alt="Instalaciones Clínica SER" className="hero-v2__bg-img" style={{ transform: `translateY(${scrollPos * 0.3}px)` }} />
       </div>
 
-      <div className="hero-v2__content">
+      <div className="hero__container">
         {/* Left side */}
-        <div className="hero-v2__left">
-          <div className="hero-v2__years" data-anim="fade-up">
-            <span className="hero-v2__years-num">58</span>
-            <span className="hero-v2__years-label">años</span>
+        <div className="hero__left">
+          <div className="hero__years" data-anim="fade-up">
+            <span className="hero__years-num">58</span>
+            <span className="hero__years-label">años</span>
           </div>
 
-          {/* Pill-shaped logo with orbiting text */}
-          <div className="hero-v2__pill-wrap" data-anim="fade-up" data-anim-delay="0.1s">
-            <div className="hero-v2__pill-blob">
-              <img src={logoSer} alt="Logo SER" className="hero-v2__logo-img" />
-            </div>
-            <div className="hero-v2__orbit-text">
-              <span className="hero-v2__orbit-text-inner">
-                TRANSFORMANDO VIDAS DESDE 1968 · CLÍNICA DE REHABILITACIÓN DE ADICCIONES · PUEBLA — MÉXICO · TRANSFORMANDO VIDAS DESDE 1968 · CLÍNICA DE REHABILITACIÓN DE ADICCIONES · PUEBLA — MÉXICO · 
-              </span>
+          {/* Oval logo ring with text around perimeter */}
+          <div className="hero__logo-ring" data-anim="fade-up" data-anim-delay="0.1s">
+            <svg viewBox="0 0 420 280" aria-hidden="true" className="hero__ring-svg">
+              <defs>
+                <path
+                  id="ovalTop"
+                  d="M 370,140 A 160,100 0 0,0 50,140"
+                  fill="none"
+                />
+                <path
+                  id="ovalBottom"
+                  d="M 50,140 A 160,100 0 0,0 370,140"
+                  fill="none"
+                />
+              </defs>
+              <text className="hero__ring-text-svg">
+                <textPath href="#ovalTop" startOffset="50%" textAnchor="middle">
+                  PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·
+                </textPath>
+              </text>
+              <text className="hero__ring-text-svg">
+                <textPath href="#ovalBottom" startOffset="50%" textAnchor="middle">
+                  CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·
+                </textPath>
+              </text>
+            </svg>
+            <div className="hero__logo-center">
+              <img src={logoSer} alt="Clínica SER" className="hero__logo-img" />
             </div>
           </div>
 
-          <h1 className="hero-v2__title" data-anim="fade-up" data-anim-delay="0.2s">
+          <p className="hero__headline" data-anim="fade-up" data-anim-delay="0.2s">
             la experiencia de ser líderes<br />en tratamiento de adicciones
-          </h1>
+          </p>
 
-          <div className="hero-v2__actions" data-anim="fade-up" data-anim-delay="0.3s">
-            <button className="hero-v2__btn-call" onClick={() => { trackCTAClick("AGENDAR_HERO"); setModalOpen(true); }}>
+          <div className="hero__ctas" data-anim="fade-up" data-anim-delay="0.3s">
+            <button className="hero__btn hero__btn--primary" onClick={() => { trackCTAClick("AGENDAR_HERO"); setModalOpen(true); }}>
               📞 Agendar llamada
             </button>
           </div>
         </div>
 
-        {/* Right side - circular photos */}
-        <div className="hero-v2__right" data-anim="fade-left">
-          <div className="hero-v2__photo-circle hero-v2__photo-circle--1">
-            <img src={DOC_1} alt="Doctora del equipo médico" />
+        {/* Right side */}
+        <div className="hero__right" data-anim="fade-left">
+          <div className="hero__right-backdrop" aria-hidden="true" />
+          <div className="hero__circle hero__circle--main">
+            <img src={DOC_1} alt="Doctora especialista de Clínica SER" />
           </div>
-          <div className="hero-v2__photo-circle hero-v2__photo-circle--2">
-            <img src={DOC_2} alt="Doctor del equipo médico" />
+          <div className="hero__circle hero__circle--secondary">
+            <img src={DOC_2} alt="Enfermera de Clínica SER" />
           </div>
-          <div className="hero-v2__circle-outline hero-v2__circle-outline--1" />
-          <div className="hero-v2__circle-outline hero-v2__circle-outline--2" />
-          <div className="hero-v2__label-tag">Equipo médico</div>
+          <div className="hero__circle hero__circle--third">
+            <img src={DOC_3} alt="Equipo médico en cirugía" />
+          </div>
+          <div className="hero__ellipse hero__ellipse--1" aria-hidden="true" />
+          <div className="hero__ellipse hero__ellipse--2" aria-hidden="true" />
+          <div className="hero__wa-bubble" aria-hidden="true">
+            <span className="hero__wa-icon">💬</span>
+            <span className="hero__wa-text">Hola, ¿necesitas ayuda?</span>
+          </div>
         </div>
-      </div>
-
-      {/* Chat bubble */}
-      <div className="hero-v2__chat-bubble" data-anim="fade-up" data-anim-delay="0.3s">
-        <span className="hero-v2__chat-icon">💬</span>
-        <span>Hola, ¿necesitas ayuda?</span>
       </div>
 
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} source="hero_button" />
@@ -80,70 +103,47 @@ const Hero = () => {
       <style>{`
         .hero-v2 { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 100px 48px 64px; }
         .hero-v2__bg-wrap { position: absolute; inset: 0; z-index: 1; }
-        .hero-v2__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,0.75) 0%, rgba(26,26,46,0.55) 100%); z-index: 2; }
+        .hero-v2__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,0.78) 0%, rgba(26,26,46,0.55) 100%); z-index: 2; }
         .hero-v2__bg-img { width: 100%; height: 110%; object-fit: cover; will-change: transform; }
-        .hero-v2__content { position: relative; z-index: 10; max-width: 1300px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
 
-        .hero-v2__left { display: flex; flex-direction: column; }
-        .hero-v2__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
-        .hero-v2__years-num { font-family: 'Inter', sans-serif; font-size: clamp(50px, 7vw, 84px); font-weight: 900; color: white; line-height: 1; letter-spacing: -0.03em; }
-        .hero-v2__years-label { font-family: 'Inter', sans-serif; font-size: clamp(17px, 2vw, 25px); font-weight: 300; color: rgba(255,255,255,0.7); }
+        .hero__container { position: relative; z-index: 10; max-width: 1300px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
 
-        /* Pill-shaped logo container */
-        .hero-v2__pill-wrap { position: relative; width: clamp(300px, 40vw, 480px); height: clamp(160px, 18vw, 220px); margin-bottom: 24px; overflow: hidden; }
-        .hero-v2__pill-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 75%; height: 70%; background: white; border-radius: 100px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 40px rgba(0,0,0,0.15); z-index: 2; }
-        .hero-v2__logo-img { width: 60%; height: auto; }
+        .hero__left { display: flex; flex-direction: column; }
+        .hero__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px; }
+        .hero__years-num { font-family: 'Inter', sans-serif; font-size: clamp(50px, 7vw, 84px); font-weight: 900; color: white; line-height: 1; letter-spacing: -0.03em; }
+        .hero__years-label { font-family: 'Inter', sans-serif; font-size: clamp(17px, 2vw, 25px); font-weight: 300; color: rgba(255,255,255,0.7); }
 
-        /* Orbiting text around pill */
-        .hero-v2__orbit-text { position: absolute; inset: 0; z-index: 1; overflow: hidden; border-radius: 100px; border: 1px solid rgba(255,255,255,0.15); }
-        .hero-v2__orbit-text-inner {
-          position: absolute; top: 0; left: 0; white-space: nowrap;
-          font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.45);
-          animation: hero-orbit-scroll 20s linear infinite;
-        }
-        /* Top text line */
-        .hero-v2__orbit-text::before {
-          content: 'TRANSFORMANDO VIDAS DESDE 1968 · CLÍNICA DE REHABILITACIÓN DE ADICCIONES · PUEBLA — MÉXICO · TRANSFORMANDO VIDAS DESDE 1968 · CLÍNICA DE REHABILITACIÓN ·';
-          position: absolute; top: 6px; left: 0; white-space: nowrap;
-          font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.45);
-          animation: hero-orbit-scroll 25s linear infinite;
-        }
-        /* Bottom text line */
-        .hero-v2__orbit-text::after {
-          content: 'PUEBLA — MÉXICO · CLÍNICA DE REHABILITACIÓN DE ADICCIONES · TRANSFORMANDO VIDAS DESDE 1968 · PUEBLA — MÉXICO · CLÍNICA DE REHABILITACIÓN ·';
-          position: absolute; bottom: 6px; left: 0; white-space: nowrap;
-          font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.45);
-          animation: hero-orbit-scroll 30s linear infinite reverse;
-        }
-        @keyframes hero-orbit-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
+        /* Oval logo ring */
+        .hero__logo-ring { position: relative; width: clamp(300px, 36vw, 420px); height: clamp(200px, 24vw, 280px); margin-bottom: 24px; }
+        .hero__ring-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+        .hero__ring-text-svg { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 500; fill: rgba(255,255,255,0.65); letter-spacing: 0.08em; }
+        .hero__logo-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60%; height: 55%; background: white; border-radius: 120px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 40px rgba(0,0,0,0.15); z-index: 2; }
+        .hero__logo-img { width: 55%; height: auto; }
 
-        .hero-v2__title { font-family: 'Inter', sans-serif; font-size: clamp(15px, 2.1vw, 22px); font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.4; margin: 0 0 24px; }
-        .hero-v2__actions { display: flex; gap: 16px; }
-        .hero-v2__btn-call { background: white; color: #1A1A2E; border: none; padding: 16px 36px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-        .hero-v2__btn-call:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+        .hero__headline { font-family: 'Inter', sans-serif; font-size: clamp(15px, 2.1vw, 22px); font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.4; margin: 0 0 24px; }
+        .hero__ctas { display: flex; gap: 16px; }
+        .hero__btn--primary { background: white; color: #1A1A2E; border: none; padding: 16px 36px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .hero__btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 
-        .hero-v2__right { position: relative; height: 500px; }
-        .hero-v2__photo-circle { position: absolute; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255,255,255,0.15); }
-        .hero-v2__photo-circle img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-v2__photo-circle--1 { width: 260px; height: 260px; top: 0; right: 0; }
-        .hero-v2__photo-circle--2 { width: 300px; height: 300px; bottom: 20px; right: 60px; }
-        .hero-v2__circle-outline { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); }
-        .hero-v2__circle-outline--1 { width: 340px; height: 340px; top: -30px; right: -30px; }
-        .hero-v2__circle-outline--2 { width: 200px; height: 200px; bottom: 100px; right: 320px; }
-        .hero-v2__label-tag { position: absolute; top: 200px; right: -10px; font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 500; }
-
-        .hero-v2__chat-bubble { position: absolute; top: 120px; right: 48px; z-index: 20; background: white; color: #1A1A2E; padding: 10px 20px; border-radius: 24px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
-        .hero-v2__chat-icon { font-size: 18px; }
+        /* Right side */
+        .hero__right { position: relative; height: 500px; }
+        .hero__right-backdrop { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; height: 90%; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%); }
+        .hero__circle { position: absolute; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255,255,255,0.15); }
+        .hero__circle img { width: 100%; height: 100%; object-fit: cover; }
+        .hero__circle--main { width: 260px; height: 260px; top: 20px; right: 60px; z-index: 3; }
+        .hero__circle--secondary { width: 200px; height: 200px; bottom: 40px; right: 0; z-index: 2; }
+        .hero__circle--third { width: 160px; height: 160px; bottom: 80px; right: 240px; z-index: 1; }
+        .hero__ellipse { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); }
+        .hero__ellipse--1 { width: 340px; height: 340px; top: -10px; right: -20px; }
+        .hero__ellipse--2 { width: 200px; height: 200px; bottom: 20px; right: 200px; }
+        .hero__wa-bubble { position: absolute; bottom: 10px; right: 10px; background: white; color: #1A1A2E; padding: 10px 18px; border-radius: 24px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); z-index: 5; }
+        .hero__wa-icon { font-size: 16px; }
 
         @media (max-width: 900px) {
           .hero-v2 { padding: 100px 24px 48px; }
-          .hero-v2__content { grid-template-columns: 1fr; }
-          .hero-v2__right { display: none; }
-          .hero-v2__chat-bubble { top: 80px; right: 16px; font-size: 12px; padding: 8px 14px; }
-          .hero-v2__pill-wrap { width: 280px; height: 140px; }
+          .hero__container { grid-template-columns: 1fr; }
+          .hero__right { display: none; }
+          .hero__logo-ring { width: 280px; height: 187px; }
         }
       `}</style>
     </section>
