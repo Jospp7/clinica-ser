@@ -119,9 +119,9 @@ const Analytics = () => {
         }
         setDailyViews(days);
 
-        const { data: ctaData } = await supabase.from("page_events").select("element").eq("event_type", "cta_click");
+        const { data: ctaData } = await supabase.from("page_events").select("label").eq("event_type", "cta_click");
         const ctaCounts: Record<string, number> = {};
-        (ctaData ?? []).forEach(e => { ctaCounts[e.element ?? "unknown"] = (ctaCounts[e.element ?? "unknown"] || 0) + 1; });
+        (ctaData ?? []).forEach(e => { ctaCounts[e.label ?? "unknown"] = (ctaCounts[e.label ?? "unknown"] || 0) + 1; });
         setTopCtas(Object.entries(ctaCounts).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([element, clicks]) => ({ element, clicks })));
 
         const { data: pvData } = await supabase.from("page_events").select("page").eq("event_type", "pageview");
