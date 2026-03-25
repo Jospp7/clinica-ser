@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 160 60">
+  <!-- "se" letters in dark navy -->
+  <text x="8" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" fill="#1A2A5E" letter-spacing="-1">se</text>
+  <!-- Gold circle for "r" -->
+  <circle cx="114" cy="30" r="26" fill="#C8B84A"/>
+  <!-- "r" letter in white inside the circle -->
+  <text x="104" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" fill="#FFFFFF">r</text>
+  <!-- Registered trademark symbol -->
+  <text x="142" y="38" font-family="Georgia, serif" font-size="14" fill="#1A2A5E">®</text>
+</svg>
