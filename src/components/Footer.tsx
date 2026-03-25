@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
+import { Star } from "lucide-react";
 
 const Footer = () => {
   const [footerEmail, setFooterEmail] = useState("");
@@ -10,63 +11,148 @@ const Footer = () => {
     e.preventDefault();
     if (!footerEmail.trim()) return;
     trackCTAClick("PREGUNTANOS_FOOTER");
-    await supabase.from("contacts").insert({ email: footerEmail, source: "footer" });
+    await supabase.from("contacts").insert({ email: footerEmail, source: "footer" } as any);
     setFooterSent(true);
     setFooterEmail("");
     setTimeout(() => setFooterSent(false), 3000);
   };
 
   return (
-    <footer className="site-footer">
-      <div className="site-footer__main">
-        <div className="site-footer__col">
-          <h4 className="site-footer__heading">Clínica SER</h4>
-          <p className="site-footer__text">Tepeyahualco 39, Col. La Paz, Puebla, Pue. 72160</p>
-          <p className="site-footer__text">
-            <a href="tel:+522226884386" className="site-footer__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_1")}>+52 (222) 688-4386</a><br/>
-            <a href="tel:+522222570258" className="site-footer__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>+52 (222) 257-0258</a>
-          </p>
-        </div>
-        <div className="site-footer__col">
-          <h4 className="site-footer__heading">Mapa del sitio</h4>
-          <a href="/" className="site-footer__link">Inicio</a>
-          <a href="/por-que-elegirnos" className="site-footer__link">Por qué elegirnos</a>
-          <a href="/instalaciones" className="site-footer__link">Instalaciones</a>
-          <a href="/padecimientos" className="site-footer__link">Padecimientos</a>
-          <a href="/blog" className="site-footer__link">Blog</a>
-        </div>
-        <div className="site-footer__col">
-          <h4 className="site-footer__heading">¿Tienes alguna consulta?</h4>
-          {footerSent ? (
-            <p className="site-footer__text" style={{ color: "#C8E64A" }}>¡Gracias! Te contactaremos pronto.</p>
-          ) : (
-            <form onSubmit={handleFooterSubmit} style={{ display: "flex", gap: 8 }}>
-              <input value={footerEmail} onChange={e => setFooterEmail(e.target.value)} type="email" placeholder="Tu email" required
-                style={{ flex: 1, padding: "8px 12px", borderRadius: 6, border: "1px solid rgba(255,255,255,.2)", background: "rgba(255,255,255,.1)", color: "white", fontSize: 13, fontFamily: "'Inter',sans-serif" }} />
-              <button type="submit" style={{ padding: "8px 16px", background: "#C8E64A", color: "#1A1A2E", border: "none", borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>PREGÚNTANOS</button>
-            </form>
-          )}
+    <footer className="footer-v2">
+      {/* Top section - CENADIC certified */}
+      <div className="footer-v2__top">
+        <div className="footer-v2__top-grid">
+          <div className="footer-v2__top-col">
+            <span className="footer-v2__label">CERTIFICADO</span>
+            <h3 className="footer-v2__cenadic">CENADIC</h3>
+            <p className="footer-v2__address">
+              Tepeyahualco 39, Col. La Paz<br />Puebla, Puebla 72160
+            </p>
+            <p className="footer-v2__phones">
+              <a href="tel:+522226884386" className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_1")}>+52 (222) 688 4386</a><br/>
+              <a href="tel:+522222570258" className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>+52 (222) 257 0258</a>
+            </p>
+            <p className="footer-v2__email">info@clinicaser.com</p>
+            <div className="footer-v2__socials">
+              {["f", "📷", "▶", "𝕏"].map((icon, i) => (
+                <span key={i} className="footer-v2__social-icon">{icon}</span>
+              ))}
+            </div>
+            <div className="footer-v2__circle-deco" />
+            <div className="footer-v2__stars-row">
+              {[1,2,3,4,5].map(s => <Star key={s} fill="#D4A843" color="#D4A843" size={16} />)}
+              <span className="footer-v2__stars-text">Reseñas de nuestros pacientes</span>
+            </div>
+          </div>
+
+          <div className="footer-v2__top-col">
+            <span className="footer-v2__label">MAPA DEL SITIO</span>
+            <div className="footer-v2__sitemap">
+              <div>
+                <a href="/" className="footer-v2__sitemap-link">Inicio</a>
+                <a href="/instalaciones" className="footer-v2__sitemap-link">Instalaciones</a>
+                <a href="/nuestro-equipo" className="footer-v2__sitemap-link">Nuestro Equipo</a>
+              </div>
+              <div>
+                <a href="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</a>
+                <a href="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</a>
+                <a href="/aviso-de-privacidad" className="footer-v2__sitemap-link">Aviso de privacidad</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-v2__top-col">
+            <span className="footer-v2__label">¿TIENES ALGUNA CONSULTA?</span>
+            {footerSent ? (
+              <p style={{ color: "#C8E64A", fontFamily: "'Inter',sans-serif", fontSize: 14 }}>¡Gracias! Te contactaremos pronto.</p>
+            ) : (
+              <form onSubmit={handleFooterSubmit} className="footer-v2__form">
+                <input
+                  value={footerEmail}
+                  onChange={e => setFooterEmail(e.target.value)}
+                  type="email"
+                  placeholder="tu correo electrónico"
+                  required
+                  className="footer-v2__input"
+                />
+                <button type="submit" className="footer-v2__submit">PREGÚNTANOS</button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
-      <div className="site-footer__inner">
-        <span>Copyright © 2024 SER Clínica</span>
-        <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <a href="/admin/login" className="site-footer__link" style={{ opacity: 0.4, fontSize: 11 }}>🔒 Admin</a>
-          {" | "}
-          <a href="#" className="site-footer__link">Terms of Use</a>
-          {" | "}
-          <a href="#" className="site-footer__link">Privacy Policy</a>
-        </span>
+
+      {/* Bottom bar */}
+      <div className="footer-v2__bottom">
+        <div className="footer-v2__bottom-grid">
+          <div className="footer-v2__bottom-col">
+            <h4 className="footer-v2__bottom-heading">Clínica SER</h4>
+            <p className="footer-v2__bottom-text">Tepeyahualco 39, Col. La Paz, Puebla, Pue. 72160</p>
+            <p className="footer-v2__bottom-text">
+              <a href="tel:+522226884386" className="footer-v2__bottom-link">+52 (222) 688-4386</a><br/>
+              <a href="tel:+522222570258" className="footer-v2__bottom-link">+52 (222) 257-0258</a>
+            </p>
+          </div>
+          <div className="footer-v2__bottom-col">
+            <h4 className="footer-v2__bottom-heading">Mapa del sitio</h4>
+            <a href="/" className="footer-v2__bottom-link">Inicio</a>
+            <a href="/por-que-elegirnos" className="footer-v2__bottom-link">Por qué elegirnos</a>
+            <a href="/instalaciones" className="footer-v2__bottom-link">Instalaciones</a>
+          </div>
+          <div className="footer-v2__bottom-col">
+            <h4 className="footer-v2__bottom-heading">¿Tienes alguna consulta?</h4>
+            <div style={{ display: "flex", gap: 8 }}>
+              <input placeholder="Tu email" className="footer-v2__bottom-input" />
+              <button className="footer-v2__bottom-btn">PREGÚNTANOS</button>
+            </div>
+          </div>
+        </div>
+        <div className="footer-v2__copyright">
+          <span>Copyright © 2024 SER Clínica</span>
+          <span style={{ display: "flex", gap: 8 }}>
+            <a href="/admin/login" className="footer-v2__bottom-link" style={{ opacity: 0.4, fontSize: 11 }}>🔒 Admin</a>
+          </span>
+        </div>
       </div>
+
       <style>{`
-        .site-footer { background: #1A1A2E; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.10); padding: 48px 24px 20px; }
-        .site-footer__main { max-width: 1200px; margin: 0 auto 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
-        .site-footer__col { display: flex; flex-direction: column; gap: 6px; }
-        .site-footer__heading { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: white; margin: 0 0 8px; }
-        .site-footer__text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,.5); margin: 0; line-height: 1.5; }
-        .site-footer__inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,.5); border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; }
-        .site-footer__link { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s ease; font-family: 'Inter', sans-serif; font-size: 12px; }
-        .site-footer__link:hover { color: #C8E64A; }
+        .footer-v2__top { background: #1B2A4A; padding: 60px 24px 40px; }
+        .footer-v2__top-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
+        .footer-v2__label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); display: block; margin-bottom: 16px; }
+        .footer-v2__cenadic { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 800; color: #C8E64A; margin: 0 0 16px; }
+        .footer-v2__address { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.5; margin: 0 0 16px; }
+        .footer-v2__phones { font-family: 'Inter', sans-serif; font-size: 14px; margin: 0 0 12px; line-height: 1.8; }
+        .footer-v2__email { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.5); margin: 0 0 16px; }
+        .footer-v2__link { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+        .footer-v2__link:hover { color: #C8E64A; }
+        .footer-v2__socials { display: flex; gap: 10px; margin-bottom: 12px; }
+        .footer-v2__social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #C8E64A; color: #C8E64A; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+        .footer-v2__social-icon:hover { background: rgba(200,230,74,0.15); }
+        .footer-v2__circle-deco { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(200,230,74,0.2); margin-bottom: 12px; }
+        .footer-v2__stars-row { display: flex; align-items: center; gap: 6px; }
+        .footer-v2__stars-text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); margin-left: 8px; }
+        .footer-v2__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; }
+        .footer-v2__sitemap-link { display: block; font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; padding: 6px 0; transition: color 0.2s; }
+        .footer-v2__sitemap-link:hover { color: #C8E64A; }
+        .footer-v2__form { display: flex; flex-direction: column; gap: 12px; }
+        .footer-v2__input { padding: 12px 16px; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: 'Inter', sans-serif; font-size: 14px; }
+        .footer-v2__input::placeholder { color: rgba(255,255,255,0.4); }
+        .footer-v2__submit { padding: 14px 24px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.08em; transition: background 0.2s; }
+        .footer-v2__submit:hover { background: #8AB83A; color: white; }
+
+        .footer-v2__bottom { background: #141E33; padding: 40px 24px 20px; }
+        .footer-v2__bottom-grid { max-width: 1200px; margin: 0 auto 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+        .footer-v2__bottom-heading { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: white; margin: 0 0 12px; }
+        .footer-v2__bottom-text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); margin: 0 0 4px; line-height: 1.5; }
+        .footer-v2__bottom-link { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; display: block; padding: 2px 0; transition: color 0.2s; }
+        .footer-v2__bottom-link:hover { color: #C8E64A; }
+        .footer-v2__bottom-input { flex: 1; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; background: rgba(255,255,255,0.05); color: white; font-size: 12px; font-family: 'Inter', sans-serif; }
+        .footer-v2__bottom-btn { padding: 8px 14px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); }
+
+        @media (max-width: 900px) {
+          .footer-v2__top-grid, .footer-v2__bottom-grid { grid-template-columns: 1fr; gap: 32px; }
+        }
       `}</style>
     </footer>
   );
