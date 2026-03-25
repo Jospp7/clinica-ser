@@ -1,4 +1,4 @@
-const DOC_IMG = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80";
+const DOC_IMG = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80";
 
 const Nosotros = () => {
   return (
@@ -31,7 +31,7 @@ const Nosotros = () => {
       <style>{`
         .nosotros-v2 { padding: clamp(80px, 10vw, 140px) 24px; background: #FFFFFF; }
         .nosotros-v2__container { max-width: 1200px; margin: 0 auto; }
-        .nosotros-v2__heading { font-family: 'Inter', sans-serif; font-size: clamp(32px, 4.5vw, 56px); font-weight: 800; color: #1A1A2E; text-align: center; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+        .nosotros-v2__heading { font-family: 'Inter', sans-serif; font-size: clamp(22px, 3.2vw, 39px); font-weight: 800; color: #1A1A2E; text-align: center; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
         .nosotros-v2__dot { width: 12px; height: 12px; border-radius: 50%; background: #C8E64A; margin: 0 auto 60px; }
         .nosotros-v2__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
         .nosotros-v2__text { font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: #555; margin: 0 0 24px; }

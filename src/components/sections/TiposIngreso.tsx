@@ -64,13 +64,15 @@ const TiposIngreso = () => {
         .tipos-v2__container { max-width: 1300px; margin: 0 auto; }
         .tipos-v2__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
         .tipos-v2__tag { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #8AB83A; display: block; margin-bottom: 16px; }
-        .tipos-v2__title { font-family: 'Inter', sans-serif; font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #1A1A2E; margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
+        .tipos-v2__title { font-family: 'Inter', sans-serif; font-size: clamp(20px, 2.8vw, 34px); font-weight: 800; color: #1A1A2E; margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
         .tipos-v2__cta { background: #C8E64A; color: #1A1A2E; border: none; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; align-self: flex-start; margin-top: 8px; }
         .tipos-v2__cta:hover { background: #8AB83A; color: white; transform: translateY(-2px); }
 
         .tipos-v2__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .tipos-v2__card { background: #F5F5F0; padding: 40px 32px; border-radius: 16px; }
         .tipos-v2__card-num { width: 48px; height: 48px; border-radius: 50%; background: #C8A84A; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 24px; }
+        .tipos-v2__card:nth-child(2) .tipos-v2__card-num { background: #1A5276; }
+        .tipos-v2__card:nth-child(3) .tipos-v2__card-num { background: #27AE60; }
         .tipos-v2__card-title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #1A1A2E; margin: 0 0 16px; }
         .tipos-v2__card-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0 0 20px; }
         .tipos-v2__card-list { list-style: none; padding: 0; margin: 0; }
