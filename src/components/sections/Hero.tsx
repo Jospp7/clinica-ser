@@ -8,8 +8,6 @@ const DOC_1 = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q
 const DOC_2 = "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80";
 const DOC_3 = "https://images.unsplash.com/photo-1551190822-a9ce113ac100?w=600&q=80";
 
-const RING_TEXT = "CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·  PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·  ";
-
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [scrollPos, setScrollPos] = useState(0);
@@ -35,31 +33,25 @@ const Hero = () => {
             <span className="hero__years-label">años</span>
           </div>
 
-          {/* Oval logo ring with text around perimeter */}
+          {/* Oval logo ring with animated text */}
           <div className="hero__logo-ring" data-anim="fade-up" data-anim-delay="0.1s">
-            <svg viewBox="0 0 420 280" aria-hidden="true" className="hero__ring-svg">
+            <svg viewBox="0 0 500 340" aria-hidden="true" className="hero__ring-svg">
               <defs>
-                <path
-                  id="ovalTop"
-                  d="M 370,140 A 160,100 0 0,0 50,140"
-                  fill="none"
-                />
-                <path
-                  id="ovalBottom"
-                  d="M 50,140 A 160,100 0 0,0 370,140"
-                  fill="none"
-                />
+                <path id="ovalTop" d="M 440,170 A 190,130 0 0,0 60,170" fill="none" />
+                <path id="ovalBottom" d="M 60,170 A 190,130 0 0,0 440,170" fill="none" />
               </defs>
-              <text className="hero__ring-text-svg">
-                <textPath href="#ovalTop" startOffset="50%" textAnchor="middle">
-                  PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·
-                </textPath>
-              </text>
-              <text className="hero__ring-text-svg">
-                <textPath href="#ovalBottom" startOffset="50%" textAnchor="middle">
-                  CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·
-                </textPath>
-              </text>
+              <g className="hero__ring-rotate">
+                <text className="hero__ring-text-svg">
+                  <textPath href="#ovalTop" startOffset="50%" textAnchor="middle">
+                    PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·
+                  </textPath>
+                </text>
+                <text className="hero__ring-text-svg">
+                  <textPath href="#ovalBottom" startOffset="50%" textAnchor="middle">
+                    CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·
+                  </textPath>
+                </text>
+              </g>
             </svg>
             <div className="hero__logo-center">
               <img src={logoSer} alt="Clínica SER" className="hero__logo-img" />
@@ -108,20 +100,32 @@ const Hero = () => {
 
         .hero__container { position: relative; z-index: 10; max-width: 1300px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
 
-        .hero__left { display: flex; flex-direction: column; }
-        .hero__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px; }
+        .hero__left { display: flex; flex-direction: column; align-items: center; }
+
+        .hero__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; justify-content: center; }
         .hero__years-num { font-family: 'Inter', sans-serif; font-size: clamp(50px, 7vw, 84px); font-weight: 900; color: white; line-height: 1; letter-spacing: -0.03em; }
         .hero__years-label { font-family: 'Inter', sans-serif; font-size: clamp(17px, 2vw, 25px); font-weight: 300; color: rgba(255,255,255,0.7); }
 
-        /* Oval logo ring */
-        .hero__logo-ring { position: relative; width: clamp(300px, 36vw, 420px); height: clamp(200px, 24vw, 280px); margin-bottom: 24px; }
+        /* Oval logo ring — bigger */
+        .hero__logo-ring { position: relative; width: clamp(360px, 42vw, 500px); height: clamp(245px, 29vw, 340px); margin-bottom: 16px; }
         .hero__ring-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-        .hero__ring-text-svg { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 500; fill: rgba(255,255,255,0.65); letter-spacing: 0.08em; }
-        .hero__logo-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60%; height: 55%; background: white; border-radius: 120px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 40px rgba(0,0,0,0.15); z-index: 2; }
+        .hero__ring-text-svg { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; fill: rgba(255,255,255,0.6); letter-spacing: 0.08em; }
+
+        /* Animate: scale oscillation to simulate text movement along the oval */
+        .hero__ring-rotate {
+          transform-origin: 250px 170px;
+          animation: hero-ring-spin 30s linear infinite;
+        }
+        @keyframes hero-ring-spin {
+          0%   { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        .hero__logo-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 62%; height: 55%; background: white; border-radius: 140px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 40px rgba(0,0,0,0.15); z-index: 2; }
         .hero__logo-img { width: 55%; height: auto; }
 
-        .hero__headline { font-family: 'Inter', sans-serif; font-size: clamp(15px, 2.1vw, 22px); font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.4; margin: 0 0 24px; }
-        .hero__ctas { display: flex; gap: 16px; }
+        .hero__headline { font-family: 'Inter', sans-serif; font-size: clamp(15px, 2.1vw, 22px); font-weight: 400; color: rgba(255,255,255,0.85); line-height: 1.4; margin: 0 0 24px; text-align: center; }
+        .hero__ctas { display: flex; gap: 16px; justify-content: center; }
         .hero__btn--primary { background: white; color: #1A1A2E; border: none; padding: 16px 36px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
         .hero__btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 
@@ -143,7 +147,7 @@ const Hero = () => {
           .hero-v2 { padding: 100px 24px 48px; }
           .hero__container { grid-template-columns: 1fr; }
           .hero__right { display: none; }
-          .hero__logo-ring { width: 280px; height: 187px; }
+          .hero__logo-ring { width: 320px; height: 218px; }
         }
       `}</style>
     </section>
