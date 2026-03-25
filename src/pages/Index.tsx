@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/sections/Hero";
+import Nosotros from "@/components/sections/Nosotros";
+import Instalaciones from "@/components/sections/Instalaciones";
+import TiposIngreso from "@/components/sections/TiposIngreso";
+import Testimonios from "@/components/sections/Testimonios";
+import CTAFinal from "@/components/sections/CTAFinal";
+import Mapa from "@/components/sections/Mapa";
+import { usePageView } from "@/hooks/useTracking";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  usePageView();
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main>
+      <Hero />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <Nosotros />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <Instalaciones />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <TiposIngreso />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <Testimonios />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <CTAFinal />
+      <Mapa />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
