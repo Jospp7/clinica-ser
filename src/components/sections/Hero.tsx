@@ -116,7 +116,7 @@ const Hero = () => {
     <section className="hero-v2">
       <div className="hero-v2__bg-wrap">
         <div className="hero-v2__overlay" />
-        <img src={HERO_BG} alt="Instalaciones Clínica SER" className="hero-v2__bg-img" style={{ transform: `translateY(${scrollPos * 0.3}px)` }} />
+        <img src={HERO_BG} alt="Instalaciones de Clínica SER, rehabilitación de adicciones en Puebla" className="hero-v2__bg-img" style={{ transform: `translateY(${scrollPos * 0.3}px)` }} />
       </div>
 
       <div className="hero__container">
@@ -155,9 +155,9 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="hero__headline">
-            La experiencia de ser líderes<br />en tratamiento de adicciones
-          </p>
+          <h1 className="hero__headline">
+            La experiencia de ser líderes<br />en tratamiento de adicciones en Puebla
+          </h1>
 
           <div className="hero__ctas">
             <button className="hero__btn hero__btn--primary" onClick={() => { trackCTAClick("AGENDAR_HERO"); setModalOpen(true); }}>
