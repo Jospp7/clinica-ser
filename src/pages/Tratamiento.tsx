@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const TREATMENTS = [
@@ -21,6 +22,11 @@ const Tratamiento = () => {
 
   return (
     <main>
+      <Seo
+        title="Tratamientos para Adicciones y Salud Mental — Clínica SER"
+        description="Programas integrales para alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia y doble diagnóstico. Equipo multidisciplinario en Puebla."
+        path="/tratamiento"
+      />
       <section className="trat-hero">
         <div className="trat-hero__overlay" />
         <div className="trat-hero__content" data-anim="fade-up">

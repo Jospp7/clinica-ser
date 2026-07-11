@@ -11,16 +11,16 @@ const Instalaciones = () => {
         <div className="inst-v2__grid">
           {/* Left: large doctor photo */}
           <div className="inst-v2__large" data-anim="fade-right">
-            <img src={IMG_DOC} alt="Doctora Clínica SER" loading="lazy" />
+            <img src={IMG_DOC} alt="Doctora especialista en tratamiento de adicciones de Clínica SER Puebla" loading="lazy" />
           </div>
 
           {/* Center: two stacked photos */}
           <div className="inst-v2__stack" data-anim="fade-up">
             <div className="inst-v2__stack-img">
-              <img src={IMG_PROC} alt="Procedimiento médico" loading="lazy" />
+              <img src={IMG_PROC} alt="Consultorio médico equipado para evaluación clínica en Clínica SER" loading="lazy" />
             </div>
             <div className="inst-v2__stack-img">
-              <img src={IMG_HALL} alt="Instalaciones" loading="lazy" />
+              <img src={IMG_HALL} alt="Instalaciones de tratamiento médico de Clínica SER en Puebla" loading="lazy" />
             </div>
           </div>
 

@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import Hero from "@/components/sections/Hero";
 import Nosotros from "@/components/sections/Nosotros";
 import Instalaciones from "@/components/sections/Instalaciones";
@@ -12,6 +13,11 @@ const Index = () => {
 
   return (
     <main>
+      <Seo
+        title="Clínica SER — Rehabilitación de Adicciones en Puebla"
+        description="Clínica SER: 58 años tratando adicciones y salud mental en Puebla. Ingreso voluntario, involuntario y por intervención profesional. Atención 24/7 certificada por CENADIC."
+        path="/"
+      />
       <Hero />
       <hr data-anim="fade-up" className="section-divider-line" />
       <Nosotros />

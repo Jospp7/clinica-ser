@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const GALLERY = [
@@ -23,6 +24,11 @@ const InstalacionesPage = () => {
 
   return (
     <main>
+      <Seo
+        title="Instalaciones — Clínica SER Puebla"
+        description="Habitaciones privadas, áreas verdes, gimnasio, sala de meditación y consultorios equipados. Instalaciones diseñadas para la recuperación integral en Puebla."
+        path="/instalaciones"
+      />
       <section className="inst-pg__hero">
         <div className="inst-pg__hero-overlay" />
         <div className="inst-pg__hero-content" data-anim="fade-up">

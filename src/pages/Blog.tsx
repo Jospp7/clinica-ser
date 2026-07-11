@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const POSTS = [
@@ -14,6 +15,11 @@ const Blog = () => {
 
   return (
     <main>
+      <Seo
+        title="Blog — Recursos sobre Adicciones y Salud Mental | Clínica SER"
+        description="Guías, artículos y recursos sobre adicciones, salud mental, apoyo familiar y prevención de recaídas. Contenido escrito por el equipo clínico de Clínica SER en Puebla."
+        path="/blog"
+      />
       <section className="blog-hero">
         <div className="blog-hero__overlay" />
         <div className="blog-hero__content" data-anim="fade-up">

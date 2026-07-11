@@ -1,0 +1,13 @@
+# Clínica SER
+
+> Clínica de rehabilitación de adicciones y salud mental con más de 58 años de experiencia en Puebla, México. Ofrecemos tratamiento integral con enfoque clínico-humanista, ingreso voluntario e involuntario, y atención médica 24/7 certificada por CENADIC.
+
+## Pages
+
+- [Inicio](/): Presentación de Clínica SER, servicios principales y contacto.
+- [Tratamientos](/tratamiento): Programas para alcoholismo, drogadicción, ludopatía, codependencia y doble diagnóstico.
+- [Instalaciones](/instalaciones): Habitaciones privadas, áreas verdes, consultorios y espacios terapéuticos.
+- [Padecimientos](/padecimientos): Adicciones a alcohol, cocaína, metanfetaminas, opioides, benzodiacepinas y trastornos de salud mental.
+- [Por qué elegirnos](/por-que-elegirnos): 58 años de experiencia, equipo multidisciplinario, certificación CENADIC y atención 24/7.
+- [Blog](/blog): Recursos y guías sobre adicciones, familia y recuperación.
+- [Guía de ingreso involuntario](/blog/guia-ingreso-involuntario): Proceso legal y clínico del ingreso involuntario bajo la NOM-028-SSA2-2009.
