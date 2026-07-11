@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const CONDITIONS = [
@@ -14,6 +15,11 @@ const Padecimientos = () => {
 
   return (
     <main>
+      <Seo
+        title="Padecimientos que Tratamos — Clínica SER Puebla"
+        description="Especialistas en alcoholismo, adicción a cocaína, metanfetaminas, opioides, benzodiacepinas y trastornos de salud mental. Diagnóstico y plan de tratamiento personalizado."
+        path="/padecimientos"
+      />
       <section className="pad-hero">
         <div className="pad-hero__overlay" />
         <div className="pad-hero__content" data-anim="fade-up">

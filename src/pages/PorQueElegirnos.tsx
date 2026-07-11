@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { Star } from "lucide-react";
 
@@ -24,6 +25,11 @@ const PorQueElegirnos = () => {
 
   return (
     <main>
+      <Seo
+        title="Por Qué Elegirnos — Clínica SER Puebla"
+        description="58 años tratando adicciones, equipo multidisciplinario, certificación CENADIC, instalaciones de primer nivel y atención humana 24/7. Descubre por qué las familias eligen Clínica SER."
+        path="/por-que-elegirnos"
+      />
       <section className="pqe-hero">
         <div className="pqe-hero__overlay" />
         <div className="pqe-hero__content" data-anim="fade-up">
