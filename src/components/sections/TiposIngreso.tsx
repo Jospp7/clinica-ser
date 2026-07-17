@@ -7,19 +7,23 @@ const CARDS = [
     num: 1,
     title: "Ingreso Voluntario",
     desc: "Tu ser querido está de acuerdo en recibir ayuda. El Ingreso lo puedes realizar las 24 horas, los 365 días del año.",
-    items: ["Evaluación médica y psicológica inicial", "Plan de tratamiento personalizado", "Acompañamiento familiar desde el primer día", "Seguimiento post-tratamiento incluido"],
+    items: [], // TODO: confirmar bullets con el cliente - no existen en el sitio original
   },
   {
     num: 2,
     title: "Ingreso por Emergencia",
     desc: "Si tu familiar presenta signos o síntomas de urgencia según la Norma Oficial Mexicana, la familia puede realizar el Ingreso Involuntario cuando se presenten los siguientes criterios:",
-    items: ["Intoxicación", "Síndrome de abstinencia o supresión", "Trastorno psicótico agudo", "Exceso de pánico"],
+    items: [
+      "Intoxicación",
+      "Síndrome de abstinencia o supresión",
+      "Trastorno psicótico agudo, caracterizado por: errores de juicio y conductas de alucinación; alta posibilidad de daño a sí mismo o a terceros; agresividad y agitación psicomotora.",
+    ],
   },
   {
     num: 3,
     title: "Ingreso por Intervención Profesional",
     desc: "Si tu ser querido necesita ayuda, pero se niega a recibir tratamiento, nuestro equipo de intervención profesional puede ayudarte.",
-    items: ["Intervención guiada por especialistas certificados", "Proceso respetuoso y libre de confrontación", "Coordinación con la familia paso a paso", "Alta tasa de aceptación del tratamiento"],
+    items: [], // TODO: confirmar bullets con el cliente - no existen en el sitio original
   },
 ];
 
