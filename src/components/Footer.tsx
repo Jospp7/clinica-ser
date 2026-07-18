@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { Star } from "lucide-react";
@@ -52,15 +53,15 @@ const Footer = () => {
             <span className="footer-v2__label">MAPA DEL SITIO</span>
             <div className="footer-v2__sitemap">
               <div>
-                <a href="/" className="footer-v2__sitemap-link">Inicio</a>
-                <a href="/instalaciones" className="footer-v2__sitemap-link">Instalaciones</a>
-                <a href="/nuestro-equipo" className="footer-v2__sitemap-link">Nuestro Equipo</a>
+                <Link to="/" className="footer-v2__sitemap-link">Inicio</Link>
+                <Link to="/instalaciones" className="footer-v2__sitemap-link">Instalaciones</Link>
+                <Link to="/equipo" className="footer-v2__sitemap-link">Nuestro Equipo</Link>
               </div>
               <div>
-                <a href="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</a>
-                <a href="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</a>
-                <a href="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</a>
-                <a href="/aviso-de-privacidad" className="footer-v2__sitemap-link">Aviso de privacidad</a>
+                <Link to="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</Link>
+                <Link to="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</Link>
+                <Link to="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</Link>
+                {/* TODO: la ruta /aviso-de-privacidad no existe en el repo — pedir contenido al cliente y crear página antes de re-enlazar */}
               </div>
             </div>
           </div>
@@ -100,9 +101,9 @@ const Footer = () => {
           </div>
           <div className="footer-v2__bottom-col">
             <h4 className="footer-v2__bottom-heading">Mapa del sitio</h4>
-            <a href="/" className="footer-v2__bottom-link">Inicio</a>
-            <a href="/por-que-elegirnos" className="footer-v2__bottom-link">Por qué elegirnos</a>
-            <a href="/instalaciones" className="footer-v2__bottom-link">Instalaciones</a>
+            <Link to="/" className="footer-v2__bottom-link">Inicio</Link>
+            <Link to="/por-que-elegirnos" className="footer-v2__bottom-link">Por qué elegirnos</Link>
+            <Link to="/instalaciones" className="footer-v2__bottom-link">Instalaciones</Link>
           </div>
           <div className="footer-v2__bottom-col">
             <h4 className="footer-v2__bottom-heading">¿Tienes alguna consulta?</h4>
@@ -115,7 +116,7 @@ const Footer = () => {
         <div className="footer-v2__copyright">
           <span>Copyright © 2024 SER Clínica</span>
           <span style={{ display: "flex", gap: 8 }}>
-            <a href="/admin/login" className="footer-v2__bottom-link" style={{ opacity: 0.4, fontSize: 11 }}>🔒 Admin</a>
+            <Link to="/admin/login" className="footer-v2__bottom-link" style={{ opacity: 0.4, fontSize: 11 }}>🔒 Admin</Link>
           </span>
         </div>
       </div>
