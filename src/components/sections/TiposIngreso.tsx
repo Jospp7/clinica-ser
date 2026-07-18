@@ -60,7 +60,7 @@ const TiposIngreso = () => {
                   <li key={j}>{item}</li>
                 ))}
               </ul>
-              {c.cta.kind === "tel" ? (
+              {c.cta.kind === "tel" || c.cta.kind === "link" ? (
                 <a
                   href={c.cta.href}
                   className="tipos-v2__cta tipos-v2__card-cta"
