@@ -7,23 +7,27 @@ const CARDS = [
     num: 1,
     title: "Ingreso Voluntario",
     desc: "Tu ser querido está de acuerdo en recibir ayuda. El Ingreso lo puedes realizar las 24 horas, los 365 días del año.",
-    items: [], // TODO: confirmar bullets con el cliente - no existen en el sitio original
+    items: [], // Sin bullets en el sitio original — verificado
+    cta: { kind: "modal" as const, label: "Contáctanos", track: "CONTACTANOS_CARD_VOLUNTARIO" },
   },
   {
     num: 2,
     title: "Ingreso por Emergencia",
-    desc: "Si tu familiar presenta signos o síntomas de urgencia según la Norma Oficial Mexicana, la familia puede realizar el Ingreso Involuntario cuando se presenten los siguientes criterios:",
+    desc: "Si tu familiar presenta alguno de estos síntomas de urgencia menor, según la Norma Oficial Mexicana, la familia puede realizar el Ingreso Involuntario cuando se presentan los siguientes casos:",
     items: [
       "Intoxicación",
       "Síndrome de abstinencia o supresión",
       "Trastorno psicótico agudo, caracterizado por: errores de juicio y conductas de alucinación; alta posibilidad de daño a sí mismo o a terceros; agresividad y agitación psicomotora.",
     ],
+    cta: { kind: "tel" as const, href: "tel:+522222317626", label: "Llámanos Ahora", track: "LLAMAR_CARD_EMERGENCIA" },
   },
   {
     num: 3,
-    title: "Ingreso por Intervención Profesional",
-    desc: "Si tu ser querido necesita ayuda, pero se niega a recibir tratamiento, nuestro equipo de intervención profesional puede ayudarte.",
-    items: [], // TODO: confirmar bullets con el cliente - no existen en el sitio original
+    title: "Ingreso por Intervención",
+    desc: "Si tu ser querido necesita ayuda, pero se niega a recibir tratamiento, consulta la guía para saber qué hacer en ese caso.",
+    items: [], // Sin bullets en el sitio original — verificado
+    // TODO: apuntar a /guia-intervencion cuando exista la ruta
+    cta: { kind: "modal" as const, label: "Consulta la guía", track: "GUIA_CARD_INTERVENCION" },
   },
 ];
 
@@ -56,6 +60,22 @@ const TiposIngreso = () => {
                   <li key={j}>{item}</li>
                 ))}
               </ul>
+              {c.cta.kind === "tel" ? (
+                <a
+                  href={c.cta.href}
+                  className="tipos-v2__cta tipos-v2__card-cta"
+                  onClick={() => trackCTAClick(c.cta.track)}
+                >
+                  {c.cta.label}
+                </a>
+              ) : (
+                <button
+                  className="tipos-v2__cta tipos-v2__card-cta"
+                  onClick={() => { trackCTAClick(c.cta.track); setModalOpen(true); }}
+                >
+                  {c.cta.label}
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -82,6 +102,7 @@ const TiposIngreso = () => {
         .tipos-v2__card-list { list-style: none; padding: 0; margin: 0; }
         .tipos-v2__card-list li { font-family: 'Inter', sans-serif; font-size: 14px; color: #555; line-height: 1.5; padding: 6px 0 6px 20px; position: relative; }
         .tipos-v2__card-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; background: #C8A84A; }
+        .tipos-v2__card-cta { display: inline-block; margin-top: 20px; text-decoration: none; text-align: center; }
 
         @media (max-width: 900px) { .tipos-v2__grid { grid-template-columns: 1fr; } }
       `}</style>
