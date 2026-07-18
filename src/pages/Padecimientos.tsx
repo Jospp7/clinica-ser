@@ -53,7 +53,7 @@ const Padecimientos = () => {
         <div className="pad-cta__inner" data-anim="fade-up">
           <h2 className="pad-cta__title">¿Reconoces alguna de estas señales?</h2>
           <p className="pad-cta__text">No estás solo. Nuestro equipo puede ayudarte a dar el primer paso.</p>
-          <a href="https://wa.me/5212213490308" target="_blank" rel="noopener noreferrer" className="pad-cta__btn">💬 Hablar con un especialista</a>
+          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn">💬 Hablar con un especialista</a>
         </div>
       </section>
 
