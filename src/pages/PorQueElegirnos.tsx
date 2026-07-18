@@ -1,11 +1,13 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { Star } from "lucide-react";
+import { SITE, waLink } from "@/lib/site";
 
 const REASONS = [
-  { icon: "🏥", title: "58 años de experiencia", desc: "Desde 1967, hemos tratado exitosamente a miles de pacientes y familias en Puebla y toda la República Mexicana." },
+  { icon: "🏥", title: `${SITE.aniosExperiencia} años de experiencia`, desc: `Desde 1967, hemos tratado exitosamente a miles de pacientes y familias en Puebla y toda la República Mexicana.` },
   { icon: "👨‍⚕️", title: "Equipo multidisciplinario", desc: "Psiquiatras, psicólogos, médicos internistas, nutriólogos y consejeros certificados trabajando en conjunto." },
   { icon: "📋", title: "Certificación CENADIC", desc: "Centro certificado por el Centro Nacional para la Prevención y el Control de las Adicciones." },
+  // TODO: confirmar vigencia de certificación con cliente (CENADIC se disolvió ~2011, hoy es CONADIC)
   { icon: "🏠", title: "Instalaciones de primer nivel", desc: "Habitaciones privadas, áreas verdes, gimnasio y espacios terapéuticos en el corazón de Puebla." },
   { icon: "🕐", title: "Atención 24/7", desc: "Disponibles las 24 horas, los 365 días del año. Ingreso inmediato cuando lo necesites." },
   { icon: "❤️", title: "Trato humano y personalizado", desc: "Cada paciente recibe un plan de tratamiento único, diseñado para su situación específica." },
@@ -14,8 +16,10 @@ const REASONS = [
 ];
 
 const STATS = [
-  { num: "58+", label: "Años de experiencia" },
+  { num: `${SITE.aniosExperiencia}+`, label: "Años de experiencia" },
+  // TODO: falta dato del cliente (pacientes tratados)
   { num: "5,000+", label: "Pacientes tratados" },
+  // TODO: falta dato del cliente (satisfacción familiar)
   { num: "95%", label: "Satisfacción familiar" },
   { num: "24/7", label: "Disponibilidad" },
 ];
@@ -27,7 +31,7 @@ const PorQueElegirnos = () => {
     <main>
       <Seo
         title="Por Qué Elegirnos — Clínica SER Puebla"
-        description="58 años tratando adicciones, equipo multidisciplinario, certificación CENADIC, instalaciones de primer nivel y atención humana 24/7. Descubre por qué las familias eligen Clínica SER."
+        description={`${SITE.aniosExperiencia} años tratando adicciones, equipo multidisciplinario, instalaciones de primer nivel y atención humana 24/7. Descubre por qué las familias eligen Clínica SER.`}
         path="/por-que-elegirnos"
       />
       <section className="pqe-hero">
@@ -35,7 +39,7 @@ const PorQueElegirnos = () => {
         <div className="pqe-hero__content" data-anim="fade-up">
           <span className="pqe-hero__tag">POR QUÉ ELEGIRNOS</span>
           <h1 className="pqe-hero__title">La clínica de adicciones<br />más confiable de Puebla</h1>
-          <p className="pqe-hero__sub">58 años transformando vidas con profesionalismo, calidez y resultados comprobados.</p>
+          <p className="pqe-hero__sub">{SITE.aniosExperiencia} años transformando vidas con profesionalismo, calidez y resultados comprobados.</p>
         </div>
       </section>
 
@@ -84,8 +88,8 @@ const PorQueElegirnos = () => {
           <h2 className="pqe-cta__title">Da el primer paso hoy</h2>
           <p className="pqe-cta__text">Tu llamada es confidencial. Estamos aquí para ayudarte.</p>
           <div className="pqe-cta__btns">
-            <a href="tel:+522224994306" className="pqe-cta__btn">📞 Llamar ahora</a>
-            <a href="https://wa.me/5212213490308" target="_blank" rel="noopener noreferrer" className="pqe-cta__btn pqe-cta__btn--wa">💬 WhatsApp</a>
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="pqe-cta__btn">📞 Llamar ahora</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pqe-cta__btn pqe-cta__btn--wa">💬 WhatsApp</a>
           </div>
         </div>
       </section>

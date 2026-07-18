@@ -15,7 +15,7 @@ const Index = () => {
     <main>
       <Seo
         title="Clínica SER — Rehabilitación de Adicciones en Puebla"
-        description="Clínica SER: 58 años tratando adicciones y salud mental en Puebla. Ingreso voluntario, involuntario y por intervención profesional. Atención 24/7 certificada por CENADIC."
+        description="Clínica SER: 58 años tratando adicciones y salud mental en Puebla. Ingreso voluntario, involuntario y por intervención profesional. Atención 24/7."
         path="/"
       />
       <Hero />

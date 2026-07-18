@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { trackCTAClick } from "@/hooks/useTracking";
 import logoSer from "@/assets/logo-ser.png";
+import { SITE } from "@/lib/site";
 
 const NAV_LINKS = [
   { label: "INICIO", href: "/" },
@@ -57,7 +58,7 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-ser__right">
-          <a href="tel:+522226884386" className="nav-ser__cta" onClick={() => trackCTAClick("LLAMAR_24H")}>📞 Llamar 24h</a>
+          <a href={`tel:${SITE.telefonoTel[0]}`} className="nav-ser__cta" onClick={() => trackCTAClick("LLAMAR_24H")}>📞 Llamar 24h</a>
           <button className="nav-ser__menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}>
             {menuOpen ? "✕" : "☰"}
           </button>
@@ -72,7 +73,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <a href="tel:+522226884386" onClick={() => { trackCTAClick("LLAMAR_AHORA_MOBILE"); setMenuOpen(false); }} className="nav-ser__dropdown-cta">📞 Llamar ahora — 24h</a>
+        <a href={`tel:${SITE.telefonoTel[0]}`} onClick={() => { trackCTAClick("LLAMAR_AHORA_MOBILE"); setMenuOpen(false); }} className="nav-ser__dropdown-cta">📞 Llamar ahora — 24h</a>
       </div>
 
       <style>{`

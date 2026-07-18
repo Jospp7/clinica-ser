@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContactModal from "../ContactModal";
 import { trackCTAClick } from "@/hooks/useTracking";
+import { SITE } from "@/lib/site";
 
 const CARDS = [
   {
@@ -19,7 +20,7 @@ const CARDS = [
       "Síndrome de abstinencia o supresión",
       "Trastorno psicótico agudo, caracterizado por: errores de juicio y conductas de alucinación; alta posibilidad de daño a sí mismo o a terceros; agresividad y agitación psicomotora.",
     ],
-    cta: { kind: "tel" as const, href: "tel:+522222317626", label: "Llámanos Ahora", track: "LLAMAR_CARD_EMERGENCIA" },
+    cta: { kind: "tel" as const, href: `tel:${SITE.telefonoTel[2]}`, label: "Llámanos Ahora", track: "LLAMAR_CARD_EMERGENCIA" },
   },
   {
     num: 3,

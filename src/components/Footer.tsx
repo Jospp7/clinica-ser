@@ -2,6 +2,7 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { Star } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 const Footer = () => {
   const [footerEmail, setFooterEmail] = useState("");
@@ -20,19 +21,21 @@ const Footer = () => {
   return (
     <footer className="footer-v2">
       {/* Top section - CENADIC certified */}
+      {/* TODO: confirmar vigencia de certificación con cliente (CENADIC se disolvió ~2011, hoy es CONADIC) */}
       <div className="footer-v2__top">
         <div className="footer-v2__top-grid">
           <div className="footer-v2__top-col">
             <span className="footer-v2__label">CERTIFICADO</span>
             <h3 className="footer-v2__cenadic">CENADIC</h3>
             <p className="footer-v2__address">
-              Tepeyahualco 39, Col. La Paz<br />Puebla, Puebla 72160
+              {SITE.direccion}
             </p>
             <p className="footer-v2__phones">
-              <a href="tel:+522226884386" className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_1")}>+52 (222) 688 4386</a><br/>
-              <a href="tel:+522222570258" className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>+52 (222) 257 0258</a>
+              <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_1")}>{SITE.telefonos[0]}</a><br/>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>{SITE.telefonos[1]}</a><br/>
+              <a href={`tel:${SITE.telefonoTel[2]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_3")}>{SITE.telefonos[2]}</a>
             </p>
-            <p className="footer-v2__email">info@clinicaser.com</p>
+            <p className="footer-v2__email">{SITE.email}</p>
             <div className="footer-v2__socials">
               {["f", "📷", "▶", "𝕏"].map((icon, i) => (
                 <span key={i} className="footer-v2__social-icon">{icon}</span>
@@ -86,11 +89,12 @@ const Footer = () => {
       <div className="footer-v2__bottom">
         <div className="footer-v2__bottom-grid">
           <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">Clínica SER</h4>
-            <p className="footer-v2__bottom-text">Tepeyahualco 39, Col. La Paz, Puebla, Pue. 72160</p>
+            <h4 className="footer-v2__bottom-heading">{SITE.nombre}</h4>
+            <p className="footer-v2__bottom-text">{SITE.direccion}</p>
             <p className="footer-v2__bottom-text">
-              <a href="tel:+522226884386" className="footer-v2__bottom-link">+52 (222) 688-4386</a><br/>
-              <a href="tel:+522222570258" className="footer-v2__bottom-link">+52 (222) 257-0258</a>
+              <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__bottom-link">{SITE.telefonos[0]}</a><br/>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]}</a><br/>
+              <a href={`tel:${SITE.telefonoTel[2]}`} className="footer-v2__bottom-link">{SITE.telefonos[2]}</a>
             </p>
           </div>
           <div className="footer-v2__bottom-col">

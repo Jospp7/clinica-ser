@@ -1,4 +1,5 @@
 import { trackCTAClick } from "@/hooks/useTracking";
+import { SITE } from "@/lib/site";
 
 const IMG_DOC = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80";
 const IMG_PROC = "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80";
@@ -28,11 +29,14 @@ const Instalaciones = () => {
           <div className="inst-v2__info" data-anim="fade-left">
             <div className="inst-v2__circle-deco" />
             <span className="inst-v2__tag">NUESTRAS INSTALACIONES</span>
-            <a href="tel:+522226884386" className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
-              📞 +52 (222) 688 4386
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
+              📞 {SITE.telefonos[0]}
             </a>
-            <a href="tel:+522222570258" className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_2")}>
-              📞 +52 (222) 257 0258
+            <a href={`tel:${SITE.telefonoTel[1]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_2")}>
+              📞 {SITE.telefonos[1]}
+            </a>
+            <a href={`tel:${SITE.telefonoTel[2]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_3")}>
+              📞 {SITE.telefonos[2]}
             </a>
           </div>
         </div>
