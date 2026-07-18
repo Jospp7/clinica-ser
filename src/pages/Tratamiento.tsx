@@ -2,20 +2,40 @@ import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 
-const TREATMENTS = [
-  { title: "Alcoholismo", desc: "Tratamiento integral para la dependencia al alcohol, con desintoxicación médica supervisada y terapia cognitivo-conductual.", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" },
-  { title: "Drogadicción", desc: "Programas especializados para adicciones a cocaína, metanfetaminas, opioides y otras sustancias controladas.", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" },
-  { title: "Adicción a medicamentos", desc: "Tratamiento para dependencia a benzodiacepinas, analgésicos opioides y otros medicamentos de prescripción.", img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80" },
-  { title: "Ludopatía", desc: "Intervención terapéutica para la adicción al juego compulsivo, con enfoque en rehabilitación conductual.", img: "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=600&q=80" },
-  { title: "Codependencia", desc: "Terapia para familiares que han desarrollado patrones codependientes. Recuperamos el bienestar de toda la familia.", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" },
-  { title: "Doble diagnóstico", desc: "Tratamiento simultáneo de adicciones y trastornos de salud mental como depresión, ansiedad o bipolaridad.", img: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80" },
-];
-
-const PROCESS = [
-  { step: "01", title: "Evaluación inicial", desc: "Valoración médica y psicológica completa para diseñar tu plan de tratamiento personalizado." },
-  { step: "02", title: "Desintoxicación", desc: "Proceso médico supervisado 24/7 para una desintoxicación segura y confortable." },
-  { step: "03", title: "Terapia intensiva", desc: "Sesiones individuales y grupales con psicólogos, psiquiatras y consejeros certificados." },
-  { step: "04", title: "Reinserción", desc: "Preparación para el regreso a la vida cotidiana con herramientas de prevención de recaídas." },
+// Bloques del programa — texto literal del sitio original.
+const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
+  {
+    title: "Tratamiento para las adicciones.",
+    desc: "Somos especialistas en el tratamiento de trastornos coexistentes como el estrés, la depresión y la ansiedad. Esto permite un porcentaje altísimo de recuperación con miras a alcanzar la sobriedad.",
+  },
+  {
+    title: "Atención individualizada para adictos.",
+    desc: "Trabajamos con grupos reducidos, lo que nos permite asignar más terapeutas y ofrecer sesiones personalizadas. Incluye post-tratamiento sin tiempo límite ni costo adicional para el paciente y su familia, en la clínica y en cualquier parte de la República o del mundo vía videoconferencia.",
+  },
+  {
+    title: "Actividades adicionales.",
+    desc: "Yoga, meditación, ejercicios, arteterapia y orientación espiritual, para una rehabilitación integral.",
+  },
+  {
+    title: "Terapias de grupo especial",
+    desc: "Únicas en México, desarrolladas desde la historia personal de cada paciente:",
+    items: [
+      "Técnicas de manejo del estrés",
+      "Grupo de duelo",
+      "Grupo de ira",
+      "Grupo de terapia racional emotiva",
+      "Grupo de salud mental",
+      "Grupo de terapia cognitivo conductual",
+    ],
+  },
+  {
+    title: "Tratamiento continuo.",
+    desc: "Seguimiento después del tratamiento primario de 35 o 42 días, vía programa Tratamiento Continuo: atención externa en instalaciones, sin costo ni tiempo límite, sesiones grupales dos veces por semana guiadas por expertos en psicología. Disponible por videoconferencia desde cualquier lugar.",
+  },
+  {
+    title: "Programa para la familia.",
+    desc: "Reuniones familiares dos veces por semana, dirigidas por un experto en Psicología, gratuitas y sin límite de tiempo.",
+  },
 ];
 
 const Tratamiento = () => {
@@ -28,46 +48,49 @@ const Tratamiento = () => {
         description="Programas integrales para alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia y doble diagnóstico. Equipo multidisciplinario en Puebla."
         path="/tratamiento"
       />
+      {/* TODO: imagen del cliente — reemplazar background del hero (actualmente Unsplash placeholder pendiente de pasada dedicada). */}
       <section className="trat-hero">
         <div className="trat-hero__overlay" />
         <div className="trat-hero__content" data-anim="fade-up">
           <span className="trat-hero__tag">NUESTROS TRATAMIENTOS</span>
-          <h1 className="trat-hero__title">Tratamiento integral para<br />adicciones y salud mental</h1>
-          <p className="trat-hero__sub">Más de {SITE.aniosExperiencia} años de experiencia respaldados por un equipo multidisciplinario de profesionales certificados.</p>
+          <h1 className="trat-hero__title">Descubre nuestro tratamiento para adicciones</h1>
+          <p className="trat-hero__sub">En Clínica SER, estamos a la vanguardia en la rehabilitación de adicciones como alcoholismo y drogadicción. ¡Nuestro nivel de recuperación y no incidencia es de los más altos de México!</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-hero__btn">AGENDA TU EVALUACIÓN</a>
         </div>
       </section>
 
       <section className="trat-process">
         <div className="trat-process__container">
-          <h2 className="trat-process__title" data-anim="fade-up">Nuestro proceso de tratamiento</h2>
-          <div className="trat-process__grid">
-            {PROCESS.map((p, i) => (
-              <div key={i} className="trat-process__card" data-anim="fade-up" data-anim-delay={`${i * 0.12}s`}>
-                <span className="trat-process__step">{p.step}</span>
-                <h3 className="trat-process__card-title">{p.title}</h3>
-                <p className="trat-process__card-text">{p.desc}</p>
-              </div>
-            ))}
+          <h2 className="trat-process__title" data-anim="fade-up">Programa de Tratamiento Integral SER®</h2>
+          <div className="trat-intro" data-anim="fade-up">
+            <p className="trat-intro__p">En la clínica de rehabilitación SER, sumamos al modelo Hazelden —anteriormente llamado modelo Minnesota para tratamiento de adicciones— y al programa de los 12 pasos, nuestra experiencia de más de {SITE.aniosExperiencia} años en el área de la salud mental.</p>
+            <p className="trat-intro__p">Nuestro Programa de Tratamiento Integral SER®, proporciona una evaluación clínica y médica completa, desintoxicación y atención primaria por parte de especialistas en psiquiatría, con soporte médico y de enfermería disponible las 24 horas del día.</p>
+            <p className="trat-intro__p">Este enfoque asegura un manejo seguro de los síntomas físicos agudos de la abstinencia. Además, en esta etapa, realizamos pruebas de laboratorio, detección de drogas y electrocardiogramas para garantizar la salud y seguridad de nuestros pacientes.</p>
           </div>
         </div>
       </section>
 
       <section className="trat-grid-section">
         <div className="trat-grid__container">
-          <span className="trat-grid__tag" data-anim="fade-up">ESPECIALIDADES</span>
-          <h2 className="trat-grid__title" data-anim="fade-up">¿Qué tratamos?</h2>
+          <span className="trat-grid__tag" data-anim="fade-up">NUESTRO PROGRAMA</span>
+          <h2 className="trat-grid__title" data-anim="fade-up">¿Qué incluye el tratamiento?</h2>
           <div className="trat-grid">
-            {TREATMENTS.map((t, i) => (
+            {/* TODO: imagen del cliente — cada bloque necesita imagen real; por ahora sin img. */}
+            {BLOQUES.map((b, i) => (
               <div key={i} className="trat-card" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
-                <img src={t.img} alt={t.title} loading="lazy" decoding="async" className="trat-card__img" />
                 <div className="trat-card__body">
-                  <h3 className="trat-card__title">{t.title}</h3>
-                  <p className="trat-card__text">{t.desc}</p>
+                  <h3 className="trat-card__title">{b.title}</h3>
+                  {b.desc && <p className="trat-card__text">{b.desc}</p>}
+                  {b.items && (
+                    <ul className="trat-card__list">
+                      {b.items.map((it, j) => <li key={j}>{it}</li>)}
+                    </ul>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+          <p className="trat-grid__closer" data-anim="fade-up">Elige ser feliz... estás a sólo unos pasos. ¡Vive sin ataduras!</p>
         </div>
       </section>
 
@@ -95,11 +118,8 @@ const Tratamiento = () => {
         .trat-process { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .trat-process__container { max-width: 1200px; margin: 0 auto; }
         .trat-process__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
-        .trat-process__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
-        .trat-process__card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; }
-        .trat-process__step { display: inline-block; font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: #C8E64A; margin-bottom: 12px; }
-        .trat-process__card-title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
-        .trat-process__card-text { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+        .trat-intro { max-width: 860px; margin: 0 auto; }
+        .trat-intro__p { font-family: 'Inter', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; }
 
         .trat-grid-section { background: #F5F5F5; padding: clamp(64px,8vw,120px) 24px; }
         .trat-grid__container { max-width: 1200px; margin: 0 auto; }
@@ -108,10 +128,11 @@ const Tratamiento = () => {
         .trat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .trat-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
         .trat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06); }
-        .trat-card__img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .trat-card__body { padding: 24px; }
         .trat-card__title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
         .trat-card__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+        .trat-card__list { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
+        .trat-grid__closer { font-family: 'Inter', sans-serif; font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1A1A2E; text-align: center; margin: 48px 0 0; font-style: italic; }
 
         .trat-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .trat-cta__inner { max-width: 600px; margin: 0 auto; }
@@ -124,11 +145,7 @@ const Tratamiento = () => {
         .trat-cta__btn--wa:hover { background: #1DB954; }
 
         @media (max-width: 900px) {
-          .trat-process__grid { grid-template-columns: repeat(2,1fr); }
           .trat-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-          .trat-process__grid { grid-template-columns: 1fr; }
         }
       `}</style>
     </main>
