@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "TRATAMIENTOS", href: "/tratamiento" },
   { label: "INSTALACIONES", href: "/instalaciones" },
   { label: "PADECIMIENTOS", href: "/padecimientos" },
+  { label: "EQUIPO", href: "/equipo" },
   { label: "BLOG", href: "/blog" },
   { label: "POR QUÉ ELEGIRNOS", href: "/por-que-elegirnos" },
 ];
