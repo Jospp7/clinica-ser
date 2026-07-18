@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { SITE } from "@/lib/site";
 
 const GALLERY = [
   { src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80", alt: "Fachada principal de Clínica SER Puebla", span: "inst-pg__span-2" },
@@ -34,7 +35,8 @@ const InstalacionesPage = () => {
         <div className="inst-pg__hero-content" data-anim="fade-up">
           <span className="inst-pg__tag">NUESTRAS INSTALACIONES</span>
           <h1 className="inst-pg__hero-title">Un espacio diseñado<br />para tu recuperación</h1>
-          <p className="inst-pg__hero-sub">Instalaciones de primer nivel en el corazón de Puebla, certificadas por CENADIC.</p>
+          {/* TODO: confirmar vigencia de certificación con cliente (CENADIC se disolvió ~2011, hoy es CONADIC) */}
+          <p className="inst-pg__hero-sub">Instalaciones de primer nivel en el corazón de Puebla.</p>
         </div>
       </section>
 
@@ -67,7 +69,7 @@ const InstalacionesPage = () => {
         <div className="inst-pg__cta-inner" data-anim="fade-up">
           <h2 className="inst-pg__cta-title">Agenda una visita</h2>
           <p className="inst-pg__cta-text">Conoce nuestras instalaciones y resuelve todas tus dudas con nuestro equipo.</p>
-          <a href="tel:+522224994306" className="inst-pg__cta-btn">📞 Llamar para agendar</a>
+          <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-pg__cta-btn">📞 Llamar para agendar</a>
         </div>
       </section>
 
