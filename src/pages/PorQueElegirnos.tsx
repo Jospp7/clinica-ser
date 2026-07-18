@@ -18,6 +18,11 @@ const TIMELINE = [
   { year: "2025", label: "Hito de la clínica." }, // TODO: falta dato del cliente — descripción exacta del hito 2025
 ];
 
+const STATS = [
+  { num: `${SITE.aniosExperiencia}+`, label: "Años de experiencia" },
+  { num: "24/7", label: "Disponibilidad" },
+];
+
 const PorQueElegirnos = () => {
   useScrollToTop();
 
@@ -45,6 +50,17 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
+      <section className="pqe-stats">
+        <div className="pqe-stats__container">
+          {STATS.map((s, i) => (
+            <div key={i} className="pqe-stats__item" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
+              <span className="pqe-stats__num">{s.num}</span>
+              <span className="pqe-stats__label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="pqe-reasons">
         <div className="pqe-reasons__container">
           <h2 className="pqe-reasons__title" data-anim="fade-up">7 razones para elegir Clínica SER</h2>
@@ -60,20 +76,7 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
-      <section className="pqe-timeline">
-        <div className="pqe-timeline__container">
-          <h2 className="pqe-timeline__title" data-anim="fade-up">Conoce nuestra clínica a través del tiempo</h2>
-          <div className="pqe-timeline__grid">
-            {TIMELINE.map((t, i) => (
-              <div key={i} className="pqe-timeline__item" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
-                {/* TODO: imagen del cliente — hito {t.year} */}
-                <span className="pqe-timeline__year">{t.year}</span>
-                <span className="pqe-timeline__label">{t.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* TODO: restaurar sección .pqe-timeline cuando el cliente entregue las descripciones reales de los hitos 2014 y 2025 (ver array TIMELINE). */}
 
       <section className="pqe-closing">
         <p className="pqe-closing__text" data-anim="fade-up">Elige ser feliz... estás a sólo unos pasos. ¡Vive sin ataduras!</p>
@@ -99,6 +102,12 @@ const PorQueElegirnos = () => {
         .pqe-intro-section { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; }
         .pqe-intro-container { max-width: 900px; margin: 0 auto; }
         .pqe-intro { font-family: 'Inter', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
+
+        .pqe-stats { background: #FFFFFF; padding: clamp(32px,4vw,56px) 24px; }
+        .pqe-stats__container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+        .pqe-stats__item { background: #F5F5F5; border-radius: 20px; padding: 32px 24px; text-align: center; }
+        .pqe-stats__num { display: block; font-family: 'Inter', sans-serif; font-size: clamp(32px,3.5vw,44px); font-weight: 800; color: #1B2A4A; margin-bottom: 8px; }
+        .pqe-stats__label { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; }
 
         .pqe-reasons { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .pqe-reasons__container { max-width: 1200px; margin: 0 auto; }
