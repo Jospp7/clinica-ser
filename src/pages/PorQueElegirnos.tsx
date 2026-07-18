@@ -1,10 +1,9 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import { Star } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 
 const REASONS = [
-  { icon: "🏥", title: `${SITE.aniosExperiencia} años de experiencia`, desc: `Desde 1967, hemos tratado exitosamente a miles de pacientes y familias en Puebla y toda la República Mexicana.` },
+  { icon: "🏥", title: `${SITE.aniosExperiencia} años de experiencia`, desc: `Desde 1967, son miles los pacientes y familias que se han visto beneficiados por nuestra atención, en Puebla y en toda la República Mexicana.` },
   { icon: "👨‍⚕️", title: "Equipo multidisciplinario", desc: "Psiquiatras, psicólogos, médicos internistas, nutriólogos y consejeros certificados trabajando en conjunto." },
   // TODO: confirmar vigencia de certificación con cliente antes de reintroducir el card
   // "Certificación CENADIC" (CENADIC se disolvió ~2011, hoy es CONADIC).
@@ -66,19 +65,7 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
-      <section className="pqe-testimonial">
-        <div className="pqe-testimonial__inner" data-anim="fade-up">
-          <span className="pqe-testimonial__quote">❝</span>
-          <p className="pqe-testimonial__text">"Llegamos desesperados buscando ayuda y encontramos un equipo que nos trató con humanidad. Hoy mi hijo tiene 3 años de sobriedad."</p>
-          <div className="pqe-testimonial__author">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="María G." loading="lazy" decoding="async" className="pqe-testimonial__avatar" />
-            <div>
-              <span className="pqe-testimonial__name">María G.</span>
-              <div className="pqe-testimonial__stars">{[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#D4A843" color="#D4A843" />)}</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* TODO: restaurar con testimonios reales del cliente. */}
 
       <section className="pqe-cta">
         <div className="pqe-cta__inner" data-anim="fade-up">

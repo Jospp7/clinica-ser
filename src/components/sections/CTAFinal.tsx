@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
 
@@ -13,25 +12,14 @@ const CTAFinal = () => {
           <h2 className="cta-v2__title" data-anim="fade-up">
             Somos expertos<br />recuperando vidas
           </h2>
-
-          <div className="cta-v2__testimonial" data-anim="fade-up" data-anim-delay="0.1s">
-            <span className="cta-v2__quote-mark">❝</span>
-            <p className="cta-v2__quote-text">
-              "El equipo no solo trató la adicción, sino que entendió mi historia. Me devolvieron la esperanza y las ganas de vivir."
-            </p>
-            <div className="cta-v2__quote-author">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Violeta J." className="cta-v2__author-img" />
-              <div>
-                <span className="cta-v2__author-name">Violeta J.</span>
-                <div className="cta-v2__stars">
-                  {[1,2,3,4,5].map(s => <Star key={s} fill="#D4A843" color="#D4A843" size={14} />)}
-                </div>
-              </div>
-            </div>
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="cta-v2__call-btn" onClick={() => trackCTAClick("LLAMA_AHORA_CTA")}>
-              LLAMA AHORA
-            </a>
-          </div>
+          {/* TODO: restaurar con testimonios reales del cliente. */}
+          <a
+            href={`tel:${SITE.telefonoTel[0]}`}
+            className="cta-v2__call-btn"
+            onClick={() => trackCTAClick("LLAMA_AHORA_CTA")}
+          >
+            LLAMA AHORA
+          </a>
         </div>
 
         {/* Right: image */}
