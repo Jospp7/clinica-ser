@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { SITE, waLink } from "@/lib/site";
 
 const TREATMENTS = [
   { title: "Alcoholismo", desc: "Tratamiento integral para la dependencia al alcohol, con desintoxicación médica supervisada y terapia cognitivo-conductual.", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" },
@@ -32,8 +33,8 @@ const Tratamiento = () => {
         <div className="trat-hero__content" data-anim="fade-up">
           <span className="trat-hero__tag">NUESTROS TRATAMIENTOS</span>
           <h1 className="trat-hero__title">Tratamiento integral para<br />adicciones y salud mental</h1>
-          <p className="trat-hero__sub">Más de 58 años de experiencia respaldados por un equipo multidisciplinario de profesionales certificados.</p>
-          <a href="https://wa.me/5212213490308" target="_blank" rel="noopener noreferrer" className="trat-hero__btn">AGENDA TU EVALUACIÓN</a>
+          <p className="trat-hero__sub">Más de {SITE.aniosExperiencia} años de experiencia respaldados por un equipo multidisciplinario de profesionales certificados.</p>
+          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-hero__btn">AGENDA TU EVALUACIÓN</a>
         </div>
       </section>
 
@@ -75,8 +76,8 @@ const Tratamiento = () => {
           <h2 className="trat-cta__title">¿Necesitas ayuda?</h2>
           <p className="trat-cta__text">Nuestro equipo está disponible las 24 horas para orientarte.</p>
           <div className="trat-cta__btns">
-            <a href="tel:+522224994306" className="trat-cta__btn">📞 Llamar ahora</a>
-            <a href="https://wa.me/5212213490308" target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa">💬 WhatsApp</a>
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="trat-cta__btn">📞 Llamar ahora</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa">💬 WhatsApp</a>
           </div>
         </div>
       </section>
