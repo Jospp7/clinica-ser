@@ -1,9 +1,10 @@
 import { trackCTAClick } from "@/hooks/useTracking";
+import { SITE } from "@/lib/site";
 
 const Mapa = () => {
   return (
     <section className="map-v2" data-anim="fade-up">
-      <a href="https://maps.google.com/?q=Tepeyahualco+39+La+Paz+Puebla" target="_blank" rel="noopener noreferrer" className="map-v2__open-link">
+      <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="map-v2__open-link">
         Abrir en Maps ↗
       </a>
 
@@ -20,7 +21,7 @@ const Mapa = () => {
 
       <div className="map-v2__overlay-bar">
         <span className="map-v2__overlay-text">SIEMPRE A TU SERVICIO</span>
-        <a href="https://maps.google.com/?q=Tepeyahualco+39+La+Paz+Puebla" target="_blank" rel="noopener noreferrer" className="map-v2__visit-btn" onClick={() => trackCTAClick("VISITANOS_MAPA")}>
+        <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="map-v2__visit-btn" onClick={() => trackCTAClick("VISITANOS_MAPA")}>
           VISÍTANOS
         </a>
       </div>
