@@ -6,8 +6,8 @@ import { SITE, waLink } from "@/lib/site";
 const REASONS = [
   { icon: "🏥", title: `${SITE.aniosExperiencia} años de experiencia`, desc: `Desde 1967, hemos tratado exitosamente a miles de pacientes y familias en Puebla y toda la República Mexicana.` },
   { icon: "👨‍⚕️", title: "Equipo multidisciplinario", desc: "Psiquiatras, psicólogos, médicos internistas, nutriólogos y consejeros certificados trabajando en conjunto." },
-  { icon: "📋", title: "Certificación CENADIC", desc: "Centro certificado por el Centro Nacional para la Prevención y el Control de las Adicciones." },
-  // TODO: confirmar vigencia de certificación con cliente (CENADIC se disolvió ~2011, hoy es CONADIC)
+  // TODO: confirmar vigencia de certificación con cliente antes de reintroducir el card
+  // "Certificación CENADIC" (CENADIC se disolvió ~2011, hoy es CONADIC).
   { icon: "🏠", title: "Instalaciones de primer nivel", desc: "Habitaciones privadas, áreas verdes, gimnasio y espacios terapéuticos en el corazón de Puebla." },
   { icon: "🕐", title: "Atención 24/7", desc: "Disponibles las 24 horas, los 365 días del año. Ingreso inmediato cuando lo necesites." },
   { icon: "❤️", title: "Trato humano y personalizado", desc: "Cada paciente recibe un plan de tratamiento único, diseñado para su situación específica." },
@@ -15,12 +15,9 @@ const REASONS = [
   { icon: "🔄", title: "Seguimiento post-tratamiento", desc: "Acompañamos a nuestros pacientes después del alta para prevenir recaídas y consolidar la recuperación." },
 ];
 
+// TODO: si el cliente aporta cifras verificables (pacientes atendidos, etc.), agregarlas aquí.
 const STATS = [
   { num: `${SITE.aniosExperiencia}+`, label: "Años de experiencia" },
-  // TODO: falta dato del cliente (pacientes tratados)
-  { num: "5,000+", label: "Pacientes tratados" },
-  // TODO: falta dato del cliente (satisfacción familiar)
-  { num: "95%", label: "Satisfacción familiar" },
   { num: "24/7", label: "Disponibilidad" },
 ];
 
