@@ -1,9 +1,10 @@
 import { trackCTAClick } from "@/hooks/useTracking";
+import { waLink } from "@/lib/site";
 
 const WhatsAppButton = () => {
   const handleClick = () => {
     trackCTAClick("WHATSAPP_FLOTANTE");
-    window.open("https://wa.me/5212213490308?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20el%20tratamiento", "_blank");
+    window.open(waLink(), "_blank");
   };
 
   return (
