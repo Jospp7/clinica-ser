@@ -2,22 +2,24 @@ import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
 
-const GALLERY = [
-  { src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80", alt: "Fachada principal de Clínica SER Puebla", span: "inst-pg__span-2" },
-  { src: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80", alt: "Jardines y áreas verdes de la clínica", span: "" },
-  { src: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80", alt: "Habitación privada de tratamiento", span: "" },
-  { src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80", alt: "Área de terapia y rehabilitación", span: "" },
-  { src: "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=600&q=80", alt: "Consultorio médico equipado", span: "" },
-  { src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80", alt: "Área de evaluación clínica", span: "inst-pg__span-2" },
-];
-
-const FEATURES = [
-  { icon: "🏥", title: "Habitaciones privadas", desc: "Espacios cómodos y seguros diseñados para la recuperación integral." },
-  { icon: "🌿", title: "Áreas verdes", desc: "Jardines terapéuticos que promueven la relajación y la meditación." },
-  { icon: "🍽️", title: "Nutrición personalizada", desc: "Comedor con menús diseñados por nutriólogos especializados." },
-  { icon: "🏋️", title: "Gimnasio y deporte", desc: "Instalaciones deportivas para la recuperación física y mental." },
-  { icon: "🧘", title: "Sala de meditación", desc: "Espacios de paz para la práctica de mindfulness y yoga." },
-  { icon: "👨‍⚕️", title: "Consultorios médicos", desc: "Equipados con tecnología de punta para evaluaciones completas." },
+// TODO: imagen del cliente — reemplazar cada amenidad con foto real (16 amenidades)
+const AMENIDADES = [
+  "Terraza",
+  "Áreas de descanso",
+  "Cancha de Básquetbol",
+  "Cancha de Vóleibol",
+  "Habitaciones separadas",
+  "Área de desintoxicación",
+  "Salón de terapia familiar",
+  "Salón para sesiones",
+  "Áreas para sesión individual",
+  "Salón de informes",
+  "Consultorios médicos",
+  "Central de enfermeras",
+  "Taller de Arte",
+  "Gimnasio",
+  "Salas de TV",
+  "Comedor amplio",
 ];
 
 const InstalacionesPage = () => {
@@ -34,34 +36,23 @@ const InstalacionesPage = () => {
         <div className="inst-pg__hero-overlay" />
         <div className="inst-pg__hero-content" data-anim="fade-up">
           <span className="inst-pg__tag">NUESTRAS INSTALACIONES</span>
-          <h1 className="inst-pg__hero-title">Un espacio diseñado<br />para tu recuperación</h1>
-          {/* TODO: confirmar vigencia de certificación con cliente (CENADIC se disolvió ~2011, hoy es CONADIC) */}
+          <h1 className="inst-pg__hero-title">Conoce nuestras modernas instalaciones</h1>
           <p className="inst-pg__hero-sub">Instalaciones de primer nivel en el corazón de Puebla.</p>
-        </div>
-      </section>
-
-      <section className="inst-pg__gallery-section">
-        <div className="inst-pg__gallery" data-anim="fade-up">
-          {GALLERY.map((img, i) => (
-            <div key={i} className={`inst-pg__cell ${img.span}`}>
-              <img src={img.src} alt={img.alt} loading="lazy" decoding="async" className="inst-pg__photo" />
-            </div>
-          ))}
         </div>
       </section>
 
       <section className="inst-pg__features">
         <div className="inst-pg__features-container">
-          <h2 className="inst-pg__features-title" data-anim="fade-up">¿Qué ofrecemos?</h2>
+          <h2 className="inst-pg__features-title" data-anim="fade-up">Amenidades</h2>
           <div className="inst-pg__features-grid">
-            {FEATURES.map((f, i) => (
+            {AMENIDADES.map((nombre, i) => (
               <div key={i} className="inst-pg__feature" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
-                <span className="inst-pg__feature-icon">{f.icon}</span>
-                <h3 className="inst-pg__feature-title">{f.title}</h3>
-                <p className="inst-pg__feature-text">{f.desc}</p>
+                {/* TODO: imagen del cliente */}
+                <h3 className="inst-pg__feature-title">{nombre}</h3>
               </div>
             ))}
           </div>
+          <p className="inst-pg__features-title" data-anim="fade-up" style={{ marginTop: 48, fontSize: 'clamp(20px,2.5vw,28px)' }}>Somos expertos recuperando vidas.</p>
         </div>
       </section>
 
