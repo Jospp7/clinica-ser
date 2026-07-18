@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { trackCTAClick } from "@/hooks/useTracking";
+import { SITE } from "@/lib/site";
 
 const CTA_IMG = "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80";
 
@@ -27,7 +28,7 @@ const CTAFinal = () => {
                 </div>
               </div>
             </div>
-            <a href="tel:+522226884386" className="cta-v2__call-btn" onClick={() => trackCTAClick("LLAMA_AHORA_CTA")}>
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="cta-v2__call-btn" onClick={() => trackCTAClick("LLAMA_AHORA_CTA")}>
               LLAMA AHORA
             </a>
           </div>
