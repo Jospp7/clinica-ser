@@ -93,16 +93,17 @@ const TiposIngreso = () => {
         .tipos-v2__cta:hover { background: #8AB83A; color: white; transform: translateY(-2px); }
 
         .tipos-v2__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .tipos-v2__card { background: #F5F5F0; padding: 40px 32px; border-radius: 16px; }
+        .tipos-v2__card { background: #F5F5F0; padding: 40px 32px; border-radius: 16px; display: flex; flex-direction: column; }
         .tipos-v2__card-num { width: 48px; height: 48px; border-radius: 50%; background: #C8A84A; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 24px; }
         .tipos-v2__card:nth-child(2) .tipos-v2__card-num { background: #1A5276; }
         .tipos-v2__card:nth-child(3) .tipos-v2__card-num { background: #27AE60; }
         .tipos-v2__card-title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #1A1A2E; margin: 0 0 16px; }
         .tipos-v2__card-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0 0 20px; }
         .tipos-v2__card-list { list-style: none; padding: 0; margin: 0; }
+        .tipos-v2__card-list:not(:empty) { margin-bottom: 20px; }
         .tipos-v2__card-list li { font-family: 'Inter', sans-serif; font-size: 14px; color: #555; line-height: 1.5; padding: 6px 0 6px 20px; position: relative; }
         .tipos-v2__card-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; background: #C8A84A; }
-        .tipos-v2__card-cta { display: inline-block; margin-top: 20px; text-decoration: none; text-align: center; }
+        .tipos-v2__card-cta { display: inline-block; margin-top: auto; align-self: flex-start; text-decoration: none; text-align: center; }
 
         @media (max-width: 900px) { .tipos-v2__grid { grid-template-columns: 1fr; } }
       `}</style>
