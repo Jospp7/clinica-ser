@@ -3,21 +3,19 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 
 const REASONS = [
-  { icon: "🏥", title: `${SITE.aniosExperiencia} años de experiencia`, desc: `Desde 1967, son miles los pacientes y familias que se han visto beneficiados por nuestra atención, en Puebla y en toda la República Mexicana.` },
-  { icon: "👨‍⚕️", title: "Equipo multidisciplinario", desc: "Psiquiatras, psicólogos, médicos internistas, nutriólogos y consejeros certificados trabajando en conjunto." },
-  // TODO: confirmar vigencia de certificación con cliente antes de reintroducir el card
-  // "Certificación CENADIC" (CENADIC se disolvió ~2011, hoy es CONADIC).
-  { icon: "🏠", title: "Instalaciones de primer nivel", desc: "Habitaciones privadas, áreas verdes, gimnasio y espacios terapéuticos en el corazón de Puebla." },
-  { icon: "🕐", title: "Atención 24/7", desc: "Disponibles las 24 horas, los 365 días del año. Ingreso inmediato cuando lo necesites." },
-  { icon: "❤️", title: "Trato humano y personalizado", desc: "Cada paciente recibe un plan de tratamiento único, diseñado para su situación específica." },
-  { icon: "👥", title: "Programa familiar", desc: "Incluimos a la familia en el proceso de recuperación con terapias y grupos de apoyo especializados." },
-  { icon: "🔄", title: "Seguimiento post-tratamiento", desc: "Acompañamos a nuestros pacientes después del alta para prevenir recaídas y consolidar la recuperación." },
+  { num: "1", title: "Costos accesibles y facilidades de pago.", desc: "Considerando nuestra experiencia, instalaciones, profesionalismo y casos de éxito." },
+  { num: "2", title: "Experiencia.", desc: "Clínica SER forma parte de un grupo médico fundado en 1967, distinguido por su constante evolución y liderazgo a través del tiempo." },
+  { num: "3", title: "Profesionalismo.", desc: "Todo el equipo cuenta con grado de especialización y maestría y se actualiza constantemente sobre las técnicas más avanzadas de abordaje terapéutico." },
+  { num: "4", title: "Atención.", desc: "Amplio equipo de personal médico calificado, disponible para nuestros pacientes todos los días del año." },
+  { num: "5", title: "Tratamiento Integral SER®.", desc: "Único en el país que contempla un tratamiento integral por especialistas en Psiquiatría que atienden padecimientos coexistentes." },
+  { num: "6", title: "Instalaciones.", desc: "Espacio por espacio, diseñadas para facilitar la recuperación con la comodidad y privacidad requeridas." },
+  { num: "7", title: "Seguimiento.", desc: "Seguimiento post-tratamiento sin límite y sin costo, desde cualquier lugar de México y el mundo." },
 ];
 
-// TODO: si el cliente aporta cifras verificables (pacientes atendidos, etc.), agregarlas aquí.
-const STATS = [
-  { num: `${SITE.aniosExperiencia}+`, label: "Años de experiencia" },
-  { num: "24/7", label: "Disponibilidad" },
+const TIMELINE = [
+  { year: "1967", label: "Fundación del grupo médico." },
+  { year: "2014", label: "Hito de la clínica." }, // TODO: falta dato del cliente — descripción exacta del hito 2014
+  { year: "2025", label: "Hito de la clínica." }, // TODO: falta dato del cliente — descripción exacta del hito 2025
 ];
 
 const PorQueElegirnos = () => {
@@ -26,37 +24,34 @@ const PorQueElegirnos = () => {
   return (
     <main>
       <Seo
-        title="Por Qué Elegirnos — Clínica SER Puebla"
-        description={`${SITE.aniosExperiencia} años tratando adicciones, equipo multidisciplinario, instalaciones de primer nivel y atención humana 24/7. Descubre por qué las familias eligen Clínica SER.`}
+        title="Centro de Rehabilitación en Puebla — 7 razones para elegir Clínica SER"
+        description="Conoce las 7 razones para elegir Clínica SER en Puebla: experiencia desde 1967, equipo especializado, tratamiento integral y seguimiento post-tratamiento."
         path="/por-que-elegirnos"
       />
+      {/* TODO: imagen del cliente — hero de la página */}
       <section className="pqe-hero">
         <div className="pqe-hero__overlay" />
         <div className="pqe-hero__content" data-anim="fade-up">
           <span className="pqe-hero__tag">POR QUÉ ELEGIRNOS</span>
-          <h1 className="pqe-hero__title">La clínica de adicciones<br />más confiable de Puebla</h1>
-          <p className="pqe-hero__sub">{SITE.aniosExperiencia} años transformando vidas con profesionalismo, calidez y resultados comprobados.</p>
+          <h1 className="pqe-hero__title">Centro de Rehabilitación en Puebla — 7 razones para elegir Clínica SER</h1>
         </div>
       </section>
 
-      <section className="pqe-stats">
-        <div className="pqe-stats__grid">
-          {STATS.map((s, i) => (
-            <div key={i} className="pqe-stat" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
-              <span className="pqe-stat__num">{s.num}</span>
-              <span className="pqe-stat__label">{s.label}</span>
-            </div>
-          ))}
+      <section className="pqe-intro-section">
+        <div className="pqe-intro-container" data-anim="fade-up">
+          <p className="pqe-intro">
+            Clínica SER® forma parte de un grupo médico cuya experiencia de más de {SITE.aniosExperiencia} años le ha permitido desarrollar el modelo de tratamiento para la adicción al alcohol y la drogadicción más avanzado y con mayor éxito del país. No existe en todo el país un centro de rehabilitación y desintoxicación que cuente con el respaldo de un hospital de salud mental como parte de su grupo médico, lo que permite brindar atención calificada para padecimientos coexistentes. El trato en Clínica SER es profesional y humano, con confidencialidad y respeto.
+          </p>
         </div>
       </section>
 
       <section className="pqe-reasons">
         <div className="pqe-reasons__container">
-          <h2 className="pqe-reasons__title" data-anim="fade-up">¿Por qué confiar en Clínica SER?</h2>
+          <h2 className="pqe-reasons__title" data-anim="fade-up">7 razones para elegir Clínica SER</h2>
           <div className="pqe-reasons__grid">
             {REASONS.map((r, i) => (
               <div key={i} className="pqe-reason" data-anim="fade-up" data-anim-delay={`${(i % 4) * 0.1}s`}>
-                <span className="pqe-reason__icon">{r.icon}</span>
+                <span className="pqe-reason__icon">{r.num}</span>
                 <h3 className="pqe-reason__title">{r.title}</h3>
                 <p className="pqe-reason__text">{r.desc}</p>
               </div>
@@ -65,7 +60,24 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
-      {/* TODO: restaurar con testimonios reales del cliente. */}
+      <section className="pqe-timeline">
+        <div className="pqe-timeline__container">
+          <h2 className="pqe-timeline__title" data-anim="fade-up">Conoce nuestra clínica a través del tiempo</h2>
+          <div className="pqe-timeline__grid">
+            {TIMELINE.map((t, i) => (
+              <div key={i} className="pqe-timeline__item" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
+                {/* TODO: imagen del cliente — hito {t.year} */}
+                <span className="pqe-timeline__year">{t.year}</span>
+                <span className="pqe-timeline__label">{t.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pqe-closing">
+        <p className="pqe-closing__text" data-anim="fade-up">Elige ser feliz... estás a sólo unos pasos. ¡Vive sin ataduras!</p>
+      </section>
 
       <section className="pqe-cta">
         <div className="pqe-cta__inner" data-anim="fade-up">
@@ -79,17 +91,14 @@ const PorQueElegirnos = () => {
       </section>
 
       <style>{`
-        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80') center/cover; }
+        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: linear-gradient(135deg, #1A1A2E, #1B2A4A); }
         .pqe-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .pqe-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .pqe-hero__tag { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #C8E64A; display: block; margin-bottom: 16px; }
         .pqe-hero__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
-        .pqe-hero__sub { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
-
-        .pqe-stats { background: #C8E64A; padding: 48px 24px; }
-        .pqe-stats__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; max-width: 800px; margin: 0 auto; text-align: center; }
-        .pqe-stat__num { display: block; font-family: 'Inter', sans-serif; font-size: clamp(32px,4vw,48px); font-weight: 800; color: #1A1A2E; }
-        .pqe-stat__label { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(26,26,46,.7); font-weight: 500; }
+        .pqe-intro-section { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; }
+        .pqe-intro-container { max-width: 900px; margin: 0 auto; }
+        .pqe-intro { font-family: 'Inter', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
 
         .pqe-reasons { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .pqe-reasons__container { max-width: 1200px; margin: 0 auto; }
@@ -97,18 +106,20 @@ const PorQueElegirnos = () => {
         .pqe-reasons__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
         .pqe-reason { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .pqe-reason:hover { transform: translateY(-4px); }
-        .pqe-reason__icon { font-size: 36px; display: block; margin-bottom: 16px; }
+        .pqe-reason__icon { font-size: 36px; font-weight: 800; color: #C8E64A; display: block; margin-bottom: 16px; }
         .pqe-reason__title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
         .pqe-reason__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
 
-        .pqe-testimonial { background: #F5F5F5; padding: clamp(64px,8vw,100px) 24px; }
-        .pqe-testimonial__inner { max-width: 700px; margin: 0 auto; text-align: center; }
-        .pqe-testimonial__quote { font-size: 48px; color: #D4A843; line-height: 1; display: block; margin-bottom: 16px; }
-        .pqe-testimonial__text { font-family: 'Inter', sans-serif; font-size: clamp(16px,2vw,20px); color: #333; line-height: 1.7; font-style: italic; margin: 0 0 24px; }
-        .pqe-testimonial__author { display: flex; align-items: center; gap: 12px; justify-content: center; }
-        .pqe-testimonial__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
-        .pqe-testimonial__name { display: block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #1A1A2E; }
-        .pqe-testimonial__stars { display: flex; gap: 2px; }
+        .pqe-timeline { background: #F5F5F5; padding: clamp(64px,8vw,100px) 24px; }
+        .pqe-timeline__container { max-width: 1100px; margin: 0 auto; }
+        .pqe-timeline__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
+        .pqe-timeline__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .pqe-timeline__item { background: #FFFFFF; border-radius: 20px; padding: 32px 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.05); }
+        .pqe-timeline__year { display: block; font-family: 'Inter', sans-serif; font-size: clamp(28px,3vw,40px); font-weight: 800; color: #1B2A4A; margin-bottom: 8px; }
+        .pqe-timeline__label { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; }
+
+        .pqe-closing { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; text-align: center; }
+        .pqe-closing__text { font-family: 'Inter', sans-serif; font-size: clamp(18px,2vw,24px); font-weight: 600; color: #1A1A2E; margin: 0; font-style: italic; }
 
         .pqe-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .pqe-cta__inner { max-width: 600px; margin: 0 auto; }
@@ -121,12 +132,11 @@ const PorQueElegirnos = () => {
         .pqe-cta__btn--wa:hover { background: #1DB954; }
 
         @media (max-width: 900px) {
-          .pqe-stats__grid { grid-template-columns: repeat(2,1fr); }
           .pqe-reasons__grid { grid-template-columns: repeat(2,1fr); }
+          .pqe-timeline__grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
           .pqe-reasons__grid { grid-template-columns: 1fr; }
-          .pqe-stats__grid { grid-template-columns: repeat(2,1fr); }
         }
       `}</style>
     </main>
