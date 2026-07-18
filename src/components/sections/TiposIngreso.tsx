@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ContactModal from "../ContactModal";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
@@ -60,7 +61,7 @@ const TiposIngreso = () => {
                   <li key={j}>{item}</li>
                 ))}
               </ul>
-              {c.cta.kind === "tel" || c.cta.kind === "link" ? (
+              {c.cta.kind === "tel" ? (
                 <a
                   href={c.cta.href}
                   className="tipos-v2__cta tipos-v2__card-cta"
@@ -68,6 +69,14 @@ const TiposIngreso = () => {
                 >
                   {c.cta.label}
                 </a>
+              ) : c.cta.kind === "link" ? (
+                <Link
+                  to={c.cta.href}
+                  className="tipos-v2__cta tipos-v2__card-cta"
+                  onClick={() => trackCTAClick(c.cta.track)}
+                >
+                  {c.cta.label}
+                </Link>
               ) : (
                 <button
                   className="tipos-v2__cta tipos-v2__card-cta"
