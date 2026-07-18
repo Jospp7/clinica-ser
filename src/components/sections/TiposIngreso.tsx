@@ -27,8 +27,7 @@ const CARDS = [
     title: "Ingreso por Intervención",
     desc: "Si tu ser querido necesita ayuda, pero se niega a recibir tratamiento, consulta la guía para saber qué hacer en ese caso.",
     items: [], // Sin bullets en el sitio original — verificado
-    // TODO: apuntar a /guia-intervencion cuando exista la ruta
-    cta: { kind: "modal" as const, label: "Consulta la guía", track: "GUIA_CARD_INTERVENCION" },
+    cta: { kind: "link" as const, href: "/guia-intervencion", label: "Consulta la guía", track: "GUIA_CARD_INTERVENCION" },
   },
 ];
 
@@ -61,7 +60,7 @@ const TiposIngreso = () => {
                   <li key={j}>{item}</li>
                 ))}
               </ul>
-              {c.cta.kind === "tel" ? (
+              {c.cta.kind === "tel" || c.cta.kind === "link" ? (
                 <a
                   href={c.cta.href}
                   className="tipos-v2__cta tipos-v2__card-cta"

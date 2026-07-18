@@ -59,6 +59,7 @@ const Footer = () => {
               <div>
                 <a href="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</a>
                 <a href="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</a>
+                <a href="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</a>
                 <a href="/aviso-de-privacidad" className="footer-v2__sitemap-link">Aviso de privacidad</a>
               </div>
             </div>
