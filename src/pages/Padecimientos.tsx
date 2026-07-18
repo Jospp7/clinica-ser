@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { waLink } from "@/lib/site";
 
 const CONDITIONS = [
   { title: "Alcoholismo", desc: "El alcoholismo es una enfermedad crónica que afecta a millones de personas. Nuestro programa aborda la desintoxicación, la terapia conductual y el apoyo a largo plazo.", symptoms: ["Necesidad de beber cada vez más", "Incapacidad para dejar de beber", "Síntomas de abstinencia", "Descuido de responsabilidades"] },
