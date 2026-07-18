@@ -48,7 +48,7 @@ const Equipo = () => {
       <section className="eq-pg__intro-section">
         <div className="eq-pg__intro-container" data-anim="fade-up">
           <p className="eq-pg__intro">
-            SER® es una de las mejores clínicas de rehabilitación en Puebla... ofrecemos un equipo profesional y humano, altamente especializado en las técnicas más actualizadas de abordaje terapéutico, terapia cognitivo conductual y terapia racional emotiva. Nuestros especialistas dirigen entrevistas motivacionales para potenciar los deseos de cambio del familiar adicto. En nuestro equipo encontrarás especialistas en psiquiatría, médicos y enfermeras disponibles las 24 horas del día. Mantenemos estrictas políticas de confidencialidad, un trato empático y altos estándares de calidad.
+            SER® es una de las mejores clínicas de rehabilitación en Puebla. Ofrecemos un equipo profesional y humano, altamente especializado en las técnicas más actualizadas de abordaje terapéutico, terapia cognitivo conductual y terapia racional emotiva. Nuestros especialistas dirigen entrevistas motivacionales para potenciar los deseos de cambio del familiar adicto. En nuestro equipo encontrarás especialistas en psiquiatría, médicos y enfermeras disponibles las 24 horas del día. Mantenemos estrictas políticas de confidencialidad, un trato empático y altos estándares de calidad.
           </p>
         </div>
       </section>
