@@ -182,14 +182,14 @@ const GuiaIngresoInvoluntario = () => {
             </p>
             <div className="guia__cta-btns">
               <a
-                href="tel:+522226884386"
+                href={`tel:${SITE.telefonoTel[0]}`}
                 className="guia__btn"
                 onClick={() => trackCTAClick("LLAMAR_GUIA_INVOLUNTARIO")}
               >
                 📞 Llamar ahora
               </a>
               <a
-                href="https://wa.me/5212213490308"
+                href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="guia__btn guia__btn--wa"
