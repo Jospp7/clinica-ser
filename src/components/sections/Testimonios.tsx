@@ -1,16 +1,15 @@
-import { useState } from "react";
+// TODO: el cliente tiene testimonios reales en video (ver sitio anterior, sección
+// "Historias de Transformación"). Restaurar la sección cuando los entregue.
+// Los testimonios previos eran personas inventadas con fotos de Unsplash — retirados
+// por riesgo legal.
+const Testimonios = () => null;
 
-const TESTIMONIALS = [
-  { name: "LORENZO TORRES", age: "45 años", color: "#C8A84A", thumb: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80", video: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" },
-  { name: "JUAN DAVID", age: "18 años", color: "#C8E64A", thumb: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80", video: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80" },
-  { name: "MAURICIO C.", age: "31 años", color: "#C8A84A", thumb: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80", video: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80" },
-];
+export default Testimonios;
 
-const Testimonios = () => {
-  const [active, setActive] = useState(1);
-
+// eslint-disable-next-line
+const _unused = () => {
   return (
-    <section className="test-v2">
+    <section>
       <div className="test-v2__container">
         <span className="test-v2__tag" data-anim="fade-up">HISTORIAS DE RECUPERACIÓN</span>
         <h2 className="test-v2__title" data-anim="fade-up">
