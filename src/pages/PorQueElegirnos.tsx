@@ -100,7 +100,7 @@ const PorQueElegirnos = () => {
         .pqe-hero__sub { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
 
         .pqe-stats { background: #C8E64A; padding: 48px 24px; }
-        .pqe-stats__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .pqe-stats__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; max-width: 800px; margin: 0 auto; text-align: center; }
         .pqe-stat__num { display: block; font-family: 'Inter', sans-serif; font-size: clamp(32px,4vw,48px); font-weight: 800; color: #1A1A2E; }
         .pqe-stat__label { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(26,26,46,.7); font-weight: 500; }
 
