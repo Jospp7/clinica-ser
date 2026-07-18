@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { trackCTAClick } from "@/hooks/useTracking";
+import { SITE, waLink } from "@/lib/site";
 
 const GuiaIngresoInvoluntario = () => {
   useScrollToTop();
