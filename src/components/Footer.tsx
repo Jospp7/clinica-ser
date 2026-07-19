@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
-import { Star } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const Footer = () => {
@@ -38,15 +38,26 @@ const Footer = () => {
             </p>
             <p className="footer-v2__email">{SITE.email}</p>
             <div className="footer-v2__socials">
-              {["f", "📷", "▶", "𝕏"].map((icon, i) => (
-                <span key={i} className="footer-v2__social-icon">{icon}</span>
-              ))}
+              <a href={SITE.redes.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                 className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_FACEBOOK")}>
+                <Facebook size={18} />
+              </a>
+              <a href={SITE.redes.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                 className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_INSTAGRAM")}>
+                <Instagram size={18} />
+              </a>
+              <a href={SITE.redes.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter"
+                 className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_TWITTER")}>
+                <Twitter size={18} />
+              </a>
+              <a href={SITE.redes.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                 className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_LINKEDIN")}>
+                <Linkedin size={18} />
+              </a>
+              {/* TODO: preguntar al cliente si tienen canal de YouTube (mencionan videos de testimonios en el sitio anterior). */}
             </div>
             <div className="footer-v2__circle-deco" />
-            <div className="footer-v2__stars-row">
-              {[1,2,3,4,5].map(s => <Star key={s} fill="#D4A843" color="#D4A843" size={16} />)}
-              <span className="footer-v2__stars-text">Reseñas de nuestros pacientes</span>
-            </div>
+            {/* TODO: si el cliente tiene perfil de Google Business con reseñas reales, restaurar este bloque con la calificación real y enlazarlo al perfil. */}
           </div>
 
           <div className="footer-v2__top-col">
@@ -132,8 +143,8 @@ const Footer = () => {
         .footer-v2__link { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
         .footer-v2__link:hover { color: #C8E64A; }
         .footer-v2__socials { display: flex; gap: 10px; margin-bottom: 12px; }
-        .footer-v2__social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #C8E64A; color: #C8E64A; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: background 0.2s; }
-        .footer-v2__social-icon:hover { background: rgba(200,230,74,0.15); }
+        .footer-v2__social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #C8E64A; color: #C8E64A; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
+        .footer-v2__social-icon:hover { background: rgba(200,230,74,0.15); color: #C8E64A; }
         .footer-v2__circle-deco { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(200,230,74,0.2); margin-bottom: 12px; }
         .footer-v2__stars-row { display: flex; align-items: center; gap: 6px; }
         .footer-v2__stars-text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); margin-left: 8px; }
