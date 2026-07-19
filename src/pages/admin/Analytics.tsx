@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
-import { Eye, MousePointerClick, BarChart3, Mail, Phone, Lightbulb, Search, Stethoscope, Zap, CheckCircle2, AlertTriangle, ArrowUp, ArrowDown, ArrowRight, LucideIcon } from "lucide-react";
+import { Eye, MousePointerClick, BarChart3, Mail, Phone, Clock, Lightbulb, Search, Stethoscope, Zap, CheckCircle2, AlertTriangle, ArrowUp, ArrowDown, ArrowRight, LucideIcon } from "lucide-react";
 
 const TrendIcon = ({ trend }: { trend: "up" | "down" | "flat" }) => {
   const color = trend === "up" ? "#2E7D32" : trend === "down" ? "#C62828" : "#888";
@@ -159,7 +159,7 @@ const Analytics = () => {
           { label: "Tasa conversión", value: `${totals.rate}%`, icon: BarChart3 as LucideIcon | null, delta: "+2.1pp" },
           { label: "Contactos", value: totals.contacts.toLocaleString(), icon: Mail as LucideIcon | null, delta: "+15.4%" },
           { label: "Llamadas estimadas", value: "214", icon: Phone as LucideIcon | null, delta: "+9.2%" },
-          { label: "Tiempo promedio", value: "3:42", icon: null, delta: "+0:18" },
+          { label: "Tiempo promedio", value: "3:42", icon: Clock as LucideIcon | null, delta: "+0:18" },
         ].map(m => (
           <div key={m.label} style={{ ...cardStyle, padding: "18px 20px" }}>
             <div style={{ marginBottom: 6, color: "#1A1A2E", height: 22, display: "flex", alignItems: "center" }}>
