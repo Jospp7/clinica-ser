@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Eye, MousePointerClick, Mail, FileText, LucideIcon } from "lucide-react";
 
-interface Metric { label: string; icon: string; value: number | string; }
+interface Metric { label: string; icon: LucideIcon; value: number | string; }
 
 const Dashboard = () => {
   const [metrics, setMetrics] = useState<Metric[]>([]);
@@ -25,10 +26,10 @@ const Dashboard = () => {
       ]);
 
       setMetrics([
-        { label: "Visitas hoy", icon: "👁️", value: pvToday.count ?? 0 },
-        { label: "Clicks CTAs hoy", icon: "🖱️", value: ctaToday.count ?? 0 },
-        { label: "Contactos nuevos", icon: "📨", value: newContacts.count ?? 0 },
-        { label: "Posts publicados", icon: "📝", value: publishedPosts.count ?? 0 },
+        { label: "Visitas hoy", icon: Eye, value: pvToday.count ?? 0 },
+        { label: "Clicks CTAs hoy", icon: MousePointerClick, value: ctaToday.count ?? 0 },
+        { label: "Contactos nuevos", icon: Mail, value: newContacts.count ?? 0 },
+        { label: "Posts publicados", icon: FileText, value: publishedPosts.count ?? 0 },
       ]);
       setContacts(recentContacts.data ?? []);
       setPosts(recentPosts.data ?? []);
@@ -55,7 +56,7 @@ const Dashboard = () => {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 32 }}>
         {metrics.map(m => (
           <div key={m.label} style={{ background: "white", borderRadius: 12, padding: "20px 24px", boxShadow: "0 1px 3px rgba(0,0,0,.06)" }}>
-            <div style={{ fontSize: 24, marginBottom: 8 }}>{m.icon}</div>
+            <div style={{ marginBottom: 8, color: "#1A1A2E" }}><m.icon size={20} aria-hidden="true" /></div>
             <div style={{ fontSize: 28, fontWeight: 800, color: "#1A1A2E" }}>{m.value}</div>
             <div style={{ fontSize: 12, color: "#888", marginTop: 4 }}>{m.label}</div>
           </div>
