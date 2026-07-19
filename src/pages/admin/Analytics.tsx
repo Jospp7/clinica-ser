@@ -309,13 +309,13 @@ const Analytics = () => {
             </Bar>
           </BarChart>
         </ResponsiveContainer>
-        <p style={{ fontSize: 11, color: "#888", textAlign: "center", marginTop: 8 }}>
-          💡 Horarios pico: 10:00–13:00 y 19:00–21:00 — ideal para publicar contenido y campañas
+        <p style={{ fontSize: 11, color: "#888", textAlign: "center", marginTop: 8, display: "inline-flex", alignItems: "center", gap: 6, justifyContent: "center", width: "100%" }}>
+          <Lightbulb size={14} aria-hidden="true" /> Horarios pico: 10:00–13:00 y 19:00–21:00 — ideal para publicar contenido y campañas
         </p>
       </div>
 
       <div style={{ ...cardStyle, marginBottom: 24 }}>
-        <h3 style={titleStyle}>🔍 Posicionamiento SEO — Keywords principales</h3>
+        <h3 style={{ ...titleStyle, display: "inline-flex", alignItems: "center", gap: 8 }}><Search size={16} aria-hidden="true" /> Posicionamiento SEO — Keywords principales</h3>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
@@ -350,13 +350,13 @@ const Analytics = () => {
             </tbody>
           </table>
         </div>
-        <p style={{ fontSize: 11, color: "#888", marginTop: 12 }}>
-          💡 Recomendación: Crear artículos de blog enfocados en "internamiento adicciones" (pos. #8, alto volumen) para mejorar ranking.
+        <p style={{ fontSize: 11, color: "#888", marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <Lightbulb size={14} aria-hidden="true" /> Recomendación: Crear artículos de blog enfocados en "internamiento adicciones" (pos. #8, alto volumen) para mejorar ranking.
         </p>
       </div>
 
       <div style={{ ...cardStyle, marginBottom: 24 }}>
-        <h3 style={titleStyle}>🩺 Salud SEO del sitio</h3>
+        <h3 style={{ ...titleStyle, display: "inline-flex", alignItems: "center", gap: 8 }}><Stethoscope size={16} aria-hidden="true" /> Salud SEO del sitio</h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
           {[
             { label: "Meta títulos", status: "ok", detail: "Todas las páginas tienen título único < 60 chars" },
@@ -371,8 +371,11 @@ const Analytics = () => {
             { label: "SSL / HTTPS", status: "ok", detail: "Certificado válido" },
           ].map(item => (
             <div key={item.label} style={{ padding: "12px 16px", background: item.status === "ok" ? "#F1F8E9" : "#FFF8E1", borderRadius: 10, border: `1px solid ${item.status === "ok" ? "#C5E1A5" : "#FFE082"}` }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#1A1A2E", marginBottom: 4 }}>
-                {item.status === "ok" ? "✅" : "⚠️"} {item.label}
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#1A1A2E", marginBottom: 4, display: "inline-flex", alignItems: "center", gap: 6 }}>
+                {item.status === "ok"
+                  ? <CheckCircle2 size={16} color="#2E7D32" aria-hidden="true" />
+                  : <AlertTriangle size={16} color="#F57F17" aria-hidden="true" />}
+                {item.label}
               </div>
               <div style={{ fontSize: 11, color: "#666" }}>{item.detail}</div>
             </div>
@@ -381,7 +384,7 @@ const Analytics = () => {
       </div>
 
       <div style={{ ...cardStyle }}>
-        <h3 style={titleStyle}>⚡ Acciones rápidas recomendadas</h3>
+        <h3 style={{ ...titleStyle, display: "inline-flex", alignItems: "center", gap: 8 }}><Zap size={16} aria-hidden="true" /> Acciones rápidas recomendadas</h3>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {[
             { priority: "Alta", action: "Agregar alt text a 3 imágenes de la sección Instalaciones", impact: "SEO imágenes +15%" },
@@ -397,7 +400,7 @@ const Analytics = () => {
                 color: a.priority === "Alta" ? "#C62828" : a.priority === "Media" ? "#F57F17" : "#2E7D32",
               }}>{a.priority}</span>
               <span style={{ fontSize: 13, color: "#1A1A2E", flex: 1 }}>{a.action}</span>
-              <span style={{ fontSize: 11, color: "#888", flexShrink: 0 }}>→ {a.impact}</span>
+              <span style={{ fontSize: 11, color: "#888", flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 4 }}><ArrowRight size={12} aria-hidden="true" /> {a.impact}</span>
             </div>
           ))}
         </div>
