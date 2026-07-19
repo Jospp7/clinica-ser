@@ -41,7 +41,7 @@ const Blog = () => {
                 </div>
                 <h2 className="blog-card__title">{post.title}</h2>
                 <p className="blog-card__excerpt">{post.excerpt}</p>
-                <span className="blog-card__link">Leer más →</span>
+                <span className="blog-card__link">Leer más <ArrowRight size={14} aria-hidden="true" /></span>
               </div>
             </article>
           ))}
@@ -78,7 +78,7 @@ const Blog = () => {
         .blog-card__date { font-family: 'Inter', sans-serif; font-size: 11px; color: #999; }
         .blog-card__title { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; line-height: 1.4; }
         .blog-card__excerpt { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 16px; }
-        .blog-card__link { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #C8E64A; }
+        .blog-card__link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #C8E64A; }
 
         .blog-newsletter { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .blog-newsletter__inner { max-width: 500px; margin: 0 auto; }
