@@ -98,14 +98,22 @@ const FAQS: FaqItem[] = [
   {
     q: "¿Qué NO debe llevar el paciente a Clínica SER Puebla?",
     a: (
-      <p>
-        Televisiones portátiles · Planchas · Armas de fuego · Artículos
-        punzocortantes · Cobertores o calentadores eléctricos · Ordenadores
-        portátiles · Teléfonos celulares · Radios de comunicación · Material
-        pornográfico · Artículos de valor · Vitaminas o productos naturistas ·
-        Instrumentos musicales · Estupefacientes, drogas o ninguna sustancia
-        que contenga alcohol · Medicamentos
-      </p>
+      <ul>
+        <li>Televisiones portátiles.</li>
+        <li>Planchas.</li>
+        <li>Armas de fuego.</li>
+        <li>Artículos punzocortantes.</li>
+        <li>Cobertores o calentadores eléctricos.</li>
+        <li>Ordenadores portátiles.</li>
+        <li>Teléfonos celulares.</li>
+        <li>Radios de comunicación.</li>
+        <li>Material pornográfico.</li>
+        <li>Artículos de valor.</li>
+        <li>Vitaminas o productos naturistas.</li>
+        <li>Instrumentos musicales.</li>
+        <li>Estupefacientes, drogas o ninguna sustancia que contenga alcohol.</li>
+        <li>Medicamentos.</li>
+      </ul>
     ),
     aText:
       "Televisiones portátiles · Planchas · Armas de fuego · Artículos punzocortantes · Cobertores o calentadores eléctricos · Ordenadores portátiles · Teléfonos celulares · Radios de comunicación · Material pornográfico · Artículos de valor · Vitaminas o productos naturistas · Instrumentos musicales · Estupefacientes, drogas o ninguna sustancia que contenga alcohol · Medicamentos.",
