@@ -1,11 +1,12 @@
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
+import { ArrowUpRight } from "lucide-react";
 
 const Mapa = () => {
   return (
     <section className="map-v2" data-anim="fade-up">
       <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="map-v2__open-link">
-        Abrir en Maps ↗
+        Abrir en Maps <ArrowUpRight size={16} aria-hidden="true" />
       </a>
 
       <iframe
@@ -28,7 +29,7 @@ const Mapa = () => {
 
       <style>{`
         .map-v2 { position: relative; background: #E8E8E8; }
-        .map-v2__open-link { position: absolute; top: 24px; left: 24px; z-index: 10; background: white; padding: 10px 20px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #1B2A4A; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: background 0.2s; }
+        .map-v2__open-link { position: absolute; top: 24px; left: 24px; z-index: 10; background: white; padding: 10px 20px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #1B2A4A; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.1); transition: background 0.2s; display: inline-flex; align-items: center; gap: 6px; }
         .map-v2__open-link:hover { background: #F5F5F0; }
         .map-v2__overlay-bar { position: absolute; bottom: 40px; left: 40px; background: rgba(26,26,46,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 20px 32px; border-radius: 16px; display: flex; align-items: center; gap: 24px; z-index: 10; }
         .map-v2__overlay-text { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: white; letter-spacing: 0.08em; text-transform: uppercase; }
