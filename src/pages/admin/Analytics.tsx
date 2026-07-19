@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
+import { Eye, MousePointerClick, BarChart3, Mail, Phone, Lightbulb, Search, Stethoscope, Zap, CheckCircle2, AlertTriangle, ArrowUp, ArrowDown, ArrowRight, LucideIcon } from "lucide-react";
+
+const TrendIcon = ({ trend }: { trend: "up" | "down" | "flat" }) => {
+  const color = trend === "up" ? "#2E7D32" : trend === "down" ? "#C62828" : "#888";
+  const Icon = trend === "up" ? ArrowUp : trend === "down" ? ArrowDown : ArrowRight;
+  return <Icon size={16} color={color} aria-hidden="true" />;
+};
 
 const genDailyViews = () => {
   const days: { date: string; views: number }[] = [];
@@ -38,14 +45,15 @@ const DEMO_SOURCES = [
 ];
 
 const DEMO_KEYWORDS = [
-  { keyword: "clínica de adicciones puebla", pos: 3, vol: 1200, trend: "↑" },
-  { keyword: "rehabilitación alcoholismo puebla", pos: 5, vol: 880, trend: "↑" },
-  { keyword: "centro rehabilitación drogas puebla", pos: 4, vol: 720, trend: "→" },
-  { keyword: "internamiento adicciones", pos: 8, vol: 1400, trend: "↑" },
-  { keyword: "clínica ser puebla", pos: 1, vol: 320, trend: "→" },
-  { keyword: "tratamiento adicciones mexico", pos: 12, vol: 2100, trend: "↓" },
-  { keyword: "ingreso voluntario adicciones", pos: 6, vol: 480, trend: "↑" },
-  { keyword: "desintoxicación puebla", pos: 7, vol: 560, trend: "↑" },
+const DEMO_KEYWORDS: { keyword: string; pos: number; vol: number; trend: "up" | "down" | "flat" }[] = [
+  { keyword: "clínica de adicciones puebla", pos: 3, vol: 1200, trend: "up" },
+  { keyword: "rehabilitación alcoholismo puebla", pos: 5, vol: 880, trend: "up" },
+  { keyword: "centro rehabilitación drogas puebla", pos: 4, vol: 720, trend: "flat" },
+  { keyword: "internamiento adicciones", pos: 8, vol: 1400, trend: "up" },
+  { keyword: "clínica ser puebla", pos: 1, vol: 320, trend: "flat" },
+  { keyword: "tratamiento adicciones mexico", pos: 12, vol: 2100, trend: "down" },
+  { keyword: "ingreso voluntario adicciones", pos: 6, vol: 480, trend: "up" },
+  { keyword: "desintoxicación puebla", pos: 7, vol: 560, trend: "up" },
 ];
 
 const DEMO_CONVERSIONS = (() => {
@@ -141,21 +149,23 @@ const Analytics = () => {
     <div>
       {useDemo && (
         <div style={{ background: "#FFF8E1", border: "1px solid #FFE082", borderRadius: 10, padding: "10px 16px", marginBottom: 20, fontSize: 13, color: "#6D4C00", display: "flex", alignItems: "center", gap: 8 }}>
-          ⚠️ Mostrando datos de demostración. Los datos reales aparecerán cuando haya tráfico en el sitio.
+          <AlertTriangle size={16} aria-hidden="true" /> Mostrando datos de demostración. Los datos reales aparecerán cuando haya tráfico en el sitio.
         </div>
       )}
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14, marginBottom: 28 }}>
         {[
-          { label: "Visitas totales", value: totals.views.toLocaleString(), icon: "👁️", delta: "+12.3%" },
-          { label: "Clics en CTAs", value: totals.ctas.toLocaleString(), icon: "🖱️", delta: "+8.7%" },
-          { label: "Tasa conversión", value: `${totals.rate}%`, icon: "📊", delta: "+2.1pp" },
-          { label: "Contactos", value: totals.contacts.toLocaleString(), icon: "📨", delta: "+15.4%" },
-          { label: "Llamadas estimadas", value: "214", icon: "📞", delta: "+9.2%" },
-          { label: "Tiempo promedio", value: "3:42", icon: "⏱️", delta: "+0:18" },
+          { label: "Visitas totales", value: totals.views.toLocaleString(), icon: Eye as LucideIcon | null, delta: "+12.3%" },
+          { label: "Clics en CTAs", value: totals.ctas.toLocaleString(), icon: MousePointerClick as LucideIcon | null, delta: "+8.7%" },
+          { label: "Tasa conversión", value: `${totals.rate}%`, icon: BarChart3 as LucideIcon | null, delta: "+2.1pp" },
+          { label: "Contactos", value: totals.contacts.toLocaleString(), icon: Mail as LucideIcon | null, delta: "+15.4%" },
+          { label: "Llamadas estimadas", value: "214", icon: Phone as LucideIcon | null, delta: "+9.2%" },
+          { label: "Tiempo promedio", value: "3:42", icon: null, delta: "+0:18" },
         ].map(m => (
           <div key={m.label} style={{ ...cardStyle, padding: "18px 20px" }}>
-            <div style={{ fontSize: 22, marginBottom: 6 }}>{m.icon}</div>
+            <div style={{ marginBottom: 6, color: "#1A1A2E", height: 22, display: "flex", alignItems: "center" }}>
+              {m.icon ? <m.icon size={20} aria-hidden="true" /> : null}
+            </div>
             <div style={{ fontSize: 26, fontWeight: 800, color: "#1A1A2E" }}>{m.value}</div>
             <div style={{ fontSize: 11, color: "#888", marginTop: 2 }}>{m.label}</div>
             <div style={{ fontSize: 11, color: "#2E7D32", fontWeight: 600, marginTop: 4 }}>{m.delta} vs mes ant.</div>
