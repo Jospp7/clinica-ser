@@ -14,7 +14,7 @@ import Tratamiento from "./pages/Tratamiento.tsx";
 import InstalacionesPage from "./pages/InstalacionesPage.tsx";
 import Padecimientos from "./pages/Padecimientos.tsx";
 import Blog from "./pages/Blog.tsx";
-import GuiaIngresoInvoluntario from "./pages/GuiaIngresoInvoluntario.tsx";
+import GuiaIngreso from "./pages/GuiaIngreso.tsx";
 import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
 import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
 import Equipo from "./pages/Equipo.tsx";
@@ -38,7 +38,7 @@ const AppContent = () => {
       <Route path="/instalaciones" element={<InstalacionesPage />} />
       <Route path="/padecimientos" element={<Padecimientos />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/guia-ingreso" element={<GuiaIngresoInvoluntario />} />
+      <Route path="/guia-ingreso" element={<GuiaIngreso />} />
       <Route path="/guia-intervencion" element={<GuiaIntervencion />} />
       <Route path="/por-que-elegirnos" element={<PorQueElegirnos />} />
       <Route path="/equipo" element={<Equipo />} />
