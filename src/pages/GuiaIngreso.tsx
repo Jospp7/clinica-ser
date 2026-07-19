@@ -4,7 +4,7 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE, waLink } from "@/lib/site";
 
-const GuiaIngresoInvoluntario = () => {
+const GuiaIngreso = () => {
   useScrollToTop();
 
   const jsonLd = {
@@ -203,4 +203,4 @@ const GuiaIngresoInvoluntario = () => {
   );
 };
 
-export default GuiaIngresoInvoluntario;
+export default GuiaIngreso;
