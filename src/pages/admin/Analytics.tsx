@@ -340,8 +340,10 @@ const Analytics = () => {
                     </span>
                   </td>
                   <td style={{ padding: "10px 12px", textAlign: "center", color: "#555" }}>{k.vol.toLocaleString()}</td>
-                  <td style={{ padding: "10px 12px", textAlign: "center", fontSize: 16 }}>
-                    <span style={{ color: k.trend === "↑" ? "#2E7D32" : k.trend === "↓" ? "#C62828" : "#888" }}>{k.trend}</span>
+                  <td style={{ padding: "10px 12px", textAlign: "center" }}>
+                    <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+                      <TrendIcon trend={k.trend} />
+                    </span>
                   </td>
                 </tr>
               ))}
