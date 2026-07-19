@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { Pencil, RefreshCw, Trash2 } from "lucide-react";
 
 const CATEGORIES = ["Alcoholismo", "Familia", "Drogadicción", "Rehabilitación", "Psicología", "Recaídas", "Sin categoría"];
 
@@ -79,9 +80,15 @@ const BlogManager = () => {
                   <td style={{ padding: "12px 16px" }}>{p.views}</td>
                   <td style={{ padding: "12px 16px", color: "#888" }}>{new Date(p.created_at).toLocaleDateString()}</td>
                   <td style={{ padding: "12px 16px", display: "flex", gap: 8 }}>
-                    <Link to={`/admin/blog/edit/${p.id}`} style={{ textDecoration: "none", fontSize: 16 }} title="Editar">✏️</Link>
-                    <button onClick={() => toggleStatus(p.id, p.status)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 16 }} title="Cambiar status">🔄</button>
-                    <button onClick={() => deletePost(p.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 16 }} title="Eliminar">🗑️</button>
+                    <Link to={`/admin/blog/edit/${p.id}`} style={{ textDecoration: "none", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }} title="Editar" aria-label="Editar">
+                      <Pencil size={16} aria-hidden="true" />
+                    </Link>
+                    <button onClick={() => toggleStatus(p.id, p.status)} style={{ background: "none", border: "none", cursor: "pointer", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }} title="Cambiar status" aria-label="Cambiar status">
+                      <RefreshCw size={16} aria-hidden="true" />
+                    </button>
+                    <button onClick={() => deletePost(p.id)} style={{ background: "none", border: "none", cursor: "pointer", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }} title="Eliminar" aria-label="Eliminar">
+                      <Trash2 size={16} aria-hidden="true" />
+                    </button>
                   </td>
                 </tr>
               ))}
