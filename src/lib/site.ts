@@ -21,6 +21,13 @@ export const SITE = {
     linkedin: "https://www.linkedin.com/company/clínica-ser-puebla",
   },
   horarioIngreso: "24 horas, los 365 días del año",
+  google: {
+    // Datos del perfil real de Google Business. Capturados el 19 de julio de 2026.
+    // TODO: revisar cada ~3 meses; la calificación y el conteo cambian con el tiempo.
+    rating: 4.3,
+    reviewCount: 93,
+    url: "https://www.google.com/maps/place/?q=place_id:ChIJ1fY679nGz4URAsH-NllWjQY",
+  },
 } as const;
 
 export const waLink = (texto: string = SITE.whatsappTextoDefault) =>

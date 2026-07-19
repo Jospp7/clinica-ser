@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const Footer = () => {
@@ -57,7 +57,23 @@ const Footer = () => {
               {/* TODO: preguntar al cliente si tienen canal de YouTube (mencionan videos de testimonios en el sitio anterior). */}
             </div>
             <div className="footer-v2__circle-deco" />
-            {/* TODO: si el cliente tiene perfil de Google Business con reseñas reales, restaurar este bloque con la calificación real y enlazarlo al perfil. */}
+            <a
+              href={SITE.google.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-v2__stars-row"
+              aria-label={`Calificación ${SITE.google.rating} de 5 basada en ${SITE.google.reviewCount} reseñas en Google`}
+              onClick={() => trackCTAClick("GOOGLE_REVIEWS")}
+              style={{ textDecoration: "none" }}
+            >
+              {[0, 1, 2, 3].map((i) => (
+                <Star key={i} size={16} fill="#C8E64A" color="#C8E64A" />
+              ))}
+              <StarHalf size={16} fill="#C8E64A" color="#C8E64A" />
+              <span className="footer-v2__stars-text">
+                {SITE.google.rating} · {SITE.google.reviewCount} reseñas en Google
+              </span>
+            </a>
           </div>
 
           <div className="footer-v2__top-col">
