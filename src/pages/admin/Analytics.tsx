@@ -44,7 +44,6 @@ const DEMO_SOURCES = [
   { name: "Referidos", value: 5, color: "#D4A843" },
 ];
 
-const DEMO_KEYWORDS = [
 const DEMO_KEYWORDS: { keyword: string; pos: number; vol: number; trend: "up" | "down" | "flat" }[] = [
   { keyword: "clínica de adicciones puebla", pos: 3, vol: 1200, trend: "up" },
   { keyword: "rehabilitación alcoholismo puebla", pos: 5, vol: 880, trend: "up" },
