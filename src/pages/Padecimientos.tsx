@@ -2,7 +2,7 @@ import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { waLink } from "@/lib/site";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 
 // TODO: lista y descripciones pendientes de validación por el equipo médico del cliente.
 // Estas 6 provienen del sitio anterior; ninguna incluye sintomatología por falta de fuente.
@@ -62,7 +62,7 @@ const Padecimientos = () => {
               </div>
               <p className="pad-card__desc">{c.desc}</p>
               <Link to="/tratamiento" className="pad-card__link">
-                Conoce nuestro Modelo Hazelden →
+                Conoce nuestro Modelo Hazelden <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
           ))}
@@ -94,7 +94,7 @@ const Padecimientos = () => {
         .pad-card__num { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: #C8E64A; }
         .pad-card__title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #1A1A2E; margin: 0; }
         .pad-card__desc { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 16px; }
-        .pad-card__link { display: inline-block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #1B2A4A; text-decoration: none; border-bottom: 1px solid #C8E64A; padding-bottom: 2px; transition: color .2s; }
+        .pad-card__link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #1B2A4A; text-decoration: none; border-bottom: 1px solid #C8E64A; padding-bottom: 2px; transition: color .2s; }
         .pad-card__link:hover { color: #8AB83A; }
 
         .pad-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }

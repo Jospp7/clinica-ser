@@ -67,9 +67,9 @@ const Footer = () => {
               style={{ textDecoration: "none" }}
             >
               {[0, 1, 2, 3].map((i) => (
-                <Star key={i} size={16} fill="#C8E64A" color="#C8E64A" />
+                <Star key={i} size={16} fill="#F5A623" color="#F5A623" />
               ))}
-              <StarHalf size={16} fill="#C8E64A" color="#C8E64A" />
+              <StarHalf size={16} fill="#F5A623" color="#F5A623" />
               <span className="footer-v2__stars-text">
                 {SITE.google.rating} · {SITE.google.reviewCount} reseñas en Google
               </span>
