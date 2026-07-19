@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
+import { Phone, Mail, Check } from "lucide-react";
 
 const EQUIPO_MEDICO = [
   "4 Especialistas en Psiquiatría",
@@ -59,7 +60,7 @@ const Equipo = () => {
             <h2 className="eq-pg__list-title">Equipo Médico y Paramédico</h2>
             <ul className="eq-pg__list">
               {EQUIPO_MEDICO.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}><Check size={16} aria-hidden="true" /><span>{item}</span></li>
               ))}
             </ul>
           </div>
@@ -67,7 +68,7 @@ const Equipo = () => {
             <h2 className="eq-pg__list-title">Servicios Generales</h2>
             <ul className="eq-pg__list">
               {SERVICIOS_GENERALES.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}><Check size={16} aria-hidden="true" /><span>{item}</span></li>
               ))}
             </ul>
           </div>
@@ -111,8 +112,8 @@ const Equipo = () => {
           <h2 className="eq-pg__cta-title">¿Necesitas hablar con un especialista?</h2>
           <p className="eq-pg__cta-text">Nuestro equipo está disponible las 24 horas para resolver tus dudas.</p>
           <div className="eq-pg__cta-actions">
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="eq-pg__cta-btn">📞 Llamar ahora</a>
-            <a href={`mailto:${SITE.email}`} className="eq-pg__cta-btn eq-pg__cta-btn--ghost">✉ {SITE.email}</a>
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="eq-pg__cta-btn"><Phone size={16} aria-hidden="true" /> Llamar ahora</a>
+            <a href={`mailto:${SITE.email}`} className="eq-pg__cta-btn eq-pg__cta-btn--ghost"><Mail size={16} aria-hidden="true" /> {SITE.email}</a>
           </div>
         </div>
       </section>
@@ -133,9 +134,9 @@ const Equipo = () => {
         .eq-pg__list-card { background: #FFFFFF; border-radius: 20px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,.05); }
         .eq-pg__list-title { font-family: 'Inter', sans-serif; font-size: clamp(20px,2vw,26px); font-weight: 700; color: #1A1A2E; margin: 0 0 24px; }
         .eq-pg__list { list-style: none; margin: 0; padding: 0; }
-        .eq-pg__list li { font-family: 'Inter', sans-serif; font-size: 15px; color: #444; line-height: 1.7; padding: 10px 0 10px 24px; position: relative; border-bottom: 1px solid #EEE; }
+        .eq-pg__list li { font-family: 'Inter', sans-serif; font-size: 15px; color: #444; line-height: 1.7; padding: 10px 0; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #EEE; }
+        .eq-pg__list li > svg { color: #C8E64A; flex-shrink: 0; }
         .eq-pg__list li:last-child { border-bottom: none; }
-        .eq-pg__list li::before { content: '✓'; position: absolute; left: 0; top: 10px; color: #C8E64A; font-weight: 700; }
 
         .eq-pg__profile-section { background: #FFFFFF; padding: clamp(64px,8vw,100px) 24px; }
         .eq-pg__profile-container { max-width: 900px; margin: 0 auto; background: #F9FAFB; border-radius: 24px; padding: clamp(32px,4vw,56px); border: 1px solid #E5E7EB; }

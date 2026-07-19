@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { trackCTAClick } from "@/hooks/useTracking";
 import logoSer from "@/assets/logo-ser.png";
 import { SITE } from "@/lib/site";
+import { Phone, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "INICIO", href: "/" },
@@ -59,9 +60,9 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-ser__right">
-          <a href={`tel:${SITE.telefonoTel[0]}`} className="nav-ser__cta" onClick={() => trackCTAClick("LLAMAR_24H")}>📞 Llamar 24h</a>
+          <a href={`tel:${SITE.telefonoTel[0]}`} className="nav-ser__cta" onClick={() => trackCTAClick("LLAMAR_24H")}><Phone size={16} aria-hidden="true" /> Llamar 24h</a>
           <button className="nav-ser__menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}>
-            {menuOpen ? "✕" : "☰"}
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -74,7 +75,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <a href={`tel:${SITE.telefonoTel[0]}`} onClick={() => { trackCTAClick("LLAMAR_AHORA_MOBILE"); setMenuOpen(false); }} className="nav-ser__dropdown-cta">📞 Llamar ahora — 24h</a>
+        <a href={`tel:${SITE.telefonoTel[0]}`} onClick={() => { trackCTAClick("LLAMAR_AHORA_MOBILE"); setMenuOpen(false); }} className="nav-ser__dropdown-cta"><Phone size={16} aria-hidden="true" /> Llamar ahora — 24h</a>
       </div>
 
       <style>{`
@@ -89,7 +90,7 @@ const Navbar = () => {
         .nav-ser__link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: #C8E64A; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
         .nav-ser__link:hover::after, .nav-ser__link--active::after { transform: scaleX(1); }
         .nav-ser__right { display: flex; align-items: center; gap: 12px; }
-        .nav-ser__cta { background: rgba(200,230,74,.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.25); color: #1A1A2E; border-radius: 60px; padding: 8px 20px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-decoration: none; transition: all .3s ease; white-space: nowrap; box-shadow: 0 4px 16px rgba(200,230,74,.2); }
+        .nav-ser__cta { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,230,74,.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.25); color: #1A1A2E; border-radius: 60px; padding: 8px 20px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-decoration: none; transition: all .3s ease; white-space: nowrap; box-shadow: 0 4px 16px rgba(200,230,74,.2); }
         .nav-ser__cta:hover { background: rgba(138,184,58,.9); color: white; box-shadow: 0 6px 20px rgba(138,184,58,.35); }
         .nav-ser__menu-btn { display: none; align-items: center; justify-content: center; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); color: white; border-radius: 8px; padding: 8px 14px; font-size: 16px; cursor: pointer; transition: background .2s ease; }
         .nav-ser__menu-btn:hover { background: rgba(255,255,255,.2); }
@@ -102,7 +103,7 @@ const Navbar = () => {
         @keyframes navDropIn { to { opacity: 1; transform: translateY(0); } }
         .nav-ser__dropdown-link { display: block; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,.8); text-decoration: none; padding: 12px 16px; border-radius: 8px; transition: background .2s ease, color .2s ease; }
         .nav-ser__dropdown-link:hover { background: rgba(255,255,255,.1); color: #fff; }
-        .nav-ser__dropdown-cta { display: block; text-align: center; background: #C8E64A; color: #1A1A2E; border-radius: 60px; padding: 14px 24px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .2s ease; }
+        .nav-ser__dropdown-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; text-align: center; background: #C8E64A; color: #1A1A2E; border-radius: 60px; padding: 14px 24px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .2s ease; }
         .nav-ser__dropdown-cta:hover { background: #8AB83A; color: white; }
 
         @media (max-width: 900px) {

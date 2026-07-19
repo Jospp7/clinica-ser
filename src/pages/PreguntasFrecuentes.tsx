@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE, waLink } from "@/lib/site";
+import { Phone, MessageCircle } from "lucide-react";
 
 type FaqItem = {
   q: string;
@@ -228,7 +229,7 @@ const PreguntasFrecuentes = () => {
                 className="guia__btn"
                 onClick={() => trackCTAClick("LLAMAR_FAQ")}
               >
-                📞 Llamar ahora
+                <Phone size={16} aria-hidden="true" /> Llamar ahora
               </a>
               <a
                 href={waLink()}
@@ -237,7 +238,7 @@ const PreguntasFrecuentes = () => {
                 className="guia__btn guia__btn--wa"
                 onClick={() => trackCTAClick("WA_FAQ")}
               >
-                💬 WhatsApp
+                <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
           </section>

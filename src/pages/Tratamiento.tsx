@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
+import { Phone, MessageCircle } from "lucide-react";
 
 // Bloques del programa — texto literal del sitio original.
 const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
@@ -99,8 +100,8 @@ const Tratamiento = () => {
           <h2 className="trat-cta__title">¿Necesitas ayuda?</h2>
           <p className="trat-cta__text">Nuestro equipo está disponible las 24 horas para orientarte.</p>
           <div className="trat-cta__btns">
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="trat-cta__btn">📞 Llamar ahora</a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa">💬 WhatsApp</a>
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="trat-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa"><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
           </div>
         </div>
       </section>

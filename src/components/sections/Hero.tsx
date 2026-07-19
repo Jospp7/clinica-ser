@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import ContactModal from "../ContactModal";
 import { trackCTAClick } from "@/hooks/useTracking";
 import logoSer from "@/assets/logo-ser.png";
+import { Phone, MessageCircle } from "lucide-react";
 
 const HERO_BG = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80";
 const DOC_1 = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80";
@@ -161,7 +162,7 @@ const Hero = () => {
 
           <div className="hero__ctas">
             <button className="hero__btn hero__btn--primary" onClick={() => { trackCTAClick("AGENDAR_HERO"); setModalOpen(true); }}>
-              📞 Agendar llamada
+              <Phone size={18} aria-hidden="true" /> Agendar llamada
             </button>
           </div>
         </div>
@@ -180,7 +181,7 @@ const Hero = () => {
           <div className="hero__ellipse hero__ellipse--1" aria-hidden="true" />
           <div className="hero__ellipse hero__ellipse--2" aria-hidden="true" />
           <div className="hero__wa-bubble" aria-hidden="true">
-            <span className="hero__wa-icon">💬</span>
+            <MessageCircle size={16} className="hero__wa-icon" />
             <span className="hero__wa-text">Hola, ¿necesitas ayuda?</span>
           </div>
         </div>

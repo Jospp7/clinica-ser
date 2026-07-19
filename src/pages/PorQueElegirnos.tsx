@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
+import { Phone, MessageCircle } from "lucide-react";
 
 const REASONS = [
   { num: "1", title: "Costos accesibles y facilidades de pago.", desc: "Considerando nuestra experiencia, instalaciones, profesionalismo y casos de éxito." },
@@ -87,8 +88,8 @@ const PorQueElegirnos = () => {
           <h2 className="pqe-cta__title">Da el primer paso hoy</h2>
           <p className="pqe-cta__text">Tu llamada es confidencial. Estamos aquí para ayudarte.</p>
           <div className="pqe-cta__btns">
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="pqe-cta__btn">📞 Llamar ahora</a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pqe-cta__btn pqe-cta__btn--wa">💬 WhatsApp</a>
+            <a href={`tel:${SITE.telefonoTel[0]}`} className="pqe-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pqe-cta__btn pqe-cta__btn--wa"><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
           </div>
         </div>
       </section>

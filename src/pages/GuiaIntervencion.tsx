@@ -3,6 +3,7 @@ import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE, waLink } from "@/lib/site";
+import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 
 const GuiaIntervencion = () => {
   useScrollToTop();
@@ -183,7 +184,7 @@ const GuiaIntervencion = () => {
                 className="guia__btn"
                 onClick={() => trackCTAClick("LLAMAR_GUIA_INTERVENCION_CTA")}
               >
-                📞 Llamar ahora
+                <Phone size={16} aria-hidden="true" /> Llamar ahora
               </a>
               <a
                 href={waLink()}
@@ -192,11 +193,11 @@ const GuiaIntervencion = () => {
                 className="guia__btn guia__btn--wa"
                 onClick={() => trackCTAClick("WA_GUIA_INTERVENCION")}
               >
-                💬 WhatsApp
+                <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
             <Link to="/guia-ingreso" className="guia__back">
-              → Guía de Ingreso
+              <ArrowRight size={14} aria-hidden="true" /> Guía de Ingreso
             </Link>
           </section>
         </div>
@@ -227,7 +228,7 @@ const GuiaIntervencion = () => {
         .guia__btn:hover { background: #8AB83A; color: white; }
         .guia__btn--wa { background: #25D366; color: white; }
         .guia__btn--wa:hover { background: #1DB954; }
-        .guia__back { display: inline-block; font-size: 13px; color: #888; text-decoration: none; margin-top: 12px; }
+        .guia__back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #888; text-decoration: none; margin-top: 12px; }
         .guia__back:hover { color: #1A1A2E; }
       `}</style>
     </main>

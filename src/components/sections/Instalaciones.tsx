@@ -1,5 +1,6 @@
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
+import { Phone } from "lucide-react";
 
 const Instalaciones = () => {
   return (
@@ -23,13 +24,13 @@ const Instalaciones = () => {
             <div className="inst-v2__circle-deco" />
             <span className="inst-v2__tag">NUESTRAS INSTALACIONES</span>
             <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
-              📞 {SITE.telefonos[0]}
+              <Phone size={18} aria-hidden="true" /> {SITE.telefonos[0]}
             </a>
             <a href={`tel:${SITE.telefonoTel[1]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_2")}>
-              📞 {SITE.telefonos[1]}
+              <Phone size={18} aria-hidden="true" /> {SITE.telefonos[1]}
             </a>
             <a href={`tel:${SITE.telefonoTel[2]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_3")}>
-              📞 {SITE.telefonos[2]}
+              <Phone size={18} aria-hidden="true" /> {SITE.telefonos[2]}
             </a>
           </div>
         </div>

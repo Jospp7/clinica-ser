@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ContactModal from "../ContactModal";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
+import { CheckSquare } from "lucide-react";
 
 const CARDS = [
   {
@@ -40,7 +41,7 @@ const TiposIngreso = () => {
       <div className="tipos-v2__container">
         <div className="tipos-v2__header" data-anim="fade-up">
           <div>
-            <span className="tipos-v2__tag">☑️ NUESTROS SERVICIOS</span>
+            <span className="tipos-v2__tag"><CheckSquare size={16} aria-hidden="true" /> NUESTROS SERVICIOS</span>
             <h2 className="tipos-v2__title">
               ¿Cómo podemos ayudarte en<br />la clínica de adicciones?
             </h2>
@@ -96,7 +97,7 @@ const TiposIngreso = () => {
         .tipos-v2 { padding: clamp(80px, 10vw, 120px) 24px; background: #FFFFFF; }
         .tipos-v2__container { max-width: 1300px; margin: 0 auto; }
         .tipos-v2__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
-        .tipos-v2__tag { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #8AB83A; display: block; margin-bottom: 16px; }
+        .tipos-v2__tag { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #8AB83A; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; }
         .tipos-v2__title { font-family: 'Inter', sans-serif; font-size: clamp(20px, 2.8vw, 34px); font-weight: 800; color: #1A1A2E; margin: 0; line-height: 1.15; letter-spacing: -0.02em; }
         .tipos-v2__cta { background: #C8E64A; color: #1A1A2E; border: none; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.08em; text-transform: uppercase; align-self: flex-start; margin-top: 8px; }
         .tipos-v2__cta:hover { background: #8AB83A; color: white; transform: translateY(-2px); }
