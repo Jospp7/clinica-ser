@@ -195,7 +195,7 @@ const GuiaIntervencion = () => {
                 💬 WhatsApp
               </a>
             </div>
-            <Link to="/blog/guia-ingreso-involuntario" className="guia__back">
+            <Link to="/guia-ingreso" className="guia__back">
               → Guía de Ingreso
             </Link>
           </section>

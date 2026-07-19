@@ -72,6 +72,7 @@ const Footer = () => {
                 <Link to="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</Link>
                 <Link to="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</Link>
                 <Link to="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</Link>
+                <Link to="/guia-ingreso" className="footer-v2__sitemap-link">Guía de Ingreso</Link>
                 {/* TODO: la ruta /aviso-de-privacidad no existe en el repo — pedir contenido al cliente y crear página antes de re-enlazar */}
               </div>
             </div>

@@ -10,4 +10,4 @@
 - [Padecimientos](/padecimientos): Adicciones a alcohol, cocaína, metanfetaminas, opioides, benzodiacepinas y trastornos de salud mental.
 - [Por qué elegirnos](/por-que-elegirnos): 58 años de experiencia, equipo multidisciplinario, certificación CENADIC y atención 24/7.
 - [Blog](/blog): Recursos y guías sobre adicciones, familia y recuperación.
-- [Guía de ingreso involuntario](/blog/guia-ingreso-involuntario): Proceso legal y clínico del ingreso involuntario bajo la NOM-028-SSA2-2009.
+- [Guía de ingreso a Clínica SER](/guia-ingreso): Modalidades de ingreso (voluntario, involuntario y obligatorio) bajo la NOM-028-SSA2-2009.

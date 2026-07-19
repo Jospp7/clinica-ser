@@ -10,21 +10,19 @@ const GuiaIngresoInvoluntario = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Guía del ingreso involuntario por adicciones en México",
+    headline: "¡Entra con confianza! Guía de ingreso a Clínica SER",
     description:
-      "Proceso legal y clínico del ingreso involuntario para tratamiento de adicciones bajo la NOM-028-SSA2-2009 en México.",
+      "Modalidades de ingreso a Clínica SER conforme a la NOM-028-SSA2-2009: voluntario, involuntario y obligatorio.",
     author: { "@type": "Organization", name: "Clínica SER" },
     publisher: { "@type": "Organization", name: "Clínica SER" },
-    datePublished: "2026-03-01",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80",
   };
 
   return (
     <main>
       <Seo
-        title="Guía del Ingreso Involuntario por Adicciones — Clínica SER Puebla"
-        description="Cuándo y cómo la familia puede intervenir legalmente cuando un paciente se niega al tratamiento. Proceso clínico, criterios médicos y NOM-028-SSA2-2009 explicados por Clínica SER."
-        path="/blog/guia-ingreso-involuntario"
+        title="Guía de ingreso a Clínica SER — Modalidades bajo la NOM-028"
+        description="Modalidades de ingreso a Clínica SER (voluntario, involuntario y obligatorio) conforme a la NOM-028-SSA2-2009."
+        path="/guia-ingreso"
         jsonLd={jsonLd}
       />
 
@@ -34,158 +32,117 @@ const GuiaIngresoInvoluntario = () => {
           <div className="guia__hero-content">
             <span className="guia__tag">GUÍA PARA FAMILIAS</span>
             <h1 className="guia__title">
-              Proceso de Ingreso Involuntario<br />por Adicciones en México
+              ¡Entra con confianza!<br />Guía de ingreso a Clínica SER
             </h1>
-            <p className="guia__lead">
-              Cuándo y cómo la familia puede intervenir legalmente cuando un ser
-              querido se niega a recibir tratamiento — bajo la Norma Oficial
-              Mexicana NOM-028-SSA2-2009.
-            </p>
+            {/* TODO: subir clinica-ser-guia-de-ingreso.pdf a /public y enlazar aquí */}
+            <a
+              href="#"
+              className="guia__btn"
+              onClick={(e) => { e.preventDefault(); trackCTAClick("DESCARGAR_GUIA_INGRESO"); }}
+              style={{ marginTop: 8 }}
+            >
+              Versión Descargable
+            </a>
           </div>
         </header>
 
         <div className="guia__body">
           <section className="guia__section">
-            <h2>¿Qué es el ingreso involuntario?</h2>
             <p>
-              El ingreso involuntario es una intervención médico-legal que
-              permite a la familia solicitar el internamiento de un ser querido
-              con una adicción activa, cuando esa persona no reconoce su
-              problema, se niega a recibir ayuda y su vida —o la de terceros—
-              está en riesgo. En México, este procedimiento está regulado por la
-              <strong> Norma Oficial Mexicana NOM-028-SSA2-2009</strong>, que
-              establece los criterios clínicos y las salvaguardas éticas para
-              proteger tanto al paciente como a su familia.
+              En Clínica SER, nos apegamos a la legislación más estricta que
+              establece el Estado mexicano en relación a la prevención,
+              tratamiento y control de las adicciones.
             </p>
-          </section>
-
-          <section className="guia__section">
-            <h2>Criterios médicos que justifican el ingreso</h2>
             <p>
-              La NOM-028 exige que se cumpla al menos uno de los siguientes
-              criterios clínicos para autorizar un ingreso involuntario:
+              De acuerdo a la Norma Oficial Mexicana, NOM-028-SSA2-2009, que nos
+              regula, las modalidades de ingreso a nuestro centro de
+              rehabilitación pueden ser tres:
             </p>
             <ul>
               <li>
-                <strong>Intoxicación aguda</strong> por consumo de alcohol o
-                sustancias psicoactivas que ponga en riesgo la vida.
+                <strong>Ingreso voluntario:</strong> el ingreso voluntario a
+                Clínica SER requiere del consentimiento del individuo, quien, en
+                caso de ser menor de edad, necesita de la solicitud por escrito
+                de sus padres, representante legal o tutor.
               </li>
               <li>
-                <strong>Síndrome de abstinencia o supresión</strong> severo que
-                requiera atención médica inmediata.
+                <strong>Ingreso involuntario:</strong> el ingreso involuntario,
+                por otro lado, se presenta en el caso de quienes precisan
+                atención urgente o representan un peligro grave e inminente para
+                sí mismos o para la sociedad. Se requiere la indicación médica
+                de un especialista de Clínica SER y la solicitud de un familiar
+                responsable, tutor o representante legal, ambas por escrito.
               </li>
               <li>
-                <strong>Trastorno psicótico agudo</strong> inducido por el
-                consumo (alucinaciones, delirios, agresividad).
-              </li>
-              <li>
-                <strong>Riesgo suicida o de heteroagresión</strong> derivado de
-                la adicción o del consumo activo.
-              </li>
-              <li>
-                <strong>Incapacidad para tomar decisiones</strong> por deterioro
-                cognitivo relacionado con el consumo.
+                <strong>Ingreso obligatorio:</strong> el ingreso obligatorio se
+                lleva a cabo cuando lo solicite la autoridad legal competente,
+                siempre y cuando el estado de salud del paciente lo amerite.
               </li>
             </ul>
           </section>
 
           <section className="guia__section">
-            <h2>Paso a paso del proceso</h2>
-            <ol>
-              <li>
-                <strong>Consulta inicial con la clínica.</strong> La familia
-                contacta al centro de tratamiento para explicar el caso y
-                recibir orientación. En Clínica SER esta llamada es gratuita y
-                confidencial, disponible 24/7.
-              </li>
-              <li>
-                <strong>Valoración clínica.</strong> Un médico especialista
-                evalúa si el paciente cumple los criterios de la NOM-028 y
-                determina el nivel de urgencia.
-              </li>
-              <li>
-                <strong>Firma del consentimiento familiar.</strong> Un familiar
-                directo (cónyuge, padre, madre o hijo mayor de edad) firma la
-                solicitud de ingreso involuntario, respaldada por la valoración
-                médica.
-              </li>
-              <li>
-                <strong>Traslado seguro.</strong> Un equipo de intervención
-                profesional acude al domicilio para realizar el traslado con
-                técnicas respetuosas y no confrontativas.
-              </li>
-              <li>
-                <strong>Ingreso y estabilización.</strong> El paciente es
-                recibido por el equipo médico, se realiza desintoxicación
-                supervisada y se inicia el plan terapéutico.
-              </li>
-              <li>
-                <strong>Notificación a las autoridades sanitarias.</strong> Como
-                lo exige la NOM-028, la clínica notifica el ingreso a la
-                autoridad sanitaria correspondiente dentro de las 24 horas
-                siguientes.
-              </li>
-            </ol>
-          </section>
-
-          <section className="guia__section">
-            <h2>El papel del intervencionista profesional</h2>
+            <h2>Ingreso a Clínica SER</h2>
             <p>
-              Un intervencionista es un especialista entrenado para acompañar a
-              la familia y facilitar el traslado del paciente al centro de
-              tratamiento. Su trabajo no es coercitivo: utiliza técnicas de
-              comunicación motivacional para reducir la resistencia y preservar
-              la dignidad del paciente. En la mayoría de los casos, la
-              intervención profesional logra que el paciente acepte
-              voluntariamente el tratamiento durante el proceso.
+              Cuando se realiza un ingreso en Clínica SER, lo ideal es que la
+              persona acuda por voluntad propia, pues esto favorece la
+              recuperación e incrementa su compromiso con nuestro programa de
+              rehabilitación.
+            </p>
+            <p>
+              No obstante, no todos los casos son así, pues, cuando se trata de
+              un ingreso involuntario, la familia está facultada legalmente para
+              llevar a cabo dicho procedimiento.
+            </p>
+            <p>
+              Asimismo, esta modalidad de ingreso se encuentra contemplada
+              dentro de la Norma Oficial Mexicana, debido a que, en algunos
+              casos, la vida de la persona intoxicada y de quienes lo rodean se
+              encuentra bajo amenaza.
+            </p>
+            <p>
+              Es por ello que, al llevar a cabo un ingreso involuntario, hay que
+              tener en mente que se realiza en beneficio de la salud del
+              paciente y de su grupo familiar más cercano.
+            </p>
+            <p>
+              No hacerlo a tiempo, puede desencadenar terribles consecuencias,
+              las cuales, en ocasiones, podrían ser irreversibles.
             </p>
           </section>
 
           <section className="guia__section">
-            <h2>Derechos del paciente durante el internamiento</h2>
-            <ul>
-              <li>Recibir información clara sobre su diagnóstico y tratamiento.</li>
-              <li>Ser tratado con dignidad, respeto y confidencialidad.</li>
-              <li>Recibir atención médica y psicológica adecuada.</li>
-              <li>Ser reevaluado periódicamente para determinar la continuidad del internamiento.</li>
-              <li>Recibir visitas familiares según el plan terapéutico.</li>
-            </ul>
-          </section>
-
-          <section className="guia__section">
-            <h2>Preguntas frecuentes de las familias</h2>
-            <h3>¿El ingreso involuntario es legal en México?</h3>
+            <h2>Importancia de acudir a tratamiento por adicciones</h2>
             <p>
-              Sí. La NOM-028-SSA2-2009 lo regula expresamente cuando existe
-              riesgo para la salud o la vida del paciente y se cuenta con
-              valoración médica.
+              En nuestra clínica de rehabilitación, contarás con el apoyo y la
+              profesionalidad de nuestros especialistas desde el primer día,
+              quienes tendrán a su cargo la valiosa labor de estabilizar y{" "}
+              <Link to="/tratamiento">desintoxicar</Link> a tu ser querido, con
+              el respeto que todo ser humano merece.
             </p>
-            <h3>¿Cuánto tiempo dura el ingreso involuntario?</h3>
             <p>
-              La fase involuntaria suele durar entre 3 y 15 días, tiempo
-              suficiente para estabilizar al paciente. A partir de ese punto se
-              busca el consentimiento del paciente para continuar con el
-              tratamiento voluntario.
+              Y cuando las condiciones de salud de tu familiar adicto lo
+              permitan, nuestros terapeutas se encargarán de realizar una
+              intervención dentro de la clínica para conseguir su autorización
+              para recibir ayuda profesional.
             </p>
-            <h3>¿Puedo visitar a mi familiar durante el internamiento?</h3>
             <p>
-              Sí, pero las visitas se programan de acuerdo con el plan
-              terapéutico. En las primeras 72 horas suelen limitarse para
-              favorecer la estabilización.
+              ¿El objetivo? Hacer de la rehabilitación para adictos una
+              experiencia acogedora y llena de apoyo, guiándoles en todo momento
+              en este nuevo comienzo.
             </p>
           </section>
 
           <section className="guia__cta">
-            <h2>¿Necesitas ayuda urgente?</h2>
-            <p>
-              Nuestro equipo de intervención profesional está disponible las 24
-              horas para orientarte sin compromiso.
-            </p>
+            <h2>¡Transformamos vidas, recuperamos familias!</h2>
+            <p>En Clínica SER, la AYUDA está LISTA</p>
+            <p>Tu llamada es confidencial y no constituye compromiso alguno</p>
+            <p>En Clínica SER, todos los días y a toda hora, la AYUDA está LISTA.</p>
             <div className="guia__cta-btns">
               <a
                 href={`tel:${SITE.telefonoTel[0]}`}
                 className="guia__btn"
-                onClick={() => trackCTAClick("LLAMAR_GUIA_INVOLUNTARIO")}
+                onClick={() => trackCTAClick("LLAMAR_GUIA_INGRESO")}
               >
                 📞 Llamar ahora
               </a>
@@ -194,12 +151,21 @@ const GuiaIngresoInvoluntario = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="guia__btn guia__btn--wa"
-                onClick={() => trackCTAClick("WA_GUIA_INVOLUNTARIO")}
+                onClick={() => trackCTAClick("WA_GUIA_INGRESO")}
               >
                 💬 WhatsApp
               </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="guia__btn"
+                onClick={() => trackCTAClick("EMAIL_GUIA_INGRESO")}
+              >
+                ✉ {SITE.email}
+              </a>
             </div>
-            <Link to="/blog" className="guia__back">← Volver al blog</Link>
+            <Link to="/guia-intervencion" className="guia__back">
+              Ver también: Guía de Intervención →
+            </Link>
           </section>
         </div>
       </article>
