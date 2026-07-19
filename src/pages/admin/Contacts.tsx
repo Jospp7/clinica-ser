@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { X } from "lucide-react";
 
 const statusColor: Record<string, string> = { nuevo: "#3B82F6", contactado: "#F59E0B", cerrado: "#22C55E" };
 
@@ -86,7 +87,9 @@ const Contacts = () => {
           <div style={{ background: "white", borderRadius: 16, padding: 32, maxWidth: 500, width: "100%", maxHeight: "80vh", overflow: "auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
               <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0 }}>Detalle del contacto</h3>
-              <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>✕</button>
+              <button onClick={() => setSelected(null)} aria-label="Cerrar" style={{ background: "none", border: "none", cursor: "pointer", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }}>
+                <X size={20} aria-hidden="true" />
+              </button>
             </div>
             <div style={{ fontSize: 14, lineHeight: 1.8 }}>
               <p><strong>Nombre:</strong> {selected.name || "—"}</p>
