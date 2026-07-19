@@ -2,6 +2,7 @@ import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { waLink } from "@/lib/site";
+import { MessageCircle } from "lucide-react";
 
 // TODO: lista y descripciones pendientes de validación por el equipo médico del cliente.
 // Estas 6 provienen del sitio anterior; ninguna incluye sintomatología por falta de fuente.
@@ -72,7 +73,7 @@ const Padecimientos = () => {
         <div className="pad-cta__inner" data-anim="fade-up">
           <h2 className="pad-cta__title">¿Tienes dudas sobre un caso?</h2>
           <p className="pad-cta__text">Nuestro equipo puede orientarte. La llamada es confidencial y no compromete a nada.</p>
-          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn">💬 Hablar con un especialista</a>
+          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn"><MessageCircle size={18} aria-hidden="true" /> Hablar con un especialista</a>
         </div>
       </section>
 
