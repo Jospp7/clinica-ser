@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
-import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf, Lock } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const Footer = () => {
@@ -145,7 +145,7 @@ const Footer = () => {
         <div className="footer-v2__copyright">
           <span>Copyright © 2024 SER Clínica</span>
           <span style={{ display: "flex", gap: 8 }}>
-            <Link to="/admin/login" className="footer-v2__bottom-link" style={{ opacity: 0.4, fontSize: 11 }}>🔒 Admin</Link>
+            <Link to="/admin/login" className="footer-v2__bottom-link" style={{ opacity: 0.4, fontSize: 11, display: "inline-flex", alignItems: "center", gap: 6 }}><Lock size={12} aria-hidden="true" /> Admin</Link>
           </span>
         </div>
       </div>
