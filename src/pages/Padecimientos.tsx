@@ -1,14 +1,35 @@
 import Seo from "@/components/Seo";
+import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { waLink } from "@/lib/site";
 
+// TODO: lista y descripciones pendientes de validación por el equipo médico del cliente.
+// Estas 6 provienen del sitio anterior; ninguna incluye sintomatología por falta de fuente.
 const CONDITIONS = [
-  { title: "Alcoholismo", desc: "El alcoholismo es una enfermedad crónica que afecta a millones de personas. Nuestro programa aborda la desintoxicación, la terapia conductual y el apoyo a largo plazo.", symptoms: ["Necesidad de beber cada vez más", "Incapacidad para dejar de beber", "Síntomas de abstinencia", "Descuido de responsabilidades"] },
-  { title: "Adicción a cocaína", desc: "La cocaína genera una dependencia psicológica intensa. Ofrecemos intervención especializada con terapia cognitivo-conductual y soporte psiquiátrico.", symptoms: ["Euforia seguida de depresión", "Irritabilidad y ansiedad", "Problemas financieros", "Aislamiento social"] },
-  { title: "Adicción a metanfetaminas", desc: "Las metanfetaminas causan daño neurológico severo. Nuestro equipo utiliza protocolos avanzados de neurorehabilitación.", symptoms: ["Pérdida de peso extrema", "Paranoia y alucinaciones", "Insomnio prolongado", "Deterioro dental"] },
-  { title: "Adicción a opioides", desc: "Los opioides incluyen heroína y analgésicos de prescripción. Ofrecemos desintoxicación médica supervisada y terapia de reemplazo.", symptoms: ["Tolerancia creciente", "Dolor al dejar de consumir", "Somnolencia extrema", "Riesgo de sobredosis"] },
-  { title: "Adicción a benzodiacepinas", desc: "La dependencia a medicamentos como clonazepam o diazepam requiere un proceso de desintoxicación gradual y cuidadoso.", symptoms: ["Ansiedad al intentar dejar", "Insomnio rebote", "Confusión mental", "Temblores"] },
-  { title: "Trastornos de salud mental", desc: "Tratamos depresión, ansiedad, trastorno bipolar y otros padecimientos que frecuentemente acompañan a las adicciones.", symptoms: ["Cambios de humor", "Pensamientos negativos", "Aislamiento", "Dificultad para funcionar"] },
+  {
+    title: "Alcoholismo",
+    desc: "Somos expertos en rehabilitación de alcoholismo. Nuestro Programa de Tratamiento Integral SER® incluye evaluación clínica y médica, desintoxicación y atención primaria por especialistas en psiquiatría.",
+  },
+  {
+    title: "Drogadicción",
+    desc: "Tratamiento para la adicción a sustancias, con soporte médico y de enfermería disponible las 24 horas del día, pruebas de laboratorio, detección de drogas y electrocardiogramas.",
+  },
+  {
+    title: "Adicción a medicamentos",
+    desc: "Los anestésicos, analgésicos, sedantes y ansiolíticos en exceso, no prescritos ni controlados por un profesional médico, son tan peligrosos como cualquier otra droga. Su tratamiento requiere la intervención de especialistas en psiquiatría para un manejo adecuado y seguro.",
+  },
+  {
+    title: "Ludopatía",
+    desc: "Tratamiento para la adicción al juego y las apuestas.",
+  },
+  {
+    title: "Codependencia",
+    desc: "La codependencia requiere de tratamiento y rehabilitación oportunos, igual que una adicción.",
+  },
+  {
+    title: "Trastornos coexistentes",
+    desc: "Si no se trata el trastorno coexistente, como la depresión, la ansiedad o el estrés postraumático, junto con la adicción al alcohol o las drogas, la sobriedad se ve comprometida y aumenta significativamente el riesgo de recaída.",
+  },
 ];
 
 const Padecimientos = () => {
@@ -18,15 +39,15 @@ const Padecimientos = () => {
     <main>
       <Seo
         title="Padecimientos que Tratamos — Clínica SER Puebla"
-        description="Especialistas en alcoholismo, adicción a cocaína, metanfetaminas, opioides, benzodiacepinas y trastornos de salud mental. Diagnóstico y plan de tratamiento personalizado."
+        description="Padecimientos que atendemos en Clínica SER Puebla: alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia y trastornos coexistentes."
         path="/padecimientos"
       />
       <section className="pad-hero">
         <div className="pad-hero__overlay" />
         <div className="pad-hero__content" data-anim="fade-up">
           <span className="pad-hero__tag">PADECIMIENTOS QUE TRATAMOS</span>
-          <h1 className="pad-hero__title">Especialistas en adicciones<br />y salud mental</h1>
-          <p className="pad-hero__sub">Cada adicción es diferente. Por eso diseñamos un plan de tratamiento personalizado para cada paciente.</p>
+          <h1 className="pad-hero__title">Padecimientos que atendemos</h1>
+          <p className="pad-hero__sub">Adicciones y trastornos coexistentes atendidos en Clínica SER Puebla.</p>
         </div>
       </section>
 
@@ -39,12 +60,9 @@ const Padecimientos = () => {
                 <h2 className="pad-card__title">{c.title}</h2>
               </div>
               <p className="pad-card__desc">{c.desc}</p>
-              <div className="pad-card__symptoms">
-                <span className="pad-card__symptoms-label">Señales de alerta:</span>
-                <ul>
-                  {c.symptoms.map((s, j) => <li key={j}>{s}</li>)}
-                </ul>
-              </div>
+              <Link to="/tratamiento" className="pad-card__link">
+                Conoce nuestro Modelo Hazelden →
+              </Link>
             </div>
           ))}
         </div>
@@ -52,14 +70,15 @@ const Padecimientos = () => {
 
       <section className="pad-cta">
         <div className="pad-cta__inner" data-anim="fade-up">
-          <h2 className="pad-cta__title">¿Reconoces alguna de estas señales?</h2>
-          <p className="pad-cta__text">No estás solo. Nuestro equipo puede ayudarte a dar el primer paso.</p>
+          <h2 className="pad-cta__title">¿Tienes dudas sobre un caso?</h2>
+          <p className="pad-cta__text">Nuestro equipo puede orientarte. La llamada es confidencial y no compromete a nada.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn">💬 Hablar con un especialista</a>
         </div>
       </section>
 
       <style>{`
-        .pad-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80') center/cover; }
+        /* TODO: imagen del cliente para .pad-hero (fondo neutro por defecto) */
+        .pad-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: #1A1A2E; }
         .pad-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .pad-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .pad-hero__tag { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #C8E64A; display: block; margin-bottom: 16px; }
@@ -74,9 +93,8 @@ const Padecimientos = () => {
         .pad-card__num { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: #C8E64A; }
         .pad-card__title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #1A1A2E; margin: 0; }
         .pad-card__desc { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 16px; }
-        .pad-card__symptoms-label { display: block; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: #8AB83A; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
-        .pad-card__symptoms ul { margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 13px; color: #555; line-height: 1.8; }
-        .pad-card__symptoms li::marker { color: #C8E64A; }
+        .pad-card__link { display: inline-block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #1B2A4A; text-decoration: none; border-bottom: 1px solid #C8E64A; padding-bottom: 2px; transition: color .2s; }
+        .pad-card__link:hover { color: #8AB83A; }
 
         .pad-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .pad-cta__inner { max-width: 600px; margin: 0 auto; }
