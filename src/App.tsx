@@ -18,6 +18,7 @@ import GuiaIngreso from "./pages/GuiaIngreso.tsx";
 import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
 import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
 import Equipo from "./pages/Equipo.tsx";
+import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Login from "./pages/admin/Login.tsx";
 import AdminLayout from "./pages/admin/AdminLayout.tsx";
@@ -42,6 +43,7 @@ const AppContent = () => {
       <Route path="/guia-intervencion" element={<GuiaIntervencion />} />
       <Route path="/por-que-elegirnos" element={<PorQueElegirnos />} />
       <Route path="/equipo" element={<Equipo />} />
+      <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
