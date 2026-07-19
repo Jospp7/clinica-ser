@@ -3,12 +3,13 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import logoSer from "@/assets/logo-ser.png";
+import { BarChart3, PenLine, Users, TrendingUp, Menu } from "lucide-react";
 
 const NAV = [
-  { label: "Dashboard", icon: "📊", path: "/admin/dashboard" },
-  { label: "Blog", icon: "✍️", path: "/admin/blog" },
-  { label: "Contactos", icon: "👥", path: "/admin/contacts" },
-  { label: "Analíticas", icon: "📈", path: "/admin/analytics" },
+  { label: "Dashboard", icon: BarChart3, path: "/admin/dashboard" },
+  { label: "Blog", icon: PenLine, path: "/admin/blog" },
+  { label: "Contactos", icon: Users, path: "/admin/contacts" },
+  { label: "Analíticas", icon: TrendingUp, path: "/admin/analytics" },
 ];
 
 const AdminLayout = () => {
@@ -53,7 +54,7 @@ const AdminLayout = () => {
                 background: location.pathname.startsWith(item.path) ? "rgba(255,255,255,.1)" : "transparent",
                 textDecoration: "none", fontSize: 14, fontWeight: 500, marginBottom: 4, position: "relative",
               }}>
-              <span>{item.icon}</span>
+              <item.icon size={18} aria-hidden="true" />
               <span>{item.label}</span>
               {item.label === "Contactos" && newContacts > 0 && (
                 <span style={{ marginLeft: "auto", background: "#C0392B", borderRadius: 10, padding: "2px 8px", fontSize: 11, fontWeight: 700 }}>{newContacts}</span>
@@ -72,7 +73,10 @@ const AdminLayout = () => {
       <div style={{ flex: 1, marginLeft: 0 }} className="admin-main">
         <header style={{ height: 60, background: "white", borderBottom: "1px solid #E8E8E8", display: "flex", alignItems: "center", padding: "0 24px", gap: 16, position: "sticky", top: 0, zIndex: 50 }}>
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="admin-hamburger"
-            style={{ background: "none", border: "1px solid #E8E8E8", borderRadius: 6, padding: "6px 10px", cursor: "pointer", fontSize: 18 }}>☰</button>
+            aria-label="Abrir menú"
+            style={{ background: "none", border: "1px solid #E8E8E8", borderRadius: 6, padding: "6px 10px", cursor: "pointer", display: "inline-flex", alignItems: "center" }}>
+            <Menu size={18} aria-hidden="true" />
+          </button>
           <h2 style={{ fontSize: 16, fontWeight: 700, color: "#1A1A2E", margin: 0 }}>{currentTitle}</h2>
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12, color: "#22C55E", fontWeight: 600 }}>

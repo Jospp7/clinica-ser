@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
+import { Eye, MousePointerClick, BarChart3, Mail, Phone, Lightbulb, Search, Stethoscope, Zap, CheckCircle2, AlertTriangle, ArrowUp, ArrowDown, ArrowRight, LucideIcon } from "lucide-react";
+
+const TrendIcon = ({ trend }: { trend: "up" | "down" | "flat" }) => {
+  const color = trend === "up" ? "#2E7D32" : trend === "down" ? "#C62828" : "#888";
+  const Icon = trend === "up" ? ArrowUp : trend === "down" ? ArrowDown : ArrowRight;
+  return <Icon size={16} color={color} aria-hidden="true" />;
+};
 
 const genDailyViews = () => {
   const days: { date: string; views: number }[] = [];
@@ -37,15 +44,15 @@ const DEMO_SOURCES = [
   { name: "Referidos", value: 5, color: "#D4A843" },
 ];
 
-const DEMO_KEYWORDS = [
-  { keyword: "clínica de adicciones puebla", pos: 3, vol: 1200, trend: "↑" },
-  { keyword: "rehabilitación alcoholismo puebla", pos: 5, vol: 880, trend: "↑" },
-  { keyword: "centro rehabilitación drogas puebla", pos: 4, vol: 720, trend: "→" },
-  { keyword: "internamiento adicciones", pos: 8, vol: 1400, trend: "↑" },
-  { keyword: "clínica ser puebla", pos: 1, vol: 320, trend: "→" },
-  { keyword: "tratamiento adicciones mexico", pos: 12, vol: 2100, trend: "↓" },
-  { keyword: "ingreso voluntario adicciones", pos: 6, vol: 480, trend: "↑" },
-  { keyword: "desintoxicación puebla", pos: 7, vol: 560, trend: "↑" },
+const DEMO_KEYWORDS: { keyword: string; pos: number; vol: number; trend: "up" | "down" | "flat" }[] = [
+  { keyword: "clínica de adicciones puebla", pos: 3, vol: 1200, trend: "up" },
+  { keyword: "rehabilitación alcoholismo puebla", pos: 5, vol: 880, trend: "up" },
+  { keyword: "centro rehabilitación drogas puebla", pos: 4, vol: 720, trend: "flat" },
+  { keyword: "internamiento adicciones", pos: 8, vol: 1400, trend: "up" },
+  { keyword: "clínica ser puebla", pos: 1, vol: 320, trend: "flat" },
+  { keyword: "tratamiento adicciones mexico", pos: 12, vol: 2100, trend: "down" },
+  { keyword: "ingreso voluntario adicciones", pos: 6, vol: 480, trend: "up" },
+  { keyword: "desintoxicación puebla", pos: 7, vol: 560, trend: "up" },
 ];
 
 const DEMO_CONVERSIONS = (() => {
@@ -141,21 +148,23 @@ const Analytics = () => {
     <div>
       {useDemo && (
         <div style={{ background: "#FFF8E1", border: "1px solid #FFE082", borderRadius: 10, padding: "10px 16px", marginBottom: 20, fontSize: 13, color: "#6D4C00", display: "flex", alignItems: "center", gap: 8 }}>
-          ⚠️ Mostrando datos de demostración. Los datos reales aparecerán cuando haya tráfico en el sitio.
+          <AlertTriangle size={16} aria-hidden="true" /> Mostrando datos de demostración. Los datos reales aparecerán cuando haya tráfico en el sitio.
         </div>
       )}
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 14, marginBottom: 28 }}>
         {[
-          { label: "Visitas totales", value: totals.views.toLocaleString(), icon: "👁️", delta: "+12.3%" },
-          { label: "Clics en CTAs", value: totals.ctas.toLocaleString(), icon: "🖱️", delta: "+8.7%" },
-          { label: "Tasa conversión", value: `${totals.rate}%`, icon: "📊", delta: "+2.1pp" },
-          { label: "Contactos", value: totals.contacts.toLocaleString(), icon: "📨", delta: "+15.4%" },
-          { label: "Llamadas estimadas", value: "214", icon: "📞", delta: "+9.2%" },
-          { label: "Tiempo promedio", value: "3:42", icon: "⏱️", delta: "+0:18" },
+          { label: "Visitas totales", value: totals.views.toLocaleString(), icon: Eye as LucideIcon | null, delta: "+12.3%" },
+          { label: "Clics en CTAs", value: totals.ctas.toLocaleString(), icon: MousePointerClick as LucideIcon | null, delta: "+8.7%" },
+          { label: "Tasa conversión", value: `${totals.rate}%`, icon: BarChart3 as LucideIcon | null, delta: "+2.1pp" },
+          { label: "Contactos", value: totals.contacts.toLocaleString(), icon: Mail as LucideIcon | null, delta: "+15.4%" },
+          { label: "Llamadas estimadas", value: "214", icon: Phone as LucideIcon | null, delta: "+9.2%" },
+          { label: "Tiempo promedio", value: "3:42", icon: null, delta: "+0:18" },
         ].map(m => (
           <div key={m.label} style={{ ...cardStyle, padding: "18px 20px" }}>
-            <div style={{ fontSize: 22, marginBottom: 6 }}>{m.icon}</div>
+            <div style={{ marginBottom: 6, color: "#1A1A2E", height: 22, display: "flex", alignItems: "center" }}>
+              {m.icon ? <m.icon size={20} aria-hidden="true" /> : null}
+            </div>
             <div style={{ fontSize: 26, fontWeight: 800, color: "#1A1A2E" }}>{m.value}</div>
             <div style={{ fontSize: 11, color: "#888", marginTop: 2 }}>{m.label}</div>
             <div style={{ fontSize: 11, color: "#2E7D32", fontWeight: 600, marginTop: 4 }}>{m.delta} vs mes ant.</div>
@@ -300,13 +309,13 @@ const Analytics = () => {
             </Bar>
           </BarChart>
         </ResponsiveContainer>
-        <p style={{ fontSize: 11, color: "#888", textAlign: "center", marginTop: 8 }}>
-          💡 Horarios pico: 10:00–13:00 y 19:00–21:00 — ideal para publicar contenido y campañas
+        <p style={{ fontSize: 11, color: "#888", textAlign: "center", marginTop: 8, display: "inline-flex", alignItems: "center", gap: 6, justifyContent: "center", width: "100%" }}>
+          <Lightbulb size={14} aria-hidden="true" /> Horarios pico: 10:00–13:00 y 19:00–21:00 — ideal para publicar contenido y campañas
         </p>
       </div>
 
       <div style={{ ...cardStyle, marginBottom: 24 }}>
-        <h3 style={titleStyle}>🔍 Posicionamiento SEO — Keywords principales</h3>
+        <h3 style={{ ...titleStyle, display: "inline-flex", alignItems: "center", gap: 8 }}><Search size={16} aria-hidden="true" /> Posicionamiento SEO — Keywords principales</h3>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
@@ -331,21 +340,23 @@ const Analytics = () => {
                     </span>
                   </td>
                   <td style={{ padding: "10px 12px", textAlign: "center", color: "#555" }}>{k.vol.toLocaleString()}</td>
-                  <td style={{ padding: "10px 12px", textAlign: "center", fontSize: 16 }}>
-                    <span style={{ color: k.trend === "↑" ? "#2E7D32" : k.trend === "↓" ? "#C62828" : "#888" }}>{k.trend}</span>
+                  <td style={{ padding: "10px 12px", textAlign: "center" }}>
+                    <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+                      <TrendIcon trend={k.trend} />
+                    </span>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p style={{ fontSize: 11, color: "#888", marginTop: 12 }}>
-          💡 Recomendación: Crear artículos de blog enfocados en "internamiento adicciones" (pos. #8, alto volumen) para mejorar ranking.
+        <p style={{ fontSize: 11, color: "#888", marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <Lightbulb size={14} aria-hidden="true" /> Recomendación: Crear artículos de blog enfocados en "internamiento adicciones" (pos. #8, alto volumen) para mejorar ranking.
         </p>
       </div>
 
       <div style={{ ...cardStyle, marginBottom: 24 }}>
-        <h3 style={titleStyle}>🩺 Salud SEO del sitio</h3>
+        <h3 style={{ ...titleStyle, display: "inline-flex", alignItems: "center", gap: 8 }}><Stethoscope size={16} aria-hidden="true" /> Salud SEO del sitio</h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
           {[
             { label: "Meta títulos", status: "ok", detail: "Todas las páginas tienen título único < 60 chars" },
@@ -360,8 +371,11 @@ const Analytics = () => {
             { label: "SSL / HTTPS", status: "ok", detail: "Certificado válido" },
           ].map(item => (
             <div key={item.label} style={{ padding: "12px 16px", background: item.status === "ok" ? "#F1F8E9" : "#FFF8E1", borderRadius: 10, border: `1px solid ${item.status === "ok" ? "#C5E1A5" : "#FFE082"}` }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#1A1A2E", marginBottom: 4 }}>
-                {item.status === "ok" ? "✅" : "⚠️"} {item.label}
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#1A1A2E", marginBottom: 4, display: "inline-flex", alignItems: "center", gap: 6 }}>
+                {item.status === "ok"
+                  ? <CheckCircle2 size={16} color="#2E7D32" aria-hidden="true" />
+                  : <AlertTriangle size={16} color="#F57F17" aria-hidden="true" />}
+                {item.label}
               </div>
               <div style={{ fontSize: 11, color: "#666" }}>{item.detail}</div>
             </div>
@@ -370,7 +384,7 @@ const Analytics = () => {
       </div>
 
       <div style={{ ...cardStyle }}>
-        <h3 style={titleStyle}>⚡ Acciones rápidas recomendadas</h3>
+        <h3 style={{ ...titleStyle, display: "inline-flex", alignItems: "center", gap: 8 }}><Zap size={16} aria-hidden="true" /> Acciones rápidas recomendadas</h3>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {[
             { priority: "Alta", action: "Agregar alt text a 3 imágenes de la sección Instalaciones", impact: "SEO imágenes +15%" },
@@ -386,7 +400,7 @@ const Analytics = () => {
                 color: a.priority === "Alta" ? "#C62828" : a.priority === "Media" ? "#F57F17" : "#2E7D32",
               }}>{a.priority}</span>
               <span style={{ fontSize: 13, color: "#1A1A2E", flex: 1 }}>{a.action}</span>
-              <span style={{ fontSize: 11, color: "#888", flexShrink: 0 }}>→ {a.impact}</span>
+              <span style={{ fontSize: 11, color: "#888", flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 4 }}><ArrowRight size={12} aria-hidden="true" /> {a.impact}</span>
             </div>
           ))}
         </div>
