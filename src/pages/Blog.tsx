@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { ArrowRight } from "lucide-react";
 
 const POSTS = [
   { title: "¿Cómo saber si un familiar tiene problemas de adicción?", date: "15 Mar 2026", category: "Familia", excerpt: "Identificar los signos tempranos de una adicción puede marcar la diferencia. Aprende a reconocer las señales de alerta más comunes.", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" },
