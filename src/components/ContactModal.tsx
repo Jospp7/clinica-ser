@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { X, CheckCircle2 } from "lucide-react";
 
 interface Props {
   open: boolean;
@@ -31,10 +32,10 @@ const ContactModal = ({ open, onClose, source }: Props) => {
   return (
     <div style={{ position: "fixed", inset: 0, background: "rgba(0, 0, 10, 0.55)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 24 }}>
       <div style={{ background: "rgba(255, 255, 255, 0.92)", backdropFilter: "blur(28px)", WebkitBackdropFilter: "blur(28px)", border: "1px solid rgba(255,255,255,0.40)", boxShadow: "0 24px 64px rgba(0,0,0,0.30)", borderRadius: 16, padding: 32, maxWidth: 440, width: "100%", position: "relative", fontFamily: "'Inter',sans-serif" }}>
-        <button onClick={onClose} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "#888" }}>✕</button>
+        <button onClick={onClose} aria-label="Cerrar" style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#888", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}><X size={20} /></button>
         {sent ? (
           <div style={{ textAlign: "center", padding: "40px 0" }}>
-            <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+            <div style={{ marginBottom: 16, display: "flex", justifyContent: "center", color: "#8AB83A" }}><CheckCircle2 size={48} aria-hidden="true" /></div>
             <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A2E" }}>¡Gracias!</h3>
             <p style={{ color: "#888", fontSize: 14 }}>Te contactaremos pronto.</p>
           </div>
