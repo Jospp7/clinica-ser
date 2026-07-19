@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
+import { Phone } from "lucide-react";
 
 // TODO: imagen del cliente — reemplazar cada amenidad con foto real (16 amenidades)
 const AMENIDADES = [
@@ -60,7 +61,7 @@ const InstalacionesPage = () => {
         <div className="inst-pg__cta-inner" data-anim="fade-up">
           <h2 className="inst-pg__cta-title">Agenda una visita</h2>
           <p className="inst-pg__cta-text">Conoce nuestras instalaciones y resuelve todas tus dudas con nuestro equipo.</p>
-          <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-pg__cta-btn">📞 Llamar para agendar</a>
+          <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-pg__cta-btn"><Phone size={18} aria-hidden="true" /> Llamar para agendar</a>
         </div>
       </section>
 
