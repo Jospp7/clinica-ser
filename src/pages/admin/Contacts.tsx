@@ -13,7 +13,8 @@ const Contacts = () => {
   const load = async () => {
     let q = supabase.from("contacts").select("*").order("created_at", { ascending: false });
     if (filter) q = q.eq("status", filter);
-    const { data } = await q;
+    const { data, error } = await q;
+    if (error) console.error("[Contacts] load failed:", error);
     setContacts(data ?? []);
     setLoading(false);
   };
@@ -21,7 +22,12 @@ const Contacts = () => {
   useEffect(() => { load(); }, [filter]);
 
   const updateStatus = async (id: string, status: string) => {
-    await supabase.from("contacts").update({ status }).eq("id", id);
+    const { error } = await supabase.from("contacts").update({ status }).eq("id", id);
+    if (error) {
+      console.error("[Contacts] updateStatus failed:", error);
+      alert("No se pudo actualizar el status: " + error.message);
+      return;
+    }
     setSelected((s: any) => s ? { ...s, status } : null);
     load();
   };
