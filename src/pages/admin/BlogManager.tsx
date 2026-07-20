@@ -17,7 +17,8 @@ const BlogManager = () => {
     if (filterStatus) q = q.eq("status", filterStatus);
     if (filterCat) q = q.eq("category", filterCat);
     if (search) q = q.ilike("title", `%${search}%`);
-    const { data } = await q;
+    const { data, error } = await q;
+    if (error) console.error("[BlogManager] load failed:", error);
     setPosts(data ?? []);
     setLoading(false);
   };
@@ -25,13 +26,23 @@ const BlogManager = () => {
   useEffect(() => { load(); }, [search, filterStatus, filterCat]);
 
   const toggleStatus = async (id: string, current: string) => {
-    await supabase.from("posts").update({ status: current === "published" ? "draft" : "published" }).eq("id", id);
+    const { error } = await supabase.from("posts").update({ status: current === "published" ? "draft" : "published" }).eq("id", id);
+    if (error) {
+      console.error("[BlogManager] toggleStatus failed:", error);
+      alert("No se pudo cambiar el status: " + error.message);
+      return;
+    }
     load();
   };
 
   const deletePost = async (id: string) => {
     if (!confirm("¿Eliminar este post?")) return;
-    await supabase.from("posts").delete().eq("id", id);
+    const { error } = await supabase.from("posts").delete().eq("id", id);
+    if (error) {
+      console.error("[BlogManager] deletePost failed:", error);
+      alert("No se pudo eliminar el post: " + error.message);
+      return;
+    }
     load();
   };
 
