@@ -12,8 +12,8 @@ const Footer = () => {
   const handleFooterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!footerEmail.trim()) return;
-    trackCTAClick("PREGUNTANOS_FOOTER");
-    const { error } = await supabase.from("contacts").insert({ email: footerEmail, source: "footer" } as any);
+    trackCTAClick("SOLICITAR_CONTACTO_FOOTER");
+    const { error } = await supabase.from("contacts").insert({ email: footerEmail, source: "footer" });
     if (error) {
       console.error("[Footer] newsletter insert failed:", error);
       alert(`No pudimos registrar tu correo. Por favor llámanos al ${SITE.telefonos[0]} o escríbenos por WhatsApp.`);
@@ -114,7 +114,7 @@ const Footer = () => {
                   required
                   className="footer-v2__input"
                 />
-                <button type="submit" className="footer-v2__submit">PREGÚNTANOS</button>
+                <button type="submit" className="footer-v2__submit">SOLICITAR CONTACTO</button>
               </form>
             )}
           </div>
