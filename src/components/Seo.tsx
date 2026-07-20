@@ -5,14 +5,16 @@ interface SeoProps {
   description: string;
   path: string;
   jsonLd?: object;
+  noindex?: boolean;
 }
 
-export default function Seo({ title, description, path, jsonLd }: SeoProps) {
+export default function Seo({ title, description, path, jsonLd, noindex }: SeoProps) {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={path} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={path} />
