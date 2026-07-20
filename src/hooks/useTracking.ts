@@ -12,19 +12,33 @@ function getSessionId(): string {
 
 export function usePageView() {
   useEffect(() => {
-    supabase.from("page_events").insert({
-      event_type: "pageview",
-      page: window.location.pathname,
-      session_id: getSessionId(),
-    }).then(() => {});
+    (async () => {
+      try {
+        const { error } = await supabase.from("page_events").insert({
+          event_type: "pageview",
+          page: window.location.pathname,
+          metadata: { session_id: getSessionId() },
+        });
+        if (error) console.error("[tracking] pageview insert failed:", error);
+      } catch (err) {
+        console.error("[tracking] pageview threw:", err);
+      }
+    })();
   }, []);
 }
 
 export function trackCTAClick(element: string) {
-  supabase.from("page_events").insert({
-    event_type: "cta_click",
-    element,
-    page: window.location.pathname,
-    session_id: getSessionId(),
-  }).then(() => {});
+  (async () => {
+    try {
+      const { error } = await supabase.from("page_events").insert({
+        event_type: "cta_click",
+        label: element,
+        page: window.location.pathname,
+        metadata: { session_id: getSessionId() },
+      });
+      if (error) console.error("[tracking] cta_click insert failed:", error);
+    } catch (err) {
+      console.error("[tracking] cta_click threw:", err);
+    }
+  })();
 }

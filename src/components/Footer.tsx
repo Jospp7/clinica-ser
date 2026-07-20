@@ -13,7 +13,12 @@ const Footer = () => {
     e.preventDefault();
     if (!footerEmail.trim()) return;
     trackCTAClick("PREGUNTANOS_FOOTER");
-    await supabase.from("contacts").insert({ email: footerEmail, source: "footer" } as any);
+    const { error } = await supabase.from("contacts").insert({ email: footerEmail, source: "footer" } as any);
+    if (error) {
+      console.error("[Footer] newsletter insert failed:", error);
+      alert(`No pudimos registrar tu correo. Por favor llámanos al ${SITE.telefonos[0]} o escríbenos por WhatsApp.`);
+      return;
+    }
     setFooterSent(true);
     setFooterEmail("");
     setTimeout(() => setFooterSent(false), 3000);

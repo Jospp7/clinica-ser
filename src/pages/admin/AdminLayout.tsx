@@ -25,7 +25,10 @@ const AdminLayout = () => {
 
   useEffect(() => {
     supabase.from("contacts").select("id", { count: "exact", head: true }).eq("status", "nuevo")
-      .then(({ count }) => setNewContacts(count ?? 0));
+      .then(({ count, error }) => {
+        if (error) console.error("[AdminLayout] new contacts count failed:", error);
+        setNewContacts(count ?? 0);
+      });
   }, [location.pathname]);
 
   if (loading) return <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Inter',sans-serif" }}>Cargando...</div>;

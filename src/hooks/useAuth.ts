@@ -11,7 +11,8 @@ export function useAuth() {
       setUser(session?.user ?? null);
       setLoading(false);
     });
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      if (error) console.error("[useAuth] getSession failed:", error);
       setUser(session?.user ?? null);
       setLoading(false);
     });
@@ -24,7 +25,8 @@ export function useAuth() {
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    const { error } = await supabase.auth.signOut();
+    if (error) console.error("[useAuth] signOut failed:", error);
   };
 
   return { user, loading, signIn, signOut };

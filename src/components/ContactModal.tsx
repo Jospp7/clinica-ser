@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { X, CheckCircle2 } from "lucide-react";
+import { SITE, waLink } from "@/lib/site";
 
 interface Props {
   open: boolean;
@@ -15,16 +16,34 @@ const ContactModal = ({ open, onClose, source }: Props) => {
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   if (!open) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMsg(null);
+    if (!phone.trim() && !email.trim()) {
+      setErrorMsg("Necesitamos al menos un medio de contacto: teléfono o correo electrónico.");
+      return;
+    }
     setSending(true);
-    await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: message || null, source });
-    setSending(false);
-    setSent(true);
-    setTimeout(() => { onClose(); setSent(false); setName(""); setPhone(""); setEmail(""); setMessage(""); }, 2000);
+    try {
+      const { error } = await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: message || null, source });
+      if (error) {
+        console.error("[ContactModal] insert failed:", error);
+        setSending(false);
+        setErrorMsg(`No pudimos enviar tu mensaje. Por favor llámanos al ${SITE.telefonos[0]} o escríbenos por WhatsApp.`);
+        return;
+      }
+      setSending(false);
+      setSent(true);
+      setTimeout(() => { onClose(); setSent(false); setName(""); setPhone(""); setEmail(""); setMessage(""); }, 2000);
+    } catch (err) {
+      console.error("[ContactModal] insert threw:", err);
+      setSending(false);
+      setErrorMsg(`No pudimos enviar tu mensaje. Por favor llámanos al ${SITE.telefonos[0]} o escríbenos por WhatsApp.`);
+    }
   };
 
   const inputStyle = { width: "100%", padding: "10px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 14, boxSizing: "border-box" as const, fontFamily: "'Inter',sans-serif" };
@@ -58,6 +77,18 @@ const ContactModal = ({ open, onClose, source }: Props) => {
             <div style={{ marginBottom: 20 }}>
               <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="¿Cómo podemos ayudarte?" rows={3} style={{ ...inputStyle, resize: "vertical" }} />
             </div>
+            {errorMsg && (
+              <div role="alert" style={{ marginBottom: 12, padding: "10px 12px", background: "#FFEBEE", border: "1px solid #F5C2C7", borderRadius: 8, fontSize: 13, color: "#8A1F1F" }}>
+                {errorMsg}
+                {errorMsg.startsWith("No pudimos") && (
+                  <div style={{ marginTop: 6, fontSize: 12 }}>
+                    <a href={`tel:${SITE.telefonoTel[0]}`} style={{ color: "#8A1F1F", fontWeight: 700 }}>{SITE.telefonos[0]}</a>
+                    {" · "}
+                    <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{ color: "#8A1F1F", fontWeight: 700 }}>WhatsApp</a>
+                  </div>
+                )}
+              </div>
+            )}
             <button type="submit" disabled={sending}
               style={{ width: "100%", padding: "12px", background: "#C8E64A", color: "#1A1A2E", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
               {sending ? "Enviando..." : "Enviar"}
