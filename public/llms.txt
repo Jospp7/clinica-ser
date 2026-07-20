@@ -1,13 +1,16 @@
 # Clínica SER
 
-> Clínica de rehabilitación de adicciones y salud mental con más de 58 años de experiencia en Puebla, México. Ofrecemos tratamiento integral con enfoque clínico-humanista, ingreso voluntario e involuntario, y atención médica 24/7 certificada por CENADIC.
+> Clínica de rehabilitación de adicciones y salud mental en Puebla, México, con 58 años de experiencia. Atención de ingreso 24 horas, los 365 días del año.
 
 ## Pages
 
 - [Inicio](/): Presentación de Clínica SER, servicios principales y contacto.
-- [Tratamientos](/tratamiento): Programas para alcoholismo, drogadicción, ludopatía, codependencia y doble diagnóstico.
-- [Instalaciones](/instalaciones): Habitaciones privadas, áreas verdes, consultorios y espacios terapéuticos.
-- [Padecimientos](/padecimientos): Adicciones a alcohol, cocaína, metanfetaminas, opioides, benzodiacepinas y trastornos de salud mental.
-- [Por qué elegirnos](/por-que-elegirnos): 58 años de experiencia, equipo multidisciplinario, certificación CENADIC y atención 24/7.
+- [Tratamiento](/tratamiento): Programas de tratamiento para adicciones y salud mental.
+- [Instalaciones](/instalaciones): Amenidades reales de la clínica, incluyendo habitaciones separadas, área de desintoxicación, consultorios médicos, central de enfermeras, salones de terapia familiar y sesiones, gimnasio, taller de arte, salas de TV y comedor amplio.
+- [Padecimientos](/padecimientos): Alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia y trastornos coexistentes.
+- [Equipo](/equipo): Equipo médico y paramédico y servicios generales de Clínica SER, con perfil del Doctor Jorge Alfredo Gayosso del Valle.
+- [Por qué elegirnos](/por-que-elegirnos): Razones verificables para elegir Clínica SER y atención 24/7.
+- [Guía de ingreso](/guia-ingreso): Modalidades de ingreso bajo la NOM-028-SSA2-2009.
+- [Guía de intervención](/guia-intervencion): Guía para familias sobre cómo actuar en un ingreso por intervención.
+- [Preguntas frecuentes](/preguntas-frecuentes): Respuestas a las dudas más comunes sobre el tratamiento y el ingreso.
 - [Blog](/blog): Recursos y guías sobre adicciones, familia y recuperación.
-- [Guía de ingreso a Clínica SER](/guia-ingreso): Modalidades de ingreso (voluntario, involuntario y obligatorio) bajo la NOM-028-SSA2-2009.
