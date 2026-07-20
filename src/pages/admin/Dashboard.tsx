@@ -25,6 +25,10 @@ const Dashboard = () => {
         supabase.from("posts").select("*").order("created_at", { ascending: false }).limit(5),
       ]);
 
+      [pvToday, ctaToday, newContacts, publishedPosts, recentContacts, recentPosts].forEach((r, i) => {
+        if (r.error) console.error(`[Dashboard] load query ${i} failed:`, r.error);
+      });
+
       setMetrics([
         { label: "Visitas hoy", icon: Eye, value: pvToday.count ?? 0 },
         { label: "Clicks CTAs hoy", icon: MousePointerClick, value: ctaToday.count ?? 0 },
@@ -38,7 +42,8 @@ const Dashboard = () => {
       for (let i = 6; i >= 0; i--) {
         const d = new Date(); d.setDate(d.getDate() - i);
         const ds = d.toISOString().split("T")[0];
-        const { count } = await supabase.from("page_events").select("id", { count: "exact", head: true }).eq("event_type", "pageview").gte("created_at", ds).lt("created_at", new Date(d.getTime() + 86400000).toISOString().split("T")[0]);
+        const { count, error } = await supabase.from("page_events").select("id", { count: "exact", head: true }).eq("event_type", "pageview").gte("created_at", ds).lt("created_at", new Date(d.getTime() + 86400000).toISOString().split("T")[0]);
+        if (error) console.error("[Dashboard] chart day query failed:", error);
         days.push({ date: ds.slice(5), views: count ?? 0 });
       }
       setChartData(days);
