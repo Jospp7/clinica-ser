@@ -31,6 +31,10 @@ const CONDITIONS = [
     title: "Trastornos coexistentes",
     desc: "Si no se trata el trastorno coexistente, como la depresión, la ansiedad o el estrés postraumático, junto con la adicción al alcohol o las drogas, la sobriedad se ve comprometida y aumenta significativamente el riesgo de recaída.",
   },
+  {
+    title: "Trastorno por consumo de opiáceos",
+    desc: "Los opiáceos son una clase de analgésicos potentes. Entre los recetados se encuentran la codeína, la morfina y la oxicodona; también se incluyen opiáceos sintéticos como el fentanilo y la heroína. En Clínica SER ofrecemos tratamiento integral para el trastorno por consumo de opiáceos.",
+  },
 ];
 
 const Padecimientos = () => {
@@ -40,7 +44,7 @@ const Padecimientos = () => {
     <main>
       <Seo
         title="Padecimientos que Tratamos — Clínica SER Puebla"
-        description="Padecimientos que atendemos en Clínica SER Puebla: alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia y trastornos coexistentes."
+        description="Padecimientos que atendemos en Clínica SER Puebla: alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia, trastornos coexistentes y trastorno por consumo de opiáceos."
         path="/padecimientos"
       />
       <section className="pad-hero">
