@@ -25,7 +25,12 @@ const BlogEditor = () => {
 
   useEffect(() => {
     if (id) {
-      supabase.from("posts").select("*").eq("id", id).single().then(({ data }) => {
+      supabase.from("posts").select("*").eq("id", id).single().then(({ data, error }) => {
+        if (error) {
+          console.error("[BlogEditor] load failed:", error);
+          alert("No se pudo cargar el post: " + error.message);
+          return;
+        }
         if (data) {
           setTitle(data.title); setSlug(data.slug); setCategory(data.category ?? "");
           setExcerpt(data.excerpt ?? ""); setCoverImage(data.cover_image ?? "");
@@ -45,13 +50,22 @@ const BlogEditor = () => {
     setSaving(true);
     const payload = { title, slug, category: category || null, excerpt: excerpt || null, cover_image: coverImage || null, author, content: content || null, status };
 
-    if (isEdit) {
-      await supabase.from("posts").update(payload).eq("id", id);
-    } else {
-      await supabase.from("posts").insert(payload);
+    try {
+      const { error } = isEdit
+        ? await supabase.from("posts").update(payload).eq("id", id)
+        : await supabase.from("posts").insert(payload);
+      setSaving(false);
+      if (error) {
+        console.error("[BlogEditor] save failed:", error);
+        alert("No se pudo guardar el post: " + error.message);
+        return;
+      }
+      navigate("/admin/blog");
+    } catch (err: any) {
+      console.error("[BlogEditor] save threw:", err);
+      setSaving(false);
+      alert("No se pudo guardar el post: " + (err?.message ?? "error desconocido"));
     }
-    setSaving(false);
-    navigate("/admin/blog");
   };
 
   const inputStyle = { width: "100%", padding: "10px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 14, boxSizing: "border-box" as const };
