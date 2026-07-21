@@ -77,7 +77,10 @@ const Contacts = () => {
                   <td style={{ padding: "12px 16px", maxWidth: 200, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{c.message || "—"}</td>
                   <td style={{ padding: "12px 16px" }}>{c.source || "—"}</td>
                   <td style={{ padding: "12px 16px" }}>
-                    <span style={{ background: statusColor[c.status] ?? "#888", color: "white", padding: "2px 10px", borderRadius: 10, fontSize: 11, fontWeight: 600 }}>{c.status}</span>
+                    {(() => {
+                      const status = c.status ?? "nuevo";
+                      return <span style={{ background: statusColor[status] ?? statusColor.nuevo, color: "white", padding: "2px 10px", borderRadius: 10, fontSize: 11, fontWeight: 600 }}>{status}</span>;
+                    })()}
                   </td>
                   <td style={{ padding: "12px 16px", color: "#888" }}>{new Date(c.created_at).toLocaleDateString()}</td>
                 </tr>
@@ -108,7 +111,7 @@ const Contacts = () => {
             </div>
             <div style={{ marginTop: 20 }}>
               <label style={{ fontSize: 12, fontWeight: 600, color: "#888", display: "block", marginBottom: 6 }}>Cambiar status</label>
-              <select value={selected.status} onChange={e => updateStatus(selected.id, e.target.value)}
+              <select value={selected.status ?? "nuevo"} onChange={e => updateStatus(selected.id, e.target.value)}
                 style={{ padding: "8px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 13, width: "100%" }}>
                 <option value="nuevo">Nuevo</option>
                 <option value="contactado">Contactado</option>
