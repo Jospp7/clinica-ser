@@ -29,7 +29,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
     }
     setSending(true);
     try {
-      const { error } = await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: message || null, source });
+      const { error } = await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: message || null, source, status: "nuevo" });
       if (error) {
         console.error("[ContactModal] insert failed:", error);
         setSending(false);
