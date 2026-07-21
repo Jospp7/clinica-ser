@@ -35,11 +35,13 @@ const GuiaIngreso = () => {
             <h1 className="guia__title">
               ¡Entra con confianza!<br />Guía de ingreso a Clínica SER
             </h1>
-            {/* TODO: subir clinica-ser-guia-de-ingreso.pdf a /public y enlazar aquí */}
             <a
-              href="#"
+              href="/clinica-ser-guia-de-ingreso.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
               className="guia__btn"
-              onClick={(e) => { e.preventDefault(); trackCTAClick("DESCARGAR_GUIA_INGRESO"); }}
+              onClick={() => trackCTAClick("DESCARGAR_GUIA_INGRESO")}
               style={{ marginTop: 8 }}
             >
               Versión Descargable

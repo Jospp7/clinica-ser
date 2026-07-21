@@ -29,7 +29,17 @@ const GuiaIntervencion = () => {
               se presentan en la mayoría de los casos. Esto lleva a la familia a
               entrar en desesperación y vivir caos, miedo y desolación.
             </p>
-            {/* TODO: subir el PDF a /public y habilitar el CTA "Versión Descargable" */}
+            <a
+              href="/clinica-ser-guia-de-intervencion.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="guia__btn"
+              onClick={() => trackCTAClick("DESCARGAR_GUIA_INTERVENCION")}
+              style={{ marginTop: 8 }}
+            >
+              Versión Descargable
+            </a>
           </div>
         </header>
 
