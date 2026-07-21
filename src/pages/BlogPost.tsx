@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Phone, MessageCircle, Calendar, Tag } from "lucide-react";
+import DOMPurify from "dompurify";
 import Seo from "@/components/Seo";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tables } from "@/integrations/supabase/types";
@@ -10,6 +11,55 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 type Post = Tables<"posts">;
 type Status = "loading" | "ok" | "not-found" | "error";
+
+/**
+ * SEGURIDAD — NO ELIMINAR.
+ * El contenido de `posts.content` se renderiza con dangerouslySetInnerHTML.
+ * Proviene de: (a) migración masiva de ~500 artículos WordPress cuyo HTML no
+ * controlamos (puede traer <script>, iframes de plugins muertos, pixeles),
+ * y (b) un editor admin que acepta HTML crudo — si esa cuenta se compromete,
+ * cualquier <script> se ejecutaría en todo el blog.
+ *
+ * La sanitización ocurre en RENDER (no solo al guardar) porque hay contenido
+ * que ya entró a la BD antes de esta protección y porque la migración inserta
+ * directo a Supabase sin pasar por el editor. No la quites "porque estorba".
+ */
+const ALLOWED_TAGS = [
+  "p","h2","h3","h4","h5","ul","ol","li","strong","em","b","i","u","a","img",
+  "blockquote","figure","figcaption","br","hr","span","div",
+  "table","thead","tbody","tr","th","td","pre","code",
+];
+const FORBIDDEN_TAGS = ["script","style","iframe","object","embed","form","input","button","link","meta","base"];
+const ALLOWED_ATTR = ["href","title","target","src","alt","width","height","loading","class","id","rel"];
+
+const sanitizeArticleHtml = (dirty: string, currentHost: string) => {
+  // Fuerza rel="noopener noreferrer" en <a> externos y no permite target sin rel.
+  DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+    if (node.tagName === "A") {
+      const href = node.getAttribute("href") || "";
+      let isExternal = false;
+      try {
+        const u = new URL(href, `https://${currentHost}`);
+        isExternal = u.host !== "" && u.host !== currentHost;
+      } catch { /* href relativo o inválido */ }
+      if (isExternal || node.getAttribute("target")) {
+        node.setAttribute("rel", "noopener noreferrer");
+        if (!node.getAttribute("target")) node.setAttribute("target", "_blank");
+      }
+    }
+  });
+  const clean = DOMPurify.sanitize(dirty, {
+    ALLOWED_TAGS,
+    ALLOWED_ATTR,
+    FORBID_TAGS: FORBIDDEN_TAGS,
+    FORBID_ATTR: ["onerror","onload","onclick","onmouseover","onmouseout","onfocus","onblur","onchange","onsubmit","onkeydown","onkeyup","onkeypress"],
+    // Bloquea javascript:, vbscript:, file:, etc. Permite http(s), mailto, tel, y data:image para <img>.
+    ALLOWED_URI_REGEXP: /^(?:(?:https?|mailto|tel|ftp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i,
+    ADD_DATA_URI_TAGS: ["img"],
+  });
+  DOMPurify.removeHook("afterSanitizeAttributes");
+  return clean;
+};
 
 const formatDate = (iso: string) => {
   try {
@@ -26,6 +76,12 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const [status, setStatus] = useState<Status>("loading");
   const [post, setPost] = useState<Post | null>(null);
+
+  const safeContent = useMemo(() => {
+    if (!post?.content) return "";
+    const host = typeof window !== "undefined" ? window.location.hostname : "";
+    return sanitizeArticleHtml(post.content, host);
+  }, [post?.content]);
 
   useEffect(() => {
     let cancelled = false;
@@ -139,7 +195,8 @@ const BlogPost = () => {
             {post.content && (
               <div
                 className="bp__content"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                // SEGURIDAD: `safeContent` viene de DOMPurify — ver comentario arriba. NO quitar.
+                dangerouslySetInnerHTML={{ __html: safeContent }}
               />
             )}
 
