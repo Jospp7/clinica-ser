@@ -29,9 +29,6 @@ const Instalaciones = () => {
             <a href={`tel:${SITE.telefonoTel[1]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_2")}>
               <Phone size={18} aria-hidden="true" /> {SITE.telefonos[1]}
             </a>
-            <a href={`tel:${SITE.telefonoTel[2]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_3")}>
-              <Phone size={18} aria-hidden="true" /> {SITE.telefonos[2]}
-            </a>
           </div>
         </div>
       </div>
