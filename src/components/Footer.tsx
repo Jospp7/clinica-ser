@@ -38,8 +38,7 @@ const Footer = () => {
             </p>
             <p className="footer-v2__phones">
               <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_1")}>{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>{SITE.telefonos[1]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[2]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_3")}>{SITE.telefonos[2]}</a>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>{SITE.telefonos[1]} (emergencias 24 h)</a>
             </p>
             <p className="footer-v2__email">{SITE.email}</p>
             <div className="footer-v2__socials">
@@ -129,8 +128,7 @@ const Footer = () => {
             <p className="footer-v2__bottom-text">{SITE.direccion}</p>
             <p className="footer-v2__bottom-text">
               <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__bottom-link">{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[2]}`} className="footer-v2__bottom-link">{SITE.telefonos[2]}</a>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a>
             </p>
           </div>
           <div className="footer-v2__bottom-col">
