@@ -22,7 +22,7 @@ const CARDS = [
       "Síndrome de abstinencia o supresión",
       "Trastorno psicótico agudo, caracterizado por: errores de juicio y conductas de alucinación; alta posibilidad de daño a sí mismo o a terceros; agresividad y agitación psicomotora.",
     ],
-    cta: { kind: "tel" as const, href: `tel:${SITE.telefonoTel[2]}`, label: "Llámanos Ahora", track: "LLAMAR_CARD_EMERGENCIA" },
+    cta: { kind: "tel" as const, href: `tel:${SITE.telefonoTel[1]}`, label: "Llámanos Ahora", track: "LLAMAR_CARD_EMERGENCIA" },
   },
   {
     num: 3,
