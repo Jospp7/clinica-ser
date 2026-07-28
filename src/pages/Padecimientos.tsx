@@ -40,7 +40,7 @@ const Padecimientos = () => {
     <main>
       <Seo
         title="Padecimientos que Tratamos — Clínica SER Puebla"
-        description="Padecimientos que atendemos en Clínica SER Puebla: alcoholismo, drogadicción, adicción a medicamentos, ludopatía, codependencia, trastornos coexistentes y trastorno por consumo de opiáceos."
+        description="Padecimientos que atendemos en Clínica SER Puebla: alcohol, drogas, ludopatía (juego y apuestas), tecnofilia (adicción a las nuevas tecnologías), opiáceos (heroína, morfina, codeína, tebaína) y medicamentos psicotrópicos (benzodiazepinas)."
         path="/padecimientos"
       />
       <section className="pad-hero">
