@@ -31,6 +31,16 @@ const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
   },
 ];
 
+// Duración de tratamiento por tipo de adicción — texto literal del cliente.
+const DURACION: { adiccion: string; duracion: string }[] = [
+  { adiccion: "Alcohol", duracion: "5 semanas" },
+  { adiccion: "Drogas", duracion: "5 semanas" },
+  { adiccion: "Ludopatía (juego / apuestas)", duracion: "5 semanas" },
+  { adiccion: "Tecnofilia (adicción a las nuevas tecnologías)", duracion: "5 semanas" },
+  { adiccion: "Opiáceos (heroína, morfina, codeína, tebaína)", duracion: "6 semanas" },
+  { adiccion: "Medicamentos psicotrópicos (benzodiazepinas)", duracion: "6 semanas" },
+];
+
 const Tratamiento = () => {
   useScrollToTop();
 
