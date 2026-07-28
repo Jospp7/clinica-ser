@@ -27,7 +27,6 @@ const Footer = () => {
   return (
     <footer className="footer-v2">
       {/* Top section - CENADIC certified */}
-      {/* TODO: confirmar vigencia de certificación con cliente (CENADIC se disolvió ~2011, hoy es CONADIC) */}
       <div className="footer-v2__top">
         <div className="footer-v2__top-grid">
           <div className="footer-v2__top-col">
