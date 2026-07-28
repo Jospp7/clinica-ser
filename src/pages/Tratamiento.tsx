@@ -31,6 +31,16 @@ const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
   },
 ];
 
+// Duración de tratamiento por tipo de adicción — texto literal del cliente.
+const DURACION: { adiccion: string; duracion: string }[] = [
+  { adiccion: "Alcohol", duracion: "5 semanas" },
+  { adiccion: "Drogas", duracion: "5 semanas" },
+  { adiccion: "Ludopatía (juego / apuestas)", duracion: "5 semanas" },
+  { adiccion: "Tecnofilia (adicción a las nuevas tecnologías)", duracion: "5 semanas" },
+  { adiccion: "Opiáceos (heroína, morfina, codeína, tebaína)", duracion: "6 semanas" },
+  { adiccion: "Medicamentos psicotrópicos (benzodiazepinas)", duracion: "6 semanas" },
+];
+
 const Tratamiento = () => {
   useScrollToTop();
 
@@ -117,6 +127,31 @@ const Tratamiento = () => {
         </div>
       </section>
 
+      <section className="trat-process">
+        <div className="trat-process__container">
+          <h2 className="trat-process__title" data-anim="fade-up">Duración de tratamiento</h2>
+          <div className="trat-duracion" data-anim="fade-up">
+            <table className="trat-duracion__table">
+              <thead>
+                <tr>
+                  <th>Adicción</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody>
+                {DURACION.map((fila, i) => (
+                  <tr key={i}>
+                    <td>{fila.adiccion}</td>
+                    <td>{fila.duracion}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="trat-duracion__legend">Extensiones de tratamiento pueden ser recomendadas por nuestro Equipo Médico si es clínicamente apropiado.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="trat-cta">
         <div className="trat-cta__inner" data-anim="fade-up">
           <h2 className="trat-cta__title">¿Necesitas ayuda?</h2>
@@ -165,6 +200,14 @@ const Tratamiento = () => {
         .trat-cta__btn:hover { background: #8AB83A; color: white; }
         .trat-cta__btn--wa { background: #25D366; color: white; }
         .trat-cta__btn--wa:hover { background: #1DB954; }
+
+        .trat-duracion { max-width: 700px; margin: 0 auto; }
+        .trat-duracion__table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 15px; color: #444; }
+        .trat-duracion__table th, .trat-duracion__table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08); }
+        .trat-duracion__table th { background: #1A1A2E; color: #FFFFFF; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .05em; }
+        .trat-duracion__table td:first-child { width: 70%; }
+        .trat-duracion__table td:last-child { width: 30%; font-weight: 600; }
+        .trat-duracion__legend { font-family: 'Inter', sans-serif; font-size: 13px; color: #666; text-align: center; margin: 16px 0 0; line-height: 1.5; }
 
         @media (max-width: 900px) {
           .trat-grid { grid-template-columns: 1fr; }
