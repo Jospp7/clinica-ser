@@ -3,23 +3,23 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
 
-// Bloques del programa — texto literal del sitio original.
+// Bloques de la sección "Tratamiento para adicciones de Clínica SER" — texto literal del cliente.
 const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
   {
     title: "Tratamiento para las adicciones.",
-    desc: "Somos especialistas en el tratamiento de trastornos coexistentes como el estrés, la depresión y la ansiedad. Esto permite un porcentaje altísimo de recuperación con miras a alcanzar la sobriedad.",
+    desc: "Somos especialistas en el tratamiento de trastornos coexistentes como el estrés, la depresión y la ansiedad. Esto permite un porcentaje altísimo de recuperación con miras a alcanzar la sobriedad en personas que sufren de adicciones.",
   },
   {
     title: "Atención individualizada para adictos.",
-    desc: "Trabajamos con grupos reducidos, lo que nos permite asignar más terapeutas y ofrecer sesiones personalizadas. Incluye post-tratamiento sin tiempo límite ni costo adicional para el paciente y su familia, en la clínica y en cualquier parte de la República o del mundo vía videoconferencia.",
+    desc: "Dentro de nuestro tratamiento para adicciones, trabajamos con grupos reducidos, lo que nos permite asignar un mayor número de terapeutas y ofrecer sesiones personalizadas a nuestros pacientes. Incluye post-tratamiento sin tiempo límite ni costo adicional para el paciente y su familia, en nuestra clínica y en cualquier parte de la República o del mundo a través de videoconferencias con un terapeuta calificado.",
   },
   {
-    title: "Actividades adicionales.",
-    desc: "Yoga, meditación, ejercicios, arteterapia y orientación espiritual, para una rehabilitación integral.",
+    title: "Actividades adicionales para pacientes.",
+    desc: "Integramos actividades complementarias como yoga, meditación, ejercicios, arteterapia y orientación espiritual, para una rehabilitación integral de nuestros pacientes.",
   },
   {
     title: "Terapias de grupo especial",
-    desc: "Únicas en México, desarrolladas desde la historia personal de cada paciente:",
+    desc: "Contamos con terapias únicas en México, desarrolladas a partir de la historia personal de cada paciente. Estas terapias incluyen:",
     items: [
       "Técnicas de manejo del estrés",
       "Grupo de duelo",
@@ -28,14 +28,6 @@ const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
       "Grupo de salud mental",
       "Grupo de terapia cognitivo conductual",
     ],
-  },
-  {
-    title: "Tratamiento continuo.",
-    desc: "Seguimiento después del tratamiento primario de 35 o 42 días, vía programa Tratamiento Continuo: atención externa en instalaciones, sin costo ni tiempo límite, sesiones grupales dos veces por semana guiadas por expertos en psicología. Disponible por videoconferencia desde cualquier lugar.",
-  },
-  {
-    title: "Programa para la familia.",
-    desc: "Reuniones familiares dos veces por semana, dirigidas por un experto en Psicología, gratuitas y sin límite de tiempo.",
   },
 ];
 
@@ -55,7 +47,7 @@ const Tratamiento = () => {
         <div className="trat-hero__content" data-anim="fade-up">
           <span className="trat-hero__tag">NUESTROS TRATAMIENTOS</span>
           <h1 className="trat-hero__title">Descubre nuestro tratamiento para adicciones</h1>
-          <p className="trat-hero__sub">En Clínica SER, estamos a la vanguardia en la rehabilitación de adicciones como alcoholismo y drogadicción. ¡Nuestro nivel de recuperación y no incidencia es de los más altos de México!</p>
+          <p className="trat-hero__sub">En Clínica SER, estamos a la vanguardia en la rehabilitación de adicciones como alcoholismo y drogadicción.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-hero__btn">AGENDA TU EVALUACIÓN</a>
         </div>
       </section>
@@ -74,7 +66,7 @@ const Tratamiento = () => {
       <section className="trat-grid-section">
         <div className="trat-grid__container">
           <span className="trat-grid__tag" data-anim="fade-up">NUESTRO PROGRAMA</span>
-          <h2 className="trat-grid__title" data-anim="fade-up">¿Qué incluye el tratamiento?</h2>
+          <h2 className="trat-grid__title" data-anim="fade-up">Tratamiento para adicciones de Clínica SER</h2>
           <div className="trat-grid">
             {/* TODO: imagen del cliente — cada bloque necesita imagen real; por ahora sin img. */}
             {BLOQUES.map((b, i) => (
@@ -91,7 +83,37 @@ const Tratamiento = () => {
               </div>
             ))}
           </div>
-          <p className="trat-grid__closer" data-anim="fade-up">Elige ser feliz... estás a sólo unos pasos. ¡Vive sin ataduras!</p>
+        </div>
+      </section>
+
+      <section className="trat-process">
+        <div className="trat-process__container">
+          <h2 className="trat-process__title" data-anim="fade-up">Enfoque integral</h2>
+          <div className="trat-intro" data-anim="fade-up">
+            <p className="trat-intro__p">En el centro de rehabilitación Clínica SER, ofrecemos un enfoque clínico integral que aborda simultáneamente problemas de salud mental y el tratamiento de adicciones tan comunes como alcoholismo y drogadicción. Si no se trata el trastorno coexistente, como la depresión, la ansiedad o el estrés postraumático, junto con la adicción al alcohol o las drogas, la sobriedad se ve comprometida y aumenta significativamente el riesgo de recaída.</p>
+            <p className="trat-intro__p">Cada persona que busca ayuda en el centro de adicciones Clínica SER, trae consigo una historia personal única y un contexto específico. Nuestro tratamiento para adicciones aborda al individuo en su totalidad, basándose en un diagnóstico mental preciso, la sustancia adictiva, su historia familiar, salud física, género y otras variables relevantes. De esta manera, establecemos un plan de tratamiento individualizado que no solo promueve la rehabilitación, sino que también sostiene la sobriedad a largo plazo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="trat-process">
+        <div className="trat-process__container">
+          <h2 className="trat-process__title" data-anim="fade-up">Tratamiento continuo para el paciente</h2>
+          <div className="trat-intro" data-anim="fade-up">
+            <p className="trat-intro__p">En Clínica SER, nuestros pacientes no están solos. Brindamos seguimiento continuo después de finalizado el tratamiento primario de 35 o 42 días, a través de nuestro programa Tratamiento Continuo.</p>
+            <p className="trat-intro__p">En Clínica SER, ofrecemos nuestro programa de atención externa en nuestras instalaciones, sin ningún costo ni tiempo límite. Contamos con sesiones grupales dos veces por semana, guiadas por nuestros expertos calificados en psicología.</p>
+            <p className="trat-intro__p">Si vives o estás fuera de Puebla, no te preocupes. Nuestro innovador programa te permite participar a través de videoconferencia en línea desde cualquier lugar de México y el mundo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="trat-process">
+        <div className="trat-process__container">
+          <h2 className="trat-process__title" data-anim="fade-up">Programa para la familia del adicto</h2>
+          <div className="trat-intro" data-anim="fade-up">
+            <p className="trat-intro__p">En Clínica SER, apoyamos a las familias para que identifiquen nuevas maneras de afrontar la adicción y mejorar sus relaciones.</p>
+            <p className="trat-intro__p">Durante y después del programa, los familiares de nuestros pacientes pueden asistir a reuniones familiares en Clínica SER® dos veces por semana, dirigidas por uno de nuestros expertos en Psicología. Estas sesiones son gratuitas y no tienen límite de tiempo.</p>
+          </div>
         </div>
       </section>
 
@@ -133,7 +155,6 @@ const Tratamiento = () => {
         .trat-card__title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
         .trat-card__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
         .trat-card__list { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
-        .trat-grid__closer { font-family: 'Inter', sans-serif; font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1A1A2E; text-align: center; margin: 48px 0 0; font-style: italic; }
 
         .trat-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .trat-cta__inner { max-width: 600px; margin: 0 auto; }
