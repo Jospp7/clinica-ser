@@ -48,7 +48,7 @@ const Padecimientos = () => {
         <div className="pad-hero__content" data-anim="fade-up">
           <span className="pad-hero__tag">PADECIMIENTOS QUE TRATAMOS</span>
           <h1 className="pad-hero__title">Padecimientos que atendemos</h1>
-          <p className="pad-hero__sub">Adicciones y trastornos coexistentes atendidos en Clínica SER Puebla.</p>
+          <p className="pad-hero__sub">Adicciones atendidas en Clínica SER Puebla.</p>
         </div>
       </section>
 
