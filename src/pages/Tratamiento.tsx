@@ -201,6 +201,14 @@ const Tratamiento = () => {
         .trat-cta__btn--wa { background: #25D366; color: white; }
         .trat-cta__btn--wa:hover { background: #1DB954; }
 
+        .trat-duracion { max-width: 700px; margin: 0 auto; }
+        .trat-duracion__table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 15px; color: #444; }
+        .trat-duracion__table th, .trat-duracion__table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08); }
+        .trat-duracion__table th { background: #1A1A2E; color: #FFFFFF; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .05em; }
+        .trat-duracion__table td:first-child { width: 70%; }
+        .trat-duracion__table td:last-child { width: 30%; font-weight: 600; }
+        .trat-duracion__legend { font-family: 'Inter', sans-serif; font-size: 13px; color: #666; text-align: center; margin: 16px 0 0; line-height: 1.5; }
+
         @media (max-width: 900px) {
           .trat-grid { grid-template-columns: 1fr; }
         }
