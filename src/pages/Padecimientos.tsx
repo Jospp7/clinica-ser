@@ -4,36 +4,32 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { waLink } from "@/lib/site";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
-// TODO: lista y descripciones pendientes de validación por el equipo médico del cliente.
-// Estas 6 provienen del sitio anterior; ninguna incluye sintomatología por falta de fuente.
+// Lista oficial de padecimientos validada por el cliente.
 const CONDITIONS = [
   {
-    title: "Alcoholismo",
-    desc: "Somos expertos en rehabilitación de alcoholismo. Nuestro Programa de Tratamiento Integral SER® incluye evaluación clínica y médica, desintoxicación y atención primaria por especialistas en psiquiatría.",
+    title: "Alcohol",
+    desc: "Tratamiento integral para el consumo de alcohol, con evaluación clínica, desintoxicación y atención primaria por especialistas en psiquiatría.",
   },
   {
-    title: "Drogadicción",
+    title: "Drogas",
     desc: "Tratamiento para la adicción a sustancias, con soporte médico y de enfermería disponible las 24 horas del día, pruebas de laboratorio, detección de drogas y electrocardiogramas.",
   },
   {
-    title: "Adicción a medicamentos",
-    desc: "Los anestésicos, analgésicos, sedantes y ansiolíticos en exceso, no prescritos ni controlados por un profesional médico, son tan peligrosos como cualquier otra droga. Su tratamiento requiere la intervención de especialistas en psiquiatría para un manejo adecuado y seguro.",
-  },
-  {
-    title: "Ludopatía",
+    title: "Ludopatía (juego y apuestas)",
     desc: "Tratamiento para la adicción al juego y las apuestas.",
   },
   {
-    title: "Codependencia",
-    desc: "La codependencia requiere de tratamiento y rehabilitación oportunos, igual que una adicción.",
+    title: "Tecnofilia (adicción a las nuevas tecnologías)",
+    desc: "Tratamiento especializado para la adicción a las nuevas tecnologías.",
+    // TODO: descripción pendiente
   },
   {
-    title: "Trastornos coexistentes",
-    desc: "Si no se trata el trastorno coexistente, como la depresión, la ansiedad o el estrés postraumático, junto con la adicción al alcohol o las drogas, la sobriedad se ve comprometida y aumenta significativamente el riesgo de recaída.",
+    title: "Opiáceos (heroína, morfina, codeína, tebaína)",
+    desc: "Tratamiento integral para el consumo de opiáceos, incluyendo heroína, morfina, codeína y tebaína.",
   },
   {
-    title: "Trastorno por consumo de opiáceos",
-    desc: "Los opiáceos son una clase de analgésicos potentes. Entre los recetados se encuentran la codeína, la morfina y la oxicodona; también se incluyen opiáceos sintéticos como el fentanilo y la heroína. En Clínica SER ofrecemos tratamiento integral para el trastorno por consumo de opiáceos.",
+    title: "Medicamentos psicotrópicos (benzodiazepinas)",
+    desc: "Tratamiento para la adicción a medicamentos psicotrópicos, como benzodiazepinas.",
   },
 ];
 
