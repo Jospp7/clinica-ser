@@ -127,6 +127,31 @@ const Tratamiento = () => {
         </div>
       </section>
 
+      <section className="trat-process">
+        <div className="trat-process__container">
+          <h2 className="trat-process__title" data-anim="fade-up">Duración de tratamiento</h2>
+          <div className="trat-duracion" data-anim="fade-up">
+            <table className="trat-duracion__table">
+              <thead>
+                <tr>
+                  <th>Adicción</th>
+                  <th>Duración</th>
+                </tr>
+              </thead>
+              <tbody>
+                {DURACION.map((fila, i) => (
+                  <tr key={i}>
+                    <td>{fila.adiccion}</td>
+                    <td>{fila.duracion}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="trat-duracion__legend">Extensiones de tratamiento pueden ser recomendadas por nuestro Equipo Médico si es clínicamente apropiado.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="trat-cta">
         <div className="trat-cta__inner" data-anim="fade-up">
           <h2 className="trat-cta__title">¿Necesitas ayuda?</h2>
