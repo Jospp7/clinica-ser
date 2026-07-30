@@ -1,18 +1,45 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import type { Tables } from "@/integrations/supabase/types";
 
-const POSTS = [
-  { title: "¿Cómo saber si un familiar tiene problemas de adicción?", date: "15 Mar 2026", category: "Familia", excerpt: "Identificar los signos tempranos de una adicción puede marcar la diferencia. Aprende a reconocer las señales de alerta más comunes.", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" },
-  { title: "La importancia del apoyo familiar en la rehabilitación", date: "8 Mar 2026", category: "Rehabilitación", excerpt: "El papel de la familia es fundamental en el proceso de recuperación. Descubre cómo puedes ser un pilar de apoyo efectivo.", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" },
-  { title: "Mitos y realidades sobre el tratamiento de adicciones", date: "1 Mar 2026", category: "Educación", excerpt: "Desmitificamos las creencias más comunes sobre el tratamiento de adicciones y la rehabilitación profesional.", img: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80" },
-  { title: "¿Qué es el doble diagnóstico y por qué es importante?", date: "22 Feb 2026", category: "Salud Mental", excerpt: "Cuando una adicción coexiste con un trastorno mental, el tratamiento debe abordar ambas condiciones simultáneamente.", img: "https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=600&q=80" },
-  { title: "Prevención de recaídas: herramientas prácticas", date: "15 Feb 2026", category: "Prevención", excerpt: "La recuperación es un proceso continuo. Conoce las estrategias más efectivas para prevenir recaídas.", img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" },
-  { title: "El papel de la nutrición en la recuperación", date: "8 Feb 2026", category: "Bienestar", excerpt: "Una alimentación adecuada puede acelerar significativamente el proceso de recuperación física y mental.", img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80" },
-];
+type PostCard = Pick<
+  Tables<"posts">,
+  "id" | "title" | "slug" | "excerpt" | "category" | "cover_image" | "created_at"
+>;
+
+const PAGE_SIZE = 24;
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("es-MX", { day: "numeric", month: "short", year: "numeric" });
 
 const Blog = () => {
   useScrollToTop();
+  const [posts, setPosts] = useState<PostCard[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [visible, setVisible] = useState(PAGE_SIZE);
+
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      const { data, error } = await supabase
+        .from("posts")
+        .select("id, title, slug, excerpt, category, cover_image, created_at")
+        .eq("status", "published")
+        .order("created_at", { ascending: false });
+      if (!active) return;
+      if (error) setError(error.message);
+      else setPosts(data ?? []);
+      setLoading(false);
+    })();
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <main>
@@ -31,22 +58,44 @@ const Blog = () => {
       </section>
 
       <section className="blog-grid-section">
-        <div className="blog-container">
-          {POSTS.map((post, i) => (
-            <article key={i} className="blog-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
-              <img src={post.img} alt={post.title} loading="lazy" decoding="async" className="blog-card__img" />
-              <div className="blog-card__body">
-                <div className="blog-card__meta">
-                  <span className="blog-card__cat">{post.category}</span>
-                  <span className="blog-card__date">{post.date}</span>
-                </div>
-                <h2 className="blog-card__title">{post.title}</h2>
-                <p className="blog-card__excerpt">{post.excerpt}</p>
-                <span className="blog-card__link">Leer más <ArrowRight size={14} aria-hidden="true" /></span>
+        {loading && <p className="blog-state">Cargando artículos…</p>}
+        {!loading && error && <p className="blog-state">No se pudieron cargar los artículos: {error}</p>}
+        {!loading && !error && posts.length === 0 && <p className="blog-state">Aún no hay artículos publicados.</p>}
+        {!loading && !error && posts.length > 0 && (
+          <>
+            <div className="blog-container">
+              {posts.slice(0, visible).map((post, i) => (
+                <article key={post.id} className="blog-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
+                  <Link to={`/blog/${post.slug}`} className="blog-card__anchor">
+                    {post.cover_image ? (
+                      <img src={post.cover_image} alt={post.title} loading="lazy" decoding="async" className="blog-card__img" />
+                    ) : (
+                      <div className="blog-card__img blog-card__img--ph" aria-hidden="true">
+                        <FileText size={32} />
+                      </div>
+                    )}
+                    <div className="blog-card__body">
+                      <div className="blog-card__meta">
+                        {post.category && <span className="blog-card__cat">{post.category}</span>}
+                        <span className="blog-card__date">{formatDate(post.created_at)}</span>
+                      </div>
+                      <h2 className="blog-card__title">{post.title}</h2>
+                      {post.excerpt && <p className="blog-card__excerpt">{post.excerpt}</p>}
+                      <span className="blog-card__link">Leer más <ArrowRight size={14} aria-hidden="true" /></span>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+            {visible < posts.length && (
+              <div className="blog-more">
+                <button className="blog-more__btn" onClick={() => setVisible((v) => v + PAGE_SIZE)}>
+                  VER MÁS ARTÍCULOS
+                </button>
               </div>
-            </article>
-          ))}
-        </div>
+            )}
+          </>
+        )}
       </section>
 
       <section className="blog-newsletter">
@@ -73,6 +122,12 @@ const Blog = () => {
         .blog-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; transition: transform .3s; cursor: pointer; }
         .blog-card:hover { transform: translateY(-4px); }
         .blog-card__img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .blog-card__anchor { display: block; text-decoration: none; color: inherit; }
+        .blog-card__img--ph { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1B2A4A, #2c3f68); color: #C8E64A; }
+        .blog-state { font-family: 'Inter', sans-serif; font-size: 15px; color: #666; text-align: center; margin: 0; }
+        .blog-more { text-align: center; margin-top: 40px; }
+        .blog-more__btn { background: #C8E64A; color: #1A1A2E; padding: 14px 28px; border-radius: 60px; border: none; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .06em; cursor: pointer; transition: background .2s, color .2s; }
+        .blog-more__btn:hover { background: #8AB83A; color: white; }
         .blog-card__body { padding: 24px; }
         .blog-card__meta { display: flex; justify-content: space-between; margin-bottom: 12px; }
         .blog-card__cat { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: #8AB83A; text-transform: uppercase; letter-spacing: .08em; }
