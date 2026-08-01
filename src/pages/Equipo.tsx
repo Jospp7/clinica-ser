@@ -31,6 +31,31 @@ const PERFILES: Perfil[] = [
   },
 ];
 
+const EQUIPO_MEDICO = [
+  "4 Especialistas en Psiquiatría",
+  "4 Especialistas en Adicciones",
+  "2 Médicos Generales",
+  "5 Maestros en Psicología",
+  "1 Instructor de Yoga",
+  "1 Profesor de Educación Física",
+  "1 Licenciado en Artes Plásticas",
+  "1 Licenciada en Enfermería",
+  "8 Enfermeras Generales (2 Diplomadas en Psiquiatría)",
+  "2 Adictos en Recuperación (Programa de los 12 Pasos)",
+];
+
+const SERVICIOS_GENERALES = [
+  "2 Licenciados en Administración de Empresas",
+  "1 Contador Público",
+  "1 Recepcionista",
+  "5 Ayudantes de Cocina",
+  "2 Guardias de Seguridad",
+  "5 Intendentes",
+  "2 Lavanderas",
+  "1 Mensajero",
+];
+
+
 
 const Equipo = () => {
   useScrollToTop();
