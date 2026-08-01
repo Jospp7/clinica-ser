@@ -3,29 +3,34 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
 import { Phone, Mail, Check } from "lucide-react";
 
-const EQUIPO_MEDICO = [
-  "4 Especialistas en Psiquiatría",
-  "4 Especialistas en Adicciones",
-  "2 Médicos Generales",
-  "5 Maestros en Psicología",
-  "1 Instructor de Yoga",
-  "1 Profesor de Educación Física",
-  "1 Licenciado en Artes Plásticas",
-  "1 Licenciada en Enfermería",
-  "8 Enfermeras Generales (2 Diplomadas en Psiquiatría)",
-  "2 Adictos en Recuperación (Programa de los 12 Pasos)",
+interface Perfil {
+  nombre: string;
+  cargo: string;
+  formacion: string[];
+  especialidades?: string[];
+  congresos?: string[];
+  foto?: string;
+}
+
+const PERFILES: Perfil[] = [
+  {
+    nombre: "Doctor Jorge Alfredo Gayosso del Valle",
+    cargo: "Especialista en Psiquiatría",
+    formacion: [
+      "Doctor con especialidad en Psiquiatría.",
+      "Egresado de la Universidad Autónoma de Guadalajara. Cédula de Especialista: 3181351",
+      "Licenciatura en Medicina en la Benemérita Universidad Autónoma de Puebla. Cédula Profesional: 1659122",
+      "Diplomado en Adicción a Sustancias en el Centro de Estudios Superiores Monte Fénix.",
+    ],
+    congresos: [
+      "RWJ Pharmaceutical Research Institute Protocol: TOP-INT-50, Investigator's Meeting. Miami Beach, Florida, U.S.A.",
+      "Latin American Neuroscience Summit. Costa do Sauipe, Bahía, Brasil.",
+      "XIII WPA World Congress of Psychiatry. El Cairo, Egipto.",
+      "XXIV Congreso Asociación Psiquiátrica de América Latina (APAL). Punta Cana, Rep. Dom.",
+    ],
+  },
 ];
 
-const SERVICIOS_GENERALES = [
-  "2 Licenciados en Administración de Empresas",
-  "1 Contador Público",
-  "1 Recepcionista",
-  "5 Ayudantes de Cocina",
-  "2 Guardias de Seguridad",
-  "5 Intendentes",
-  "2 Lavanderas",
-  "1 Mensajero",
-];
 
 const Equipo = () => {
   useScrollToTop();
