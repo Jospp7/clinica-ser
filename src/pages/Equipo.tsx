@@ -3,6 +3,34 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
 import { Phone, Mail, Check } from "lucide-react";
 
+interface Perfil {
+  nombre: string;
+  cargo: string;
+  formacion: string[];
+  especialidades?: string[];
+  congresos?: string[];
+  foto?: string;
+}
+
+const PERFILES: Perfil[] = [
+  {
+    nombre: "Doctor Jorge Alfredo Gayosso del Valle",
+    cargo: "Especialista en Psiquiatría",
+    formacion: [
+      "Doctor con especialidad en Psiquiatría.",
+      "Egresado de la Universidad Autónoma de Guadalajara. Cédula de Especialista: 3181351",
+      "Licenciatura en Medicina en la Benemérita Universidad Autónoma de Puebla. Cédula Profesional: 1659122",
+      "Diplomado en Adicción a Sustancias en el Centro de Estudios Superiores Monte Fénix.",
+    ],
+    congresos: [
+      "RWJ Pharmaceutical Research Institute Protocol: TOP-INT-50, Investigator's Meeting. Miami Beach, Florida, U.S.A.",
+      "Latin American Neuroscience Summit. Costa do Sauipe, Bahía, Brasil.",
+      "XIII WPA World Congress of Psychiatry. El Cairo, Egipto.",
+      "XXIV Congreso Asociación Psiquiátrica de América Latina (APAL). Punta Cana, Rep. Dom.",
+    ],
+  },
+];
+
 const EQUIPO_MEDICO = [
   "4 Especialistas en Psiquiatría",
   "4 Especialistas en Adicciones",
@@ -26,6 +54,8 @@ const SERVICIOS_GENERALES = [
   "2 Lavanderas",
   "1 Mensajero",
 ];
+
+
 
 const Equipo = () => {
   useScrollToTop();
@@ -76,36 +106,48 @@ const Equipo = () => {
       </section>
 
       <section className="eq-pg__profile-section">
-        <div className="eq-pg__profile-container" data-anim="fade-up">
-          {/* TODO: imagen del cliente — foto del Dr. Jorge Alfredo Gayosso del Valle */}
-          <div className="eq-pg__profile-header">
-            <h2 className="eq-pg__profile-name">Doctor Jorge Alfredo Gayosso del Valle</h2>
-            <p className="eq-pg__profile-role">Especialista en Psiquiatría</p>
-          </div>
+        {PERFILES.map((perfil, idx) => (
+          <div key={idx} className="eq-pg__profile-container" data-anim="fade-up">
+            {/* TODO: imagen del cliente — foto de {perfil.nombre} */}
+            <div className="eq-pg__profile-header">
+              <h2 className="eq-pg__profile-name">{perfil.nombre}</h2>
+              <p className="eq-pg__profile-role">{perfil.cargo}</p>
+            </div>
 
-          <div className="eq-pg__profile-block">
-            <h3 className="eq-pg__profile-subtitle">Formación</h3>
-            <ul className="eq-pg__profile-list">
-              <li>Doctor con especialidad en Psiquiatría.</li>
-              <li>Egresado de la Universidad Autónoma de Guadalajara. Cédula de Especialista: 3181351</li>
-              <li>Licenciatura en Medicina en la Benemérita Universidad Autónoma de Puebla. Cédula Profesional: 1659122</li>
-              <li>Diplomado en Adicción a Sustancias en el Centro de Estudios Superiores Monte Fénix.</li>
-            </ul>
-          </div>
+            <div className="eq-pg__profile-block">
+              <h3 className="eq-pg__profile-subtitle">Formación</h3>
+              <ul className="eq-pg__profile-list">
+                {perfil.formacion.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="eq-pg__profile-block">
-            <h3 className="eq-pg__profile-subtitle">Cursos y congresos internacionales</h3>
-            <ul className="eq-pg__profile-list">
-              <li>RWJ Pharmaceutical Research Institute Protocol: TOP-INT-50, Investigator's Meeting. Miami Beach, Florida, U.S.A.</li>
-              <li>Latin American Neuroscience Summit. Costa do Sauipe, Bahía, Brasil.</li>
-              <li>XIII WPA World Congress of Psychiatry. El Cairo, Egipto.</li>
-              <li>XXIV Congreso Asociación Psiquiátrica de América Latina (APAL). Punta Cana, Rep. Dom.</li>
-            </ul>
+            {perfil.especialidades && perfil.especialidades.length > 0 && (
+              <div className="eq-pg__profile-block">
+                <h3 className="eq-pg__profile-subtitle">Entre sus especialidades resaltan</h3>
+                <ul className="eq-pg__profile-list">
+                  {perfil.especialidades.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {perfil.congresos && perfil.congresos.length > 0 && (
+              <div className="eq-pg__profile-block">
+                <h3 className="eq-pg__profile-subtitle">Cursos y congresos internacionales</h3>
+                <ul className="eq-pg__profile-list">
+                  {perfil.congresos.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-        </div>
+        ))}
       </section>
 
-      {/* TODO: 15 perfiles adicionales del equipo (fotos + bios) — pendiente segunda tanda. */}
 
       <section className="eq-pg__cta">
         <div className="eq-pg__cta-inner" data-anim="fade-up">
