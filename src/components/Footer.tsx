@@ -131,48 +131,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="footer-v2__bottom">
-        <div className="footer-v2__bottom-grid">
-          <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">{SITE.nombre}</h4>
-            <p className="footer-v2__bottom-text">{SITE.direccion}</p>
-            <p className="footer-v2__bottom-text">
-              <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__bottom-link">{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a><br/>
-              <a
-                href={waLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-v2__bottom-link"
-                onClick={() => trackCTAClick("WHATSAPP_FOOTER")}
-                title={`WhatsApp · ${SITE.whatsappHorario}`}
-                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
-                style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
-              >
-                <MessageCircle size={14} aria-hidden="true" /> WhatsApp <span style={{ color: "rgba(255,255,255,0.85)" }}>({SITE.whatsappHorario})</span>
-              </a>
-            </p>
-          </div>
-          <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">Mapa del sitio</h4>
-            <Link to="/" className="footer-v2__bottom-link">Inicio</Link>
-            <Link to="/por-que-elegirnos" className="footer-v2__bottom-link">Por qué elegirnos</Link>
-            <Link to="/instalaciones" className="footer-v2__bottom-link">Instalaciones</Link>
-          </div>
-          <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">¿Tienes alguna consulta?</h4>
-            <div style={{ display: "flex", gap: 8 }}>
-              <input placeholder="Tu email" className="footer-v2__bottom-input" />
-              <button className="footer-v2__bottom-btn">PREGÚNTANOS</button>
-            </div>
-          </div>
-        </div>
-        <div className="footer-v2__copyright">
-          <span>Copyright © 2024 SER Clínica</span>
-          <span style={{ display: "flex", gap: 8 }}>
-            <Link to="/admin/login" className="footer-v2__admin-link"><Lock size={12} aria-hidden="true" /> Admin</Link>
-          </span>
-        </div>
+      <div className="footer-v2__copyright">
+        <span>© {new Date().getFullYear()} {SITE.nombre}. Todos los derechos reservados.</span>
+        <span style={{ display: "flex", gap: 8 }}>
+          <Link to="/admin/login" className="footer-v2__admin-link"><Lock size={12} aria-hidden="true" /> Admin</Link>
+        </span>
       </div>
 
       <style>{`
@@ -200,20 +163,12 @@ const Footer = () => {
         .footer-v2__submit { padding: 14px 24px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.08em; transition: background 0.2s; }
         .footer-v2__submit:hover { background: #8AB83A; color: white; }
 
-        .footer-v2__bottom { background: #141E33; padding: 40px 24px 20px; }
-        .footer-v2__bottom-grid { max-width: 1200px; margin: 0 auto 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-        .footer-v2__bottom-heading { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: white; margin: 0 0 12px; }
-        .footer-v2__bottom-text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); margin: 0 0 4px; line-height: 1.5; }
-        .footer-v2__bottom-link { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; display: block; padding: 2px 0; transition: color 0.2s; }
-        .footer-v2__bottom-link:hover { color: #C8E64A; }
-        .footer-v2__bottom-input { flex: 1; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; background: rgba(255,255,255,0.05); color: white; font-size: 12px; font-family: 'Inter', sans-serif; }
-        .footer-v2__bottom-btn { padding: 8px 14px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; }
-        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); }
+        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding: 24px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); }
         .footer-v2__admin-link { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.4); text-decoration: none; opacity: 0.4; font-size: 11px; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
         .footer-v2__admin-link:hover { color: #C8E64A; }
 
         @media (max-width: 900px) {
-          .footer-v2__top-grid, .footer-v2__bottom-grid { grid-template-columns: 1fr; gap: 32px; }
+          .footer-v2__top-grid { grid-template-columns: 1fr; gap: 32px; }
         }
       `}</style>
     </footer>
