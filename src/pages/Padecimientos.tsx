@@ -62,11 +62,20 @@ const Padecimientos = () => {
                 <h2 className="pad-card__title">{c.title}</h2>
               </div>
               <p className="pad-card__desc">{c.desc}</p>
-              <Link to="/tratamiento" className="pad-card__link">
-                Conoce nuestro Modelo Hazelden <ArrowRight size={16} aria-hidden="true" />
-              </Link>
             </div>
           ))}
+        </div>
+
+        <div className="pad-treatment-cta" data-anim="fade-up">
+          <h2 className="pad-treatment-cta__title">Un mismo enfoque para cada padecimiento</h2>
+          <Link
+            to="/tratamiento"
+            className="pad-treatment-cta__btn"
+            onClick={() => trackCTAClick("PADECIMIENTOS_A_TRATAMIENTO")}
+          >
+            Conoce el Programa de Tratamiento Integral SER®, basado en el Modelo Hazelden
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
