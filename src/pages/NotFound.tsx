@@ -58,7 +58,7 @@ const NotFound = () => {
               <MessageCircle size={18} aria-hidden="true" /> Escribir por WhatsApp
             </a>
           </div>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
 
           <div className="nf__back">
             <Link to="/" className="nf__back-link">
