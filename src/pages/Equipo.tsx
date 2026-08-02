@@ -30,6 +30,92 @@ const PERFILES: Perfil[] = [
       "XXIV Congreso Asociación Psiquiátrica de América Latina (APAL). Punta Cana, Rep. Dom.",
     ],
   },
+  {
+    nombre: "Dra. Nadia Ivette Ibarias Cortés",
+    cargo: "Licenciada Médico Cirujano General Especializada en Adicciones",
+    formacion: [
+      "Licenciada Médico Cirujano General, especializada en adicciones.",
+      "Trabaja en Centros de Integración Juvenil.",
+      "Cuenta con 20 años de experiencia.",
+      "Cédula: 3309563.",
+    ],
+    congresos: [
+      "Curso Tratamiento Especializado en Consumo de Sustancias, CONADIC.",
+      "Programa Integral de Capacitación en Calidad de la Atención de los Establecimientos Residenciales Especializados en Adicciones.",
+      "Diplomado en Prevención y Manejo de las Adicciones.",
+      "Diplomado en Psiquiatría General y sus Aplicaciones Prácticas en el Contexto de Urgencias.",
+      "Jornadas de Psiquiatría y Neurociencias, CONAMEGE.",
+    ],
+  },
+  {
+    nombre: "Mto. Ángel David Herrera Pérez",
+    cargo: "Especializado en psicoterapia cognitivo conductual, terapeuta en clínica de adicciones",
+    formacion: [
+      "Licenciado en Psicología.",
+      "Maestrante en Psicoterapia Cognitivo Conductual.",
+      "Cuenta con 9 años de experiencia.",
+      "Cédula: 8680606.",
+    ],
+    especialidades: [
+      "Maestrante en Psicoterapia Cognitivo Conductual en Clínica SER.",
+    ],
+    congresos: [
+      "Curso en Primeros Auxilios Psicológicos.",
+      "Centro de Integración Juvenil Online.",
+      "Diplomado en Terapia Familiar Sistémica.",
+      "Psicoterapia 13, avalada por Secretaría de Salud y Hospital General de Pachuca.",
+      "Diplomado en Tanatología.",
+      "Seminario de Formación de Instructores CEFAPSIC.",
+    ],
+  },
+  {
+    nombre: "Mto. Andrés Luciano Gregorio",
+    cargo: "Especializado en rehabilitación, terapeuta en clínica de adicciones",
+    formacion: [
+      "Licenciado en Psicología con Maestría en Psicología Clínica y de la Salud, especializado en Rehabilitación de adicciones.",
+      "Nueve años de experiencia laboral en el campo clínico y seis años en el área de RRHH.",
+      "Cédula: 11050830.",
+    ],
+    especialidades: [
+      "Atención psicoterapéutica individual, grupal y familiar enfocada en la rehabilitación en adicciones, trastornos mentales y de comportamiento.",
+      "Experiencia en atención psicológica a infantes, adolescentes y adultos.",
+      "Experiencia en desarrollo del capital humano.",
+    ],
+    congresos: [
+      "Diplomado en Primeros Auxilios Psicológicos e Intervención en Crisis, IPSICA.",
+      "Diplomado en Psicooncología.",
+      "Entrenamiento en abordaje e intervención del suicidio, enfoque centrado en soluciones.",
+    ],
+  },
+  {
+    nombre: "Mta. Dulce María Cano Lara",
+    cargo: "Especializada en salud mental, terapeuta en clínica de adicciones",
+    formacion: [
+      "Licenciada en Psicología.",
+      "Maestría en Salud Mental.",
+      "Cuenta con 6 años de experiencia.",
+      "Cédula: 13547225.",
+    ],
+    congresos: [
+      "10º Congreso de Terapia de Juego.",
+      "Área de Psicología, DIF.",
+      "Atención a pacientes en adicción.",
+    ],
+  },
+  {
+    nombre: "Lic. Alan Alonso Gutiérrez Pérez",
+    cargo: "Profesor de Arteterapia especializado en adicciones",
+    formacion: [
+      "Licenciado en Artes Plásticas por el Instituto de Artes Plásticas del Estado.",
+      "Profesor de arteterapia en Clínica SER (2016 – actualidad).",
+      "Cédula profesional: 9835844.",
+    ],
+    especialidades: [
+      "Especialista en arteterapia: intervención que utiliza las artes plásticas como medio de diálogo para recuperar o mejorar la salud mental, el bienestar emocional y social de las personas. Las actividades artísticas refuerzan los beneficios de las terapias psicológicas como vía de expresión, comunicación y reflexión para el paciente.",
+      "Tallerista en el Centro de Bienestar del ISSTEP Puebla (2014-2017).",
+      "Profesor de arteterapia en Casa de Salud (2014-actualidad).",
+    ],
+  },
 ];
 
 const EQUIPO_MEDICO = [
