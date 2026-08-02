@@ -1,7 +1,8 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import { SITE } from "@/lib/site";
-import { Phone, Mail, Check } from "lucide-react";
+import { SITE, waLink } from "@/lib/site";
+import { trackCTAClick } from "@/hooks/useTracking";
+import { Phone, Mail, Check, MessageCircle } from "lucide-react";
 
 interface Perfil {
   nombre: string;
