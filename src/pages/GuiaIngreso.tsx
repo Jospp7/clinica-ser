@@ -168,7 +168,7 @@ const GuiaIngreso = () => {
                 <Mail size={16} aria-hidden="true" /> {SITE.email}
               </a>
             </div>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
             <Link to="/guia-intervencion" className="guia__back">
               Ver también: Guía de Intervención <ArrowRight size={14} aria-hidden="true" />
             </Link>

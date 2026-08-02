@@ -176,7 +176,7 @@ const BlogPost = () => {
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
           </div>
         )}
 
@@ -228,7 +228,7 @@ const BlogPost = () => {
                   <MessageCircle size={16} aria-hidden="true" /> WhatsApp
                 </a>
               </div>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
             </div>
           </article>
         )}
