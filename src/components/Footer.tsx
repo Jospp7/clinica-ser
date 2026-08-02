@@ -165,7 +165,7 @@ const Footer = () => {
         .footer-v2__submit { padding: 14px 24px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.08em; transition: background 0.2s; }
         .footer-v2__submit:hover { background: #8AB83A; color: white; }
 
-        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding: 24px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); }
+        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding: 24px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.55); }
         .footer-v2__admin-link { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.4); text-decoration: none; opacity: 0.4; font-size: 11px; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
         .footer-v2__admin-link:hover { color: #C8E64A; }
 
