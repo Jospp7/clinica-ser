@@ -1,7 +1,8 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import { SITE } from "@/lib/site";
-import { Phone, Mail, Check } from "lucide-react";
+import { SITE, waLink } from "@/lib/site";
+import { trackCTAClick } from "@/hooks/useTracking";
+import { Phone, Mail, Check, MessageCircle } from "lucide-react";
 
 interface Perfil {
   nombre: string;
@@ -144,6 +145,43 @@ const Equipo = () => {
                 </ul>
               </div>
             )}
+
+            <div className="eq-pg__profile-block eq-pg__profile-contact">
+              <h3 className="eq-pg__profile-subtitle">Agenda una consulta</h3>
+              <div className="eq-pg__contact-links">
+                <a
+                  href={`tel:${SITE.telefonoTel[0]}`}
+                  className="eq-pg__contact-link"
+                  aria-label={`Llamar al teléfono principal ${SITE.telefonos[0]}`}
+                  onClick={() => trackCTAClick("CONTACTO_PERFIL_TEL_PRINCIPAL")}
+                >
+                  <Phone size={16} aria-hidden="true" />
+                  <span>{SITE.telefonos[0]}</span>
+                </a>
+                <a
+                  href={`tel:${SITE.telefonoTel[1]}`}
+                  className="eq-pg__contact-link"
+                  aria-label={`Llamar al teléfono de emergencias 24 horas ${SITE.telefonos[1]}`}
+                  onClick={() => trackCTAClick("CONTACTO_PERFIL_TEL_EMERGENCIA")}
+                >
+                  <Phone size={16} aria-hidden="true" />
+                  <span>{SITE.telefonos[1]}</span>
+                  <span className="eq-pg__contact-badge">24 horas</span>
+                </a>
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="eq-pg__contact-link"
+                  aria-label={`Enviar mensaje por WhatsApp, horario ${SITE.whatsappHorario}`}
+                  onClick={() => trackCTAClick("CONTACTO_PERFIL_WA")}
+                >
+                  <MessageCircle size={16} aria-hidden="true" />
+                  <span>WhatsApp</span>
+                  <span className="eq-pg__contact-note">{SITE.whatsappHorario}</span>
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </section>
@@ -190,6 +228,14 @@ const Equipo = () => {
         .eq-pg__profile-list { list-style: none; margin: 0; padding: 0; }
         .eq-pg__profile-list li { font-family: 'Inter', sans-serif; font-size: 15px; color: #333; line-height: 1.7; padding: 8px 0 8px 20px; position: relative; }
         .eq-pg__profile-list li::before { content: '•'; position: absolute; left: 0; color: #C8E64A; font-weight: 700; }
+
+        .eq-pg__profile-contact { margin-top: 36px; padding-top: 28px; border-top: 1px solid #E5E7EB; }
+        .eq-pg__contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+        .eq-pg__contact-link { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 60px; padding: 10px 18px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #1A1A2E; text-decoration: none; transition: background-color .2s, border-color .2s; }
+        .eq-pg__contact-link:hover { background: #F3F6F1; border-color: #C8E64A; }
+        .eq-pg__contact-link > svg { color: #C8E64A; flex-shrink: 0; }
+        .eq-pg__contact-badge { margin-left: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; background: #1B2A4A; color: #FFFFFF; padding: 2px 8px; border-radius: 12px; font-weight: 700; }
+        .eq-pg__contact-note { margin-left: 4px; font-size: 12px; color: #666; font-weight: 500; }
 
         .eq-pg__cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .eq-pg__cta-inner { max-width: 700px; margin: 0 auto; }
