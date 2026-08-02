@@ -116,6 +116,72 @@ const PERFILES: Perfil[] = [
       "Profesor de arteterapia en Casa de Salud (2014-actualidad).",
     ],
   },
+  {
+    nombre: "Mta. Silvia Lucía Morales López (Ravi Nam Kaur)",
+    cargo: "Maestra de yoga especializada en clínica de adicciones",
+    formacion: [
+      "Maestra de yoga especializada en Kundalini Yoga.",
+      "Directora y maestra del centro de yoga «Casa GAIA Kundalini Yoga» en Puebla.",
+    ],
+    especialidades: [
+      "Experiencia en clínicas de recuperación de adicciones y clínicas psiquiátricas.",
+      "Experiencia en clubes sociales, colegios Montessori y particulares, pre-postnatal, y trabajo con mamás y niños con capacidades diferentes.",
+    ],
+    congresos: [
+      "Certificación Internacional de Kundalini Yoga por Kundalini Research Institute (KRI) e International Kundalini Yoga Teachers Association (IKYTA).",
+      "Certificación como entrenadora para yoga de niños y adolescentes por SICCED e Instituto Poblano del Deporte.",
+      "Certificación Internacional en yoga para niños, programa «Child Play Yoga».",
+    ],
+  },
+  {
+    nombre: "Lic. Juliana Domínguez Esparza",
+    cargo: "Maestra de Educación Física en Clínica de Adicciones",
+    formacion: [
+      "Licenciada en Cultura Física por la Benemérita Universidad Autónoma de Puebla (generación 2017–2021).",
+      "Cédula profesional: 13080654.",
+    ],
+    especialidades: [
+      "3 años de experiencia como maestra de educación y actividad física para pacientes psiquiátricos y en rehabilitación de adicciones.",
+    ],
+  },
+  {
+    nombre: "Dra. Rebeca Elizabeth Morales De Los Santos",
+    cargo: "Especialista en Psiquiatría y Tratamiento de Adicciones",
+    formacion: [
+      "Médico Cirujano por la Universidad Popular Autónoma del Estado de Puebla.",
+      "Médico Interno de pregrado por el Hospital General de Puebla, Secretaría de Salud.",
+      "Especialidad en Psiquiatría (2017), Hospital Psiquiátrico Dr. Rafael Serrano.",
+      "Cédula profesional: 10418569.",
+      "Alta Especialidad en Psiquiatría Legal (2017), Hospital Psiquiátrico Fray Bernardino Álvarez.",
+      "Recertificación por el Consejo Mexicano de Psiquiatría, 2023.",
+    ],
+    congresos: [
+      "Diplomado Introductorio al Estudio de las Adicciones (2017).",
+      "Diplomado en Prevención y Tratamiento del Consumo de Drogas, Centros de Integración Juvenil A.C. (2021).",
+      "Diplomado en Administración de Sistemas de Salud, Colegio Interdisciplinario de Profesionales de la Salud (2021).",
+      "Curso de Actualización en Psiquiatría, Instituto Nacional de Psiquiatría Dr. Ramón de la Fuente, CDMX (2017).",
+    ],
+  },
+  {
+    nombre: "Dr. Juan Alberto García Zúñiga",
+    cargo: "Médico Psiquiatra adscrito",
+    formacion: [
+      "Médico Cirujano y Partero por la Benemérita Universidad Autónoma de Puebla (BUAP).",
+      "Médico Psiquiatra por la Benemérita Universidad Autónoma de Puebla (BUAP).",
+    ],
+    especialidades: [
+      "Psiquiatra adscrito en Clínica SER.",
+      "Experiencia previa como psiquiatra en el Instituto Mexicano del Seguro Social (IMSS) y en Centro de Rehabilitación Integral.",
+      "Coautor del artículo «Uso prolongado de benzodiacepinas y su relación con el trastorno neurocognitivo menor», Revista Innovación y Desarrollo Tecnológico.",
+    ],
+    congresos: [
+      "Intervención mhGAP para trastornos mentales, neurológicos y por consumo de sustancias.",
+      "Tamizaje de salud mental en trabajadores y derechohabientes.",
+      "Intoxicaciones y envenenamientos frecuentes en urgencias.",
+      "Manejo integral en cuidados paliativos.",
+      "Vigilancia epidemiológica de enfermedades no transmisibles.",
+    ],
+  },
 ];
 
 const EQUIPO_MEDICO = [
