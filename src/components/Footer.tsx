@@ -138,7 +138,19 @@ const Footer = () => {
             <p className="footer-v2__bottom-text">{SITE.direccion}</p>
             <p className="footer-v2__bottom-text">
               <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__bottom-link">{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a><br/>
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-v2__bottom-link"
+                onClick={() => trackCTAClick("WHATSAPP_FOOTER")}
+                title={`WhatsApp · ${SITE.whatsappHorario}`}
+                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+              >
+                <MessageCircle size={14} aria-hidden="true" /> WhatsApp <span style={{ color: "rgba(255,255,255,0.85)" }}>({SITE.whatsappHorario})</span>
+              </a>
             </p>
           </div>
           <div className="footer-v2__bottom-col">
