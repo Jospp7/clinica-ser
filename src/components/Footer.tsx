@@ -131,48 +131,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="footer-v2__bottom">
-        <div className="footer-v2__bottom-grid">
-          <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">{SITE.nombre}</h4>
-            <p className="footer-v2__bottom-text">{SITE.direccion}</p>
-            <p className="footer-v2__bottom-text">
-              <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__bottom-link">{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a><br/>
-              <a
-                href={waLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-v2__bottom-link"
-                onClick={() => trackCTAClick("WHATSAPP_FOOTER")}
-                title={`WhatsApp · ${SITE.whatsappHorario}`}
-                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
-                style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
-              >
-                <MessageCircle size={14} aria-hidden="true" /> WhatsApp <span style={{ color: "rgba(255,255,255,0.85)" }}>({SITE.whatsappHorario})</span>
-              </a>
-            </p>
-          </div>
-          <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">Mapa del sitio</h4>
-            <Link to="/" className="footer-v2__bottom-link">Inicio</Link>
-            <Link to="/por-que-elegirnos" className="footer-v2__bottom-link">Por qué elegirnos</Link>
-            <Link to="/instalaciones" className="footer-v2__bottom-link">Instalaciones</Link>
-          </div>
-          <div className="footer-v2__bottom-col">
-            <h4 className="footer-v2__bottom-heading">¿Tienes alguna consulta?</h4>
-            <div style={{ display: "flex", gap: 8 }}>
-              <input placeholder="Tu email" className="footer-v2__bottom-input" />
-              <button className="footer-v2__bottom-btn">PREGÚNTANOS</button>
-            </div>
-          </div>
-        </div>
-        <div className="footer-v2__copyright">
-          <span>Copyright © 2024 SER Clínica</span>
-          <span style={{ display: "flex", gap: 8 }}>
-            <Link to="/admin/login" className="footer-v2__admin-link"><Lock size={12} aria-hidden="true" /> Admin</Link>
-          </span>
-        </div>
+      <div className="footer-v2__copyright">
+        <span>© {new Date().getFullYear()} {SITE.nombre}. Todos los derechos reservados.</span>
+        <span style={{ display: "flex", gap: 8 }}>
+          <Link to="/admin/login" className="footer-v2__admin-link"><Lock size={12} aria-hidden="true" /> Admin</Link>
+        </span>
       </div>
 
       <style>{`
