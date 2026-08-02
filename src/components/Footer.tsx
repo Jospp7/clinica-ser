@@ -139,7 +139,9 @@ const Footer = () => {
       </div>
 
       <style>{`
-        .footer-v2__top { background: #1B2A4A; padding: 60px 24px 40px; }
+        .footer-v2 { background: #1B2A4A; }
+        .footer-v2__top { padding: 60px 24px 40px; }
+
         .footer-v2__top-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
         .footer-v2__label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); display: block; margin-bottom: 16px; }
         .footer-v2__cenadic { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 800; color: #C8E64A; margin: 0 0 16px; }
