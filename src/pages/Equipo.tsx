@@ -145,6 +145,43 @@ const Equipo = () => {
                 </ul>
               </div>
             )}
+
+            <div className="eq-pg__profile-block eq-pg__profile-contact">
+              <h3 className="eq-pg__profile-subtitle">Agenda una consulta</h3>
+              <div className="eq-pg__contact-links">
+                <a
+                  href={`tel:${SITE.telefonoTel[0]}`}
+                  className="eq-pg__contact-link"
+                  aria-label={`Llamar al teléfono principal ${SITE.telefonos[0]}`}
+                  onClick={() => trackCTAClick("CONTACTO_PERFIL_TEL_PRINCIPAL")}
+                >
+                  <Phone size={16} aria-hidden="true" />
+                  <span>{SITE.telefonos[0]}</span>
+                </a>
+                <a
+                  href={`tel:${SITE.telefonoTel[1]}`}
+                  className="eq-pg__contact-link"
+                  aria-label={`Llamar al teléfono de emergencias 24 horas ${SITE.telefonos[1]}`}
+                  onClick={() => trackCTAClick("CONTACTO_PERFIL_TEL_EMERGENCIA")}
+                >
+                  <Phone size={16} aria-hidden="true" />
+                  <span>{SITE.telefonos[1]}</span>
+                  <span className="eq-pg__contact-badge">24 horas</span>
+                </a>
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="eq-pg__contact-link"
+                  aria-label={`Enviar mensaje por WhatsApp, horario ${SITE.whatsappHorario}`}
+                  onClick={() => trackCTAClick("CONTACTO_PERFIL_WA")}
+                >
+                  <MessageCircle size={16} aria-hidden="true" />
+                  <span>WhatsApp</span>
+                  <span className="eq-pg__contact-note">{SITE.whatsappHorario}</span>
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </section>
