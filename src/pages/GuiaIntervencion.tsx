@@ -202,10 +202,13 @@ const GuiaIntervencion = () => {
                 rel="noopener noreferrer"
                 className="guia__btn guia__btn--wa"
                 onClick={() => trackCTAClick("WA_GUIA_INTERVENCION")}
+                title={`WhatsApp · ${SITE.whatsappHorario}`}
+                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
               >
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
             <Link to="/guia-ingreso" className="guia__back">
               <ArrowRight size={14} aria-hidden="true" /> Guía de Ingreso
             </Link>

@@ -237,10 +237,13 @@ const PreguntasFrecuentes = () => {
                 rel="noopener noreferrer"
                 className="guia__btn guia__btn--wa"
                 onClick={() => trackCTAClick("WA_FAQ")}
+                title={`WhatsApp · ${SITE.whatsappHorario}`}
+                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
               >
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
           </section>
         </div>
       </article>
