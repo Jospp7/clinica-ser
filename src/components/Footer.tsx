@@ -168,7 +168,7 @@ const Footer = () => {
         .footer-v2__admin-link:hover { color: #C8E64A; }
 
         @media (max-width: 900px) {
-          .footer-v2__top-grid, .footer-v2__bottom-grid { grid-template-columns: 1fr; gap: 32px; }
+          .footer-v2__top-grid { grid-template-columns: 1fr; gap: 32px; }
         }
       `}</style>
     </footer>
