@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick } from "@/hooks/useTracking";
-import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf, Lock } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf, Lock, MessageCircle } from "lucide-react";
+import { SITE, waLink } from "@/lib/site";
 
 const Footer = () => {
   const [footerEmail, setFooterEmail] = useState("");
@@ -37,7 +37,19 @@ const Footer = () => {
             </p>
             <p className="footer-v2__phones">
               <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_1")}>{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>{SITE.telefonos[1]} (emergencias 24 h)</a>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__link" onClick={() => trackCTAClick("LLAMAR_FOOTER_2")}>{SITE.telefonos[1]} (emergencias 24 h)</a><br/>
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-v2__link"
+                onClick={() => trackCTAClick("WHATSAPP_FOOTER")}
+                title={`WhatsApp · ${SITE.whatsappHorario}`}
+                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+              >
+                <MessageCircle size={14} aria-hidden="true" /> WhatsApp <span style={{ color: "rgba(255,255,255,0.85)" }}>({SITE.whatsappHorario})</span>
+              </a>
             </p>
             <p className="footer-v2__email">{SITE.email}</p>
             <div className="footer-v2__socials">
@@ -126,7 +138,19 @@ const Footer = () => {
             <p className="footer-v2__bottom-text">{SITE.direccion}</p>
             <p className="footer-v2__bottom-text">
               <a href={`tel:${SITE.telefonoTel[0]}`} className="footer-v2__bottom-link">{SITE.telefonos[0]}</a><br/>
-              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a>
+              <a href={`tel:${SITE.telefonoTel[1]}`} className="footer-v2__bottom-link">{SITE.telefonos[1]} (emergencias 24 h)</a><br/>
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-v2__bottom-link"
+                onClick={() => trackCTAClick("WHATSAPP_FOOTER")}
+                title={`WhatsApp · ${SITE.whatsappHorario}`}
+                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
+              >
+                <MessageCircle size={14} aria-hidden="true" /> WhatsApp <span style={{ color: "rgba(255,255,255,0.85)" }}>({SITE.whatsappHorario})</span>
+              </a>
             </p>
           </div>
           <div className="footer-v2__bottom-col">

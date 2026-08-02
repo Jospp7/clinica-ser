@@ -84,7 +84,7 @@ const Padecimientos = () => {
           <h2 className="pad-cta__title">¿Tienes dudas sobre un caso?</h2>
           <p className="pad-cta__text">Nuestro equipo puede orientarte. La llamada es confidencial y no compromete a nada.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`Hablar con un especialista por WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> Hablar con un especialista</a>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
         </div>
       </section>
 
