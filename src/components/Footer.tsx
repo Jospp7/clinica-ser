@@ -163,15 +163,7 @@ const Footer = () => {
         .footer-v2__submit { padding: 14px 24px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.08em; transition: background 0.2s; }
         .footer-v2__submit:hover { background: #8AB83A; color: white; }
 
-        .footer-v2__bottom { background: #141E33; padding: 40px 24px 20px; }
-        .footer-v2__bottom-grid { max-width: 1200px; margin: 0 auto 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-        .footer-v2__bottom-heading { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: white; margin: 0 0 12px; }
-        .footer-v2__bottom-text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); margin: 0 0 4px; line-height: 1.5; }
-        .footer-v2__bottom-link { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; display: block; padding: 2px 0; transition: color 0.2s; }
-        .footer-v2__bottom-link:hover { color: #C8E64A; }
-        .footer-v2__bottom-input { flex: 1; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; background: rgba(255,255,255,0.05); color: white; font-size: 12px; font-family: 'Inter', sans-serif; }
-        .footer-v2__bottom-btn { padding: 8px 14px; background: #C8E64A; color: #1A1A2E; border: none; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; }
-        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); }
+        .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding: 24px; font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); }
         .footer-v2__admin-link { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.4); text-decoration: none; opacity: 0.4; font-size: 11px; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
         .footer-v2__admin-link:hover { color: #C8E64A; }
 
