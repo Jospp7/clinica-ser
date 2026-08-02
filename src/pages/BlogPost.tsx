@@ -170,10 +170,13 @@ const BlogPost = () => {
                 rel="noopener noreferrer"
                 className="bp__cta bp__cta--wa"
                 onClick={() => trackCTAClick("WHATSAPP_BLOG_ERROR")}
+                title={`WhatsApp · ${SITE.whatsappHorario}`}
+                aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
               >
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
           </div>
         )}
 
@@ -219,10 +222,13 @@ const BlogPost = () => {
                   rel="noopener noreferrer"
                   className="bp__cta bp__cta--wa"
                   onClick={() => trackCTAClick("WHATSAPP_BLOG_POST")}
+                  title={`WhatsApp · ${SITE.whatsappHorario}`}
+                  aria-label={`WhatsApp · ${SITE.whatsappHorario}`}
                 >
                   <MessageCircle size={16} aria-hidden="true" /> WhatsApp
                 </a>
               </div>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
             </div>
           </article>
         )}

@@ -1,7 +1,7 @@
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import { waLink } from "@/lib/site";
+import { SITE, waLink } from "@/lib/site";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 // Lista oficial de padecimientos validada por el cliente.
@@ -73,7 +73,8 @@ const Padecimientos = () => {
         <div className="pad-cta__inner" data-anim="fade-up">
           <h2 className="pad-cta__title">¿Tienes dudas sobre un caso?</h2>
           <p className="pad-cta__text">Nuestro equipo puede orientarte. La llamada es confidencial y no compromete a nada.</p>
-          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn"><MessageCircle size={18} aria-hidden="true" /> Hablar con un especialista</a>
+          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pad-cta__btn" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`Hablar con un especialista por WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> Hablar con un especialista</a>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
         </div>
       </section>
 

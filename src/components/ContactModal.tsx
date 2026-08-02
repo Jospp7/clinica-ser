@@ -84,7 +84,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
                   <div style={{ marginTop: 6, fontSize: 12 }}>
                     <a href={`tel:${SITE.telefonoTel[0]}`} style={{ color: "#8A1F1F", fontWeight: 700 }}>{SITE.telefonos[0]}</a>
                     {" · "}
-                    <a href={waLink()} target="_blank" rel="noopener noreferrer" style={{ color: "#8A1F1F", fontWeight: 700 }}>WhatsApp</a>
+                    <a href={waLink()} target="_blank" rel="noopener noreferrer" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`WhatsApp · ${SITE.whatsappHorario}`} style={{ color: "#8A1F1F", fontWeight: 700 }}>WhatsApp</a> <span style={{ fontSize: 12, opacity: 0.75 }}>({SITE.whatsappHorario})</span>
                   </div>
                 )}
               </div>

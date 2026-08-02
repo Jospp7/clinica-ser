@@ -52,10 +52,13 @@ const NotFound = () => {
               rel="noopener noreferrer"
               className="nf__cta nf__cta--wa"
               onClick={() => trackCTAClick("WHATSAPP_404")}
+              title={`WhatsApp · ${SITE.whatsappHorario}`}
+              aria-label={`Escribir por WhatsApp · ${SITE.whatsappHorario}`}
             >
               <MessageCircle size={18} aria-hidden="true" /> Escribir por WhatsApp
             </a>
           </div>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
 
           <div className="nf__back">
             <Link to="/" className="nf__back-link">

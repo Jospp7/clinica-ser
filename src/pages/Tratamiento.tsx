@@ -58,7 +58,7 @@ const Tratamiento = () => {
           <span className="trat-hero__tag">NUESTROS TRATAMIENTOS</span>
           <h1 className="trat-hero__title">Descubre nuestro tratamiento para adicciones</h1>
           <p className="trat-hero__sub">En Clínica SER, estamos a la vanguardia en la rehabilitación de adicciones como alcoholismo y drogadicción.</p>
-          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-hero__btn">AGENDA TU EVALUACIÓN</a>
+          <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-hero__btn" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`Agenda tu evaluación por WhatsApp · ${SITE.whatsappHorario}`}>AGENDA TU EVALUACIÓN</a>
         </div>
       </section>
 
@@ -158,8 +158,9 @@ const Tratamiento = () => {
           <p className="trat-cta__text">Nuestro equipo está disponible las 24 horas para orientarte.</p>
           <div className="trat-cta__btns">
             <a href={`tel:${SITE.telefonoTel[0]}`} className="trat-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa"><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
           </div>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, opacity: 0.75, marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
         </div>
       </section>
 
