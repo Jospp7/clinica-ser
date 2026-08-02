@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 import { MessageCircle, ArrowRight } from "lucide-react";
+import { trackCTAClick } from "@/hooks/useTracking";
 
 // Lista oficial de padecimientos validada por el cliente.
 const CONDITIONS = [
