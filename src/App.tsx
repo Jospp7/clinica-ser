@@ -20,7 +20,6 @@ import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
 import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
 import Equipo from "./pages/Equipo.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
-import NotFound from "./pages/NotFound.tsx";
 import LegacySlugRedirect from "./pages/LegacySlugRedirect.tsx";
 import Login from "./pages/admin/Login.tsx";
 import AdminLayout from "./pages/admin/AdminLayout.tsx";
