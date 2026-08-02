@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 import { MessageCircle, ArrowRight } from "lucide-react";
+import { trackCTAClick } from "@/hooks/useTracking";
 
 // Lista oficial de padecimientos validada por el cliente.
 const CONDITIONS = [
@@ -61,11 +62,20 @@ const Padecimientos = () => {
                 <h2 className="pad-card__title">{c.title}</h2>
               </div>
               <p className="pad-card__desc">{c.desc}</p>
-              <Link to="/tratamiento" className="pad-card__link">
-                Conoce nuestro Modelo Hazelden <ArrowRight size={16} aria-hidden="true" />
-              </Link>
             </div>
           ))}
+        </div>
+
+        <div className="pad-treatment-cta" data-anim="fade-up">
+          <h2 className="pad-treatment-cta__title">Un mismo enfoque para cada padecimiento</h2>
+          <Link
+            to="/tratamiento"
+            className="pad-treatment-cta__btn"
+            onClick={() => trackCTAClick("PADECIMIENTOS_A_TRATAMIENTO")}
+          >
+            Conoce el Programa de Tratamiento Integral SER®, basado en el Modelo Hazelden
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
@@ -95,8 +105,10 @@ const Padecimientos = () => {
         .pad-card__num { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: #C8E64A; }
         .pad-card__title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #1A1A2E; margin: 0; }
         .pad-card__desc { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 16px; }
-        .pad-card__link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #1B2A4A; text-decoration: none; border-bottom: 1px solid #C8E64A; padding-bottom: 2px; transition: color .2s; }
-        .pad-card__link:hover { color: #8AB83A; }
+        .pad-treatment-cta { max-width: 900px; margin: clamp(48px, 6vw, 72px) auto 0; background: #1A1A2E; border: 1px solid rgba(200,230,74,.25); border-radius: 24px; padding: clamp(36px, 5vw, 56px); text-align: center; }
+        .pad-treatment-cta__title { font-family: 'Inter', sans-serif; font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: white; margin: 0 0 24px; line-height: 1.4; }
+        .pad-treatment-cta__btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #C8E64A; color: #1A1A2E; padding: 16px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; text-align: center; max-width: 100%; }
+        .pad-treatment-cta__btn:hover { background: #8AB83A; color: white; transform: translateY(-2px); }
 
         .pad-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .pad-cta__inner { max-width: 600px; margin: 0 auto; }
@@ -105,7 +117,7 @@ const Padecimientos = () => {
         .pad-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #C8E64A; color: #1A1A2E; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
         .pad-cta__btn:hover { background: #8AB83A; color: white; }
 
-        @media (max-width: 768px) { .pad-container { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .pad-container { grid-template-columns: 1fr; } .pad-treatment-cta__btn { font-size: 14px; padding: 14px 24px; } }
       `}</style>
     </main>
   );
