@@ -184,7 +184,7 @@ const Tratamiento = () => {
         .trat-grid__container { max-width: 1200px; margin: 0 auto; }
         .trat-grid__tag { display: block; font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #8AB83A; margin-bottom: 12px; text-align: center; }
         .trat-grid__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
-        .trat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .trat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
         .trat-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
         .trat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06); }
         .trat-card__body { padding: 24px; }

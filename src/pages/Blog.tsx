@@ -119,8 +119,8 @@ const Blog = () => {
 
         .blog-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .blog-container { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
-        .blog-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; transition: transform .3s; cursor: pointer; }
-        .blog-card:hover { transform: translateY(-4px); }
+        .blog-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform .3s, box-shadow .3s; cursor: pointer; }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
         .blog-card__img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .blog-card__anchor { display: block; text-decoration: none; color: inherit; }
         .blog-card__img--ph { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1B2A4A, #2c3f68); color: #C8E64A; }
