@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { trackFormSubmit } from "@/hooks/useTracking";
 import { X, CheckCircle2 } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 
