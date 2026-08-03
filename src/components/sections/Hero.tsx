@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import ContactModal from "../ContactModal";
 import { trackCTAClick } from "@/hooks/useTracking";
+import { waLink } from "@/lib/site";
 import logoSer from "@/assets/logo-ser.png";
 import { Phone, MessageCircle } from "lucide-react";
 
@@ -180,10 +181,17 @@ const Hero = () => {
           </div>
           <div className="hero__ellipse hero__ellipse--1" aria-hidden="true" />
           <div className="hero__ellipse hero__ellipse--2" aria-hidden="true" />
-          <div className="hero__wa-bubble" aria-hidden="true">
+          <a
+            className="hero__wa-bubble"
+            href={waLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contáctanos por WhatsApp"
+            onClick={() => trackCTAClick("WA_HERO_BUBBLE")}
+          >
             <MessageCircle size={16} className="hero__wa-icon" />
             <span className="hero__wa-text">Hola, ¿necesitas ayuda?</span>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -251,7 +259,7 @@ const Hero = () => {
         .hero__ellipse { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); }
         .hero__ellipse--1 { width: 340px; height: 340px; top: -10px; right: -20px; }
         .hero__ellipse--2 { width: 200px; height: 200px; bottom: 20px; right: 200px; }
-        .hero__wa-bubble { position: absolute; bottom: 10px; right: 10px; background: white; color: #1A1A2E; padding: 10px 18px; border-radius: 24px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); z-index: 5; animation: hero-fade-up 0.8s ease 1s both; }
+        .hero__wa-bubble { position: absolute; bottom: 10px; right: 10px; background: white; color: #1A1A2E; padding: 10px 18px; border-radius: 24px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); z-index: 5; animation: hero-fade-up 0.8s ease 1s both; cursor: pointer; text-decoration: none; }
         .hero__wa-icon { font-size: 16px; }
 
         @media (max-width: 900px) {
