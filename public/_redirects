@@ -1,0 +1,55 @@
+# ============================================================
+# Redirecciones 301 — migración clinicaser.com (sitio viejo -> sitio nuevo)
+# Formato Cloudflare Pages. El ORDEN importa: la primera coincidencia gana.
+# Por eso las reglas específicas van ANTES que cualquier patrón general.
+# ============================================================
+
+# --- Páginas core renombradas ---
+/porque-elegir-ser              /por-que-elegirnos   301
+/pagina-de-inicio               /                    301
+
+# --- 12 páginas de padecimientos -> /padecimientos ---
+/adiccion-a-los-opiaceos-senales-de-alerta                                      /padecimientos   301
+/tratamiento-del-trastorno-por-consumo-de-opiaceos                             /padecimientos   301
+/centros-de-rehabilitacion-para-medicamentos-psicotropicos                     /padecimientos   301
+/tratamiento-de-adiccion-de-los-medicamentos-psicotropicos                     /padecimientos   301
+/tratamiento-del-alcoholismo                                                   /padecimientos   301
+/programa-de-tratamiento-y-rehabilitacion-del-alcohol                          /padecimientos   301
+/atencion-al-juego-compulsivo                                                  /padecimientos   301
+/tratamiento-y-rehabilitacion-de-la-ludopatia                                  /padecimientos   301
+/centros-de-rehabilitacion-para-adictos-a-internet                             /padecimientos   301
+/centros-de-rehabilitacion-para-adictos-al-celular                             /padecimientos   301
+/centro-de-desintoxicacion-para-drogas                                         /padecimientos   301
+/clinicas-de-rehabilitacion-de-adicciones-un-refugio-de-esperanza-y-transformacion   /padecimientos   301
+
+# --- 16 perfiles individuales del equipo -> /equipo ---
+/dra-nadia-ivette-ibarias-cortes                        /equipo   301
+/dra-rebeca-elizabeth-morales-de-los-santos             /equipo   301
+/dr-jose-gayosso                                        /equipo   301
+/mto-andres-luciano-gregorio                            /equipo   301
+/angel-david-herrera-perez                              /equipo   301
+/dulce-maria-cano-lara                                  /equipo   301
+/lic-alan-alonso-gutierrez-perez                        /equipo   301
+/silvia-lucia-morales-lopez                             /equipo   301
+/lic-juliana-dominguez-esparza                          /equipo   301
+/hiram-alejandro-suarez-martinez                        /equipo   301
+/lic-maricela-calderon-mendez                           /equipo   301
+/guillermo-rojas-ayon                                   /equipo   301
+/digna-salgado-neri                                     /equipo   301
+/jefa-de-enfermeras-maria-antonia-ubaldo-rodriguez      /equipo   301
+/enfermera-jersey-arenas-cholula                        /equipo   301
+/enf-anahi-alatriste                                    /equipo   301
+
+# --- Tienda WooCommerce abandonada -> inicio ---
+/tienda                         /   301
+/carrito                        /   301
+/finalizar-compra               /   301
+/mi-cuenta                      /   301
+
+# --- Páginas de desarrollo/basura -> inicio ---
+/1-redesign                     /   301
+/testing                        /   301
+
+# --- Páginas retiradas por decisión del cliente -> inicio ---
+/aviso-privacidad               /   301
+/contacto                       /   301
