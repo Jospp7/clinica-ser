@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { usePageTracking } from "@/hooks/useTracking";
 import IntroMask from "@/components/IntroMask";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -34,6 +35,7 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   useScrollReveal();
+  usePageTracking();
   return (
     <Routes>
       <Route path="/" element={<Index />} />
