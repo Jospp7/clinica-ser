@@ -14,25 +14,29 @@ export function useScrollReveal() {
       return
     }
 
-    const observe = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible')
-              observer.unobserve(entry.target)
-            }
-          })
-        },
-        { threshold: 0.01, rootMargin: '0px 0px 50px 0px' }
-      )
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.01, rootMargin: '0px 0px 50px 0px' }
+    )
 
+    const observe = () => {
       document.querySelectorAll('[data-anim]:not(.is-visible)').forEach((el) => observer.observe(el))
       return observer
     }
 
     // Initial observe
     let obs = observe()
+
+    // Catch elements added later (async data, "load more", etc.)
+    const mo = new MutationObserver(() => observe())
+    mo.observe(document.body, { childList: true, subtree: true })
 
     // Re-observe shortly after mount to catch elements already in viewport
     const t1 = setTimeout(() => { obs?.disconnect(); obs = observe() }, 50)
@@ -53,6 +57,7 @@ export function useScrollReveal() {
 
     return () => {
       obs?.disconnect()
+      mo.disconnect()
       clearTimeout(t1)
       clearTimeout(t2)
       clearTimeout(scrollTimer)
