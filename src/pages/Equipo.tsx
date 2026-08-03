@@ -197,16 +197,6 @@ const EQUIPO_MEDICO = [
   "2 Adictos en Recuperación (Programa de los 12 Pasos)",
 ];
 
-const SERVICIOS_GENERALES = [
-  "2 Licenciados en Administración de Empresas",
-  "1 Contador Público",
-  "1 Recepcionista",
-  "5 Ayudantes de Cocina",
-  "2 Guardias de Seguridad",
-  "5 Intendentes",
-  "2 Lavanderas",
-  "1 Mensajero",
-];
 
 
 
