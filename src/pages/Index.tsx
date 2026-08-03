@@ -5,11 +5,7 @@ import Instalaciones from "@/components/sections/Instalaciones";
 import TiposIngreso from "@/components/sections/TiposIngreso";
 import CTAFinal from "@/components/sections/CTAFinal";
 import Mapa from "@/components/sections/Mapa";
-import { usePageView } from "@/hooks/useTracking";
-
 const Index = () => {
-  usePageView();
-
   return (
     <main>
       <Seo
