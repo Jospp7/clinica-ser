@@ -29,7 +29,7 @@ const Login = () => {
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#1B2A4A", fontFamily: "'Inter', sans-serif" }}>
       <form onSubmit={handleSubmit} style={{ background: "white", borderRadius: 16, padding: "48px 40px", width: "100%", maxWidth: 400, boxShadow: "0 20px 60px rgba(0,0,0,.3)" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
-          <img src={logoSer} alt="Logo SER" style={{ height: 48, margin: "0 auto 16px" }} />
+          <img src={logoSer} alt="Logo Clínica SER" style={{ height: 96, width: "auto", display: "block", margin: "0 auto 24px" }} />
           <h1 style={{ fontSize: 20, fontWeight: 700, color: "#1A1A2E", margin: 0 }}>Panel de Administración</h1>
         </div>
         {error && <div style={{ background: "#FEE2E2", color: "#C0392B", padding: "10px 14px", borderRadius: 8, fontSize: 13, marginBottom: 16 }}>{error}</div>}
