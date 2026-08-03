@@ -17,6 +17,7 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import GuiaIngreso from "./pages/GuiaIngreso.tsx";
 import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
+import Guias from "./pages/Guias.tsx";
 import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
 import Equipo from "./pages/Equipo.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
@@ -43,6 +44,7 @@ const AppContent = () => {
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/guia-ingreso" element={<GuiaIngreso />} />
       <Route path="/guia-intervencion" element={<GuiaIntervencion />} />
+      <Route path="/guias" element={<Guias />} />
       <Route path="/por-que-elegirnos" element={<PorQueElegirnos />} />
       <Route path="/equipo" element={<Equipo />} />
       <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
