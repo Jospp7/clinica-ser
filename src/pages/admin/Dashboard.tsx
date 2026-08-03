@@ -78,7 +78,7 @@ const Dashboard = () => {
       </div>
 
       <div style={{ background: "white", borderRadius: 12, padding: 24, marginBottom: 32, boxShadow: "0 1px 3px rgba(0,0,0,.06)" }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Visitas — Últimos 7 días</h3>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Visitantes únicos — Últimos 7 días</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
