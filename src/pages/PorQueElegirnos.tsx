@@ -114,7 +114,8 @@ const PorQueElegirnos = () => {
         .pqe-reasons { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .pqe-reasons__container { max-width: 1200px; margin: 0 auto; }
         .pqe-reasons__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
-        .pqe-reasons__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+        .pqe-reasons__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .pqe-reasons__grid > .pqe-reason:last-child:nth-child(3n+1) { grid-column: 2 / 3; }
         .pqe-reason { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .pqe-reason:hover { transform: translateY(-4px); }
         .pqe-reason__icon { font-size: 36px; font-weight: 800; color: #C8E64A; display: block; margin-bottom: 16px; }
@@ -144,6 +145,7 @@ const PorQueElegirnos = () => {
 
         @media (max-width: 900px) {
           .pqe-reasons__grid { grid-template-columns: repeat(2,1fr); }
+          .pqe-reasons__grid > .pqe-reason:last-child:nth-child(3n+1) { grid-column: auto; }
           .pqe-timeline__grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
