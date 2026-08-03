@@ -237,14 +237,6 @@ const Equipo = () => {
               ))}
             </ul>
           </div>
-          <div className="eq-pg__list-card" data-anim="fade-up">
-            <h2 className="eq-pg__list-title">Servicios Generales</h2>
-            <ul className="eq-pg__list">
-              {SERVICIOS_GENERALES.map((item, i) => (
-                <li key={i}><Check size={16} aria-hidden="true" /><span>{item}</span></li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
