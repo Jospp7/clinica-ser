@@ -197,16 +197,6 @@ const EQUIPO_MEDICO = [
   "2 Adictos en Recuperación (Programa de los 12 Pasos)",
 ];
 
-const SERVICIOS_GENERALES = [
-  "2 Licenciados en Administración de Empresas",
-  "1 Contador Público",
-  "1 Recepcionista",
-  "5 Ayudantes de Cocina",
-  "2 Guardias de Seguridad",
-  "5 Intendentes",
-  "2 Lavanderas",
-  "1 Mensajero",
-];
 
 
 
@@ -243,14 +233,6 @@ const Equipo = () => {
             <h2 className="eq-pg__list-title">Equipo Médico y Paramédico</h2>
             <ul className="eq-pg__list">
               {EQUIPO_MEDICO.map((item, i) => (
-                <li key={i}><Check size={16} aria-hidden="true" /><span>{item}</span></li>
-              ))}
-            </ul>
-          </div>
-          <div className="eq-pg__list-card" data-anim="fade-up">
-            <h2 className="eq-pg__list-title">Servicios Generales</h2>
-            <ul className="eq-pg__list">
-              {SERVICIOS_GENERALES.map((item, i) => (
                 <li key={i}><Check size={16} aria-hidden="true" /><span>{item}</span></li>
               ))}
             </ul>
@@ -362,7 +344,7 @@ const Equipo = () => {
         .eq-pg__intro { font-family: 'Inter', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
 
         .eq-pg__lists { background: #F5F5F5; padding: clamp(64px,8vw,100px) 24px; }
-        .eq-pg__lists-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .eq-pg__lists-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 32px; }
         .eq-pg__list-card { background: #FFFFFF; border-radius: 20px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,.05); }
         .eq-pg__list-title { font-family: 'Inter', sans-serif; font-size: clamp(20px,2vw,26px); font-weight: 700; color: #1A1A2E; margin: 0 0 24px; }
         .eq-pg__list { list-style: none; margin: 0; padding: 0; }
