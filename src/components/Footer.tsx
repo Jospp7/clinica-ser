@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { trackCTAClick } from "@/hooks/useTracking";
+import { trackCTAClick, trackFormSubmit } from "@/hooks/useTracking";
 import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf, Lock, MessageCircle } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 
@@ -20,6 +20,7 @@ const Footer = () => {
       return;
     }
     setFooterSent(true);
+    trackFormSubmit("footer");
     setFooterEmail("");
     setTimeout(() => setFooterSent(false), 3000);
   };
