@@ -45,8 +45,10 @@ const AdminLayout = () => {
         position: "fixed", top: 0, bottom: 0, left: sidebarOpen ? 0 : -240, zIndex: 999,
         transition: "left .3s ease",
       }} className="admin-sidebar">
-        <div style={{ padding: "24px 20px", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
-          <img src={logoSer} alt="SER" style={{ height: 32, filter: "brightness(10)" }} />
+        <div style={{ padding: "20px", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
+          <span style={{ display: "inline-flex", background: "rgba(255,255,255,.95)", borderRadius: 12, padding: "8px 14px" }}>
+            <img src={logoSer} alt="Clínica SER" style={{ height: 40, width: "auto", display: "block" }} />
+          </span>
         </div>
         <nav style={{ flex: 1, padding: "16px 12px" }}>
           {NAV.map(item => (

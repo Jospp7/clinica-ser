@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Eye, MousePointerClick, Mail, FileText, LucideIcon } from "lucide-react";
+import { Users, PhoneCall, Mail, FileText, LucideIcon } from "lucide-react";
 
 interface Metric { label: string; icon: LucideIcon; value: number | string; }
 
@@ -15,38 +15,47 @@ const Dashboard = () => {
   useEffect(() => {
     const load = async () => {
       const today = new Date().toISOString().split("T")[0];
+      const weekStart = new Date(Date.now() - 6 * 86400000).toISOString().split("T")[0];
 
-      const [pvToday, ctaToday, newContacts, publishedPosts, recentContacts, recentPosts] = await Promise.all([
-        supabase.from("page_events").select("id", { count: "exact", head: true }).eq("event_type", "pageview").gte("created_at", today),
-        supabase.from("page_events").select("id", { count: "exact", head: true }).eq("event_type", "cta_click").gte("created_at", today),
+      const [weekEvents, newContacts, publishedPosts, recentContacts, recentPosts] = await Promise.all([
+        supabase.from("page_events").select("event_type,label,created_at,metadata").gte("created_at", weekStart).limit(20000),
         supabase.from("contacts").select("id", { count: "exact", head: true }).eq("status", "nuevo"),
         supabase.from("posts").select("id", { count: "exact", head: true }).eq("status", "published"),
         supabase.from("contacts").select("*").order("created_at", { ascending: false }).limit(5),
         supabase.from("posts").select("*").order("created_at", { ascending: false }).limit(5),
       ]);
 
-      [pvToday, ctaToday, newContacts, publishedPosts, recentContacts, recentPosts].forEach((r, i) => {
+      [weekEvents, newContacts, publishedPosts, recentContacts, recentPosts].forEach((r, i) => {
         if (r.error) console.error(`[Dashboard] load query ${i} failed:`, r.error);
       });
 
+      type Ev = { event_type: string; label: string | null; created_at: string; metadata: Record<string, unknown> | null };
+      const evs = (weekEvents.data ?? []) as Ev[];
+      const isContactCta = (l: string) => /^LLAMA|^WA_|WHATSAPP/.test(l);
+      const todayEvs = evs.filter(e => e.created_at.startsWith(today));
+      const visitorsToday = new Set(
+        todayEvs.filter(e => e.event_type === "pageview").map(e => (e.metadata?.["session_id"] as string) ?? "").filter(Boolean)
+      ).size;
+      const contactClicksToday = todayEvs.filter(e => e.event_type === "cta_click" && isContactCta(e.label ?? "")).length;
+
       setMetrics([
-        { label: "Visitas hoy", icon: Eye, value: pvToday.count ?? 0 },
-        { label: "Clicks CTAs hoy", icon: MousePointerClick, value: ctaToday.count ?? 0 },
+        { label: "Visitantes hoy", icon: Users, value: visitorsToday },
+        { label: "Clics de contacto hoy", icon: PhoneCall, value: contactClicksToday },
         { label: "Contactos nuevos", icon: Mail, value: newContacts.count ?? 0 },
         { label: "Posts publicados", icon: FileText, value: publishedPosts.count ?? 0 },
       ]);
       setContacts(recentContacts.data ?? []);
       setPosts(recentPosts.data ?? []);
 
-      const days: {date: string; views: number}[] = [];
+      const buckets: Record<string, Set<string>> = {};
       for (let i = 6; i >= 0; i--) {
-        const d = new Date(); d.setDate(d.getDate() - i);
-        const ds = d.toISOString().split("T")[0];
-        const { count, error } = await supabase.from("page_events").select("id", { count: "exact", head: true }).eq("event_type", "pageview").gte("created_at", ds).lt("created_at", new Date(d.getTime() + 86400000).toISOString().split("T")[0]);
-        if (error) console.error("[Dashboard] chart day query failed:", error);
-        days.push({ date: ds.slice(5), views: count ?? 0 });
+        buckets[new Date(Date.now() - i * 86400000).toISOString().split("T")[0]] = new Set();
       }
-      setChartData(days);
+      evs.filter(e => e.event_type === "pageview").forEach(e => {
+        const d = e.created_at.split("T")[0];
+        if (buckets[d]) buckets[d].add((e.metadata?.["session_id"] as string) ?? "");
+      });
+      setChartData(Object.entries(buckets).map(([d, s]) => ({ date: d.slice(5), views: s.size })));
       setLoading(false);
     };
     load();
@@ -69,7 +78,7 @@ const Dashboard = () => {
       </div>
 
       <div style={{ background: "white", borderRadius: 12, padding: 24, marginBottom: 32, boxShadow: "0 1px 3px rgba(0,0,0,.06)" }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Visitas — Últimos 7 días</h3>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Visitantes únicos — Últimos 7 días</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />

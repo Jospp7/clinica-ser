@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: "INSTALACIONES", href: "/instalaciones" },
   { label: "PADECIMIENTOS", href: "/padecimientos" },
   { label: "EQUIPO", href: "/equipo" },
+  { label: "GUÍAS", href: "/guias" },
   { label: "BLOG", href: "/blog" },
   { label: "POR QUÉ ELEGIRNOS", href: "/por-que-elegirnos" },
 ];
@@ -44,6 +45,11 @@ const Navbar = () => {
 
   useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
+  const isActive = (href: string) =>
+    href === "/guias"
+      ? location.pathname.startsWith("/guia")
+      : location.pathname === href;
+
   return (
     <nav aria-label="Navegación principal" className="nav-ser">
       <div className={`nav-ser__bar ${scrolled ? "nav-ser__bar--scrolled" : ""}`}>
@@ -54,7 +60,7 @@ const Navbar = () => {
         <ul className="nav-ser__links">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <Link to={link.href} className={`nav-ser__link ${location.pathname === link.href ? "nav-ser__link--active" : ""}`}>{link.label}</Link>
+              <Link to={link.href} className={`nav-ser__link ${isActive(link.href) ? "nav-ser__link--active" : ""}`}>{link.label}</Link>
             </li>
           ))}
         </ul>
@@ -80,11 +86,12 @@ const Navbar = () => {
 
       <style>{`
         .nav-ser { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
-        .nav-ser__bar { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 clamp(16px,3vw,48px); background: rgba(15, 25, 60, 0.45); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12); transition: all .3s ease; }
+        .nav-ser__bar { display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 clamp(16px,3vw,48px); background: rgba(15, 25, 60, 0.45); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12); transition: all .3s ease; }
         .nav-ser__bar--scrolled { background: rgba(15, 25, 60, 0.65); box-shadow: 0 4px 24px rgba(0,0,0,.25); }
-        .nav-ser__logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-        .nav-ser__logo-img { height: 48px; width: auto; }
-        .nav-ser__links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+        .nav-ser__logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; background: rgba(255,255,255,.94); border: 1px solid rgba(255,255,255,.6); border-radius: 14px; padding: 6px 16px; box-shadow: 0 4px 14px rgba(0,0,0,.14); transition: background .3s ease; }
+        .nav-ser__logo:hover { background: #fff; }
+        .nav-ser__logo-img { height: 52px; width: auto; display: block; }
+        .nav-ser__links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
         .nav-ser__link { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.7); text-decoration: none; padding: 4px 0; position: relative; transition: color .2s ease; }
         .nav-ser__link:hover, .nav-ser__link--active { color: #fff; }
         .nav-ser__link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: #C8E64A; transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
@@ -110,6 +117,9 @@ const Navbar = () => {
           .nav-ser__links { display: none; }
           .nav-ser__cta { display: none; }
           .nav-ser__menu-btn { display: inline-flex; }
+          .nav-ser__bar { height: 64px; }
+          .nav-ser__logo-img { height: 40px; }
+          .nav-ser__logo { padding: 5px 12px; border-radius: 12px; }
         }
         @media (min-width: 901px) { .nav-ser__menu-btn { display: none; } }
       `}</style>

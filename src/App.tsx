@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { usePageTracking } from "@/hooks/useTracking";
 import IntroMask from "@/components/IntroMask";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import GuiaIngreso from "./pages/GuiaIngreso.tsx";
 import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
+import Guias from "./pages/Guias.tsx";
 import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
 import Equipo from "./pages/Equipo.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
@@ -33,6 +35,7 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   useScrollReveal();
+  usePageTracking();
   return (
     <Routes>
       <Route path="/" element={<Index />} />
@@ -43,6 +46,7 @@ const AppContent = () => {
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/guia-ingreso" element={<GuiaIngreso />} />
       <Route path="/guia-intervencion" element={<GuiaIntervencion />} />
+      <Route path="/guias" element={<Guias />} />
       <Route path="/por-que-elegirnos" element={<PorQueElegirnos />} />
       <Route path="/equipo" element={<Equipo />} />
       <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
