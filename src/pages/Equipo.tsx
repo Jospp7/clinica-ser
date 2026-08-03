@@ -344,7 +344,7 @@ const Equipo = () => {
         .eq-pg__intro { font-family: 'Inter', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
 
         .eq-pg__lists { background: #F5F5F5; padding: clamp(64px,8vw,100px) 24px; }
-        .eq-pg__lists-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .eq-pg__lists-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 32px; }
         .eq-pg__list-card { background: #FFFFFF; border-radius: 20px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,.05); }
         .eq-pg__list-title { font-family: 'Inter', sans-serif; font-size: clamp(20px,2vw,26px); font-weight: 700; color: #1A1A2E; margin: 0 0 24px; }
         .eq-pg__list { list-style: none; margin: 0; padding: 0; }
