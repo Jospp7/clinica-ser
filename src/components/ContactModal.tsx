@@ -38,6 +38,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
       }
       setSending(false);
       setSent(true);
+      trackFormSubmit(source);
       setTimeout(() => { onClose(); setSent(false); setName(""); setPhone(""); setEmail(""); setMessage(""); }, 2000);
     } catch (err) {
       console.error("[ContactModal] insert threw:", err);
