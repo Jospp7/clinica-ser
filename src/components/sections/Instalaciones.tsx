@@ -50,9 +50,9 @@ const Instalaciones = () => {
           .inst-v2__stack-img.inst-v2__placeholder { height: 180px; }
         }
         .inst-v2__info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 40px; position: relative; }
-        .inst-v2__circle-deco { width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,230,74,0.3); position: absolute; top: 0; right: 0; }
-        .inst-v2__tag { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-top: 40px; }
-        .inst-v2__phone-btn { display: flex; align-items: center; gap: 10px; background: #1B2A4A; color: white; padding: 16px 28px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; min-width: 240px; }
+        .inst-v2__circle-deco { width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(217,199,86,0.3); position: absolute; top: 0; right: 0; }
+        .inst-v2__tag { font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-top: 40px; }
+        .inst-v2__phone-btn { display: flex; align-items: center; gap: 10px; background: #003057; color: white; padding: 16px 28px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; min-width: 240px; }
         .inst-v2__phone-btn:hover { background: #2A3D66; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,42,74,0.3); }
 
         @media (max-width: 900px) {

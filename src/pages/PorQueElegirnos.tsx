@@ -91,55 +91,55 @@ const PorQueElegirnos = () => {
             <a href={`tel:${SITE.telefonoTel[0]}`} className="pqe-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
             <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pqe-cta__btn pqe-cta__btn--wa" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
           </div>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
         </div>
       </section>
 
       <style>{`
-        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: linear-gradient(135deg, #1A1A2E, #1B2A4A); }
+        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: linear-gradient(135deg, #003057, #003057); }
         .pqe-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .pqe-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
-        .pqe-hero__tag { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #C8E64A; display: block; margin-bottom: 16px; }
-        .pqe-hero__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
+        .pqe-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
+        .pqe-hero__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
         .pqe-intro-section { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; }
         .pqe-intro-container { max-width: 900px; margin: 0 auto; }
-        .pqe-intro { font-family: 'Inter', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
+        .pqe-intro { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
 
         .pqe-stats { background: #FFFFFF; padding: clamp(32px,4vw,56px) 24px; }
         .pqe-stats__container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
         .pqe-stats__item { background: #F5F5F5; border-radius: 20px; padding: 32px 24px; text-align: center; }
-        .pqe-stats__num { display: block; font-family: 'Inter', sans-serif; font-size: clamp(32px,3.5vw,44px); font-weight: 800; color: #1B2A4A; margin-bottom: 8px; }
-        .pqe-stats__label { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; }
+        .pqe-stats__num { display: block; font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,3.5vw,44px); font-weight: 800; color: #003057; margin-bottom: 8px; }
+        .pqe-stats__label { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; }
 
         .pqe-reasons { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .pqe-reasons__container { max-width: 1200px; margin: 0 auto; }
-        .pqe-reasons__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
+        .pqe-reasons__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .pqe-reasons__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .pqe-reasons__grid > .pqe-reason:last-child:nth-child(3n+1) { grid-column: 2 / 3; }
         .pqe-reason { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .pqe-reason:hover { transform: translateY(-4px); }
-        .pqe-reason__icon { font-size: 36px; font-weight: 800; color: #C8E64A; display: block; margin-bottom: 16px; }
-        .pqe-reason__title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
-        .pqe-reason__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+        .pqe-reason__icon { font-size: 36px; font-weight: 800; color: #D9C756; display: block; margin-bottom: 16px; }
+        .pqe-reason__title { font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 700; color: #003057; margin: 0 0 8px; }
+        .pqe-reason__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
 
         .pqe-timeline { background: #F5F5F5; padding: clamp(64px,8vw,100px) 24px; }
         .pqe-timeline__container { max-width: 1100px; margin: 0 auto; }
-        .pqe-timeline__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
+        .pqe-timeline__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .pqe-timeline__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .pqe-timeline__item { background: #FFFFFF; border-radius: 20px; padding: 32px 24px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.05); }
-        .pqe-timeline__year { display: block; font-family: 'Inter', sans-serif; font-size: clamp(28px,3vw,40px); font-weight: 800; color: #1B2A4A; margin-bottom: 8px; }
-        .pqe-timeline__label { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; }
+        .pqe-timeline__year { display: block; font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,3vw,40px); font-weight: 800; color: #003057; margin-bottom: 8px; }
+        .pqe-timeline__label { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; }
 
         .pqe-closing { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; text-align: center; }
-        .pqe-closing__text { font-family: 'Inter', sans-serif; font-size: clamp(18px,2vw,24px); font-weight: 600; color: #1A1A2E; margin: 0; font-style: italic; }
+        .pqe-closing__text { font-family: 'Source Sans 3', sans-serif; font-size: clamp(18px,2vw,24px); font-weight: 600; color: #003057; margin: 0; font-style: italic; }
 
-        .pqe-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
+        .pqe-cta { background: #003057; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .pqe-cta__inner { max-width: 600px; margin: 0 auto; }
-        .pqe-cta__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
-        .pqe-cta__text { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
+        .pqe-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
+        .pqe-cta__text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
         .pqe-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .pqe-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #C8E64A; color: #1A1A2E; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
-        .pqe-cta__btn:hover { background: #8AB83A; color: white; }
+        .pqe-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #D9C756; color: #003057; padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
+        .pqe-cta__btn:hover { background: #B8A63F; color: #003057; }
         .pqe-cta__btn--wa { background: #25D366; color: white; }
         .pqe-cta__btn--wa:hover { background: #1DB954; }
 

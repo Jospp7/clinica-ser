@@ -43,7 +43,7 @@ const Contacts = () => {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A2E", margin: 0 }}>Contactos</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#003057", margin: 0 }}>Contactos</h2>
         <div style={{ display: "flex", gap: 12 }}>
           <select value={filter} onChange={e => setFilter(e.target.value)}
             style={{ padding: "8px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 13 }}>
@@ -52,7 +52,7 @@ const Contacts = () => {
             <option value="contactado">Contactado</option>
             <option value="cerrado">Cerrado</option>
           </select>
-          <button onClick={exportCSV} style={{ padding: "8px 16px", background: "#1A1A2E", color: "white", border: "none", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Exportar CSV</button>
+          <button onClick={exportCSV} style={{ padding: "8px 16px", background: "#003057", color: "white", border: "none", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Exportar CSV</button>
         </div>
       </div>
 
@@ -96,7 +96,7 @@ const Contacts = () => {
           <div style={{ background: "white", borderRadius: 16, padding: 32, maxWidth: 500, width: "100%", maxHeight: "80vh", overflow: "auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
               <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0 }}>Detalle del contacto</h3>
-              <button onClick={() => setSelected(null)} aria-label="Cerrar" style={{ background: "none", border: "none", cursor: "pointer", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }}>
+              <button onClick={() => setSelected(null)} aria-label="Cerrar" style={{ background: "none", border: "none", cursor: "pointer", color: "#003057", display: "inline-flex", alignItems: "center" }}>
                 <X size={20} aria-hidden="true" />
               </button>
             </div>

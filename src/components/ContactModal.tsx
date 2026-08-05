@@ -48,24 +48,24 @@ const ContactModal = ({ open, onClose, source }: Props) => {
     }
   };
 
-  const inputStyle = { width: "100%", padding: "10px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 14, boxSizing: "border-box" as const, fontFamily: "'Inter',sans-serif" };
+  const inputStyle = { width: "100%", padding: "10px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 14, boxSizing: "border-box" as const, fontFamily: "'Source Sans 3',sans-serif" };
 
   return (
     <div style={{ position: "fixed", inset: 0, background: "rgba(0, 0, 10, 0.55)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: 24 }}>
-      <div style={{ background: "rgba(255, 255, 255, 0.92)", backdropFilter: "blur(28px)", WebkitBackdropFilter: "blur(28px)", border: "1px solid rgba(255,255,255,0.40)", boxShadow: "0 24px 64px rgba(0,0,0,0.30)", borderRadius: 16, padding: 32, maxWidth: 440, width: "100%", position: "relative", fontFamily: "'Inter',sans-serif" }}>
+      <div style={{ background: "rgba(255, 255, 255, 0.92)", backdropFilter: "blur(28px)", WebkitBackdropFilter: "blur(28px)", border: "1px solid rgba(255,255,255,0.40)", boxShadow: "0 24px 64px rgba(0,0,0,0.30)", borderRadius: 16, padding: 32, maxWidth: 440, width: "100%", position: "relative", fontFamily: "'Source Sans 3',sans-serif" }}>
         <button onClick={onClose} aria-label="Cerrar" className="contact-modal__close"><X size={20} /></button>
         <style>{`
           .contact-modal__close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: #888; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
         `}</style>
         {sent ? (
           <div style={{ textAlign: "center", padding: "40px 0" }}>
-            <div style={{ marginBottom: 16, display: "flex", justifyContent: "center", color: "#8AB83A" }}><CheckCircle2 size={48} aria-hidden="true" /></div>
-            <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A2E" }}>¡Gracias!</h3>
+            <div style={{ marginBottom: 16, display: "flex", justifyContent: "center", color: "#8A7826" }}><CheckCircle2 size={48} aria-hidden="true" /></div>
+            <h3 style={{ fontSize: 18, fontWeight: 700, color: "#003057" }}>¡Gracias!</h3>
             <p style={{ color: "#888", fontSize: 14 }}>Te contactaremos pronto.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A2E", marginBottom: 4 }}>Contáctanos</h3>
+            <h3 style={{ fontSize: 18, fontWeight: 700, color: "#003057", marginBottom: 4 }}>Contáctanos</h3>
             <p style={{ color: "#888", fontSize: 13, marginBottom: 20 }}>Completa tus datos y nos comunicaremos contigo.</p>
             <div style={{ marginBottom: 12 }}>
               <input value={name} onChange={e => setName(e.target.value)} placeholder="Tu nombre" style={inputStyle} required />
@@ -92,7 +92,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
               </div>
             )}
             <button type="submit" disabled={sending}
-              style={{ width: "100%", padding: "12px", background: "#C8E64A", color: "#1A1A2E", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
               {sending ? "Enviando..." : "Enviar"}
             </button>
           </form>

@@ -29,20 +29,20 @@ const CTAFinal = () => {
       </div>
 
       <style>{`
-        .cta-v2 { background: #1B2A4A; }
+        .cta-v2 { background: var(--brand-navy); }
         .cta-v2__grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
         .cta-v2__left { padding: clamp(60px, 8vw, 100px) clamp(24px, 5vw, 80px); display: flex; flex-direction: column; justify-content: center; }
-        .cta-v2__title { font-family: 'Inter', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; color: white; margin: 0 0 40px; line-height: 1.1; letter-spacing: -0.02em; }
+        .cta-v2__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px, 4vw, 52px); font-weight: 800; color: white; margin: 0 0 40px; line-height: 1.1; letter-spacing: -0.02em; }
 
         .cta-v2__testimonial { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; backdrop-filter: blur(10px); }
-        .cta-v2__quote-mark { font-size: 40px; color: #C8E64A; line-height: 1; display: block; margin-bottom: 12px; }
-        .cta-v2__quote-text { font-family: 'Inter', sans-serif; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; font-style: italic; margin: 0 0 20px; }
+        .cta-v2__quote-mark { font-size: 40px; color: var(--brand-gold); line-height: 1; display: block; margin-bottom: 12px; }
+        .cta-v2__quote-text { font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; font-style: italic; margin: 0 0 20px; }
         .cta-v2__quote-author { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
         .cta-v2__author-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
-        .cta-v2__author-name { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: white; display: block; margin-bottom: 2px; }
+        .cta-v2__author-name { font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 700; color: white; display: block; margin-bottom: 2px; }
         .cta-v2__stars { display: flex; gap: 2px; }
-        .cta-v2__call-btn { display: inline-block; background: #C8E64A; color: #1A1A2E; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; transition: all 0.3s; letter-spacing: 0.05em; }
-        .cta-v2__call-btn:hover { background: #8AB83A; color: white; transform: translateY(-2px); }
+        .cta-v2__call-btn { display: inline-block; background: var(--brand-gold); color: var(--brand-navy); padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 700; text-decoration: none; transition: all 0.3s; letter-spacing: 0.05em; }
+        .cta-v2__call-btn:hover { background: #B8A63F; color: var(--brand-navy); transform: translateY(-2px); }
 
         .cta-v2__right { overflow: hidden; }
         .cta-v2__img { width: 100%; height: 100%; object-fit: cover; display: block; }

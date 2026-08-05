@@ -176,7 +176,7 @@ const BlogPost = () => {
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+            <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
           </div>
         )}
 
@@ -228,7 +228,7 @@ const BlogPost = () => {
                   <MessageCircle size={16} aria-hidden="true" /> WhatsApp
                 </a>
               </div>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+              <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
             </div>
           </article>
         )}
@@ -237,33 +237,33 @@ const BlogPost = () => {
       <style>{`
         .bp { background: #FFFFFF; min-height: 100vh; padding: clamp(80px,10vw,120px) clamp(20px,4vw,32px); }
         .bp__inner { max-width: 760px; margin: 0 auto; }
-        .bp__back { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 14px; color: #555; text-decoration: none; margin-bottom: 32px; }
-        .bp__back:hover { color: #1A1A2E; }
-        .bp__state { font-family: 'Inter', sans-serif; color: #555; text-align: center; padding: 48px 0; }
+        .bp__back { display: inline-flex; align-items: center; gap: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #555; text-decoration: none; margin-bottom: 32px; }
+        .bp__back:hover { color: #003057; }
+        .bp__state { font-family: 'Source Sans 3', sans-serif; color: #555; text-align: center; padding: 48px 0; }
         .bp__state-block { text-align: center; padding: 48px 0; }
-        .bp__state-title { font-family: 'Inter', sans-serif; font-size: clamp(22px,3vw,32px); font-weight: 700; color: #1A1A2E; margin: 0 0 12px; }
-        .bp__state-text { font-family: 'Inter', sans-serif; color: #555; margin: 0 0 24px; line-height: 1.7; }
+        .bp__state-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(22px,3vw,32px); font-weight: 700; color: #003057; margin: 0 0 12px; }
+        .bp__state-text { font-family: 'Source Sans 3', sans-serif; color: #555; margin: 0 0 24px; line-height: 1.7; }
         .bp__ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .bp__cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .2s; }
-        .bp__cta--primary { background: #C8E64A; color: #1A1A2E; }
-        .bp__cta--primary:hover { background: #8AB83A; color: white; }
+        .bp__cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .2s; }
+        .bp__cta--primary { background: #D9C756; color: #003057; }
+        .bp__cta--primary:hover { background: #B8A63F; color: #003057; }
         .bp__cta--wa { background: #25D366; color: white; }
         .bp__cta--wa:hover { background: #1DA851; }
 
         .bp__header { margin-bottom: 40px; }
         .bp__meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
-        .bp__meta-item { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 13px; color: #777; text-transform: uppercase; letter-spacing: .05em; }
-        .bp__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: #1A1A2E; line-height: 1.2; margin: 0 0 12px; }
-        .bp__author { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; margin: 0; }
-        .bp__content { font-family: 'Inter', sans-serif; font-size: 17px; color: #333; line-height: 1.8; }
-        .bp__content :is(h2, h3) { color: #1A1A2E; margin-top: 1.6em; }
+        .bp__meta-item { display: inline-flex; align-items: center; gap: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #777; text-transform: uppercase; letter-spacing: .05em; }
+        .bp__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: #003057; line-height: 1.2; margin: 0 0 12px; }
+        .bp__author { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; margin: 0; }
+        .bp__content { font-family: 'Source Sans 3', sans-serif; font-size: 17px; color: #333; line-height: 1.8; }
+        .bp__content :is(h2, h3) { color: #003057; margin-top: 1.6em; }
         .bp__content p { margin: 0 0 1.2em; }
-        .bp__content a { color: #8AB83A; }
+        .bp__content a { color: #8A7826; }
         .bp__content img { max-width: 100%; height: auto; border-radius: 12px; }
 
         .bp__foot-cta { margin-top: 64px; padding: 32px; background: #F5F5F5; border-radius: 20px; text-align: center; }
-        .bp__foot-title { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
-        .bp__foot-text { font-family: 'Inter', sans-serif; color: #555; margin: 0 0 20px; }
+        .bp__foot-title { font-family: 'Source Sans 3', sans-serif; font-size: 22px; font-weight: 700; color: #003057; margin: 0 0 8px; }
+        .bp__foot-text { font-family: 'Source Sans 3', sans-serif; color: #555; margin: 0 0 20px; }
       `}</style>
     </main>
   );
