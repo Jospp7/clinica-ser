@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackCTAClick, trackFormSubmit } from "@/hooks/useTracking";
-import { Facebook, Instagram, Twitter, Linkedin, Star, StarHalf, Lock, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Music2, Star, StarHalf, Lock, MessageCircle } from "lucide-react";
 import { SITE, waLink } from "@/lib/site";
 
 const Footer = () => {
@@ -62,14 +62,13 @@ const Footer = () => {
                  className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_INSTAGRAM")}>
                 <Instagram size={18} />
               </a>
-              <a href={SITE.redes.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter"
-                 className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_TWITTER")}>
-                <Twitter size={18} />
-              </a>
-              <a href={SITE.redes.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                 className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_LINKEDIN")}>
-                <Linkedin size={18} />
-              </a>
+              {/* TODO: reemplazar por ícono oficial de TikTok e insertar la URL real (SITE.redes.tiktok) */}
+              {SITE.redes.tiktok && (
+                <a href={SITE.redes.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                   className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_TIKTOK")}>
+                  <Music2 size={18} />
+                </a>
+              )}
               {/* TODO: preguntar al cliente si tienen canal de YouTube (mencionan videos de testimonios en el sitio anterior). */}
             </div>
             <div className="footer-v2__circle-deco" />
@@ -102,7 +101,7 @@ const Footer = () => {
               </div>
               <div>
                 <Link to="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</Link>
-                <Link to="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</Link>
+                <Link to="/programas" className="footer-v2__sitemap-link">Programas</Link>
                 <Link to="/guias" className="footer-v2__sitemap-link">Guías</Link>
                 <Link to="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</Link>
                 <Link to="/guia-ingreso" className="footer-v2__sitemap-link">Guía de Ingreso</Link>

@@ -44,6 +44,14 @@ const InstalacionesPage = () => {
 
       <section className="inst-pg__features">
         <div className="inst-pg__features-container">
+          <div className="inst-pg__intro" data-anim="fade-up">
+            <p className="inst-pg__intro-text">
+              El confort, seguridad y calidez se encuentran en cada espacio de nuestra Casa, ofreciendo a nuestros huéspedes zonas de recreo, esparcimiento, talleres y salones de terapia, habitaciones, comedores, áreas de consulta y mucho más, que fueron cuidadas hasta el máximo detalle para ofrecer el mejor espacio para su recuperación emocional.
+            </p>
+            <p className="inst-pg__intro-text">
+              La seguridad de su ser querido es muy importante para nosotros, por ello contamos con instalaciones especiales únicas en México, traídas desde U.S.A., Brasil, España, Alemania e Italia, cumpliendo con estándares internacionales que nos hacen únicos.
+            </p>
+          </div>
           <h2 className="inst-pg__features-title" data-anim="fade-up">Amenidades</h2>
           <div className="inst-pg__features-grid">
             {AMENIDADES.map((nombre, i) => (
@@ -66,7 +74,8 @@ const InstalacionesPage = () => {
       </section>
 
       <style>{`
-        .inst-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80') center/cover; }
+        /* TODO: imagen del cliente para .inst-pg__hero (fondo neutro por defecto) */
+        .inst-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: #003057; }
         .inst-pg__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.85), rgba(26,26,46,.6)); }
         .inst-pg__hero-content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .inst-pg__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
@@ -83,6 +92,8 @@ const InstalacionesPage = () => {
         .inst-pg__features { background: #F5F5F5; padding: clamp(64px,8vw,120px) 24px; }
         .inst-pg__features-container { max-width: 1200px; margin: 0 auto; }
         .inst-pg__features-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
+        .inst-pg__intro { max-width: 860px; margin: 0 auto 48px; }
+        .inst-pg__intro-text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; text-align: center; }
         .inst-pg__features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .inst-pg__feature { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .inst-pg__feature:hover { transform: translateY(-4px); }

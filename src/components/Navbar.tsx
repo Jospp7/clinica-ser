@@ -7,13 +7,13 @@ import { Phone, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "INICIO", href: "/" },
+  { label: "POR QUÉ ELEGIRNOS", href: "/por-que-elegirnos" },
+  { label: "PROGRAMAS", href: "/programas" },
   { label: "TRATAMIENTOS", href: "/tratamiento" },
   { label: "INSTALACIONES", href: "/instalaciones" },
-  { label: "PADECIMIENTOS", href: "/padecimientos" },
   { label: "EQUIPO", href: "/equipo" },
   { label: "GUÍAS", href: "/guias" },
   { label: "BLOG", href: "/blog" },
-  { label: "POR QUÉ ELEGIRNOS", href: "/por-que-elegirnos" },
 ];
 
 const Navbar = () => {
