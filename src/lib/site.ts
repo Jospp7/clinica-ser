@@ -17,8 +17,8 @@ export const SITE = {
   redes: {
     facebook: "https://www.facebook.com/serclinicapuebla",
     instagram: "https://www.instagram.com/clinicaser_puebla/",
-    twitter: "https://mobile.twitter.com/clinica_ser",
-    linkedin: "https://www.linkedin.com/company/clínica-ser-puebla",
+    // TODO: URL de TikTok del cliente
+    tiktok: "",
   },
   horarioIngreso: "24 horas, los 365 días del año",
   google: {
