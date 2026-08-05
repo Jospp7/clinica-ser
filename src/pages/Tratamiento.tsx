@@ -10,7 +10,7 @@ const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
     desc: "Somos especialistas en el tratamiento de trastornos coexistentes como el estrés, la depresión y la ansiedad. Esto permite un porcentaje altísimo de recuperación con miras a alcanzar la sobriedad en personas que sufren de adicciones.",
   },
   {
-    title: "Atención individualizada para adictos.",
+    title: "Atención individualizada para pacientes.",
     desc: "Dentro de nuestro tratamiento para adicciones, trabajamos con grupos reducidos, lo que nos permite asignar un mayor número de terapeutas y ofrecer sesiones personalizadas a nuestros pacientes. Incluye post-tratamiento sin tiempo límite ni costo adicional para el paciente y su familia, en nuestra clínica y en cualquier parte de la República o del mundo a través de videoconferencias con un terapeuta calificado.",
   },
   {

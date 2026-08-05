@@ -102,7 +102,7 @@ const Footer = () => {
               </div>
               <div>
                 <Link to="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</Link>
-                <Link to="/padecimientos" className="footer-v2__sitemap-link">Padecimientos</Link>
+                <Link to="/programas" className="footer-v2__sitemap-link">Programas</Link>
                 <Link to="/guias" className="footer-v2__sitemap-link">Guías</Link>
                 <Link to="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</Link>
                 <Link to="/guia-ingreso" className="footer-v2__sitemap-link">Guía de Ingreso</Link>

@@ -5,7 +5,7 @@ import { SITE, waLink } from "@/lib/site";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { trackCTAClick } from "@/hooks/useTracking";
 
-// Lista oficial de padecimientos validada por el cliente.
+// Lista oficial de programas validada por el cliente.
 const CONDITIONS = [
   {
     title: "Alcohol",
@@ -34,21 +34,21 @@ const CONDITIONS = [
   },
 ];
 
-const Padecimientos = () => {
+const Programas = () => {
   useScrollToTop();
 
   return (
     <main>
       <Seo
-        title="Padecimientos que Tratamos — Clínica SER Puebla"
-        description="Padecimientos que atendemos en Clínica SER Puebla: alcohol, drogas, ludopatía (juego y apuestas), tecnofilia (adicción a las nuevas tecnologías), opiáceos (heroína, morfina, codeína, tebaína) y medicamentos psicotrópicos (benzodiazepinas)."
-        path="/padecimientos"
+        title="Programas que Tratamos — Clínica SER Puebla"
+        description="Programas que atendemos en Clínica SER Puebla: alcohol, drogas, ludopatía (juego y apuestas), tecnofilia (adicción a las nuevas tecnologías), opiáceos (heroína, morfina, codeína, tebaína) y medicamentos psicotrópicos (benzodiazepinas)."
+        path="/programas"
       />
       <section className="pad-hero">
         <div className="pad-hero__overlay" />
         <div className="pad-hero__content" data-anim="fade-up">
-          <span className="pad-hero__tag">PADECIMIENTOS QUE TRATAMOS</span>
-          <h1 className="pad-hero__title">Padecimientos que atendemos</h1>
+          <span className="pad-hero__tag">PROGRAMAS QUE TRATAMOS</span>
+          <h1 className="pad-hero__title">Programas que atendemos</h1>
           <p className="pad-hero__sub">Adicciones atendidas en Clínica SER Puebla.</p>
         </div>
       </section>
@@ -71,7 +71,7 @@ const Padecimientos = () => {
           <Link
             to="/tratamiento"
             className="pad-treatment-cta__btn"
-            onClick={() => trackCTAClick("PADECIMIENTOS_A_TRATAMIENTO")}
+            onClick={() => trackCTAClick("PROGRAMAS_A_TRATAMIENTO")}
           >
             Conoce el Programa de Tratamiento Integral SER®, basado en el Modelo Hazelden
             <ArrowRight size={18} aria-hidden="true" />
@@ -123,4 +123,4 @@ const Padecimientos = () => {
   );
 };
 
-export default Padecimientos;
+export default Programas;

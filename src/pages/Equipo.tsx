@@ -185,16 +185,16 @@ const PERFILES: Perfil[] = [
 ];
 
 const EQUIPO_MEDICO = [
-  "4 Especialistas en Psiquiatría",
-  "4 Especialistas en Adicciones",
+  "4 Especialistas en Psiquiatría.",
+  "4 Especialistas en Adicciones.",
   "2 Médicos Generales",
-  "5 Maestros en Psicología",
-  "1 Instructor de Yoga",
-  "1 Profesor de Educación Física",
-  "1 Licenciado en Artes Plásticas",
+  "5 Maestros en Psicología.",
+  "1 Instructor de Yoga.",
+  "1 Profesor de Educación Física.",
+  "1 Licenciado en Artes Plásticas.",
   "1 Licenciada en Enfermería",
-  "8 Enfermeras Generales (2 Diplomadas en Psiquiatría)",
-  "2 Adictos en Recuperación (Programa de los 12 Pasos)",
+  "8 Enfermeras Generales (2 Diplomadas en Psiquiatría).",
+  "2 Adictos en Recuperación (Programa de los 12 Pasos).",
 ];
 
 

@@ -8,19 +8,21 @@
 /porque-elegir-ser              /por-que-elegirnos   301
 /pagina-de-inicio               /                    301
 
-# --- 12 páginas de padecimientos -> /padecimientos ---
-/adiccion-a-los-opiaceos-senales-de-alerta                                      /padecimientos   301
-/tratamiento-del-trastorno-por-consumo-de-opiaceos                             /padecimientos   301
-/centros-de-rehabilitacion-para-medicamentos-psicotropicos                     /padecimientos   301
-/tratamiento-de-adiccion-de-los-medicamentos-psicotropicos                     /padecimientos   301
-/tratamiento-del-alcoholismo                                                   /padecimientos   301
-/programa-de-tratamiento-y-rehabilitacion-del-alcohol                          /padecimientos   301
-/atencion-al-juego-compulsivo                                                  /padecimientos   301
-/tratamiento-y-rehabilitacion-de-la-ludopatia                                  /padecimientos   301
-/centros-de-rehabilitacion-para-adictos-a-internet                             /padecimientos   301
-/centros-de-rehabilitacion-para-adictos-al-celular                             /padecimientos   301
-/centro-de-desintoxicacion-para-drogas                                         /padecimientos   301
-/clinicas-de-rehabilitacion-de-adicciones-un-refugio-de-esperanza-y-transformacion   /padecimientos   301
+/padecimientos                  /programas            301
+
+# --- 12 páginas de padecimientos -> /programas ---
+/adiccion-a-los-opiaceos-senales-de-alerta                                      /programas   301
+/tratamiento-del-trastorno-por-consumo-de-opiaceos                             /programas   301
+/centros-de-rehabilitacion-para-medicamentos-psicotropicos                     /programas   301
+/tratamiento-de-adiccion-de-los-medicamentos-psicotropicos                     /programas   301
+/tratamiento-del-alcoholismo                                                   /programas   301
+/programa-de-tratamiento-y-rehabilitacion-del-alcohol                          /programas   301
+/atencion-al-juego-compulsivo                                                  /programas   301
+/tratamiento-y-rehabilitacion-de-la-ludopatia                                  /programas   301
+/centros-de-rehabilitacion-para-adictos-a-internet                             /programas   301
+/centros-de-rehabilitacion-para-adictos-al-celular                             /programas   301
+/centro-de-desintoxicacion-para-drogas                                         /programas   301
+/clinicas-de-rehabilitacion-de-adicciones-un-refugio-de-esperanza-y-transformacion   /programas   301
 
 # --- 16 perfiles individuales del equipo -> /equipo ---
 /dra-nadia-ivette-ibarias-cortes                        /equipo   301

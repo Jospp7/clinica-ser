@@ -13,7 +13,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index.tsx";
 import Tratamiento from "./pages/Tratamiento.tsx";
 import InstalacionesPage from "./pages/InstalacionesPage.tsx";
-import Padecimientos from "./pages/Padecimientos.tsx";
+import Programas from "./pages/Programas.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import GuiaIngreso from "./pages/GuiaIngreso.tsx";
@@ -41,7 +41,8 @@ const AppContent = () => {
       <Route path="/" element={<Index />} />
       <Route path="/tratamiento" element={<Tratamiento />} />
       <Route path="/instalaciones" element={<InstalacionesPage />} />
-      <Route path="/padecimientos" element={<Padecimientos />} />
+      <Route path="/programas" element={<Programas />} />
+      <Route path="/padecimientos" element={<Navigate to="/programas" replace />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/guia-ingreso" element={<GuiaIngreso />} />
