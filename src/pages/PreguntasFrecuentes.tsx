@@ -243,41 +243,41 @@ const PreguntasFrecuentes = () => {
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+            <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
           </section>
         </div>
       </article>
 
       <style>{`
         .guia { background: #FFFFFF; }
-        .guia__hero { position: relative; min-height: 40vh; display: flex; align-items: center; background: #1A1A2E; }
+        .guia__hero { position: relative; min-height: 40vh; display: flex; align-items: center; background: #003057; }
         .guia__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .guia__hero-content { position: relative; z-index: 2; max-width: 800px; padding: 120px clamp(24px,5vw,80px) 60px; }
-        .guia__tag { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #C8E64A; display: block; margin-bottom: 16px; }
-        .guia__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
-        .guia__lead { font-family: 'Inter', sans-serif; font-size: 17px; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
+        .guia__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
+        .guia__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
+        .guia__lead { font-family: 'Source Sans 3', sans-serif; font-size: 17px; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
 
-        .guia__body { max-width: 820px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Inter', sans-serif; color: #1A1A2E; }
+        .guia__body { max-width: 820px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Source Sans 3', sans-serif; color: #003057; }
 
         .faq__list { display: flex; flex-direction: column; gap: 12px; }
         .faq__item { border: 1px solid #E5E7EB; border-radius: 12px; background: #FFFFFF; overflow: hidden; transition: box-shadow .2s, border-color .2s; }
-        .faq__item--open { border-color: #1B2A4A; box-shadow: 0 4px 20px rgba(27,42,74,.08); }
-        .faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; background: transparent; border: 0; padding: 20px 24px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1A1A2E; line-height: 1.4; }
-        .faq__q:hover { color: #1B2A4A; }
-        .faq__icon { flex-shrink: 0; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: #F5F5F0; color: #1B2A4A; font-size: 18px; font-weight: 700; }
-        .faq__item--open .faq__icon { background: #C8E64A; color: #1A1A2E; }
+        .faq__item--open { border-color: #003057; box-shadow: 0 4px 20px rgba(27,42,74,.08); }
+        .faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; background: transparent; border: 0; padding: 20px 24px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; color: #003057; line-height: 1.4; }
+        .faq__q:hover { color: #003057; }
+        .faq__icon { flex-shrink: 0; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: #F5F5F0; color: #003057; font-size: 18px; font-weight: 700; }
+        .faq__item--open .faq__icon { background: #D9C756; color: #003057; }
         .faq__a { padding: 0 24px 22px; font-size: 15.5px; line-height: 1.7; color: #444; }
         .faq__a p { margin: 0 0 12px; }
         .faq__a p:last-child { margin-bottom: 0; }
-        .faq__a a { color: #1B2A4A; text-decoration: underline; }
+        .faq__a a { color: #003057; text-decoration: underline; }
         .faq__a ul { padding-left: 22px; margin: 0; }
         .faq__a li { margin-bottom: 10px; }
 
         .guia__cta { background: #F5F5F0; padding: 40px; border-radius: 16px; text-align: center; margin-top: 48px; }
-        .guia__cta h2 { font-size: 22px; font-weight: 700; color: #1A1A2E; margin: 0 0 20px; }
+        .guia__cta h2 { font-size: 22px; font-weight: 700; color: #003057; margin: 0 0 20px; }
         .guia__cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .guia__btn { display: inline-flex; align-items: center; gap: 8px; background: #C8E64A; color: #1A1A2E; padding: 14px 28px; border-radius: 60px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s; }
-        .guia__btn:hover { background: #8AB83A; color: white; }
+        .guia__btn { display: inline-flex; align-items: center; gap: 8px; background: #D9C756; color: #003057; padding: 14px 28px; border-radius: 60px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s; }
+        .guia__btn:hover { background: #B8A63F; color: #003057; }
         .guia__btn--wa { background: #25D366; color: white; }
         .guia__btn--wa:hover { background: #1DB954; }
       `}</style>

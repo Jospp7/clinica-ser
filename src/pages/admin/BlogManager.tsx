@@ -49,8 +49,8 @@ const BlogManager = () => {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A2E", margin: 0 }}>Blog</h2>
-        <Link to="/admin/blog/new" style={{ background: "#C8E64A", color: "#1A1A2E", padding: "10px 20px", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 700 }}>+ Nuevo Post</Link>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#003057", margin: 0 }}>Blog</h2>
+        <Link to="/admin/blog/new" style={{ background: "#D9C756", color: "#003057", padding: "10px 20px", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 700 }}>+ Nuevo Post</Link>
       </div>
 
       <div style={{ display: "flex", gap: 12, marginBottom: 20, flexWrap: "wrap" }}>
@@ -91,13 +91,13 @@ const BlogManager = () => {
                   <td style={{ padding: "12px 16px" }}>{p.views}</td>
                   <td style={{ padding: "12px 16px", color: "#888" }}>{new Date(p.created_at).toLocaleDateString()}</td>
                   <td style={{ padding: "12px 16px", display: "flex", gap: 8 }}>
-                    <Link to={`/admin/blog/edit/${p.id}`} style={{ textDecoration: "none", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }} title="Editar" aria-label="Editar">
+                    <Link to={`/admin/blog/edit/${p.id}`} style={{ textDecoration: "none", color: "#003057", display: "inline-flex", alignItems: "center" }} title="Editar" aria-label="Editar">
                       <Pencil size={16} aria-hidden="true" />
                     </Link>
-                    <button onClick={() => toggleStatus(p.id, p.status)} style={{ background: "none", border: "none", cursor: "pointer", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }} title="Cambiar status" aria-label="Cambiar status">
+                    <button onClick={() => toggleStatus(p.id, p.status)} style={{ background: "none", border: "none", cursor: "pointer", color: "#003057", display: "inline-flex", alignItems: "center" }} title="Cambiar status" aria-label="Cambiar status">
                       <RefreshCw size={16} aria-hidden="true" />
                     </button>
-                    <button onClick={() => deletePost(p.id)} style={{ background: "none", border: "none", cursor: "pointer", color: "#1A1A2E", display: "inline-flex", alignItems: "center" }} title="Eliminar" aria-label="Eliminar">
+                    <button onClick={() => deletePost(p.id)} style={{ background: "none", border: "none", cursor: "pointer", color: "#003057", display: "inline-flex", alignItems: "center" }} title="Eliminar" aria-label="Eliminar">
                       <Trash2 size={16} aria-hidden="true" />
                     </button>
                   </td>

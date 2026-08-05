@@ -70,28 +70,28 @@ const Dashboard = () => {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginBottom: 32 }}>
         {metrics.map(m => (
           <div key={m.label} style={{ background: "white", borderRadius: 12, padding: "20px 24px", boxShadow: "0 1px 3px rgba(0,0,0,.06)" }}>
-            <div style={{ marginBottom: 8, color: "#1A1A2E" }}><m.icon size={20} aria-hidden="true" /></div>
-            <div style={{ fontSize: 28, fontWeight: 800, color: "#1A1A2E" }}>{m.value}</div>
+            <div style={{ marginBottom: 8, color: "#003057" }}><m.icon size={20} aria-hidden="true" /></div>
+            <div style={{ fontSize: 28, fontWeight: 800, color: "#003057" }}>{m.value}</div>
             <div style={{ fontSize: 12, color: "#888", marginTop: 4 }}>{m.label}</div>
           </div>
         ))}
       </div>
 
       <div style={{ background: "white", borderRadius: 12, padding: 24, marginBottom: 32, boxShadow: "0 1px 3px rgba(0,0,0,.06)" }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Visitantes únicos — Últimos 7 días</h3>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#003057", marginBottom: 16 }}>Visitantes únicos — Últimos 7 días</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
             <XAxis dataKey="date" fontSize={11} />
             <YAxis fontSize={11} />
             <Tooltip />
-            <Line type="monotone" dataKey="views" stroke="#C8E64A" strokeWidth={2} dot={{ r: 4 }} />
+            <Line type="monotone" dataKey="views" stroke="#D9C756" strokeWidth={2} dot={{ r: 4 }} />
           </LineChart>
         </ResponsiveContainer>
       </div>
 
       <div style={{ background: "white", borderRadius: 12, padding: 24, marginBottom: 32, boxShadow: "0 1px 3px rgba(0,0,0,.06)", overflowX: "auto" }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Últimos Contactos</h3>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#003057", marginBottom: 16 }}>Últimos Contactos</h3>
         <table style={{ width: "100%", fontSize: 13, borderCollapse: "collapse" }}>
           <thead><tr style={{ borderBottom: "1px solid #E8E8E8", textAlign: "left" }}>
             <th style={{ padding: "8px 12px", fontWeight: 600, color: "#888" }}>Nombre</th>
@@ -120,7 +120,7 @@ const Dashboard = () => {
       </div>
 
       <div style={{ background: "white", borderRadius: 12, padding: 24, boxShadow: "0 1px 3px rgba(0,0,0,.06)", overflowX: "auto" }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 }}>Posts Recientes</h3>
+        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#003057", marginBottom: 16 }}>Posts Recientes</h3>
         <table style={{ width: "100%", fontSize: 13, borderCollapse: "collapse" }}>
           <thead><tr style={{ borderBottom: "1px solid #E8E8E8", textAlign: "left" }}>
             <th style={{ padding: "8px 12px", fontWeight: 600, color: "#888" }}>Título</th>

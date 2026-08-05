@@ -208,7 +208,7 @@ const GuiaIntervencion = () => {
                 <MessageCircle size={16} aria-hidden="true" /> WhatsApp
               </a>
             </div>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+            <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "#444", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
             <Link to="/guia-ingreso" className="guia__back">
               <ArrowRight size={14} aria-hidden="true" /> Guía de Ingreso
             </Link>
@@ -218,31 +218,31 @@ const GuiaIntervencion = () => {
 
       <style>{`
         .guia { background: #FFFFFF; }
-        .guia__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: #1A1A2E; }
+        .guia__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: #003057; }
         .guia__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .guia__hero-content { position: relative; z-index: 2; max-width: 800px; padding: 120px clamp(24px,5vw,80px) 80px; }
-        .guia__tag { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #C8E64A; display: block; margin-bottom: 16px; }
-        .guia__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
-        .guia__lead { font-family: 'Inter', sans-serif; font-size: 17px; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
+        .guia__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
+        .guia__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
+        .guia__lead { font-family: 'Source Sans 3', sans-serif; font-size: 17px; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
 
-        .guia__body { max-width: 780px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Inter', sans-serif; color: #1A1A2E; }
+        .guia__body { max-width: 780px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Source Sans 3', sans-serif; color: #003057; }
         .guia__section { margin-bottom: 40px; }
-        .guia__section h2 { font-size: clamp(20px,2.5vw,26px); font-weight: 700; color: #1A1A2E; margin: 0 0 16px; }
-        .guia__section h3 { font-size: 16px; font-weight: 700; color: #1B2A4A; margin: 24px 0 8px; }
+        .guia__section h2 { font-size: clamp(20px,2.5vw,26px); font-weight: 700; color: #003057; margin: 0 0 16px; }
+        .guia__section h3 { font-size: 16px; font-weight: 700; color: #003057; margin: 24px 0 8px; }
         .guia__section p, .guia__section li { font-size: 16px; line-height: 1.7; color: #444; margin: 0 0 12px; }
-        .guia__section a { color: #1B2A4A; text-decoration: underline; }
+        .guia__section a { color: #003057; text-decoration: underline; }
         .guia__section ul, .guia__section ol { padding-left: 22px; }
         .guia__section li { margin-bottom: 10px; }
 
         .guia__cta { background: #F5F5F0; padding: 40px; border-radius: 16px; text-align: center; margin-top: 60px; }
-        .guia__cta h2 { font-size: 24px; font-weight: 700; color: #1A1A2E; margin: 0 0 20px; }
+        .guia__cta h2 { font-size: 24px; font-weight: 700; color: #003057; margin: 0 0 20px; }
         .guia__cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-        .guia__btn { display: inline-flex; align-items: center; gap: 8px; background: #C8E64A; color: #1A1A2E; padding: 14px 28px; border-radius: 60px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s; }
-        .guia__btn:hover { background: #8AB83A; color: white; }
+        .guia__btn { display: inline-flex; align-items: center; gap: 8px; background: #D9C756; color: #003057; padding: 14px 28px; border-radius: 60px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background .2s; }
+        .guia__btn:hover { background: #B8A63F; color: #003057; }
         .guia__btn--wa { background: #25D366; color: white; }
         .guia__btn--wa:hover { background: #1DB954; }
         .guia__back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #888; text-decoration: none; margin-top: 12px; }
-        .guia__back:hover { color: #1A1A2E; }
+        .guia__back:hover { color: #003057; }
       `}</style>
     </main>
   );

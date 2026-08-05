@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-text: #1A1A2E;
+  --color-text: #003057;
   --accent: 74 75% 53%;
   --accent-dark: 96 52% 47%;
 }
@@ -12,8 +12,8 @@
 
 @layer base {
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; @apply border-border; }
-  body { font-family: 'Inter', -apple-system, sans-serif; color: var(--color-text); @apply bg-background text-foreground; }
-  h1, h2, h3, h4 { font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; }
+  body { font-family: 'Source Sans 3', -apple-system, sans-serif; color: var(--color-text); @apply bg-background text-foreground; }
+  h1, h2, h3, h4 { font-family: 'Source Sans 3', -apple-system, sans-serif; font-weight: 700; }
 
   :root {
     --background: 0 0% 100%;
@@ -104,6 +104,6 @@
 }
 .section-divider-line.is-visible { max-width: 60%; }
 .gradient-text {
-  background: linear-gradient(135deg, #C8E64A, #8AB83A);
+  background: linear-gradient(135deg, #D9C756, #B8A63F);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }

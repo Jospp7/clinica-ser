@@ -4,7 +4,7 @@ import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarC
 import { Users, PhoneCall, Mail, TrendingUp, LucideIcon } from "lucide-react";
 
 const cardStyle: React.CSSProperties = { background: "white", borderRadius: 12, padding: 24, boxShadow: "0 1px 3px rgba(0,0,0,.06)" };
-const titleStyle: React.CSSProperties = { fontSize: 14, fontWeight: 700, color: "#1A1A2E", marginBottom: 16 };
+const titleStyle: React.CSSProperties = { fontSize: 14, fontWeight: 700, color: "#003057", marginBottom: 16 };
 const emptyStyle: React.CSSProperties = { color: "#888", fontSize: 13, textAlign: "center", padding: "40px 0" };
 
 const RANGES = [
@@ -210,8 +210,8 @@ const Analytics = () => {
           <button key={r.key} onClick={() => setRangeKey(r.key)}
             style={{
               padding: "8px 16px", borderRadius: 20, fontSize: 13, fontWeight: 600, cursor: "pointer",
-              border: "1px solid " + (rangeKey === r.key ? "#1B2A4A" : "#E2E2E2"),
-              background: rangeKey === r.key ? "#1B2A4A" : "white",
+              border: "1px solid " + (rangeKey === r.key ? "#003057" : "#E2E2E2"),
+              background: rangeKey === r.key ? "#003057" : "white",
               color: rangeKey === r.key ? "white" : "#555",
             }}>{r.label}</button>
         ))}
@@ -226,10 +226,10 @@ const Analytics = () => {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 28 }}>
         {cards.map(m => (
           <div key={m.label} style={{ ...cardStyle, padding: "18px 20px" }}>
-            <div style={{ marginBottom: 6, color: "#1A1A2E", height: 22, display: "flex", alignItems: "center" }}>
+            <div style={{ marginBottom: 6, color: "#003057", height: 22, display: "flex", alignItems: "center" }}>
               <m.icon size={20} aria-hidden="true" />
             </div>
-            <div style={{ fontSize: 26, fontWeight: 800, color: "#1A1A2E" }}>{m.value}</div>
+            <div style={{ fontSize: 26, fontWeight: 800, color: "#003057" }}>{m.value}</div>
             <div style={{ fontSize: 11, color: "#888", marginTop: 2 }}>{m.label}</div>
             <div style={{ fontSize: 11, marginTop: 6, color: m.change == null ? "#AAA" : m.change >= 0 ? "#1E9E5A" : "#C0392B" }}>
               {m.change == null ? "Sin comparación previa" : `${m.change >= 0 ? "▲" : "▼"} ${Math.abs(m.change).toFixed(0)}% vs. periodo anterior`}
@@ -246,12 +246,12 @@ const Analytics = () => {
             <AreaChart data={daily}>
               <defs>
                 <linearGradient id="visGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#C8E64A" stopOpacity={0.45} />
-                  <stop offset="100%" stopColor="#C8E64A" stopOpacity={0.05} />
+                  <stop offset="0%" stopColor="#D9C756" stopOpacity={0.45} />
+                  <stop offset="100%" stopColor="#D9C756" stopOpacity={0.05} />
                 </linearGradient>
                 <linearGradient id="convGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#1B2A4A" stopOpacity={0.35} />
-                  <stop offset="100%" stopColor="#1B2A4A" stopOpacity={0.04} />
+                  <stop offset="0%" stopColor="#003057" stopOpacity={0.35} />
+                  <stop offset="100%" stopColor="#003057" stopOpacity={0.04} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -259,8 +259,8 @@ const Analytics = () => {
               <YAxis fontSize={11} allowDecimals={false} />
               <Tooltip />
               <Legend />
-              <Area type="monotone" dataKey="visitantes" stroke="#8AB83A" strokeWidth={2} fill="url(#visGrad)" />
-              <Area type="monotone" dataKey="conversiones" stroke="#1B2A4A" strokeWidth={2} fill="url(#convGrad)" />
+              <Area type="monotone" dataKey="visitantes" stroke="#B8A63F" strokeWidth={2} fill="url(#visGrad)" />
+              <Area type="monotone" dataKey="conversiones" stroke="#003057" strokeWidth={2} fill="url(#convGrad)" />
             </AreaChart>
           </ResponsiveContainer>
         ) : <p style={emptyStyle}>Sin datos todavía para este periodo.</p>}
@@ -289,7 +289,7 @@ const Analytics = () => {
                 <XAxis type="number" fontSize={11} allowDecimals={false} />
                 <YAxis dataKey="page" type="category" fontSize={10} width={120} />
                 <Tooltip />
-                <Bar dataKey="total" fill="#1B2A4A" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="total" fill="#003057" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           ) : <p style={emptyStyle}>Sin datos todavía.</p>}
@@ -303,7 +303,7 @@ const Analytics = () => {
                 <XAxis type="number" fontSize={11} allowDecimals={false} />
                 <YAxis dataKey="origen" type="category" fontSize={10} width={120} />
                 <Tooltip />
-                <Bar dataKey="total" fill="#8AB83A" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="total" fill="#B8A63F" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           ) : <p style={emptyStyle}>Sin datos todavía.</p>}

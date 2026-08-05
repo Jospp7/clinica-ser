@@ -73,14 +73,14 @@ const BlogEditor = () => {
   return (
     <div style={{ maxWidth: 900, margin: "0 auto" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 12 }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#1A1A2E", margin: 0 }}>{isEdit ? "Editar Post" : "Nuevo Post"}</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, color: "#003057", margin: 0 }}>{isEdit ? "Editar Post" : "Nuevo Post"}</h2>
         <div style={{ display: "flex", gap: 8 }}>
           <button onClick={() => save("draft")} disabled={saving}
             style={{ padding: "10px 20px", background: "#888", color: "white", border: "none", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
             Guardar borrador
           </button>
           <button onClick={() => save("published")} disabled={saving}
-            style={{ padding: "10px 20px", background: "#C8E64A", color: "#1A1A2E", border: "none", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
+            style={{ padding: "10px 20px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
             Publicar
           </button>
         </div>
@@ -119,8 +119,8 @@ const BlogEditor = () => {
         </div>
         <div>
           <div style={{ display: "flex", gap: 0, marginBottom: 8 }}>
-            <button onClick={() => setTab("write")} style={{ padding: "8px 20px", background: tab === "write" ? "#1A1A2E" : "#f5f5f5", color: tab === "write" ? "white" : "#888", border: "none", borderRadius: "8px 0 0 8px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Escribir</button>
-            <button onClick={() => setTab("preview")} style={{ padding: "8px 20px", background: tab === "preview" ? "#1A1A2E" : "#f5f5f5", color: tab === "preview" ? "white" : "#888", border: "none", borderRadius: "0 8px 8px 0", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Vista previa</button>
+            <button onClick={() => setTab("write")} style={{ padding: "8px 20px", background: tab === "write" ? "#003057" : "#f5f5f5", color: tab === "write" ? "white" : "#888", border: "none", borderRadius: "8px 0 0 8px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Escribir</button>
+            <button onClick={() => setTab("preview")} style={{ padding: "8px 20px", background: tab === "preview" ? "#003057" : "#f5f5f5", color: tab === "preview" ? "white" : "#888", border: "none", borderRadius: "0 8px 8px 0", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Vista previa</button>
           </div>
           {tab === "write" ? (
             <textarea value={content} onChange={e => setContent(e.target.value)} rows={16} style={{ ...inputStyle, fontFamily: "monospace", fontSize: 13, resize: "vertical" }} placeholder="Escribe el contenido HTML aquí..." />

@@ -31,11 +31,11 @@ const Nosotros = () => {
       <style>{`
         .nosotros-v2 { padding: clamp(80px, 10vw, 140px) 24px; background: #FFFFFF; }
         .nosotros-v2__container { max-width: 1200px; margin: 0 auto; }
-        .nosotros-v2__heading { font-family: 'Inter', sans-serif; font-size: clamp(22px, 3.2vw, 39px); font-weight: 800; color: #1A1A2E; text-align: center; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
-        .nosotros-v2__dot { width: 12px; height: 12px; border-radius: 50%; background: #C8E64A; margin: 0 auto 60px; }
+        .nosotros-v2__heading { font-family: 'Source Sans 3', sans-serif; font-size: clamp(22px, 3.2vw, 39px); font-weight: 800; color: #003057; text-align: center; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+        .nosotros-v2__dot { width: 12px; height: 12px; border-radius: 50%; background: #D9C756; margin: 0 auto 60px; }
         .nosotros-v2__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
-        .nosotros-v2__text { font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: #555; margin: 0 0 24px; }
-        .nosotros-v2__highlight { font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.5vw, 17px); font-weight: 600; color: #8AB83A; margin: 0; }
+        .nosotros-v2__text { font-family: 'Source Sans 3', sans-serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: #555; margin: 0 0 24px; }
+        .nosotros-v2__highlight { font-family: 'Source Sans 3', sans-serif; font-size: clamp(15px, 1.5vw, 17px); font-weight: 600; color: #8A7826; margin: 0; }
         .nosotros-v2__img-col { border-radius: 16px; overflow: hidden; }
         .nosotros-v2__img { width: 100%; height: auto; display: block; border-radius: 16px; }
 

@@ -160,7 +160,7 @@ const Tratamiento = () => {
             <a href={`tel:${SITE.telefonoTel[0]}`} className="trat-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
             <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
           </div>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
+          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
         </div>
       </section>
 
@@ -168,47 +168,47 @@ const Tratamiento = () => {
         .trat-hero { position: relative; min-height: 60vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80') center/cover; }
         .trat-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.65)); }
         .trat-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
-        .trat-hero__tag { font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #C8E64A; display: block; margin-bottom: 16px; }
-        .trat-hero__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
-        .trat-hero__sub { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0 0 32px; }
-        .trat-hero__btn { display: inline-flex; background: #C8E64A; color: #1A1A2E; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
-        .trat-hero__btn:hover { background: #8AB83A; color: white; }
+        .trat-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
+        .trat-hero__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
+        .trat-hero__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0 0 32px; }
+        .trat-hero__btn { display: inline-flex; background: #D9C756; color: #003057; padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
+        .trat-hero__btn:hover { background: #B8A63F; color: #003057; }
 
         .trat-process { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
         .trat-process__container { max-width: 1200px; margin: 0 auto; }
-        .trat-process__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
+        .trat-process__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .trat-intro { max-width: 860px; margin: 0 auto; }
-        .trat-intro__p { font-family: 'Inter', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; }
+        .trat-intro__p { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; }
 
         .trat-grid-section { background: #F5F5F5; padding: clamp(64px,8vw,120px) 24px; }
         .trat-grid__container { max-width: 1200px; margin: 0 auto; }
-        .trat-grid__tag { display: block; font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #8AB83A; margin-bottom: 12px; text-align: center; }
-        .trat-grid__title { font-family: 'Inter', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #1A1A2E; text-align: center; margin: 0 0 48px; }
+        .trat-grid__tag { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #8A7826; margin-bottom: 12px; text-align: center; }
+        .trat-grid__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .trat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
         .trat-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
         .trat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06); }
         .trat-card__body { padding: 24px; }
-        .trat-card__title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #1A1A2E; margin: 0 0 8px; }
-        .trat-card__text { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
-        .trat-card__list { font-family: 'Inter', sans-serif; font-size: 14px; color: #666; line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
+        .trat-card__title { font-family: 'Source Sans 3', sans-serif; font-size: 18px; font-weight: 700; color: #003057; margin: 0 0 8px; }
+        .trat-card__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+        .trat-card__list { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
 
-        .trat-cta { background: #1B2A4A; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
+        .trat-cta { background: #003057; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .trat-cta__inner { max-width: 600px; margin: 0 auto; }
-        .trat-cta__title { font-family: 'Inter', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
-        .trat-cta__text { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
+        .trat-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
+        .trat-cta__text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
         .trat-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .trat-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #C8E64A; color: #1A1A2E; padding: 14px 32px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
-        .trat-cta__btn:hover { background: #8AB83A; color: white; }
+        .trat-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #D9C756; color: #003057; padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
+        .trat-cta__btn:hover { background: #B8A63F; color: #003057; }
         .trat-cta__btn--wa { background: #25D366; color: white; }
         .trat-cta__btn--wa:hover { background: #1DB954; }
 
         .trat-duracion { max-width: 700px; margin: 0 auto; }
-        .trat-duracion__table { width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 15px; color: #444; }
+        .trat-duracion__table { width: 100%; border-collapse: collapse; font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #444; }
         .trat-duracion__table th, .trat-duracion__table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(0,0,0,.08); }
-        .trat-duracion__table th { background: #1A1A2E; color: #FFFFFF; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .05em; }
+        .trat-duracion__table th { background: #003057; color: #FFFFFF; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: .05em; }
         .trat-duracion__table td:first-child { width: 70%; }
         .trat-duracion__table td:last-child { width: 30%; font-weight: 600; }
-        .trat-duracion__legend { font-family: 'Inter', sans-serif; font-size: 13px; color: #666; text-align: center; margin: 16px 0 0; line-height: 1.5; }
+        .trat-duracion__legend { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #666; text-align: center; margin: 16px 0 0; line-height: 1.5; }
 
         @media (max-width: 900px) {
           .trat-grid { grid-template-columns: 1fr; }

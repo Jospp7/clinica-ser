@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
         .wa-float-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 500; display: flex; align-items: center; }
         .wa-float-btn { width: 56px; height: 56px; border-radius: 50%; background: #25D366; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.22); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: relative; transition: transform 0.2s ease, background-color 0.2s ease; }
         .wa-float-btn:hover { transform: scale(1.10); background: #1DB954; }
-        .wa-float-tooltip { position: absolute; right: calc(100% + 12px); white-space: nowrap; background: #0A1628; color: white; border-radius: 6px; padding: 6px 12px; font-family: 'Inter', sans-serif; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+        .wa-float-tooltip { position: absolute; right: calc(100% + 12px); white-space: nowrap; background: #0A1628; color: white; border-radius: 6px; padding: 6px 12px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
         .wa-float-wrap:hover .wa-float-tooltip { opacity: 1; }
         @media (prefers-reduced-motion: no-preference) {
           .wa-float-btn::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: waPulse 2.2s ease-out infinite; z-index: -1; }

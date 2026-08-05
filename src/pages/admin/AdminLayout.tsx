@@ -31,17 +31,17 @@ const AdminLayout = () => {
       });
   }, [location.pathname]);
 
-  if (loading) return <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Inter',sans-serif" }}>Cargando...</div>;
+  if (loading) return <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Source Sans 3',sans-serif" }}>Cargando...</div>;
   if (!user) return null;
 
   const currentTitle = NAV.find(n => location.pathname.startsWith(n.path))?.label ?? "Admin";
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ display: "flex", minHeight: "100vh", fontFamily: "'Source Sans 3', sans-serif" }}>
       {sidebarOpen && <div onClick={() => setSidebarOpen(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.5)", zIndex: 998 }} />}
 
       <aside style={{
-        width: 240, background: "#1B2A4A", color: "white", display: "flex", flexDirection: "column",
+        width: 240, background: "#003057", color: "white", display: "flex", flexDirection: "column",
         position: "fixed", top: 0, bottom: 0, left: sidebarOpen ? 0 : -240, zIndex: 999,
         transition: "left .3s ease",
       }} className="admin-sidebar">
@@ -82,7 +82,7 @@ const AdminLayout = () => {
             style={{ background: "none", border: "1px solid #E8E8E8", borderRadius: 6, padding: "6px 10px", cursor: "pointer", display: "inline-flex", alignItems: "center" }}>
             <Menu size={18} aria-hidden="true" />
           </button>
-          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#1A1A2E", margin: 0 }}>{currentTitle}</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#003057", margin: 0 }}>{currentTitle}</h2>
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12, color: "#22C55E", fontWeight: 600 }}>
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#22C55E", display: "inline-block", animation: "pulse 2s infinite" }} /> En vivo

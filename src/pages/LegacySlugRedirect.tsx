@@ -67,7 +67,7 @@ const LegacySlugRedirect = () => {
         <span className="lsr__spinner" aria-label="Cargando" role="status" />
         <style>{`
           .lsr { min-height: 60vh; display: flex; align-items: center; justify-content: center; background: #F5F5F5; }
-          .lsr__spinner { width: 28px; height: 28px; border-radius: 50%; border: 3px solid rgba(0,0,0,0.1); border-top-color: #8AB83A; animation: lsr-spin .7s linear infinite; }
+          .lsr__spinner { width: 28px; height: 28px; border-radius: 50%; border: 3px solid rgba(0,0,0,0.1); border-top-color: #8A7826; animation: lsr-spin .7s linear infinite; }
           @keyframes lsr-spin { to { transform: rotate(360deg); } }
         `}</style>
       </div>

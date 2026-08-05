@@ -209,8 +209,8 @@ const Hero = () => {
         .hero__left--visible { opacity: 1; transform: translateY(0); }
 
         .hero__years { display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px; justify-content: center; }
-        .hero__years-num { font-family: 'Inter', sans-serif; font-size: clamp(34px, 5vw, 58px); font-weight: 600; color: white; line-height: 1; letter-spacing: -0.02em; }
-        .hero__years-label { font-family: 'Inter', sans-serif; font-size: clamp(13px, 1.5vw, 18px); font-weight: 300; color: rgba(255,255,255,0.7); }
+        .hero__years-num { font-family: 'Source Sans 3', sans-serif; font-size: clamp(34px, 5vw, 58px); font-weight: 600; color: white; line-height: 1; letter-spacing: -0.02em; }
+        .hero__years-label { font-family: 'Source Sans 3', sans-serif; font-size: clamp(13px, 1.5vw, 18px); font-weight: 300; color: rgba(255,255,255,0.7); }
 
         /* Pill-shaped logo ring — wider and flatter */
         .hero__logo-ring { position: relative; width: clamp(420px, 48vw, 580px); height: clamp(170px, 18vw, 240px); margin-bottom: 20px; }
@@ -231,7 +231,7 @@ const Hero = () => {
         .hero__logo-img { width: 50%; height: auto; }
 
         .hero__headline {
-          font-family: 'Inter', sans-serif; font-size: clamp(13px, 1.6vw, 17px); font-weight: 400;
+          font-family: 'Source Sans 3', sans-serif; font-size: clamp(13px, 1.6vw, 17px); font-weight: 400;
           color: rgba(255,255,255,0.85); line-height: 1.4; margin: 0 0 24px; text-align: center;
           animation: hero-fade-up 0.8s ease 0.4s both;
         }
@@ -240,7 +240,7 @@ const Hero = () => {
           from { opacity: 0; transform: translateY(16px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .hero__btn--primary { background: white; color: #1A1A2E; border: none; padding: 16px 36px; border-radius: 60px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .hero__btn--primary { background: white; color: #003057; border: none; padding: 16px 36px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
         .hero__btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 
         /* Right side */
@@ -259,7 +259,7 @@ const Hero = () => {
         .hero__ellipse { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); }
         .hero__ellipse--1 { width: 340px; height: 340px; top: -10px; right: -20px; }
         .hero__ellipse--2 { width: 200px; height: 200px; bottom: 20px; right: 200px; }
-        .hero__wa-bubble { position: absolute; bottom: 10px; right: 10px; background: white; color: #1A1A2E; padding: 10px 18px; border-radius: 24px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); z-index: 5; animation: hero-fade-up 0.8s ease 1s both; cursor: pointer; text-decoration: none; }
+        .hero__wa-bubble { position: absolute; bottom: 10px; right: 10px; background: white; color: #003057; padding: 10px 18px; border-radius: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); z-index: 5; animation: hero-fade-up 0.8s ease 1s both; cursor: pointer; text-decoration: none; }
         .hero__wa-icon { font-size: 16px; }
 
         @media (max-width: 900px) {
