@@ -114,7 +114,7 @@ const Footer = () => {
           <div className="footer-v2__top-col">
             <span className="footer-v2__label">¿TIENES ALGUNA CONSULTA?</span>
             {footerSent ? (
-              <p style={{ color: "#D9C756", fontFamily: "'Source Sans 3',sans-serif", fontSize: 14 }}>¡Gracias! Te contactaremos pronto.</p>
+              <p style={{ color: "var(--brand-gold)", fontFamily: "'Source Sans 3',sans-serif", fontSize: 14 }}>¡Gracias! Te contactaremos pronto.</p>
             ) : (
               <form onSubmit={handleFooterSubmit} className="footer-v2__form">
                 <input
@@ -141,35 +141,35 @@ const Footer = () => {
       </div>
 
       <style>{`
-        .footer-v2 { background: #003057; }
+        .footer-v2 { background: var(--brand-navy); }
         .footer-v2__top { padding: 60px 24px 40px; }
 
         .footer-v2__top-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
         .footer-v2__label { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); display: block; margin-bottom: 16px; }
-        .footer-v2__cenadic { font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 800; color: #D9C756; margin: 0 0 16px; }
+        .footer-v2__cenadic { font-family: 'Source Sans 3', sans-serif; font-size: 24px; font-weight: 800; color: var(--brand-gold); margin: 0 0 16px; }
         .footer-v2__address { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.5; margin: 0 0 16px; }
         .footer-v2__phones { font-family: 'Source Sans 3', sans-serif; font-size: 14px; margin: 0 0 12px; line-height: 1.8; }
         .footer-v2__email { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: rgba(255,255,255,0.5); margin: 0 0 16px; }
         .footer-v2__link { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-        .footer-v2__link:hover { color: #D9C756; }
+        .footer-v2__link:hover { color: var(--brand-gold); }
         .footer-v2__socials { display: flex; gap: 10px; margin-bottom: 12px; }
-        .footer-v2__social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #D9C756; color: #D9C756; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
-        .footer-v2__social-icon:hover { background: rgba(217,199,86,0.15); color: #D9C756; }
+        .footer-v2__social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--brand-gold); color: var(--brand-gold); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
+        .footer-v2__social-icon:hover { background: rgba(217,199,86,0.15); color: var(--brand-gold); }
         .footer-v2__circle-deco { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(217,199,86,0.2); margin-bottom: 12px; }
         .footer-v2__stars-row { display: flex; align-items: center; gap: 6px; }
         .footer-v2__stars-text { font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); margin-left: 8px; }
         .footer-v2__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; }
         .footer-v2__sitemap-link { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; padding: 6px 0; transition: color 0.2s; }
-        .footer-v2__sitemap-link:hover { color: #D9C756; }
+        .footer-v2__sitemap-link:hover { color: var(--brand-gold); }
         .footer-v2__form { display: flex; flex-direction: column; gap: 12px; }
         .footer-v2__input { padding: 12px 16px; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; background: rgba(255,255,255,0.05); color: white; font-family: 'Source Sans 3', sans-serif; font-size: 14px; }
         .footer-v2__input::placeholder { color: rgba(255,255,255,0.4); }
-        .footer-v2__submit { padding: 14px 24px; background: #D9C756; color: #003057; border: none; border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.08em; transition: background 0.2s; }
-        .footer-v2__submit:hover { background: #B8A63F; color: #003057; }
+        .footer-v2__submit { padding: 14px 24px; background: var(--brand-gold); color: var(--brand-navy); border: none; border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: 0.08em; transition: background 0.2s; }
+        .footer-v2__submit:hover { background: #B8A63F; color: var(--brand-navy); }
 
         .footer-v2__copyright { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding: 24px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: rgba(255,255,255,0.55); }
         .footer-v2__admin-link { font-family: 'Source Sans 3', sans-serif; color: rgba(255,255,255,0.4); text-decoration: none; opacity: 0.4; font-size: 11px; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
-        .footer-v2__admin-link:hover { color: #D9C756; }
+        .footer-v2__admin-link:hover { color: var(--brand-gold); }
 
         @media (max-width: 900px) {
           .footer-v2__top-grid { grid-template-columns: 1fr; gap: 32px; }
