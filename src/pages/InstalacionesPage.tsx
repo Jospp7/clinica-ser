@@ -74,7 +74,8 @@ const InstalacionesPage = () => {
       </section>
 
       <style>{`
-        .inst-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80') center/cover; }
+        /* TODO: imagen del cliente para .inst-pg__hero (fondo neutro por defecto) */
+        .inst-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: #003057; }
         .inst-pg__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.85), rgba(26,26,46,.6)); }
         .inst-pg__hero-content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .inst-pg__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
