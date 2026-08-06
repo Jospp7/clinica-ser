@@ -45,7 +45,7 @@ const AdminLayout = () => {
         position: "fixed", top: 0, bottom: 0, left: sidebarOpen ? 0 : -220, zIndex: 999,
         transition: "left .3s ease",
       }} className="admin-sidebar">
-        <div style={{ padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,.1)", display: "flex", justifyContent: "center" }}>
+        <div style={{ padding: "12px 20px", background: "var(--admin-logo-surface)", borderBottom: "1px solid rgba(255,255,255,.1)", display: "flex", justifyContent: "center" }}>
           <img src={logoSer} alt="Clínica SER" style={{ height: 108, width: "auto", display: "block" }} />
         </div>
         <nav style={{ flex: 1, padding: "16px 12px" }}>
