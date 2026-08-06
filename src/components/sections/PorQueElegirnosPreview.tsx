@@ -23,7 +23,9 @@ const RAZONES: Array<{ title: string; desc: string; icon: LucideIcon }> = [
 
 const PorQueElegirnosPreview = () => {
   return (
-    <section className="pqe-prev">
+    <section className="pqe-prev deco-host">
+      <span className="brand-deco brand-deco--gold brand-deco--a" aria-hidden="true" />
+      <span className="brand-deco brand-deco--navy brand-deco--b" aria-hidden="true" />
       <div className="pqe-prev__inner">
         <h2 className="pqe-prev__title" data-anim="fade-up">Más de 58 años transformando vidas</h2>
         <p className="pqe-prev__sub" data-anim="fade-up">
