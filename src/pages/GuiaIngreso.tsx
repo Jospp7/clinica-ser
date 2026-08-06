@@ -177,6 +177,7 @@ const GuiaIngreso = () => {
             </Link>
           </section>
         </div>
+        </div>
       </article>
 
       <style>{`
