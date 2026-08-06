@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo";
 import Hero from "@/components/sections/Hero";
 import Nosotros from "@/components/sections/Nosotros";
+import PorQueElegirnosPreview from "@/components/sections/PorQueElegirnosPreview";
 import Instalaciones from "@/components/sections/Instalaciones";
 import TiposIngreso from "@/components/sections/TiposIngreso";
 import CTAFinal from "@/components/sections/CTAFinal";
@@ -16,6 +17,8 @@ const Index = () => {
       <Hero />
       <hr data-anim="fade-up" className="section-divider-line" />
       <Nosotros />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <PorQueElegirnosPreview />
       <hr data-anim="fade-up" className="section-divider-line" />
       <Instalaciones />
       <hr data-anim="fade-up" className="section-divider-line" />
