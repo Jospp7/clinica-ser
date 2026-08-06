@@ -61,7 +61,7 @@ const PorQueElegirnosPreview = () => {
       </div>
 
       <style>{`
-        .pqe-prev { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
+        .pqe-prev { background: #FFFFFF; padding: clamp(64px,8vw,120px) clamp(24px, 5vw, 80px); }
         .pqe-prev__inner { max-width: 1200px; margin: 0 auto; }
         .pqe-prev__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,5vw,60px); font-weight: 800; color: var(--brand-navy); line-height: 1.1; margin: 0 0 16px; text-align: center; letter-spacing: -0.02em; }
         .pqe-prev__sub { font-family: 'Source Sans 3', sans-serif; font-size: clamp(15px,1.6vw,18px); color: hsl(var(--muted-foreground)); line-height: 1.7; margin: 0 auto clamp(40px,5vw,56px); text-align: center; max-width: 640px; }
