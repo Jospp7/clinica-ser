@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import ContactModal from "../ContactModal";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { waLink } from "@/lib/site";
@@ -9,25 +9,7 @@ const HERO_IMG = "https://images.unsplash.com/photo-1511895426328-dc8714191300?w
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [countVal, setCountVal] = useState(0);
-  const countRafRef = useRef<number>(0);
   const [visible, setVisible] = useState(false);
-
-  // Count-up animation 0 → 58
-  useEffect(() => {
-    const duration = 2000;
-    const target = 58;
-    const start = performance.now();
-    const ease = (t: number) => 1 - Math.pow(1 - t, 3); // ease-out cubic
-    const tick = (now: number) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      setCountVal(Math.round(ease(progress) * target));
-      if (progress < 1) countRafRef.current = requestAnimationFrame(tick);
-    };
-    countRafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(countRafRef.current);
-  }, []);
 
   // Fade-in trigger
   useEffect(() => {
