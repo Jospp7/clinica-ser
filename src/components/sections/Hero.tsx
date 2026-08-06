@@ -5,10 +5,9 @@ import { waLink } from "@/lib/site";
 import logoSer from "@/assets/logo-ser.png";
 import { Phone, MessageCircle } from "lucide-react";
 
-const HERO_BG = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80";
-const DOC_1 = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80";
-const DOC_2 = "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80";
-const DOC_3 = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80";
+const HERO_BG = "/images/hero-fondo.jpg";
+const DOC_1 = "/images/equipo.jpg";
+// TODO: imagen del cliente — faltan 2 fotos adicionales del equipo para los círculos secundarios.
 
 const ORBIT_TEXT = "PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·  CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·  ";
 
@@ -118,7 +117,7 @@ const Hero = () => {
     <section className="hero-v2">
       <div className="hero-v2__bg-wrap">
         <div className="hero-v2__overlay" />
-        <img src={HERO_BG} alt="Instalaciones de Clínica SER, rehabilitación de adicciones en Puebla" className="hero-v2__bg-img" style={{ transform: `translateY(${scrollPos * 0.3}px)` }} />
+        <img src={HERO_BG} alt="Jardín de las instalaciones de Clínica SER en Puebla" className="hero-v2__bg-img" style={{ transform: `translateY(${scrollPos * 0.3}px)` }} />
       </div>
 
       <div className="hero__container">
@@ -171,13 +170,7 @@ const Hero = () => {
         <div className={`hero__right ${visible ? 'hero__right--visible' : ''}`}>
           <div className="hero__right-backdrop" aria-hidden="true" />
           <div className="hero__circle hero__circle--main">
-            <img src={DOC_1} alt="Doctora especialista de Clínica SER" loading="eager" />
-          </div>
-          <div className="hero__circle hero__circle--secondary">
-            <img src={DOC_2} alt="Enfermera de Clínica SER" loading="eager" />
-          </div>
-          <div className="hero__circle hero__circle--third">
-            <img src={DOC_3} alt="Equipo médico de Clínica SER" loading="eager" />
+            <img src={DOC_1} alt="Equipo médico de Clínica SER" loading="eager" />
           </div>
           <div className="hero__ellipse hero__ellipse--1" aria-hidden="true" />
           <div className="hero__ellipse hero__ellipse--2" aria-hidden="true" />

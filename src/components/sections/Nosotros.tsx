@@ -1,4 +1,4 @@
-const DOC_IMG = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80";
+const DOC_IMG = "/images/nosotros.jpg";
 
 const Nosotros = () => {
   return (
@@ -23,7 +23,7 @@ const Nosotros = () => {
           </div>
 
           <div className="nosotros-v2__img-col" data-anim="fade-left">
-            <img src={DOC_IMG} alt="Doctor con teléfono" className="nosotros-v2__img" loading="lazy" />
+            <img src={DOC_IMG} alt="Instalaciones de Clínica SER" className="nosotros-v2__img" loading="lazy" />
           </div>
         </div>
       </div>
