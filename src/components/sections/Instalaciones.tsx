@@ -1,22 +1,15 @@
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
 import { Phone } from "lucide-react";
+import InstalacionesCarrusel from "@/components/InstalacionesCarrusel";
 
 const Instalaciones = () => {
   return (
     <section className="inst-v2">
       <div className="inst-v2__container">
         <div className="inst-v2__grid">
-          {/* Left: large photo placeholder */}
-          {/* TODO: imagen del cliente */}
-          <div className="inst-v2__large inst-v2__placeholder" data-anim="fade-right" aria-hidden="true" />
-
-          {/* Center: two stacked placeholders */}
-          <div className="inst-v2__stack" data-anim="fade-up">
-            {/* TODO: imagen del cliente */}
-            <div className="inst-v2__stack-img inst-v2__placeholder" aria-hidden="true" />
-            {/* TODO: imagen del cliente */}
-            <div className="inst-v2__stack-img inst-v2__placeholder" aria-hidden="true" />
+          <div className="inst-v2__carrusel" data-anim="fade-right">
+            <InstalacionesCarrusel />
           </div>
 
           {/* Right: info panel */}
@@ -36,7 +29,8 @@ const Instalaciones = () => {
       <style>{`
         .inst-v2 { padding: clamp(60px, 8vw, 100px) 24px; background: #F5F5F0; }
         .inst-v2__container { max-width: 1300px; margin: 0 auto; }
-        .inst-v2__grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 24px; align-items: start; }
+        .inst-v2__grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 24px; align-items: start; }
+        .inst-v2__carrusel { min-width: 0; }
         .inst-v2__large { border-radius: 12px; overflow: hidden; }
         .inst-v2__large img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; min-height: 500px; }
         .inst-v2__stack { display: flex; flex-direction: column; gap: 24px; }
