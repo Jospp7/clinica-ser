@@ -15,7 +15,7 @@ const Instalaciones = () => {
           {/* Right: info panel */}
           <div className="inst-v2__info" data-anim="fade-left">
             <div className="inst-v2__circle-deco" />
-            <span className="inst-v2__tag">NUESTRAS INSTALACIONES</span>
+            <h2 className="inst-v2__title">NUESTRAS INSTALACIONES</h2>
             <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
               <Phone size={18} aria-hidden="true" /> {SITE.telefonos[0]}
             </a>
@@ -45,7 +45,7 @@ const Instalaciones = () => {
         }
         .inst-v2__info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 40px; position: relative; }
         .inst-v2__circle-deco { width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(217,199,86,0.3); position: absolute; top: 0; right: 0; }
-        .inst-v2__tag { font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-top: 40px; }
+        .inst-v2__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(2.5rem, 4.5vw, 4.6rem); line-height: 0.95; font-weight: 800; text-transform: uppercase; letter-spacing: 0; color: var(--brand-navy); margin: 40px 0 0; max-width: 100%; }
         .inst-v2__phone-btn { display: flex; align-items: center; gap: 10px; background: #003057; color: white; padding: 16px 28px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; min-width: 240px; }
         .inst-v2__phone-btn:hover { background: #2A3D66; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,42,74,0.3); }
 
