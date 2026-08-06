@@ -108,6 +108,12 @@ const InstalacionesPage = () => {
         .inst-pg__intro-text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; text-align: center; }
         .inst-pg__carrusel { max-width: 1000px; margin: 0 auto 56px; }
         .inst-pg__features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .inst-pg__amen { display: grid; grid-template-columns: minmax(240px,1fr) 2fr; gap: clamp(32px,5vw,64px); align-items: start; }
+        .inst-pg__amen-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,4.5vw,56px); font-weight: 700; color: var(--brand-navy); margin: 0 0 16px; line-height: 1.1; }
+        .inst-pg__amen-claim { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px,1.6vw,20px); font-weight: 600; color: #444; margin: 0; }
+        .inst-pg__amen-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
+        .inst-pg__amen-item { display: inline-flex; align-items: center; gap: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; color: var(--brand-navy); }
+        .inst-pg__amen-item svg { color: var(--brand-gold-dark); flex: 0 0 auto; }
         .inst-pg__feature { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .inst-pg__feature:hover { transform: translateY(-4px); }
         .inst-pg__feature-icon { font-size: 36px; display: block; margin-bottom: 16px; }
