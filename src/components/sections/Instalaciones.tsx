@@ -7,22 +7,19 @@ const Instalaciones = () => {
   return (
     <section className="inst-v2">
       <div className="inst-v2__container">
-        <div className="inst-v2__grid">
-          <div className="inst-v2__carrusel" data-anim="fade-right">
-            <InstalacionesCarrusel />
-          </div>
+        <h2 className="inst-v2__title" data-anim="fade-left">NUESTRAS INSTALACIONES</h2>
 
-          {/* Right: info panel */}
-          <div className="inst-v2__info" data-anim="fade-left">
-            <div className="inst-v2__circle-deco" />
-            <h2 className="inst-v2__title">NUESTRAS INSTALACIONES</h2>
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
-              <Phone size={18} aria-hidden="true" /> {SITE.telefonos[0]}
-            </a>
-            <a href={`tel:${SITE.telefonoTel[1]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_2")}>
-              <Phone size={18} aria-hidden="true" /> {SITE.telefonos[1]}
-            </a>
-          </div>
+        <div className="inst-v2__carrusel" data-anim="fade-right">
+          <InstalacionesCarrusel />
+        </div>
+
+        <div className="inst-v2__phones" data-anim="fade-left">
+          <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
+            <Phone size={18} aria-hidden="true" /> {SITE.telefonos[0]}
+          </a>
+          <a href={`tel:${SITE.telefonoTel[1]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_2")}>
+            <Phone size={18} aria-hidden="true" /> {SITE.telefonos[1]}
+          </a>
         </div>
       </div>
 
