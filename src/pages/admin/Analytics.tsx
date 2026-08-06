@@ -160,18 +160,6 @@ const Analytics = () => {
     return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([page, vistas]) => ({ page, vistas }));
   }, [events]);
 
-  const _origenesLegacy = useMemo(() => {
-    const bySession: Record<string, string> = {};
-    events.filter(e => e.event_type === "pageview").forEach(e => {
-      const sid = sessionOf(e);
-      if (!sid || bySession[sid]) return;
-      bySession[sid] = (e.metadata?.["referrer_source"] as string) ?? "desconocido";
-    });
-    const counts: Record<string, number> = {};
-    Object.values(bySession).forEach(o => { counts[o] = (counts[o] ?? 0) + 1; });
-    return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([origen, total]) => ({ origen, total }));
-  }, [events]);
-
   const dispositivos = useMemo(() => {
     const bySession: Record<string, string> = {};
     events.filter(e => e.event_type === "pageview").forEach(e => {
@@ -319,6 +307,7 @@ const Analytics = () => {
 
         <div style={cardStyle}>
           <h3 style={titleStyle}>Origen del tráfico</h3>
+        {/* Páginas más visitadas se agrega abajo */}
           {origenes.length > 0 ? (
             <ResponsiveContainer width="100%" height={220}>
               <BarChart data={origenes} layout="vertical">
