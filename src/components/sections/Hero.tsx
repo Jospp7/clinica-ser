@@ -58,7 +58,7 @@ const Hero = () => {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contáctanos por WhatsApp"
+              aria-label="Escríbenos por WhatsApp"
               onClick={() => trackCTAClick("WA_HERO_BUBBLE")}
             >
               <MessageCircle size={18} aria-hidden="true" /> Escríbenos por WhatsApp
