@@ -184,12 +184,13 @@ const Tratamiento = () => {
         .trat-grid__tag { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #8A7826; margin-bottom: 12px; text-align: center; }
         .trat-grid__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .trat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
-        .trat-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
-        .trat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06); }
-        .trat-card__body { padding: 24px; }
-        .trat-card__title { font-family: 'Source Sans 3', sans-serif; font-size: 18px; font-weight: 700; color: #003057; margin: 0 0 8px; }
-        .trat-card__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
-        .trat-card__list { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
+         .trat-card { background: var(--brand-navy); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(0,48,87,.18); border-radius: 20px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
+         .trat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,48,87,.22); }
+         .trat-card__body { padding: 24px; }
+         .trat-card__title { font-family: 'Source Sans 3', sans-serif; font-size: 18px; font-weight: 700; color: #FFFFFF; margin: 0 0 8px; }
+         .trat-card__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.7; margin: 0; }
+         .trat-card__list { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
+         .trat-card__list li::marker { color: var(--brand-gold); }
 
         .trat-cta { background: #003057; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
         .trat-cta__inner { max-width: 600px; margin: 0 auto; }
