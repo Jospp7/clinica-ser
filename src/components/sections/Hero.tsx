@@ -82,7 +82,7 @@ const Hero = () => {
           .hero-v2 { padding-top: 80px; }
           .hero__container { grid-template-columns: 1fr; min-height: 0; }
           .hero__right { order: 1; min-height: 300px; height: 58vw; }
-          .hero__left { order: 2; padding: 40px 24px 56px; align-items: flex-start; }
+          .hero__left { order: 2; padding: 40px 24px 56px; align-items: center; }
           .hero__headline { max-width: none; }
         }
       `}</style>
