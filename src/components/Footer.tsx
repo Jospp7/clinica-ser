@@ -62,7 +62,7 @@ const Footer = () => {
                  className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_INSTAGRAM")}>
                 <Instagram size={18} />
               </a>
-              {/* TODO: reemplazar por ícono oficial de TikTok e insertar la URL real (SITE.redes.tiktok) */}
+              {/* TODO: reemplazar por ícono oficial de TikTok */}
               {SITE.redes.tiktok && (
                 <a href={SITE.redes.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok"
                    className="footer-v2__social-icon" onClick={() => trackCTAClick("SOCIAL_TIKTOK")}>
