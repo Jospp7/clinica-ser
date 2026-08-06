@@ -49,7 +49,9 @@ const GuiaIngreso = () => {
           </div>
         </header>
 
-        <div className="guia__body-wrap">
+        <div className="guia__body-wrap side-bands">
+        <span className="side-band side-band--l side-band--gold" aria-hidden="true" />
+        <span className="side-band side-band--r side-band--gold" aria-hidden="true" />
         <div className="guia__body">
           <section className="guia__section">
             <p>

@@ -43,7 +43,9 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
-      <section className="pqe-intro-section">
+      <section className="pqe-intro-section side-bands">
+        <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
+        <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="pqe-intro-container" data-anim="fade-up">
           <p className="pqe-intro">
             Clínica SER® forma parte de un grupo médico cuya experiencia de más de {SITE.aniosExperiencia} años le ha permitido desarrollar el modelo de tratamiento para la adicción al alcohol y la drogadicción más avanzado y con mayor éxito del país. No existe en todo el país un centro de rehabilitación y desintoxicación que cuente con el respaldo de un hospital de salud mental como parte de su grupo médico, lo que permite brindar atención calificada para padecimientos coexistentes. El trato en Clínica SER es profesional y humano, con confidencialidad y respeto.

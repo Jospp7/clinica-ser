@@ -43,7 +43,9 @@ const GuiaIntervencion = () => {
           </div>
         </header>
 
-        <div className="guia__body-wrap">
+        <div className="guia__body-wrap side-bands">
+        <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
+        <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="guia__body">
           <section className="guia__section">
             <h2>¿Qué puedo hacer?</h2>
