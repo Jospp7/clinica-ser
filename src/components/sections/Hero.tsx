@@ -5,7 +5,7 @@ import { waLink } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
 
 // TODO: temporal — reemplazar con foto real tras la visita.
-const HERO_IMG = "https://images.unsplash.com/photo-1591901206069-ed60c4429a2e?w=1200&q=80";
+const HERO_IMG = "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80";
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
