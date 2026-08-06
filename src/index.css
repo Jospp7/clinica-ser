@@ -110,3 +110,23 @@
   background: linear-gradient(135deg, #D9C756, #B8A63F);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
+
+/* Decoraciones de marca: formas geométricas suaves detrás del contenido */
+.deco-host { position: relative; overflow: hidden; }
+.deco-host > * { position: relative; z-index: 1; }
+.brand-deco {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  display: block;
+}
+.brand-deco--gold { background: radial-gradient(circle at 50% 50%, hsl(51 63% 59% / 0.16), hsl(51 63% 59% / 0) 70%); }
+.brand-deco--navy { background: radial-gradient(circle at 50% 50%, hsl(206 100% 17% / 0.10), hsl(206 100% 17% / 0) 70%); }
+.brand-deco--ring { background: none; border: 1px solid hsl(51 63% 59% / 0.22); }
+.brand-deco--a { width: 420px; height: 420px; top: -140px; right: -120px; }
+.brand-deco--b { width: 340px; height: 340px; bottom: -120px; left: -110px; }
+@media (max-width: 768px) {
+  .brand-deco--a { width: 240px; height: 240px; top: -90px; right: -90px; }
+  .brand-deco--b { width: 200px; height: 200px; bottom: -80px; left: -80px; }
+}
