@@ -36,6 +36,7 @@ const queryClient = new QueryClient();
 const AppContent = () => {
   useScrollReveal();
   usePageTracking();
+  useScrollToTop();
   return (
     <Routes>
       <Route path="/" element={<Index />} />
