@@ -243,8 +243,8 @@ const Equipo = () => {
       </section>
 
       <section className="eq-pg__profile-section side-bands">
-        <span data-anim="band" className="side-band side-band--l side-band--gold" aria-hidden="true" />
-        <span data-anim="band" className="side-band side-band--r side-band--gold" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--full side-band--l side-band--gold" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--full side-band--r side-band--gold" aria-hidden="true" />
         {PERFILES.map((perfil, idx) => (
           <div key={idx} className="eq-pg__profile-container" data-anim="fade-up">
             {/* TODO: imagen del cliente — foto de {perfil.nombre} */}
