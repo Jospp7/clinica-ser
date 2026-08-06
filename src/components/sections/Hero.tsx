@@ -54,15 +54,12 @@ const Hero = () => {
         .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; padding-top: 104px; }
         .hero__container { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 40% 60%; align-items: stretch; min-height: clamp(520px, 78vh, 760px); }
 
-        .hero__left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; background: var(--brand-navy); padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+        .hero__left { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: var(--brand-navy); padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; text-align: center; }
         .hero__left--visible { opacity: 1; transform: translateY(0); }
 
-        .hero__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
-        .hero__years-num { font-family: 'Source Sans 3', sans-serif; font-size: clamp(38px, 4.4vw, 64px); font-weight: 700; color: var(--brand-gold); line-height: 1; letter-spacing: -.02em; }
-        .hero__years-label { font-family: 'Source Sans 3', sans-serif; font-size: clamp(14px, 1.5vw, 20px); font-weight: 400; color: rgba(255,255,255,.82); }
-
-        .hero__headline { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px, 3.4vw, 50px); font-weight: 800; color: #FFFFFF; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 12px; text-align: left; max-width: 20ch; animation: hero-fade-up .8s ease .3s both; }
-        .hero__subtitle { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px, 1.45vw, 20px); font-weight: 400; color: rgba(255,255,255,.9); line-height: 1.55; margin: 0 0 28px; max-width: 42ch; animation: hero-fade-up .8s ease .4s both; }
+        .hero__headline { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px, 3.4vw, 50px); font-weight: 800; color: #FFFFFF; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 12px; text-align: center; max-width: 20ch; animation: hero-fade-up .8s ease .3s both; }
+        .hero__headline-accent { color: var(--brand-gold); }
+        .hero__subtitle { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px, 1.45vw, 20px); font-weight: 400; color: rgba(255,255,255,.9); line-height: 1.55; margin: 0 auto 28px; max-width: 42ch; text-align: center; animation: hero-fade-up .8s ease .4s both; }
 
         .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; animation: hero-fade-up .8s ease .5s both; }
         @keyframes hero-fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
