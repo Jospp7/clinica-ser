@@ -77,6 +77,8 @@ const Tratamiento = () => {
 
       <section className="trat-grid-section deco-host">
         <span className="brand-deco brand-deco--gold brand-deco--b" aria-hidden="true" />
+        <span className="brand-deco brand-deco--navy brand-deco--side-l" aria-hidden="true" />
+        <span className="brand-deco brand-deco--gold brand-deco--side-r" aria-hidden="true" />
         <div className="trat-grid__container">
           <span className="trat-grid__tag" data-anim="fade-up">NUESTRO PROGRAMA</span>
           <h2 className="trat-grid__title" data-anim="fade-up">Tratamiento para adicciones de Clínica SER</h2>
