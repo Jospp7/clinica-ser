@@ -46,6 +46,8 @@ const GuiaIntervencion = () => {
         <div className="guia__body-wrap deco-host">
         <span className="brand-deco brand-deco--navy brand-deco--side-l" aria-hidden="true" />
         <span className="brand-deco brand-deco--gold brand-deco--side-r" aria-hidden="true" />
+        <span className="brand-deco brand-deco--ring brand-deco--navy brand-deco--ring-l" aria-hidden="true" />
+        <span className="brand-deco brand-deco--gold brand-deco--dots brand-deco--dots-br" aria-hidden="true" />
         <div className="guia__body">
           <section className="guia__section">
             <h2>¿Qué puedo hacer?</h2>
