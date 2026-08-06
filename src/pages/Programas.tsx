@@ -110,13 +110,14 @@ const Programas = () => {
         .pad-hero__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
 
         .pad-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
-        .pad-container { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
-        .pad-card { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px; transition: transform .3s; }
-        .pad-card:hover { transform: translateY(-4px); }
-        .pad-card__header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-        .pad-card__num { font-family: 'Source Sans 3', sans-serif; font-size: 28px; font-weight: 800; color: #D9C756; }
-        .pad-card__title { font-family: 'Source Sans 3', sans-serif; font-size: 20px; font-weight: 700; color: #003057; margin: 0; }
-        .pad-card__desc { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 16px; }
+         .pad-container { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+         .pad-card { display: flex; flex-direction: column; min-height: 270px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 32px; box-shadow: 0 12px 30px -20px hsl(var(--brand-navy-hsl) / 0.35); transition: transform .3s, box-shadow .3s; }
+         .pad-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px hsl(var(--brand-navy-hsl) / 0.5); }
+         .pad-card__icon { color: var(--brand-navy); margin-bottom: 20px; flex-shrink: 0; }
+         .pad-card__header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+         .pad-card__num { font-family: 'Source Sans 3', sans-serif; font-size: 28px; font-weight: 800; color: var(--brand-gold); line-height: 1; }
+         .pad-card__title { font-family: 'Source Sans 3', sans-serif; font-size: 20px; font-weight: 700; color: var(--brand-navy); margin: 0; line-height: 1.25; }
+         .pad-card__desc { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: hsl(var(--muted-foreground)); line-height: 1.7; margin: 0; }
         .pad-treatment-cta { max-width: 900px; margin: clamp(48px, 6vw, 72px) auto 0; background: #003057; border: 1px solid rgba(217,199,86,.25); border-radius: 24px; padding: clamp(36px, 5vw, 56px); text-align: center; }
         .pad-treatment-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: white; margin: 0 0 24px; line-height: 1.4; }
         .pad-treatment-cta__btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #D9C756; color: #003057; padding: 16px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; text-align: center; max-width: 100%; }
