@@ -62,12 +62,7 @@ const Tratamiento = () => {
         </div>
       </section>
 
-      <section className="trat-process deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--a" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--arc brand-deco--arc-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--gold brand-deco--dots brand-deco--dots-br" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--b" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--dots brand-deco--dots-tl" aria-hidden="true" />
+      <section className="trat-process">
         <div className="trat-process__container">
           <h2 className="trat-process__title" data-anim="fade-up">Programa de Tratamiento Integral SER®</h2>
           <div className="trat-intro" data-anim="fade-up">
@@ -78,11 +73,7 @@ const Tratamiento = () => {
         </div>
       </section>
 
-      <section className="trat-grid-section deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--b" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--side-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--gold brand-deco--side-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--navy brand-deco--ring-l" aria-hidden="true" />
+      <section className="trat-grid-section">
         <div className="trat-grid__container">
           <span className="trat-grid__tag" data-anim="fade-up">NUESTRO PROGRAMA</span>
           <h2 className="trat-grid__title" data-anim="fade-up">Tratamiento para adicciones de Clínica SER</h2>
@@ -105,8 +96,7 @@ const Tratamiento = () => {
         </div>
       </section>
 
-      <section className="trat-pillars deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--a" aria-hidden="true" />
+      <section className="trat-pillars">
         <div className="trat-pillars__container">
           <div className="trat-pillars__grid">
             <article className="trat-pillar" data-anim="fade-up">

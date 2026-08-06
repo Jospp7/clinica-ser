@@ -60,13 +60,7 @@ const Programas = () => {
         </div>
       </section>
 
-      <section className="pad-grid-section deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--a" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--b" aria-hidden="true" />
-        <span className="brand-deco brand-deco--gold brand-deco--side-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--side-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--ring-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--dots brand-deco--dots-tl" aria-hidden="true" />
+      <section className="pad-grid-section">
         <div className="pad-container">
             {CONDITIONS.map((c, i) => {
               const Icon = c.icon;

@@ -49,11 +49,7 @@ const GuiaIngreso = () => {
           </div>
         </header>
 
-        <div className="guia__body-wrap deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--side-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--side-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--ring-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--dots brand-deco--dots-tl" aria-hidden="true" />
+        <div className="guia__body-wrap">
         <div className="guia__body">
           <section className="guia__section">
             <p>
