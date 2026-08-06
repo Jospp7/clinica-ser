@@ -39,7 +39,9 @@ const BlogReciente = () => {
   if (posts !== null && posts.length === 0) return null;
 
   return (
-    <section className="blogrec">
+    <section className="blogrec deco-host">
+      <span className="brand-deco brand-deco--gold brand-deco--a" aria-hidden="true" />
+      <span className="brand-deco brand-deco--navy brand-deco--b" aria-hidden="true" />
       <div className="blogrec__inner">
         <h2 className="blogrec__title" data-anim="fade-up">Recursos e información para tu familia</h2>
         <p className="blogrec__sub" data-anim="fade-up">
