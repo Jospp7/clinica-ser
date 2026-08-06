@@ -107,6 +107,8 @@ export function usePageTracking() {
   const depthSent = useRef<string | null>(null);
 
   useEffect(() => {
+    if (!esProduccion()) return;
+
     const page = location.pathname;
     sendEvent("pageview", { page, dedupeKey: `pageview:${page}` });
 
@@ -127,6 +129,8 @@ export function usePageTracking() {
 }
 
 export function trackCTAClick(element: string) {
+  if (!esProduccion()) return;
+
   void sendEvent("cta_click", { label: element });
 }
 
