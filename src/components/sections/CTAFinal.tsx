@@ -1,7 +1,7 @@
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
 
-const CTA_IMG = "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80";
+const CTA_IMG = "/images/cta-fondo.jpg";
 
 const CTAFinal = () => {
   return (
