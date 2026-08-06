@@ -74,7 +74,7 @@ const EquipoPreview = () => {
         .eq-prev__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,5vw,60px); font-weight: 800; color: var(--brand-navy); line-height: 1.1; margin: 0 0 16px; text-align: center; letter-spacing: -0.02em; }
         .eq-prev__sub { font-family: 'Source Sans 3', sans-serif; font-size: clamp(15px,1.6vw,18px); color: hsl(var(--muted-foreground)); line-height: 1.7; margin: 0 auto clamp(40px,5vw,56px); text-align: center; max-width: 720px; }
         .eq-prev__media { border-radius: 12px; overflow: hidden; margin: 0 auto clamp(32px,4vw,48px); max-width: 1000px; box-shadow: 0 18px 40px -28px hsl(var(--secondary) / 0.5); }
-        .eq-prev__img { width: 100%; height: clamp(220px, 34vw, 380px); object-fit: cover; display: block; }
+        .eq-prev__img { width: 100%; height: clamp(220px, 34vw, 380px); object-fit: cover; object-position: center 22%; display: block; }
         .eq-prev__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .eq-prev__card { display: flex; flex-direction: column; justify-content: center; min-height: 190px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 32px; box-shadow: 0 12px 30px -20px hsl(var(--secondary) / 0.35); transition: transform .3s, box-shadow .3s; }
         .eq-prev__card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px hsl(var(--secondary) / 0.5); }
