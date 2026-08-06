@@ -26,6 +26,8 @@ const Index = () => {
       <hr data-anim="fade-up" className="section-divider-line" />
       <TiposIngreso />
       <hr data-anim="fade-up" className="section-divider-line" />
+      <EquipoPreview />
+      <hr data-anim="fade-up" className="section-divider-line" />
       <BlogReciente />
       <hr data-anim="fade-up" className="section-divider-line" />
       {/* TODO: restaurar <Testimonios /> cuando el cliente entregue videos reales. */}
