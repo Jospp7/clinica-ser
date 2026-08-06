@@ -15,7 +15,7 @@ const Instalaciones = () => {
           {/* Right: info panel */}
           <div className="inst-v2__info" data-anim="fade-left">
             <div className="inst-v2__circle-deco" />
-            <span className="inst-v2__tag">NUESTRAS INSTALACIONES</span>
+            <h2 className="inst-v2__title">NUESTRAS INSTALACIONES</h2>
             <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-v2__phone-btn" onClick={() => trackCTAClick("LLAMAR_INST_1")}>
               <Phone size={18} aria-hidden="true" /> {SITE.telefonos[0]}
             </a>
