@@ -131,6 +131,8 @@ const InstalacionesPage = () => {
           .inst-pg__gallery { grid-template-columns: 1fr; }
           .inst-pg__span-2 { grid-column: span 1; }
           .inst-pg__features-grid { grid-template-columns: 1fr; }
+          .inst-pg__amen { grid-template-columns: 1fr; }
+          .inst-pg__amen-list { grid-template-columns: 1fr; }
         }
       `}</style>
     </main>
