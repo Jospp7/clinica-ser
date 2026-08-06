@@ -115,3 +115,21 @@
    Todo lo demás del sitio permanece en Source Sans 3 (alternativa a Myriad). */
 .brand-ser { font-family: 'Rubik', 'Trebuchet MS', sans-serif; }
 
+
+/* Bloques verticales de color en franjas laterales vacías (solo pantallas anchas) */
+.side-bands { position: relative; overflow: hidden; }
+.side-bands > *:not(.side-band) { position: relative; z-index: 1; }
+.side-band {
+  display: none;
+  position: absolute;
+  top: 8%;
+  height: 84%;
+  width: clamp(60px, 9vw, 160px);
+  z-index: 0;
+  pointer-events: none;
+}
+.side-band--l { left: 0; border-radius: 0 24px 24px 0; }
+.side-band--r { right: 0; border-radius: 24px 0 0 24px; }
+.side-band--navy { background: #003057; }
+.side-band--gold { background: #D9C756; }
+@media (min-width: 1200px) { .side-band { display: block; } }
