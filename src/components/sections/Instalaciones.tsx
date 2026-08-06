@@ -26,35 +26,15 @@ const Instalaciones = () => {
       <style>{`
         .inst-v2 { padding: clamp(60px, 8vw, 100px) 24px; background: #F5F5F0; }
         .inst-v2__container { max-width: 1300px; margin: 0 auto; }
-        .inst-v2__grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 24px; align-items: start; }
-        .inst-v2__carrusel { min-width: 0; }
-        .inst-v2__large { border-radius: 12px; overflow: hidden; }
-        .inst-v2__large img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; min-height: 500px; }
-        .inst-v2__stack { display: flex; flex-direction: column; gap: 24px; }
-        .inst-v2__stack-img { border-radius: 12px; overflow: hidden; }
-        .inst-v2__stack-img img { width: 100%; height: 240px; object-fit: cover; display: block; border-radius: 12px; }
-        .inst-v2__placeholder { background: #E8E8E0; border-radius: 12px; }
-        .inst-v2__large.inst-v2__placeholder { min-height: 500px; }
-        .inst-v2__stack-img.inst-v2__placeholder { height: 240px; }
-        @media (max-width: 900px) {
-          .inst-v2__large.inst-v2__placeholder { min-height: 300px; }
-          .inst-v2__stack-img.inst-v2__placeholder { height: 180px; }
-        }
-        .inst-v2__info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-top: 40px; position: relative; }
-        .inst-v2__circle-deco { width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(217,199,86,0.3); position: absolute; top: 0; right: 0; }
-        .inst-v2__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(2.5rem, 4.5vw, 4.6rem); line-height: 0.95; font-weight: 800; text-transform: uppercase; letter-spacing: 0; color: var(--brand-navy); margin: 40px 0 0; max-width: 100%; }
-        .inst-v2__phone-btn { display: flex; align-items: center; gap: 10px; background: #003057; color: white; padding: 16px 28px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; min-width: 240px; }
-        .inst-v2__phone-btn:hover { background: #2A3D66; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,42,74,0.3); }
-
-        @media (max-width: 900px) {
-          .inst-v2__grid { grid-template-columns: 1fr; }
-          .inst-v2__large img { min-height: 300px; }
-          .inst-v2__stack { flex-direction: row; }
-          .inst-v2__stack-img img { height: 180px; }
-        }
-        @media (max-width: 600px) {
-          .inst-v2__stack { flex-direction: column; }
-        }
+         .inst-v2__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(2.5rem, 4.5vw, 4.6rem); line-height: 0.95; font-weight: 800; text-transform: uppercase; letter-spacing: 0; color: var(--brand-navy); margin: 0 0 clamp(28px, 4vw, 48px); max-width: 100%; }
+         .inst-v2__carrusel { min-width: 0; }
+         .inst-v2__phones { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: clamp(24px, 3vw, 36px); }
+         .inst-v2__phone-btn { display: flex; align-items: center; gap: 10px; background: var(--brand-navy); color: white; padding: 16px 28px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; min-width: 240px; }
+         .inst-v2__phone-btn:hover { background: #2A3D66; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,42,74,0.3); }
+         @media (max-width: 600px) {
+           .inst-v2__phones { align-items: stretch; flex-direction: column; }
+           .inst-v2__phone-btn { justify-content: center; min-width: 0; }
+         }
       `}</style>
     </section>
   );
