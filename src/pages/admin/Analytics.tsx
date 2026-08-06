@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, AreaChart, Area } from "recharts";
 import { Users, PhoneCall, Mail, TrendingUp, LucideIcon } from "lucide-react";
+import { isInternalHost } from "@/hooks/useTracking";
 
 const cardStyle: React.CSSProperties = { background: "white", borderRadius: 12, padding: 24, boxShadow: "0 1px 3px rgba(0,0,0,.06)" };
 const titleStyle: React.CSSProperties = { fontSize: 14, fontWeight: 700, color: "#003057", marginBottom: 16 };
