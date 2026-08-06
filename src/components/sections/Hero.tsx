@@ -61,7 +61,7 @@ const Hero = () => {
         .hero__headline-accent { color: var(--brand-gold); }
         .hero__subtitle { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px, 1.45vw, 20px); font-weight: 400; color: rgba(255,255,255,.9); line-height: 1.55; margin: 0 auto 28px; max-width: 42ch; text-align: center; animation: hero-fade-up .8s ease .4s both; }
 
-        .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; animation: hero-fade-up .8s ease .5s both; }
+        .hero__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; animation: hero-fade-up .8s ease .5s both; }
         @keyframes hero-fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
         .hero__btn { display: inline-flex; align-items: center; gap: 8px; border: none; border-radius: 60px; padding: 15px 30px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
         .hero__btn--primary { background: var(--brand-gold); color: var(--brand-navy); box-shadow: 0 6px 22px rgba(217,199,86,.28); }
