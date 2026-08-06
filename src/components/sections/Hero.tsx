@@ -51,7 +51,7 @@ const Hero = () => {
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} source="hero_button" />
 
       <style>{`
-        .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; padding-top: 104px; }
+        .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; padding-top: 72px; }
         .hero__container { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 40% 60%; align-items: stretch; min-height: clamp(520px, 78vh, 760px); }
 
         .hero__left { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: var(--brand-navy); padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; text-align: center; }
@@ -79,7 +79,7 @@ const Hero = () => {
         }
 
         @media (max-width: 900px) {
-          .hero-v2 { padding-top: 80px; }
+          .hero-v2 { padding-top: 60px; }
           .hero__container { grid-template-columns: 1fr; min-height: 0; }
           .hero__right { order: 1; min-height: 300px; height: 58vw; }
           .hero__left { order: 2; padding: 40px 24px 56px; align-items: center; }
