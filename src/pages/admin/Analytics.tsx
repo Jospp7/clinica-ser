@@ -150,6 +150,16 @@ const Analytics = () => {
     return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([origen, total]) => ({ origen, total }));
   }, [events]);
 
+  const paginasVistas = useMemo(() => {
+    const counts: Record<string, number> = {};
+    events.forEach(e => {
+      if (e.event_type !== "pageview") return;
+      const p = e.page ?? "/";
+      counts[p] = (counts[p] ?? 0) + 1;
+    });
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([page, vistas]) => ({ page, vistas }));
+  }, [events]);
+
   const dispositivos = useMemo(() => {
     const bySession: Record<string, string> = {};
     events.filter(e => e.event_type === "pageview").forEach(e => {
@@ -307,6 +317,20 @@ const Analytics = () => {
               </BarChart>
             </ResponsiveContainer>
           ) : <p style={emptyStyle}>Sin datos todavía.</p>}
+        </div>
+
+        <div style={cardStyle}>
+          <h3 style={titleStyle}>Páginas más visitadas</h3>
+          {paginasVistas.length > 0 ? (
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={paginasVistas} layout="vertical">
+                <XAxis type="number" fontSize={11} allowDecimals={false} />
+                <YAxis dataKey="page" type="category" fontSize={10} width={140} />
+                <Tooltip />
+                <Bar dataKey="vistas" fill="#003057" radius={[0, 4, 4, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          ) : <p style={emptyStyle}>Sin datos todavía</p>}
         </div>
 
         <div style={cardStyle}>
