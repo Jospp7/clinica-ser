@@ -88,9 +88,9 @@ const Navbar = () => {
         .nav-ser { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
         .nav-ser__bar { display: flex; align-items: center; justify-content: space-between; height: 92px; padding: 0 clamp(16px,3vw,48px); background: rgba(15, 25, 60, 0.45); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12); transition: all .3s ease; }
         .nav-ser__bar--scrolled { background: rgba(15, 25, 60, 0.65); box-shadow: 0 4px 24px rgba(0,0,0,.25); }
-        .nav-ser__logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; background: rgba(255,255,255,.94); border: 1px solid rgba(255,255,255,.6); border-radius: 16px; padding: 8px 20px; box-shadow: 0 4px 14px rgba(0,0,0,.14); transition: background .3s ease; }
+        .nav-ser__logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; background: rgba(255,255,255,.94); border: 1px solid rgba(255,255,255,.6); border-radius: 16px; padding: 4px 12px; box-shadow: 0 4px 14px rgba(0,0,0,.14); transition: background .3s ease; }
         .nav-ser__logo:hover { background: #fff; }
-        .nav-ser__logo-img { height: 68px; width: auto; display: block; }
+        .nav-ser__logo-img { height: 80px; width: auto; display: block; }
         .nav-ser__links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
         .nav-ser__link { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.7); text-decoration: none; padding: 4px 0; position: relative; transition: color .2s ease; }
         .nav-ser__link:hover, .nav-ser__link--active { color: #fff; }
