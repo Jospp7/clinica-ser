@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -22,6 +22,7 @@ const Blog = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [visible, setVisible] = useState(PAGE_SIZE);
+  const [activeCat, setActiveCat] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -40,6 +41,21 @@ const Blog = () => {
       active = false;
     };
   }, []);
+
+  const categories = useMemo(
+    () => Array.from(new Set(posts.map((p) => p.category).filter((c): c is string => !!c && c.trim() !== ""))).sort((a, b) => a.localeCompare(b, "es")),
+    [posts]
+  );
+
+  const filtered = useMemo(
+    () => (activeCat ? posts.filter((p) => p.category === activeCat) : posts),
+    [posts, activeCat]
+  );
+
+  const selectCat = (cat: string | null) => {
+    setActiveCat(cat);
+    setVisible(PAGE_SIZE);
+  };
 
   return (
     <main>
@@ -63,8 +79,31 @@ const Blog = () => {
         {!loading && !error && posts.length === 0 && <p className="blog-state">Aún no hay artículos publicados.</p>}
         {!loading && !error && posts.length > 0 && (
           <>
+            {categories.length > 0 && (
+              <div className="blog-filters" role="group" aria-label="Filtrar artículos por categoría">
+                <button
+                  type="button"
+                  className={`blog-filter${activeCat === null ? " is-active" : ""}`}
+                  aria-pressed={activeCat === null}
+                  onClick={() => selectCat(null)}
+                >
+                  Todas
+                </button>
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    type="button"
+                    className={`blog-filter${activeCat === cat ? " is-active" : ""}`}
+                    aria-pressed={activeCat === cat}
+                    onClick={() => selectCat(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            )}
             <div className="blog-container">
-              {posts.slice(0, visible).map((post, i) => (
+              {filtered.slice(0, visible).map((post, i) => (
                 <article key={post.id} className="blog-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
                   <Link to={`/blog/${post.slug}`} className="blog-card__anchor">
                     {post.cover_image ? (
@@ -87,7 +126,8 @@ const Blog = () => {
                 </article>
               ))}
             </div>
-            {visible < posts.length && (
+            {filtered.length === 0 && <p className="blog-state">No hay artículos en esta categoría.</p>}
+            {visible < filtered.length && (
               <div className="blog-more">
                 <button className="blog-more__btn" onClick={() => setVisible((v) => v + PAGE_SIZE)}>
                   VER MÁS ARTÍCULOS
@@ -118,6 +158,10 @@ const Blog = () => {
         .blog-hero__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
 
         .blog-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
+        .blog-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1200px; margin: 0 auto 40px; }
+        .blog-filter { font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 10px 18px; border-radius: 60px; border: 1px solid rgba(0,48,87,.2); background: #fff; color: #003057; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+        .blog-filter:hover { background: #003057; color: #fff; border-color: #003057; }
+        .blog-filter.is-active { background: var(--brand-gold, #D9C756); border-color: var(--brand-gold, #D9C756); color: #003057; }
         .blog-container { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
         .blog-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform .3s, box-shadow .3s; cursor: pointer; }
         .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
