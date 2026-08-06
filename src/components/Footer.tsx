@@ -153,7 +153,6 @@ const Footer = () => {
         .footer-v2__socials { display: flex; gap: 10px; margin-bottom: 12px; }
         .footer-v2__social-icon { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--brand-gold); color: var(--brand-gold); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: background 0.2s, color 0.2s; text-decoration: none; }
         .footer-v2__social-icon:hover { background: rgba(217,199,86,0.15); color: var(--brand-gold); }
-        .footer-v2__circle-deco { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(217,199,86,0.2); margin-bottom: 12px; }
         .footer-v2__stars-row { display: flex; align-items: center; gap: 6px; }
         .footer-v2__stars-text { font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); margin-left: 8px; }
         .footer-v2__sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; }
