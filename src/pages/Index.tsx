@@ -4,6 +4,7 @@ import Nosotros from "@/components/sections/Nosotros";
 import PorQueElegirnosPreview from "@/components/sections/PorQueElegirnosPreview";
 import Instalaciones from "@/components/sections/Instalaciones";
 import TiposIngreso from "@/components/sections/TiposIngreso";
+import EquipoPreview from "@/components/sections/EquipoPreview";
 import BlogReciente from "@/components/sections/BlogReciente";
 import CTAFinal from "@/components/sections/CTAFinal";
 import Mapa from "@/components/sections/Mapa";
