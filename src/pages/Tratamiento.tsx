@@ -63,6 +63,8 @@ const Tratamiento = () => {
       </section>
 
       <section className="trat-process">
+        <span className="trat-process__band trat-process__band--l" aria-hidden="true" />
+        <span className="trat-process__band trat-process__band--r" aria-hidden="true" />
         <div className="trat-process__container">
           <h2 className="trat-process__title" data-anim="fade-up">Programa de Tratamiento Integral SER®</h2>
           <div className="trat-intro" data-anim="fade-up">
@@ -169,14 +171,18 @@ const Tratamiento = () => {
         .trat-hero__btn { display: inline-flex; background: #D9C756; color: #003057; padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
         .trat-hero__btn:hover { background: #B8A63F; color: #003057; }
 
-        .trat-process { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
-        .trat-process__container { max-width: 1200px; margin: 0 auto; padding-left: clamp(24px, 5vw, 80px); padding-right: clamp(24px, 5vw, 80px); }
+        .trat-process { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; position: relative; overflow: hidden; }
+        .trat-process__band { display: none; position: absolute; top: 8%; height: 84%; z-index: 0; pointer-events: none; }
+        .trat-process__band--l { left: 0; width: clamp(60px, 9vw, 160px); background: #003057; border-radius: 0 24px 24px 0; }
+        .trat-process__band--r { right: 0; width: clamp(60px, 9vw, 160px); background: #D9C756; border-radius: 24px 0 0 24px; }
+        @media (min-width: 1200px) { .trat-process__band { display: block; } }
+        .trat-process__container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
         .trat-process__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .trat-intro { max-width: 860px; margin: 0 auto; }
         .trat-intro__p { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; }
 
         .trat-grid-section { background: #F5F5F5; padding: clamp(64px,8vw,120px) 24px; }
-        .trat-grid__container { max-width: 1200px; margin: 0 auto; padding-left: clamp(24px, 5vw, 80px); padding-right: clamp(24px, 5vw, 80px); }
+        .trat-grid__container { max-width: 1200px; margin: 0 auto; }
         .trat-grid__tag { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #8A7826; margin-bottom: 12px; text-align: center; }
         .trat-grid__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .trat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
@@ -207,7 +213,7 @@ const Tratamiento = () => {
         .trat-duracion__legend { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #666; text-align: center; margin: 16px 0 0; line-height: 1.5; }
 
         .trat-pillars { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
-        .trat-pillars__container { max-width: 1200px; margin: 0 auto; padding-left: clamp(24px, 5vw, 80px); padding-right: clamp(24px, 5vw, 80px); }
+        .trat-pillars__container { max-width: 1200px; margin: 0 auto; }
         .trat-pillars__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; align-items: stretch; }
         .trat-pillar { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 20px; padding: clamp(28px,3vw,40px); box-shadow: 0 12px 30px -20px rgba(0,48,87,.45); transition: transform .3s, box-shadow .3s; }
         .trat-pillar:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(0,48,87,.5); }
