@@ -41,8 +41,8 @@ const AdminLayout = () => {
       {sidebarOpen && <div onClick={() => setSidebarOpen(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.5)", zIndex: 998 }} />}
 
       <aside style={{
-        width: 240, background: "#003057", color: "white", display: "flex", flexDirection: "column",
-        position: "fixed", top: 0, bottom: 0, left: sidebarOpen ? 0 : -240, zIndex: 999,
+        width: 220, background: "var(--admin-sidebar)", color: "white", display: "flex", flexDirection: "column",
+        position: "fixed", top: 0, bottom: 0, left: sidebarOpen ? 0 : -220, zIndex: 999,
         transition: "left .3s ease",
       }} className="admin-sidebar">
         <div style={{ padding: "20px", borderBottom: "1px solid rgba(255,255,255,.1)", display: "flex", justifyContent: "center" }}>
@@ -97,7 +97,7 @@ const AdminLayout = () => {
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
         @media (min-width: 901px) {
           .admin-sidebar { left: 0 !important; position: fixed !important; }
-          .admin-main { margin-left: 240px !important; }
+          .admin-main { margin-left: 220px !important; }
           .admin-hamburger { display: none !important; }
         }
       `}</style>
