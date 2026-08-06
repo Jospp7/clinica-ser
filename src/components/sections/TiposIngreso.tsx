@@ -46,9 +46,6 @@ const TiposIngreso = () => {
               ¿Cómo podemos ayudarte en<br />la clínica de adicciones?
             </h2>
           </div>
-          <button className="tipos-v2__cta" onClick={() => { trackCTAClick("CONTACTANOS_TIPOS"); setModalOpen(true); }}>
-            CONTÁCTANOS
-          </button>
         </div>
 
         <div className="tipos-v2__grid">
