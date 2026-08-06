@@ -73,10 +73,10 @@ const Hero = () => {
       <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} source="hero_button" />
 
       <style>{`
-        .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; }
+        .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; padding-top: 104px; }
         .hero__container { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 40% 60%; align-items: stretch; min-height: clamp(520px, 78vh, 760px); }
 
-        .hero__left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; background: #F5F5F5; padding: clamp(96px, 10vw, 140px) clamp(24px, 4vw, 72px) clamp(48px, 6vw, 80px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+        .hero__left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; background: #F5F5F5; padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
         .hero__left--visible { opacity: 1; transform: translateY(0); }
 
         .hero__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
@@ -103,6 +103,7 @@ const Hero = () => {
         }
 
         @media (max-width: 900px) {
+          .hero-v2 { padding-top: 80px; }
           .hero__container { grid-template-columns: 1fr; min-height: 0; }
           .hero__right { order: 1; min-height: 300px; height: 58vw; }
           .hero__left { order: 2; padding: 40px 24px 56px; align-items: flex-start; }
