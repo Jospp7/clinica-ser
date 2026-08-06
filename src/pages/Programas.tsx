@@ -62,15 +62,20 @@ const Programas = () => {
 
       <section className="pad-grid-section">
         <div className="pad-container">
-          {CONDITIONS.map((c, i) => (
-            <div key={i} className="pad-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
-              <div className="pad-card__header">
-                <span className="pad-card__num">{String(i + 1).padStart(2, '0')}</span>
-                <h2 className="pad-card__title">{c.title}</h2>
-              </div>
-              <p className="pad-card__desc">{c.desc}</p>
-            </div>
-          ))}
+            {CONDITIONS.map((c, i) => {
+              const Icon = c.icon;
+
+              return (
+                <div key={i} className="pad-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
+                  <Icon className="pad-card__icon" size={38} strokeWidth={1.8} aria-hidden="true" />
+                  <div className="pad-card__header">
+                    <span className="pad-card__num">{String(i + 1).padStart(2, '0')}</span>
+                    <h2 className="pad-card__title">{c.title}</h2>
+                  </div>
+                  <p className="pad-card__desc">{c.desc}</p>
+                </div>
+              );
+            })}
         </div>
 
         <div className="pad-treatment-cta" data-anim="fade-up">
