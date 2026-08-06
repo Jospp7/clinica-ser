@@ -220,8 +220,8 @@ const Equipo = () => {
       </section>
 
       <section className="eq-pg__intro-section side-bands">
-        <span data-anim="band" className="side-band side-band--l side-band--navy" aria-hidden="true" />
-        <span data-anim="band" className="side-band side-band--r side-band--navy" aria-hidden="true" />
+        <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
+        <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="eq-pg__intro-container" data-anim="fade-up">
           <p className="eq-pg__intro">
             SER® es una de las mejores clínicas de rehabilitación en Puebla. Ofrecemos un equipo profesional y humano, altamente especializado en las técnicas más actualizadas de abordaje terapéutico, terapia cognitivo conductual y terapia racional emotiva. Nuestros especialistas dirigen entrevistas motivacionales para potenciar los deseos de cambio del familiar adicto. En nuestro equipo encontrarás especialistas en psiquiatría, médicos y enfermeras disponibles las 24 horas del día. Mantenemos estrictas políticas de confidencialidad, un trato empático y altos estándares de calidad.
@@ -243,8 +243,8 @@ const Equipo = () => {
       </section>
 
       <section className="eq-pg__profile-section side-bands">
-        <span data-anim="band" className="side-band side-band--full side-band--l side-band--gold" aria-hidden="true" />
-        <span data-anim="band" className="side-band side-band--full side-band--r side-band--gold" aria-hidden="true" />
+        <span className="side-band side-band--full side-band--l side-band--gold" aria-hidden="true" />
+        <span className="side-band side-band--full side-band--r side-band--gold" aria-hidden="true" />
         {PERFILES.map((perfil, idx) => (
           <div key={idx} className="eq-pg__profile-container" data-anim="fade-up">
             {/* TODO: imagen del cliente — foto de {perfil.nombre} */}
