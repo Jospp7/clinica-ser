@@ -46,8 +46,8 @@ const AdminLayout = () => {
         transition: "left .3s ease",
       }} className="admin-sidebar">
         <div style={{ padding: "20px", borderBottom: "1px solid rgba(255,255,255,.1)" }}>
-          <span style={{ display: "inline-flex", background: "rgba(255,255,255,.95)", borderRadius: 12, padding: "8px 14px" }}>
-            <img src={logoSer} alt="Clínica SER" style={{ height: 40, width: "auto", display: "block" }} />
+          <span style={{ display: "flex", justifyContent: "center", background: "rgba(255,255,255,.95)", borderRadius: 12, padding: "10px 16px" }}>
+            <img src={logoSer} alt="Clínica SER" style={{ height: 84, width: "auto", display: "block" }} />
           </span>
         </div>
         <nav style={{ flex: 1, padding: "16px 12px" }}>
