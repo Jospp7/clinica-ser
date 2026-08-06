@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, AreaChart, Area } from "recharts";
 import { Users, PhoneCall, Mail, TrendingUp, LucideIcon } from "lucide-react";
+import { isInternalHost } from "@/hooks/useTracking";
 
 const cardStyle: React.CSSProperties = { background: "white", borderRadius: 12, padding: 24, boxShadow: "0 1px 3px rgba(0,0,0,.06)" };
 const titleStyle: React.CSSProperties = { fontSize: 14, fontWeight: 700, color: "#003057", marginBottom: 16 };
@@ -47,6 +48,13 @@ const isContactCta = (l: string) => isPhoneCta(l) || isWhatsappCta(l);
 
 const sessionOf = (e: EventRow) => (e.metadata?.["session_id"] as string) ?? "";
 
+/* Excluye tráfico interno (preview de Lovable, localhost). Los eventos antiguos
+   sin `host` provienen del preview, por lo que también se descartan. */
+const isRealTraffic = (e: EventRow) => {
+  const host = e.metadata?.["host"];
+  return typeof host === "string" && host.length > 0 && !isInternalHost(host);
+};
+
 const Analytics = () => {
   const [rangeKey, setRangeKey] = useState("30");
   const [events, setEvents] = useState<EventRow[]>([]);
@@ -73,8 +81,8 @@ const Analytics = () => {
       ]);
       [evRes, prevEvRes, ctRes, prevCtRes].forEach((r, i) => { if (r.error) console.error(`[Analytics] query ${i} failed:`, r.error); });
       if (cancelled) return;
-      setEvents((evRes.data ?? []) as EventRow[]);
-      setPrevEvents((prevEvRes.data ?? []) as EventRow[]);
+      setEvents(((evRes.data ?? []) as EventRow[]).filter(isRealTraffic));
+      setPrevEvents(((prevEvRes.data ?? []) as EventRow[]).filter(isRealTraffic));
       setContacts((ctRes.data ?? []) as ContactRow[]);
       setPrevContacts((prevCtRes.data ?? []) as ContactRow[]);
       setLoading(false);
