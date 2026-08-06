@@ -4,6 +4,11 @@ import { supabase } from "@/integrations/supabase/client";
 
 const DEDUPE_MS = 30_000;
 
+/** Hosts de desarrollo/preview: su tráfico NO debe contaminar las analíticas. */
+export function isInternalHost(host: string): boolean {
+  return /(^|\.)lovable\.dev$|(^|\.)lovable\.app$|(^|\.)lovableproject\.com$|localhost|^127\.0\.0\.1$|^0\.0\.0\.0$/.test(host);
+}
+
 function getSessionId(): string {
   let sid = sessionStorage.getItem("ser_session");
   if (!sid) {
@@ -51,6 +56,7 @@ function baseMetadata() {
     device: getDevice(),
     referrer_source: getReferrerSource(),
     returning: isReturningVisitor(),
+    host: window.location.hostname,
   };
 }
 
@@ -75,6 +81,7 @@ async function sendEvent(
 ) {
   const page = opts.page ?? window.location.pathname;
   if (page.startsWith("/admin")) return;
+  if (isInternalHost(window.location.hostname)) return;
   if (opts.dedupeKey && shouldSkip(opts.dedupeKey)) return;
   try {
     const { error } = await supabase.from("page_events").insert({
