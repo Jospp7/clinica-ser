@@ -44,6 +44,8 @@ const Guias = () => {
       <section className="guias-idx__grid-section deco-host">
         <span className="brand-deco brand-deco--gold brand-deco--side-l" aria-hidden="true" />
         <span className="brand-deco brand-deco--navy brand-deco--side-r" aria-hidden="true" />
+        <span className="brand-deco brand-deco--ring brand-deco--ring-l" aria-hidden="true" />
+        <span className="brand-deco brand-deco--gold brand-deco--dots brand-deco--dots-br" aria-hidden="true" />
         <div className="guias-idx__grid">
           {GUIAS.map((g) => (
             <Link key={g.to} to={g.to} className="guias-idx__card" data-anim="fade-up">
