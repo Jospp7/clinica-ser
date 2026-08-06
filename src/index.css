@@ -98,6 +98,18 @@
   [data-anim-delay="0.15s"] { transition-delay: 0.15s; }
   [data-anim-delay="0.2s"] { transition-delay: 0.2s; }
   [data-anim-delay="0.3s"] { transition-delay: 0.3s; }
+
+  /* Bloques laterales: crecen suavemente al entrar en viewport */
+  [data-anim].side-band {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: opacity .6s ease-out, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-anim].side-band.is-visible {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 .section-divider-line {
