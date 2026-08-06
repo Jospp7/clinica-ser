@@ -2,6 +2,7 @@ import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
 import { Phone } from "lucide-react";
+import InstalacionesCarrusel from "@/components/InstalacionesCarrusel";
 
 // TODO: imagen del cliente — reemplazar cada amenidad con foto real (16 amenidades)
 const AMENIDADES = [
@@ -52,6 +53,9 @@ const InstalacionesPage = () => {
               La seguridad de su ser querido es muy importante para nosotros, por ello contamos con instalaciones especiales únicas en México, traídas desde U.S.A., Brasil, España, Alemania e Italia, cumpliendo con estándares internacionales que nos hacen únicos.
             </p>
           </div>
+          <div className="inst-pg__carrusel" data-anim="fade-up">
+            <InstalacionesCarrusel />
+          </div>
           <h2 className="inst-pg__features-title" data-anim="fade-up">Amenidades</h2>
           <div className="inst-pg__features-grid">
             {AMENIDADES.map((nombre, i) => (
@@ -94,6 +98,7 @@ const InstalacionesPage = () => {
         .inst-pg__features-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .inst-pg__intro { max-width: 860px; margin: 0 auto 48px; }
         .inst-pg__intro-text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; text-align: center; }
+        .inst-pg__carrusel { max-width: 1000px; margin: 0 auto 56px; }
         .inst-pg__features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .inst-pg__feature { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .inst-pg__feature:hover { transform: translateY(-4px); }
