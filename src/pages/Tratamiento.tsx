@@ -63,8 +63,8 @@ const Tratamiento = () => {
       </section>
 
       <section className="trat-process side-bands">
-        <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
-        <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--l side-band--navy" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="trat-process__container">
           <h2 className="trat-process__title" data-anim="fade-up">Programa de Tratamiento Integral SER®</h2>
           <div className="trat-intro" data-anim="fade-up">
@@ -125,8 +125,8 @@ const Tratamiento = () => {
       </section>
 
       <section className="trat-process side-bands">
-        <span className="side-band side-band--l side-band--gold" aria-hidden="true" />
-        <span className="side-band side-band--r side-band--gold" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--l side-band--gold" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--r side-band--gold" aria-hidden="true" />
         <div className="trat-process__container">
           <h2 className="trat-process__title" data-anim="fade-up">Duración de tratamiento</h2>
           <div className="trat-duracion" data-anim="fade-up">

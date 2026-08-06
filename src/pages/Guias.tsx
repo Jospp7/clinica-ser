@@ -32,6 +32,7 @@ const Guias = () => {
       />
 
       <section className="guias-idx__hero">
+        <div className="guias-idx__hero-overlay" />
         <div className="guias-idx__hero-inner">
           <span className="guias-idx__tag">RECURSOS</span>
           <h1 className="guias-idx__title">Guías para familias</h1>
@@ -56,8 +57,9 @@ const Guias = () => {
       </section>
 
       <style>{`
-        .guias-idx__hero { background: #003057; padding: clamp(120px,14vw,180px) 24px clamp(56px,7vw,90px); text-align: center; }
-        .guias-idx__hero-inner { max-width: 780px; margin: 0 auto; }
+        .guias-idx__hero { position: relative; background: url('/images/cta-fondo.jpg') center/cover; padding: clamp(120px,14vw,180px) 24px clamp(56px,7vw,90px); text-align: center; }
+        .guias-idx__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
+        .guias-idx__hero-inner { position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
         .guias-idx__tag { display: inline-block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #D9C756; margin-bottom: 14px; }
         .guias-idx__title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px,5vw,52px); color: #fff; margin: 0 0 14px; }
         .guias-idx__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,0.85); margin: 0; }

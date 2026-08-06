@@ -44,8 +44,8 @@ const PorQueElegirnos = () => {
       </section>
 
       <section className="pqe-intro-section side-bands">
-        <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
-        <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--l side-band--navy" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="pqe-intro-container" data-anim="fade-up">
           <p className="pqe-intro">
             Clínica SER® forma parte de un grupo médico cuya experiencia de más de {SITE.aniosExperiencia} años le ha permitido desarrollar el modelo de tratamiento para la adicción al alcohol y la drogadicción más avanzado y con mayor éxito del país. No existe en todo el país un centro de rehabilitación y desintoxicación que cuente con el respaldo de un hospital de salud mental como parte de su grupo médico, lo que permite brindar atención calificada para padecimientos coexistentes. El trato en Clínica SER es profesional y humano, con confidencialidad y respeto.
@@ -98,7 +98,7 @@ const PorQueElegirnos = () => {
       </section>
 
       <style>{`
-        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: linear-gradient(135deg, #003057, #003057); }
+        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('/images/por-que-elegirnos.jpg') center/cover; }
         .pqe-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .pqe-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .pqe-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }

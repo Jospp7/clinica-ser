@@ -220,8 +220,8 @@ const Equipo = () => {
       </section>
 
       <section className="eq-pg__intro-section side-bands">
-        <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
-        <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--l side-band--navy" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="eq-pg__intro-container" data-anim="fade-up">
           <p className="eq-pg__intro">
             SER® es una de las mejores clínicas de rehabilitación en Puebla. Ofrecemos un equipo profesional y humano, altamente especializado en las técnicas más actualizadas de abordaje terapéutico, terapia cognitivo conductual y terapia racional emotiva. Nuestros especialistas dirigen entrevistas motivacionales para potenciar los deseos de cambio del familiar adicto. En nuestro equipo encontrarás especialistas en psiquiatría, médicos y enfermeras disponibles las 24 horas del día. Mantenemos estrictas políticas de confidencialidad, un trato empático y altos estándares de calidad.
@@ -243,8 +243,8 @@ const Equipo = () => {
       </section>
 
       <section className="eq-pg__profile-section side-bands">
-        <span className="side-band side-band--l side-band--gold" aria-hidden="true" />
-        <span className="side-band side-band--r side-band--gold" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--l side-band--gold" aria-hidden="true" />
+        <span data-anim="band" className="side-band side-band--r side-band--gold" aria-hidden="true" />
         {PERFILES.map((perfil, idx) => (
           <div key={idx} className="eq-pg__profile-container" data-anim="fade-up">
             {/* TODO: imagen del cliente — foto de {perfil.nombre} */}
@@ -337,8 +337,8 @@ const Equipo = () => {
       </section>
 
       <style>{`
-        .eq-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: linear-gradient(135deg, #003057, #003057); }
-        .eq-pg__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.6), rgba(26,26,46,.3)); }
+        .eq-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('/images/equipo.jpg') center 25%/cover; }
+        .eq-pg__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .eq-pg__hero-content { position: relative; z-index: 2; max-width: 900px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .eq-pg__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
         .eq-pg__hero-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0; }
