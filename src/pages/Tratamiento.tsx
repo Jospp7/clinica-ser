@@ -124,7 +124,9 @@ const Tratamiento = () => {
         </div>
       </section>
 
-      <section className="trat-process">
+      <section className="trat-process side-bands">
+        <span className="side-band side-band--l side-band--gold" aria-hidden="true" />
+        <span className="side-band side-band--r side-band--gold" aria-hidden="true" />
         <div className="trat-process__container">
           <h2 className="trat-process__title" data-anim="fade-up">Duración de tratamiento</h2>
           <div className="trat-duracion" data-anim="fade-up">
