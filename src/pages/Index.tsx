@@ -6,6 +6,7 @@ import Instalaciones from "@/components/sections/Instalaciones";
 import TiposIngreso from "@/components/sections/TiposIngreso";
 import EquipoPreview from "@/components/sections/EquipoPreview";
 import BlogReciente from "@/components/sections/BlogReciente";
+import Testimonios from "@/components/sections/Testimonios";
 import CTAFinal from "@/components/sections/CTAFinal";
 import Mapa from "@/components/sections/Mapa";
 const Index = () => {
@@ -28,10 +29,10 @@ const Index = () => {
       <hr data-anim="fade-up" className="section-divider-line" />
       <EquipoPreview />
       <hr data-anim="fade-up" className="section-divider-line" />
-      <BlogReciente />
-      <hr data-anim="fade-up" className="section-divider-line" />
-      {/* TODO: restaurar <Testimonios /> cuando el cliente entregue videos reales. */}
-      <CTAFinal />
+       <BlogReciente />
+       <hr data-anim="fade-up" className="section-divider-line" />
+       <Testimonios />
+       <CTAFinal />
       <Mapa />
     </main>
   );
