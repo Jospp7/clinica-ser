@@ -1,27 +1,31 @@
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE } from "@/lib/site";
-import { Phone } from "lucide-react";
+import {
+  Phone, Sun, Armchair, Dribbble, Volleyball, BedDouble, HeartPulse, Users,
+  MessagesSquare, User, ClipboardList, Stethoscope, Cross, Palette, Dumbbell,
+  Tv, UtensilsCrossed,
+} from "lucide-react";
 import InstalacionesCarrusel from "@/components/InstalacionesCarrusel";
 
 // TODO: imagen del cliente — reemplazar cada amenidad con foto real (16 amenidades)
 const AMENIDADES = [
-  "Terraza",
-  "Áreas de descanso",
-  "Cancha de Básquetbol",
-  "Cancha de Vóleibol",
-  "Habitaciones separadas",
-  "Área de desintoxicación",
-  "Salón de terapia familiar",
-  "Salón para sesiones",
-  "Áreas para sesión individual",
-  "Salón de informes",
-  "Consultorios médicos",
-  "Central de enfermeras",
-  "Taller de Arte",
-  "Gimnasio",
-  "Salas de TV",
-  "Comedor amplio",
+  { nombre: "Terraza", Icon: Sun },
+  { nombre: "Áreas de descanso", Icon: Armchair },
+  { nombre: "Cancha de Básquetbol", Icon: Dribbble },
+  { nombre: "Cancha de Vóleibol", Icon: Volleyball },
+  { nombre: "Habitaciones separadas", Icon: BedDouble },
+  { nombre: "Área de desintoxicación", Icon: HeartPulse },
+  { nombre: "Salón de terapia familiar", Icon: Users },
+  { nombre: "Salón para sesiones", Icon: MessagesSquare },
+  { nombre: "Áreas para sesión individual", Icon: User },
+  { nombre: "Salón de informes", Icon: ClipboardList },
+  { nombre: "Consultorios médicos", Icon: Stethoscope },
+  { nombre: "Central de enfermeras", Icon: Cross },
+  { nombre: "Taller de Arte", Icon: Palette },
+  { nombre: "Gimnasio", Icon: Dumbbell },
+  { nombre: "Salas de TV", Icon: Tv },
+  { nombre: "Comedor amplio", Icon: UtensilsCrossed },
 ];
 
 const InstalacionesPage = () => {
@@ -56,16 +60,20 @@ const InstalacionesPage = () => {
           <div className="inst-pg__carrusel" data-anim="fade-up">
             <InstalacionesCarrusel />
           </div>
-          <h2 className="inst-pg__features-title" data-anim="fade-up">Amenidades</h2>
-          <div className="inst-pg__features-grid">
-            {AMENIDADES.map((nombre, i) => (
-              <div key={i} className="inst-pg__feature" data-anim="fade-up" data-anim-delay={`${i * 0.1}s`}>
-                {/* TODO: imagen del cliente */}
-                <h3 className="inst-pg__feature-title">{nombre}</h3>
-              </div>
-            ))}
+          <div className="inst-pg__amen" data-anim="fade-up">
+            <div className="inst-pg__amen-head">
+              <h2 className="inst-pg__amen-title">Amenidades</h2>
+              <p className="inst-pg__amen-claim">Somos expertos recuperando vidas.</p>
+            </div>
+            <ul className="inst-pg__amen-list">
+              {AMENIDADES.map(({ nombre, Icon }) => (
+                <li key={nombre} className="inst-pg__amen-item">
+                  <Icon size={22} aria-hidden="true" />
+                  <span>{nombre}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <p className="inst-pg__features-title" data-anim="fade-up" style={{ marginTop: 48, fontSize: 'clamp(20px,2.5vw,28px)' }}>Somos expertos recuperando vidas.</p>
         </div>
       </section>
 
@@ -100,6 +108,12 @@ const InstalacionesPage = () => {
         .inst-pg__intro-text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; text-align: center; }
         .inst-pg__carrusel { max-width: 1000px; margin: 0 auto 56px; }
         .inst-pg__features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .inst-pg__amen { display: grid; grid-template-columns: minmax(240px,1fr) 2fr; gap: clamp(32px,5vw,64px); align-items: start; }
+        .inst-pg__amen-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,4.5vw,56px); font-weight: 700; color: var(--brand-navy); margin: 0 0 16px; line-height: 1.1; }
+        .inst-pg__amen-claim { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px,1.6vw,20px); font-weight: 600; color: #444; margin: 0; }
+        .inst-pg__amen-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
+        .inst-pg__amen-item { display: inline-flex; align-items: center; gap: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; color: var(--brand-navy); }
+        .inst-pg__amen-item svg { color: var(--brand-gold-dark); flex: 0 0 auto; }
         .inst-pg__feature { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
         .inst-pg__feature:hover { transform: translateY(-4px); }
         .inst-pg__feature-icon { font-size: 36px; display: block; margin-bottom: 16px; }
@@ -117,6 +131,8 @@ const InstalacionesPage = () => {
           .inst-pg__gallery { grid-template-columns: 1fr; }
           .inst-pg__span-2 { grid-column: span 1; }
           .inst-pg__features-grid { grid-template-columns: 1fr; }
+          .inst-pg__amen { grid-template-columns: 1fr; }
+          .inst-pg__amen-list { grid-template-columns: 1fr; }
         }
       `}</style>
     </main>
