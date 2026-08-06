@@ -5,9 +5,11 @@ import { waLink } from "@/lib/site";
 import logoSer from "@/assets/logo-ser.png";
 import { Phone, MessageCircle } from "lucide-react";
 
-const HERO_BG = "/images/hero-fondo.jpg";
+// TODO: temporal — reemplazar con foto real de instalaciones.
+const HERO_BG = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80";
 const DOC_1 = "/images/equipo.jpg";
-// TODO: imagen del cliente — faltan 2 fotos adicionales del equipo para los círculos secundarios.
+// TODO: temporal — reemplazar con foto real del equipo tras la visita.
+const DOC_2 = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80";
 
 const ORBIT_TEXT = "PUEBLA — MÉXICO  ·  TRANSFORMANDO VIDAS DESDE 1968  ·  CLÍNICA DE REHABILITACIÓN DE ADICCIONES  ·  ";
 
@@ -171,6 +173,9 @@ const Hero = () => {
           <div className="hero__right-backdrop" aria-hidden="true" />
           <div className="hero__circle hero__circle--main">
             <img src={DOC_1} alt="Equipo médico de Clínica SER" loading="eager" />
+          </div>
+          <div className="hero__circle hero__circle--secondary">
+            <img src={DOC_2} alt="Especialista de Clínica SER" loading="eager" />
           </div>
           <div className="hero__ellipse hero__ellipse--1" aria-hidden="true" />
           <div className="hero__ellipse hero__ellipse--2" aria-hidden="true" />
