@@ -2,35 +2,42 @@ import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { Dices, MessageCircle, Pill, Smartphone, Stethoscope, Tablets, Wine, ArrowRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { trackCTAClick } from "@/hooks/useTracking";
 
 // Lista oficial de programas validada por el cliente.
-const CONDITIONS = [
+const CONDITIONS: Array<{ title: string; desc: string; icon: LucideIcon }> = [
   {
     title: "Alcohol",
     desc: "Tratamiento integral para el consumo de alcohol, con evaluación clínica, desintoxicación y atención primaria por especialistas en psiquiatría.",
+    icon: Wine,
   },
   {
     title: "Drogas",
     desc: "Tratamiento para la adicción a sustancias, con soporte médico y de enfermería disponible las 24 horas del día, pruebas de laboratorio, detección de drogas y electrocardiogramas.",
+    icon: Pill,
   },
   {
     title: "Ludopatía (juego y apuestas)",
     desc: "Tratamiento para la adicción al juego y las apuestas.",
+    icon: Dices,
   },
   {
     title: "Tecnofilia (adicción a las nuevas tecnologías)",
     desc: "Tratamiento especializado para la adicción a las nuevas tecnologías.",
+    icon: Smartphone,
     // TODO: descripción pendiente
   },
   {
     title: "Opiáceos (heroína, morfina, codeína, tebaína)",
     desc: "Tratamiento integral para el consumo de opiáceos, incluyendo heroína, morfina, codeína y tebaína.",
+    icon: Tablets,
   },
   {
     title: "Medicamentos psicotrópicos (benzodiazepinas)",
     desc: "Tratamiento para la adicción a medicamentos psicotrópicos, como benzodiazepinas.",
+    icon: Stethoscope,
   },
 ];
 
