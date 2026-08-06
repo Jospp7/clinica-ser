@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
+    <loc>https://vite-sync-flow.lovable.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>/tratamiento</loc>
+    <loc>https://vite-sync-flow.lovable.app/tratamiento</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>/instalaciones</loc>
+    <loc>https://vite-sync-flow.lovable.app/instalaciones</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/programas</loc>
+    <loc>https://vite-sync-flow.lovable.app/programas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/por-que-elegirnos</loc>
+    <loc>https://vite-sync-flow.lovable.app/por-que-elegirnos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/blog</loc>
+    <loc>https://vite-sync-flow.lovable.app/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/guia-ingreso</loc>
+    <loc>https://vite-sync-flow.lovable.app/guia-ingreso</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/guias</loc>
+    <loc>https://vite-sync-flow.lovable.app/guias</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vite-sync-flow.lovable.app/guia-intervencion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vite-sync-flow.lovable.app/equipo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vite-sync-flow.lovable.app/preguntas-frecuentes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

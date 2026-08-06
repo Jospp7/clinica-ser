@@ -48,7 +48,7 @@ const Programas = () => {
     <main>
       <Seo
         title="Programas que Tratamos — Clínica SER Puebla"
-        description="Programas que atendemos en Clínica SER Puebla: alcohol, drogas, ludopatía (juego y apuestas), tecnofilia (adicción a las nuevas tecnologías), opiáceos (heroína, morfina, codeína, tebaína) y medicamentos psicotrópicos (benzodiazepinas)."
+        description="Programas que atendemos en Clínica SER Puebla: alcohol, drogas, ludopatía, tecnofilia, opiáceos y medicamentos psicotrópicos."
         path="/programas"
       />
       <section className="pad-hero">

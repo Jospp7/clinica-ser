@@ -119,6 +119,18 @@ const BlogPost = () => {
   const seoTitle = post ? `${post.title} — Blog Clínica SER` : "Blog — Clínica SER Puebla";
   const seoDesc = post?.excerpt ?? "";
 
+  const articleJsonLd = post
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.excerpt ?? undefined,
+        datePublished: post.created_at,
+        author: { "@type": "Person", name: post.author ?? "Clínica SER" },
+        publisher: { "@type": "Organization", name: "Clínica SER" },
+      }
+    : undefined;
+
   return (
     <main className="bp">
       <Seo
@@ -126,6 +138,8 @@ const BlogPost = () => {
         description={seoDesc}
         path={`/blog/${slug ?? ""}`}
         noindex={status !== "ok"}
+        type="article"
+        jsonLd={articleJsonLd}
       />
 
       <div className="bp__inner">
