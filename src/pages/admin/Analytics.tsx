@@ -333,19 +333,6 @@ const Analytics = () => {
           ) : <p style={emptyStyle}>Sin datos todavía</p>}
         </div>
 
-        <div style={{ ...cardStyle, display: "none" }} aria-hidden="true">
-          {origenes.length > 0 ? (
-            <ResponsiveContainer width="100%" height={220}>
-              <BarChart data={origenes} layout="vertical">
-                <XAxis type="number" fontSize={11} allowDecimals={false} />
-                <YAxis dataKey="origen" type="category" fontSize={10} width={120} />
-                <Tooltip />
-                <Bar dataKey="total" fill="#B8A63F" radius={[0, 4, 4, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          ) : <p style={emptyStyle}>Sin datos todavía.</p>}
-        </div>
-
         <div style={cardStyle}>
           <h3 style={titleStyle}>Dispositivos</h3>
           {dispositivos.length > 0 ? (
