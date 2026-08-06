@@ -6,9 +6,10 @@ interface SeoProps {
   path: string;
   jsonLd?: object;
   noindex?: boolean;
+  type?: "website" | "article";
 }
 
-export default function Seo({ title, description, path, jsonLd, noindex }: SeoProps) {
+export default function Seo({ title, description, path, jsonLd, noindex, type = "website" }: SeoProps) {
   return (
     <Helmet>
       <title>{title}</title>
@@ -18,6 +19,7 @@ export default function Seo({ title, description, path, jsonLd, noindex }: SeoPr
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={path} />
+      <meta property="og:type" content={type} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {jsonLd && (
