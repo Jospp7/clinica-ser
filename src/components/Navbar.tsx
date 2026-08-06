@@ -89,7 +89,7 @@ const Navbar = () => {
          .nav-ser__bar { display: flex; align-items: center; justify-content: space-between; height: 104px; padding: 0 clamp(16px,3vw,48px); background: rgba(15, 25, 60, 0.45); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12); transition: all .3s ease; }
          .nav-ser__bar--scrolled { background: rgba(15, 25, 60, 0.65); box-shadow: 0 4px 24px rgba(0,0,0,.25); }
          .nav-ser__logo { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; flex-shrink: 0; align-self: stretch; margin-left: calc(-1 * clamp(16px,3vw,48px)); background: #fff; border: none; border-radius: 0; padding: 0 clamp(24px,3vw,56px); box-shadow: none; transition: background .3s ease; }
-         .nav-ser__logo::after { content: ''; position: absolute; z-index: -1; top: 0; right: -72px; width: 72px; height: 100%; pointer-events: none; background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,.78) 28%, rgba(255,255,255,0) 100%); }
+         
          .nav-ser__logo:hover { background: #fff; }
          .nav-ser__logo-img { position: relative; z-index: 1; height: 92px; width: auto; display: block; }
          .nav-ser__links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
