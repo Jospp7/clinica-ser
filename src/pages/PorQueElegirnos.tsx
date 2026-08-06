@@ -43,10 +43,7 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
-      <section className="pqe-intro-section deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--side-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--side-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--ring-r" aria-hidden="true" />
+      <section className="pqe-intro-section">
         <div className="pqe-intro-container" data-anim="fade-up">
           <p className="pqe-intro">
             Clínica SER® forma parte de un grupo médico cuya experiencia de más de {SITE.aniosExperiencia} años le ha permitido desarrollar el modelo de tratamiento para la adicción al alcohol y la drogadicción más avanzado y con mayor éxito del país. No existe en todo el país un centro de rehabilitación y desintoxicación que cuente con el respaldo de un hospital de salud mental como parte de su grupo médico, lo que permite brindar atención calificada para padecimientos coexistentes. El trato en Clínica SER es profesional y humano, con confidencialidad y respeto.
@@ -65,11 +62,7 @@ const PorQueElegirnos = () => {
         </div>
       </section>
 
-      <section className="pqe-reasons deco-host">
-        <span className="brand-deco brand-deco--navy brand-deco--side-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--gold brand-deco--side-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--dots brand-deco--dots-tl" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--arc brand-deco--arc-r" aria-hidden="true" />
+      <section className="pqe-reasons">
         <div className="pqe-reasons__container">
           <h2 className="pqe-reasons__title" data-anim="fade-up">7 razones para elegir Clínica SER</h2>
           <div className="pqe-reasons__grid">
@@ -118,7 +111,7 @@ const PorQueElegirnos = () => {
         .pqe-stats__num { display: block; font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,3.5vw,44px); font-weight: 800; color: #003057; margin-bottom: 8px; }
         .pqe-stats__label { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; }
 
-        .pqe-reasons { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
+        .pqe-reasons { background: #FFFFFF; padding: clamp(64px,8vw,120px) clamp(24px, 5vw, 80px); }
         .pqe-reasons__container { max-width: 1200px; margin: 0 auto; }
         .pqe-reasons__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .pqe-reasons__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
@@ -129,7 +122,7 @@ const PorQueElegirnos = () => {
         .pqe-reason__title { font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 700; color: #003057; margin: 0 0 8px; }
         .pqe-reason__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
 
-        .pqe-timeline { background: #F5F5F5; padding: clamp(64px,8vw,100px) 24px; }
+        .pqe-timeline { background: #F5F5F5; padding: clamp(64px,8vw,100px) clamp(24px, 5vw, 80px); }
         .pqe-timeline__container { max-width: 1100px; margin: 0 auto; }
         .pqe-timeline__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .pqe-timeline__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
@@ -140,7 +133,7 @@ const PorQueElegirnos = () => {
         .pqe-closing { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; text-align: center; }
         .pqe-closing__text { font-family: 'Source Sans 3', sans-serif; font-size: clamp(18px,2vw,24px); font-weight: 600; color: #003057; margin: 0; font-style: italic; }
 
-        .pqe-cta { background: #003057; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
+        .pqe-cta { background: #003057; padding: clamp(64px,8vw,100px) clamp(24px, 5vw, 80px); text-align: center; }
         .pqe-cta__inner { max-width: 600px; margin: 0 auto; }
         .pqe-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
         .pqe-cta__text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }

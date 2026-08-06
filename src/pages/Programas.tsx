@@ -60,13 +60,7 @@ const Programas = () => {
         </div>
       </section>
 
-      <section className="pad-grid-section deco-host">
-        <span className="brand-deco brand-deco--gold brand-deco--a" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--b" aria-hidden="true" />
-        <span className="brand-deco brand-deco--gold brand-deco--side-l" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--side-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--ring brand-deco--ring-r" aria-hidden="true" />
-        <span className="brand-deco brand-deco--navy brand-deco--dots brand-deco--dots-tl" aria-hidden="true" />
+      <section className="pad-grid-section">
         <div className="pad-container">
             {CONDITIONS.map((c, i) => {
               const Icon = c.icon;
@@ -115,7 +109,7 @@ const Programas = () => {
         .pad-hero__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
         .pad-hero__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
 
-        .pad-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) 24px; }
+        .pad-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) clamp(24px, 5vw, 80px); }
          .pad-container { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
           .pad-card { display: flex; flex-direction: column; min-height: 270px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 32px; box-shadow: 0 12px 30px -20px hsl(var(--secondary) / 0.35); transition: transform .3s, box-shadow .3s; }
           .pad-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px hsl(var(--secondary) / 0.5); }
@@ -129,7 +123,7 @@ const Programas = () => {
         .pad-treatment-cta__btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #D9C756; color: #003057; padding: 16px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; text-align: center; max-width: 100%; }
         .pad-treatment-cta__btn:hover { background: #B8A63F; color: #003057; transform: translateY(-2px); }
 
-        .pad-cta { background: #003057; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
+        .pad-cta { background: #003057; padding: clamp(64px,8vw,100px) clamp(24px, 5vw, 80px); text-align: center; }
         .pad-cta__inner { max-width: 600px; margin: 0 auto; }
         .pad-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
         .pad-cta__text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
