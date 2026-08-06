@@ -42,10 +42,18 @@ const Blog = () => {
     };
   }, []);
 
-  const categories = useMemo(
-    () => Array.from(new Set(posts.map((p) => p.category).filter((c): c is string => !!c && c.trim() !== ""))).sort((a, b) => a.localeCompare(b, "es")),
-    [posts]
-  );
+  const categories = useMemo(() => {
+    const counts = new Map<string, number>();
+    posts.forEach((p) => {
+      const c = p.category;
+      if (!c || c.trim() === "") return;
+      counts.set(c, (counts.get(c) ?? 0) + 1);
+    });
+    return Array.from(counts.entries())
+      .filter(([, total]) => total > 0)
+      .sort((a, b) => a[0].localeCompare(b[0], "es"))
+      .map(([cat, total]) => ({ cat, total }));
+  }, [posts]);
 
   const filtered = useMemo(
     () => (activeCat ? posts.filter((p) => p.category === activeCat) : posts),
@@ -89,7 +97,7 @@ const Blog = () => {
                 >
                   Todas
                 </button>
-                {categories.map((cat) => (
+                {categories.map(({ cat, total }) => (
                   <button
                     key={cat}
                     type="button"
@@ -97,7 +105,7 @@ const Blog = () => {
                     aria-pressed={activeCat === cat}
                     onClick={() => selectCat(cat)}
                   >
-                    {cat}
+                    {cat} ({total})
                   </button>
                 ))}
               </div>

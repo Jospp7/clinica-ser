@@ -150,6 +150,28 @@ const Analytics = () => {
     return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([origen, total]) => ({ origen, total }));
   }, [events]);
 
+  const paginasVistas = useMemo(() => {
+    const counts: Record<string, number> = {};
+    events.forEach(e => {
+      if (e.event_type !== "pageview") return;
+      const p = e.page ?? "/";
+      counts[p] = (counts[p] ?? 0) + 1;
+    });
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([page, vistas]) => ({ page, vistas }));
+  }, [events]);
+
+  const _origenesLegacy = useMemo(() => {
+    const bySession: Record<string, string> = {};
+    events.filter(e => e.event_type === "pageview").forEach(e => {
+      const sid = sessionOf(e);
+      if (!sid || bySession[sid]) return;
+      bySession[sid] = (e.metadata?.["referrer_source"] as string) ?? "desconocido";
+    });
+    const counts: Record<string, number> = {};
+    Object.values(bySession).forEach(o => { counts[o] = (counts[o] ?? 0) + 1; });
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([origen, total]) => ({ origen, total }));
+  }, [events]);
+
   const dispositivos = useMemo(() => {
     const bySession: Record<string, string> = {};
     events.filter(e => e.event_type === "pageview").forEach(e => {

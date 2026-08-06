@@ -111,6 +111,10 @@
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
+/* Marca: la palabra "SER" usa tipografía tipo Trebuchet MS (alternativa: Rubik).
+   Todo lo demás del sitio permanece en Source Sans 3 (alternativa a Myriad). */
+.brand-ser { font-family: 'Rubik', 'Trebuchet MS', sans-serif; }
+
 /* Decoraciones de marca: formas geométricas suaves detrás del contenido */
 .deco-host { position: relative; overflow: hidden; }
 .deco-host > * { position: relative; z-index: 1; }
