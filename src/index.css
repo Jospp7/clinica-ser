@@ -130,6 +130,13 @@
 .brand-deco--ring { background: none; border: 1px solid hsl(51 63% 59% / 0.22); }
 .brand-deco--a { width: 420px; height: 420px; top: -140px; right: -120px; }
 .brand-deco--b { width: 340px; height: 340px; bottom: -120px; left: -110px; }
+/* Acentos laterales para páginas con contenido centrado y costados vacíos */
+.brand-deco--side-l { width: 380px; height: 460px; left: -170px; top: 12%; border-radius: 58% 42% 47% 53% / 45% 55% 45% 55%; }
+.brand-deco--side-r { width: 420px; height: 500px; right: -190px; top: 45%; border-radius: 46% 54% 60% 40% / 52% 44% 56% 48%; }
+.brand-deco--side-l2 { width: 300px; height: 300px; left: -130px; bottom: 8%; }
+@media (max-width: 1024px) {
+  .brand-deco--side-l, .brand-deco--side-r, .brand-deco--side-l2 { display: none; }
+}
 @media (max-width: 768px) {
   .brand-deco--a { width: 240px; height: 240px; top: -90px; right: -90px; }
   .brand-deco--b { width: 200px; height: 200px; bottom: -80px; left: -80px; }

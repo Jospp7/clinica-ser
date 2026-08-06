@@ -49,6 +49,9 @@ const GuiaIngreso = () => {
           </div>
         </header>
 
+        <div className="guia__body-wrap deco-host">
+        <span className="brand-deco brand-deco--gold brand-deco--side-l" aria-hidden="true" />
+        <span className="brand-deco brand-deco--navy brand-deco--side-r" aria-hidden="true" />
         <div className="guia__body">
           <section className="guia__section">
             <p>
@@ -174,6 +177,7 @@ const GuiaIngreso = () => {
             </Link>
           </section>
         </div>
+        </div>
       </article>
 
       <style>{`
@@ -187,6 +191,7 @@ const GuiaIngreso = () => {
         .guia__lead { font-family: 'Source Sans 3', sans-serif; font-size: 17px; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
 
         .guia__body { max-width: 780px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Source Sans 3', sans-serif; color: #003057; }
+        .guia__body-wrap { background: #FFFFFF; }
         .guia__section { margin-bottom: 40px; }
         .guia__section h2 { font-size: clamp(20px,2.5vw,26px); font-weight: 700; color: #003057; margin: 0 0 16px; }
         .guia__section h3 { font-size: 16px; font-weight: 700; color: #003057; margin: 24px 0 8px; }

@@ -4,8 +4,8 @@ import { trackCTAClick } from "@/hooks/useTracking";
 import { waLink } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
 
-// Imagen protagonista del hero — foto real ya existente en el repo.
-const HERO_IMG = "/images/equipo.jpg";
+// TODO: temporal — reemplazar con foto real tras la visita.
+const HERO_IMG = "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80";
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -66,7 +66,7 @@ const Hero = () => {
         </div>
 
         <div className={`hero__right ${visible ? "hero__right--visible" : ""}`}>
-          <img src={HERO_IMG} alt="Equipo médico de Clínica SER" loading="eager" className="hero__photo" />
+          <img src={HERO_IMG} alt="Apoyo familiar en la recuperación - Clínica SER" loading="eager" className="hero__photo" />
         </div>
       </div>
 
@@ -76,22 +76,22 @@ const Hero = () => {
         .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; padding-top: 104px; }
         .hero__container { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 40% 60%; align-items: stretch; min-height: clamp(520px, 78vh, 760px); }
 
-        .hero__left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; background: #F5F5F5; padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+        .hero__left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; background: var(--brand-navy); padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
         .hero__left--visible { opacity: 1; transform: translateY(0); }
 
         .hero__years { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
-        .hero__years-num { font-family: 'Source Sans 3', sans-serif; font-size: clamp(38px, 4.4vw, 64px); font-weight: 700; color: var(--brand-navy); line-height: 1; letter-spacing: -.02em; }
-        .hero__years-label { font-family: 'Source Sans 3', sans-serif; font-size: clamp(14px, 1.5vw, 20px); font-weight: 400; color: rgba(0,48,87,.72); }
+        .hero__years-num { font-family: 'Source Sans 3', sans-serif; font-size: clamp(38px, 4.4vw, 64px); font-weight: 700; color: var(--brand-gold); line-height: 1; letter-spacing: -.02em; }
+        .hero__years-label { font-family: 'Source Sans 3', sans-serif; font-size: clamp(14px, 1.5vw, 20px); font-weight: 400; color: rgba(255,255,255,.82); }
 
-        .hero__headline { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px, 3.4vw, 50px); font-weight: 800; color: var(--brand-navy); line-height: 1.12; letter-spacing: -.015em; margin: 0 0 28px; text-align: left; max-width: 20ch; animation: hero-fade-up .8s ease .3s both; }
+        .hero__headline { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px, 3.4vw, 50px); font-weight: 800; color: #FFFFFF; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 28px; text-align: left; max-width: 20ch; animation: hero-fade-up .8s ease .3s both; }
 
         .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; animation: hero-fade-up .8s ease .5s both; }
         @keyframes hero-fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
         .hero__btn { display: inline-flex; align-items: center; gap: 8px; border: none; border-radius: 60px; padding: 15px 30px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
-        .hero__btn--primary { background: var(--brand-navy); color: #FFFFFF; box-shadow: 0 6px 22px rgba(0,48,87,.22); }
-        .hero__btn--primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,48,87,.28); }
-        .hero__btn--wa { background: var(--brand-gold); color: var(--brand-navy); box-shadow: 0 6px 22px rgba(217,199,86,.28); }
-        .hero__btn--wa:hover { background: var(--brand-gold-dark); color: var(--brand-navy); transform: translateY(-2px); }
+        .hero__btn--primary { background: var(--brand-gold); color: var(--brand-navy); box-shadow: 0 6px 22px rgba(217,199,86,.28); }
+        .hero__btn--primary:hover { background: var(--brand-gold-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(217,199,86,.32); }
+        .hero__btn--wa { background: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,.6); }
+        .hero__btn--wa:hover { background: #FFFFFF; color: var(--brand-navy); transform: translateY(-2px); }
 
         .hero__right { position: relative; min-height: clamp(320px, 46vw, 760px); opacity: 0; transform: translateX(28px); transition: opacity 1s ease .25s, transform 1s ease .25s; }
         .hero__right--visible { opacity: 1; transform: translateX(0); }
