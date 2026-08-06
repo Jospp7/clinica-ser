@@ -307,7 +307,6 @@ const Analytics = () => {
 
         <div style={cardStyle}>
           <h3 style={titleStyle}>Origen del tráfico</h3>
-        {/* Páginas más visitadas se agrega abajo */}
           {origenes.length > 0 ? (
             <ResponsiveContainer width="100%" height={220}>
               <BarChart data={origenes} layout="vertical">
