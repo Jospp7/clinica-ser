@@ -21,12 +21,7 @@ const Hero = () => {
     <section className="hero-v2">
       <div className="hero__container">
         <div className={`hero__left ${visible ? "hero__left--visible" : ""}`}>
-          <div className="hero__years">
-            <span className="hero__years-num">{countVal}</span>
-            <span className="hero__years-label">años</span>
-          </div>
-
-          <h1 className="hero__headline">Más de 58 años recuperando vidas</h1>
+          <h1 className="hero__headline">Más de <span className="hero__headline-accent">58 años</span> recuperando vidas</h1>
           <p className="hero__subtitle">
             En Clínica SER ayudamos a personas y familias a superar las adicciones mediante un tratamiento profesional con psicólogos, médicos y terapeutas especializados.
           </p>
