@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
 const DEDUPE_MS = 30_000;
+const DOMINIOS_PRODUCCION = ["clinicaser.com", "www.clinicaser.com"];
+
+const esProduccion = () =>
+  typeof window !== "undefined" &&
+  DOMINIOS_PRODUCCION.includes(window.location.hostname);
 
 /** Hosts de desarrollo/preview: su tráfico NO debe contaminar las analíticas. */
 export function isInternalHost(host: string): boolean {
@@ -102,6 +107,8 @@ export function usePageTracking() {
   const depthSent = useRef<string | null>(null);
 
   useEffect(() => {
+    if (!esProduccion()) return;
+
     const page = location.pathname;
     sendEvent("pageview", { page, dedupeKey: `pageview:${page}` });
 
@@ -122,6 +129,8 @@ export function usePageTracking() {
 }
 
 export function trackCTAClick(element: string) {
+  if (!esProduccion()) return;
+
   void sendEvent("cta_click", { label: element });
 }
 
