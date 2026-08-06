@@ -71,7 +71,6 @@ const Footer = () => {
               )}
               {/* TODO: preguntar al cliente si tienen canal de YouTube (mencionan videos de testimonios en el sitio anterior). */}
             </div>
-            <div className="footer-v2__circle-deco" />
             <a
               href={SITE.google.url}
               target="_blank"
