@@ -23,6 +23,7 @@ import Guias from "./pages/Guias.tsx";
 import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
 import Equipo from "./pages/Equipo.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
+import AvisoPrivacidad from "./pages/AvisoPrivacidad.tsx";
 import LegacySlugRedirect from "./pages/LegacySlugRedirect.tsx";
 import Login from "./pages/admin/Login.tsx";
 import AdminLayout from "./pages/admin/AdminLayout.tsx";
@@ -53,6 +54,7 @@ const AppContent = () => {
       <Route path="/por-que-elegirnos" element={<PorQueElegirnos />} />
       <Route path="/equipo" element={<Equipo />} />
       <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
+      <Route path="/aviso-privacidad" element={<AvisoPrivacidad />} />
       {/* Catch-all al final: redirige slugs heredados de WordPress a /blog/[slug] */}
       <Route path="*" element={<LegacySlugRedirect />} />
     </Routes>

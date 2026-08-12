@@ -105,6 +105,7 @@ const Footer = () => {
                 <Link to="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</Link>
                 <Link to="/guia-ingreso" className="footer-v2__sitemap-link">Guía de Ingreso</Link>
                 <Link to="/preguntas-frecuentes" className="footer-v2__sitemap-link">Preguntas Frecuentes</Link>
+                <Link to="/aviso-privacidad" className="footer-v2__sitemap-link">Aviso de Privacidad</Link>
               </div>
             </div>
           </div>
@@ -134,6 +135,7 @@ const Footer = () => {
       <div className="footer-v2__copyright">
         <span>© {new Date().getFullYear()} {SITE.nombre}. Todos los derechos reservados.</span>
         <span style={{ display: "flex", gap: 8 }}>
+          <Link to="/aviso-privacidad" className="footer-v2__admin-link">Aviso de Privacidad</Link>
           <Link to="/admin/login" className="footer-v2__admin-link"><Lock size={12} aria-hidden="true" /> Admin</Link>
         </span>
       </div>
