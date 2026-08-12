@@ -99,7 +99,6 @@ const ContactModal = ({ open, onClose, source }: Props) => {
                 )}
               </div>
             )}
-            <button type="submit" disabled={sending}
             <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 16 }}>
               <input
                 id="contact-consent"
