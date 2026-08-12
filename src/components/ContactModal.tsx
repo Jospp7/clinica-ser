@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { trackFormSubmit } from "@/hooks/useTracking";
 import { X, CheckCircle2 } from "lucide-react";
@@ -16,6 +17,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [consent, setConsent] = useState(false);
   const [sending, setSending] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -28,9 +30,15 @@ const ContactModal = ({ open, onClose, source }: Props) => {
       setErrorMsg("Necesitamos al menos un medio de contacto: teléfono o correo electrónico.");
       return;
     }
+    if (!consent) {
+      setErrorMsg("Para enviar tu mensaje debes aceptar el Aviso de Privacidad.");
+      return;
+    }
     setSending(true);
     try {
-      const { error } = await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: message || null, source, status: "nuevo" });
+      const consentLine = `[Aviso de Privacidad aceptado: ${new Date().toISOString()}]`;
+      const messageWithConsent = message ? `${consentLine}\n${message}` : consentLine;
+      const { error } = await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: messageWithConsent, source, status: "nuevo" });
       if (error) {
         console.error("[ContactModal] insert failed:", error);
         setSending(false);
@@ -40,7 +48,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
       setSending(false);
       setSent(true);
       trackFormSubmit(source);
-      setTimeout(() => { onClose(); setSent(false); setName(""); setPhone(""); setEmail(""); setMessage(""); }, 2000);
+      setTimeout(() => { onClose(); setSent(false); setName(""); setPhone(""); setEmail(""); setMessage(""); setConsent(false); }, 2000);
     } catch (err) {
       console.error("[ContactModal] insert threw:", err);
       setSending(false);
@@ -91,8 +99,24 @@ const ContactModal = ({ open, onClose, source }: Props) => {
                 )}
               </div>
             )}
-            <button type="submit" disabled={sending}
-              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 16 }}>
+              <input
+                id="contact-consent"
+                type="checkbox"
+                checked={consent}
+                onChange={e => setConsent(e.target.checked)}
+                required
+                style={{ marginTop: 3, width: 16, height: 16, accentColor: "#003057", cursor: "pointer", flexShrink: 0 }}
+              />
+              <label htmlFor="contact-consent" style={{ fontSize: 13, color: "#555", lineHeight: 1.5, cursor: "pointer" }}>
+                He leído y acepto el{" "}
+                <Link to="/aviso-privacidad" target="_blank" rel="noopener noreferrer" style={{ color: "#003057", fontWeight: 700, textDecoration: "underline" }}>
+                  Aviso de Privacidad
+                </Link>
+              </label>
+            </div>
+            <button type="submit" disabled={sending || !consent}
+              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: consent && !sending ? "pointer" : "not-allowed", opacity: consent ? 1 : 0.55 }}>
               {sending ? "Enviando..." : "Enviar"}
             </button>
           </form>
