@@ -16,6 +16,7 @@ interface Perfil {
 const PERFILES: Perfil[] = [
   {
     nombre: "Doctor Jorge Alfredo Gayosso del Valle",
+    foto: "/images/equipo-gayosso.jpg",
     cargo: "Especialista en Psiquiatría",
     formacion: [
       "Doctor con especialidad en Psiquiatría.",
@@ -32,6 +33,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Dra. Nadia Ivette Ibarias Cortés",
+    foto: "/images/equipo-ibarias.jpg",
     cargo: "Licenciada Médico Cirujano General Especializada en Adicciones",
     formacion: [
       "Licenciada Médico Cirujano General, especializada en adicciones.",
@@ -49,6 +51,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Mto. Ángel David Herrera Pérez",
+    foto: "/images/equipo-herrera.jpg",
     cargo: "Especializado en psicoterapia cognitivo conductual, terapeuta en clínica de adicciones",
     formacion: [
       "Licenciado en Psicología.",
@@ -70,6 +73,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Mto. Andrés Luciano Gregorio",
+    foto: "/images/equipo-luciano.jpg",
     cargo: "Especializado en rehabilitación, terapeuta en clínica de adicciones",
     formacion: [
       "Licenciado en Psicología con Maestría en Psicología Clínica y de la Salud, especializado en Rehabilitación de adicciones.",
@@ -89,6 +93,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Mta. Dulce María Cano Lara",
+    foto: "/images/equipo-cano.jpg",
     cargo: "Especializada en salud mental, terapeuta en clínica de adicciones",
     formacion: [
       "Licenciada en Psicología.",
@@ -104,6 +109,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Lic. Alan Alonso Gutiérrez Pérez",
+    foto: "/images/equipo-gutierrez.jpg",
     cargo: "Profesor de Arteterapia especializado en adicciones",
     formacion: [
       "Licenciado en Artes Plásticas por el Instituto de Artes Plásticas del Estado.",
@@ -118,6 +124,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Mta. Silvia Lucía Morales López (Ravi Nam Kaur)",
+    foto: "/images/equipo-morales-silvia.jpg",
     cargo: "Maestra de yoga especializada en clínica de adicciones",
     formacion: [
       "Maestra de yoga especializada en Kundalini Yoga.",
@@ -135,6 +142,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Lic. Juliana Domínguez Esparza",
+    foto: "/images/equipo-dominguez.jpg",
     cargo: "Maestra de Educación Física en Clínica de Adicciones",
     formacion: [
       "Licenciada en Cultura Física por la Benemérita Universidad Autónoma de Puebla (generación 2017–2021).",
@@ -146,6 +154,7 @@ const PERFILES: Perfil[] = [
   },
   {
     nombre: "Dra. Rebeca Elizabeth Morales De Los Santos",
+    foto: "/images/equipo-morales-rebeca.jpg",
     cargo: "Especialista en Psiquiatría y Tratamiento de Adicciones",
     formacion: [
       "Médico Cirujano por la Universidad Popular Autónoma del Estado de Puebla.",
@@ -247,7 +256,14 @@ const Equipo = () => {
         <span className="side-band side-band--full side-band--r side-band--gold" aria-hidden="true" />
         {PERFILES.map((perfil, idx) => (
           <div key={idx} className="eq-pg__profile-container" data-anim="fade-up">
-            {/* TODO: imagen del cliente — foto de {perfil.nombre} */}
+            {perfil.foto ? (
+              <div className="eq-pg__profile-photo">
+                <img src={perfil.foto} alt={`Foto de ${perfil.nombre}`} loading="lazy" />
+              </div>
+            ) : (
+              /* TODO: imagen del cliente — foto de {perfil.nombre} */
+              null
+            )}
             <div className="eq-pg__profile-header">
               <h2 className="eq-pg__profile-name">{perfil.nombre}</h2>
               <p className="eq-pg__profile-role">{perfil.cargo}</p>
@@ -358,6 +374,8 @@ const Equipo = () => {
 
         .eq-pg__profile-section { background: #FFFFFF; padding: clamp(64px,8vw,100px) 24px; }
         .eq-pg__profile-container { max-width: 900px; margin: 0 auto; background: #F9FAFB; border-radius: 24px; padding: clamp(32px,4vw,56px); border: 1px solid #E5E7EB; }
+        .eq-pg__profile-photo { width: 180px; aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; background: #EEF1F4; margin-bottom: 24px; }
+        .eq-pg__profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
         .eq-pg__profile-header { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid #D9C756; }
         .eq-pg__profile-name { font-family: 'Source Sans 3', sans-serif; font-size: clamp(22px,2.5vw,32px); font-weight: 700; color: #003057; margin: 0 0 6px; }
         .eq-pg__profile-role { font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #666; margin: 0; }
