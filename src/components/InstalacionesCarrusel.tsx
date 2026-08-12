@@ -1,10 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const IMAGENES = [1, 2, 3, 4, 5, 6].map((n) => ({
-  src: `/images/instalaciones-${n}.jpg`,
-  alt: `Instalación de Clínica SER ${n}`,
-}));
+const IMAGENES = [
+  { src: "/images/instalaciones-1.jpg", alt: "Gimnasio equipado de Clínica SER" },
+  { src: "/images/instalaciones-2.jpg", alt: "Habitación con camas y escritorio de Clínica SER" },
+  { src: "/images/instalaciones-3.jpg", alt: "Área deportiva con cancha de básquetbol de Clínica SER" },
+  { src: "/images/instalaciones-4.jpg", alt: "Salón para sesiones grupales de Clínica SER" },
+  { src: "/images/instalaciones-5.jpg", alt: "Cama preparada en habitación de Clínica SER" },
+  { src: "/images/instalaciones-6.jpg", alt: "Áreas para sesión individual de Clínica SER" },
+];
 
 const InstalacionesCarrusel = () => {
   const [index, setIndex] = useState(0);
