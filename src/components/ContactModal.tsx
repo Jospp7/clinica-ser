@@ -100,7 +100,24 @@ const ContactModal = ({ open, onClose, source }: Props) => {
               </div>
             )}
             <button type="submit" disabled={sending}
-              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 16 }}>
+              <input
+                id="contact-consent"
+                type="checkbox"
+                checked={consent}
+                onChange={e => setConsent(e.target.checked)}
+                required
+                style={{ marginTop: 3, width: 16, height: 16, accentColor: "#003057", cursor: "pointer", flexShrink: 0 }}
+              />
+              <label htmlFor="contact-consent" style={{ fontSize: 13, color: "#555", lineHeight: 1.5, cursor: "pointer" }}>
+                He leído y acepto el{" "}
+                <Link to="/aviso-privacidad" target="_blank" rel="noopener noreferrer" style={{ color: "#003057", fontWeight: 700, textDecoration: "underline" }}>
+                  Aviso de Privacidad
+                </Link>
+              </label>
+            </div>
+            <button type="submit" disabled={sending || !consent}
+              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: consent && !sending ? "pointer" : "not-allowed", opacity: consent ? 1 : 0.55 }}>
               {sending ? "Enviando..." : "Enviar"}
             </button>
           </form>
