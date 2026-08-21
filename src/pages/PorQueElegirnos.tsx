@@ -2,6 +2,7 @@ import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
+import ContactoCTA from "@/components/ContactoCTA";
 
 const REASONS = [
   { num: "1", title: "Costos accesibles y facilidades de pago.", desc: "Considerando nuestra experiencia, instalaciones, profesionalismo y casos de éxito." },
@@ -63,6 +64,8 @@ const PorQueElegirnos = () => {
           ))}
         </div>
       </section>
+
+      <ContactoCTA ubicacion="POR_QUE_ELEGIRNOS" variant="claro" />
 
       <section className="pqe-reasons">
         <div className="pqe-reasons__container">

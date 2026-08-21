@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE, waLink } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
+import ContactoCTA from "@/components/ContactoCTA";
 
 type FaqItem = {
   q: string;
@@ -205,7 +206,8 @@ const PreguntasFrecuentes = () => {
             {FAQS.map((f, i) => {
               const isOpen = open === i;
               return (
-                <div key={i} className={`faq__item ${isOpen ? "faq__item--open" : ""}`}>
+                <Fragment key={i}>
+                <div className={`faq__item ${isOpen ? "faq__item--open" : ""}`}>
                   <button
                     type="button"
                     className="faq__q"
@@ -217,6 +219,8 @@ const PreguntasFrecuentes = () => {
                   </button>
                   {isOpen && <div className="faq__a">{f.a}</div>}
                 </div>
+                {i === 3 && <ContactoCTA ubicacion="FAQ" variant="claro" />}
+                </Fragment>
               );
             })}
           </section>

@@ -7,6 +7,7 @@ import {
   Tv, UtensilsCrossed,
 } from "lucide-react";
 import InstalacionesCarrusel from "@/components/InstalacionesCarrusel";
+import ContactoCTA from "@/components/ContactoCTA";
 
 // TODO: imagen del cliente — reemplazar cada amenidad con foto real (16 amenidades)
 const AMENIDADES = [
@@ -60,6 +61,9 @@ const InstalacionesPage = () => {
           <div className="inst-pg__carrusel" data-anim="fade-up">
             <InstalacionesCarrusel />
           </div>
+
+          <ContactoCTA ubicacion="INSTALACIONES" variant="claro" />
+
           <div className="inst-pg__amen" data-anim="fade-up">
             <div className="inst-pg__amen-head">
               <h2 className="inst-pg__amen-title">Amenidades</h2>
