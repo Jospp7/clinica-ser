@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -206,7 +206,8 @@ const PreguntasFrecuentes = () => {
             {FAQS.map((f, i) => {
               const isOpen = open === i;
               return (
-                <div key={i} className={`faq__item ${isOpen ? "faq__item--open" : ""}`}>
+                <Fragment key={i}>
+                <div className={`faq__item ${isOpen ? "faq__item--open" : ""}`}>
                   <button
                     type="button"
                     className="faq__q"
@@ -217,8 +218,9 @@ const PreguntasFrecuentes = () => {
                     <span className="faq__icon" aria-hidden>{isOpen ? "−" : "+"}</span>
                   </button>
                   {isOpen && <div className="faq__a">{f.a}</div>}
-                  {i === 3 && <ContactoCTA ubicacion="FAQ" variant="claro" />}
                 </div>
+                {i === 3 && <ContactoCTA ubicacion="FAQ" variant="claro" />}
+                </Fragment>
               );
             })}
           </section>
