@@ -71,8 +71,8 @@ const PorQueElegirnosPreview = () => {
         .pqe-prev__icon { color: var(--brand-navy); margin-bottom: 20px; flex-shrink: 0; }
         .pqe-prev__card-title { font-family: 'Source Sans 3', sans-serif; font-size: 20px; font-weight: 700; color: var(--brand-navy); margin: 0 0 12px; line-height: 1.25; }
         .pqe-prev__card-desc { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: hsl(var(--muted-foreground)); line-height: 1.7; margin: 0; }
-        .pqe-prev__media { border-radius: 12px; overflow: hidden; margin: clamp(32px,4vw,48px) auto 0; max-width: 1000px; box-shadow: 0 18px 40px -28px hsl(var(--secondary) / 0.5); }
-        .pqe-prev__img { width: 100%; height: clamp(200px, 30vw, 340px); object-fit: cover; display: block; }
+        .pqe-prev__media { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; margin-top: clamp(40px,5vw,64px); margin-bottom: clamp(40px,5vw,64px); box-shadow: 0 18px 40px -28px hsl(var(--secondary) / 0.5); }
+        .pqe-prev__img { width: 100%; height: clamp(280px, 45vw, 560px); object-fit: cover; display: block; }
         .pqe-prev__cta { text-align: center; margin-top: clamp(40px,5vw,56px); }
         .pqe-prev__btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--brand-gold); color: var(--brand-navy); padding: 16px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; }
         .pqe-prev__btn:hover { background: #B8A63F; color: var(--brand-navy); transform: translateY(-2px); }

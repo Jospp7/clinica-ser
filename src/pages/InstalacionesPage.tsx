@@ -110,7 +110,7 @@ const InstalacionesPage = () => {
         .inst-pg__features-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .inst-pg__intro { max-width: 860px; margin: 0 auto 48px; }
         .inst-pg__intro-text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: #444; line-height: 1.8; margin: 0 0 20px; text-align: center; }
-        .inst-pg__carrusel { max-width: 1000px; margin: 0 auto 56px; }
+        .inst-pg__carrusel { width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 56px; }
         .inst-pg__features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
          .inst-pg__amen { display: grid; grid-template-columns: minmax(240px,1fr) 2fr; gap: clamp(32px,5vw,64px); align-items: start; }
          .inst-pg__amen-head { align-self: center; padding-inline: clamp(12px,2vw,32px); }

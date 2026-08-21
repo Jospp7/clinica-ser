@@ -86,10 +86,10 @@ const InstalacionesCarrusel = () => {
 
       <style>{`
         .ser-carr { width: 100%; max-width: 100%; }
-        .ser-carr__viewport { position: relative; overflow: hidden; border-radius: 12px; }
+        .ser-carr__viewport { position: relative; overflow: hidden; }
         .ser-carr__track { display: flex; transition: transform .5s cubic-bezier(.25,.46,.45,.94); }
         .ser-carr__slide { flex: 0 0 100%; min-width: 100%; }
-        .ser-carr__slide img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+        .ser-carr__slide img { display: block; width: 100%; height: clamp(320px, 55vh, 680px); object-fit: cover; }
         .ser-carr__arrow {
           position: absolute; top: 50%; transform: translateY(-50%);
           width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
