@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { ArrowRight, BookOpen, LifeBuoy } from "lucide-react";
+import ContactoCTA from "@/components/ContactoCTA";
 
 const GUIAS = [
   {
@@ -55,6 +56,8 @@ const Guias = () => {
           ))}
         </div>
       </section>
+
+      <ContactoCTA ubicacion="GUIAS" variant="azul" />
 
       <style>{`
         .guias-idx__hero { position: relative; background: url('/images/cta-fondo.jpg') center/cover; padding: clamp(120px,14vw,180px) 24px clamp(56px,7vw,90px); text-align: center; }

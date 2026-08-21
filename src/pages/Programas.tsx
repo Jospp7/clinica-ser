@@ -5,6 +5,7 @@ import { SITE, waLink } from "@/lib/site";
 import { Dices, MessageCircle, Pill, Smartphone, Stethoscope, Tablets, Wine, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { trackCTAClick } from "@/hooks/useTracking";
+import ContactoCTA from "@/components/ContactoCTA";
 
 // Lista oficial de programas validada por el cliente.
 const CONDITIONS: Array<{ title: string; desc: string; icon: LucideIcon }> = [
@@ -90,6 +91,8 @@ const Programas = () => {
           </Link>
         </div>
       </section>
+
+      <ContactoCTA ubicacion="PROGRAMAS" variant="azul" />
 
       <section className="pad-cta">
         <div className="pad-cta__inner" data-anim="fade-up">

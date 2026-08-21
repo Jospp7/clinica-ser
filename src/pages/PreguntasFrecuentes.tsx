@@ -5,6 +5,7 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE, waLink } from "@/lib/site";
 import { Phone, MessageCircle } from "lucide-react";
+import ContactoCTA from "@/components/ContactoCTA";
 
 type FaqItem = {
   q: string;
@@ -220,6 +221,8 @@ const PreguntasFrecuentes = () => {
               );
             })}
           </section>
+
+          <ContactoCTA ubicacion="FAQ" variant="claro" />
 
           <section className="guia__cta">
             <h2>¿Necesitas hablar con nosotros?</h2>

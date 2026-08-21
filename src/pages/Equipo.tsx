@@ -3,6 +3,7 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { SITE, waLink } from "@/lib/site";
 import { trackCTAClick } from "@/hooks/useTracking";
 import { Phone, Mail, Check, MessageCircle } from "lucide-react";
+import ContactoCTA from "@/components/ContactoCTA";
 
 interface Perfil {
   nombre: string;
@@ -250,6 +251,8 @@ const Equipo = () => {
           </div>
         </div>
       </section>
+
+      <ContactoCTA ubicacion="EQUIPO" variant="azul" />
 
       <section className="eq-pg__profile-section side-bands">
         <span className="side-band side-band--full side-band--l side-band--gold" aria-hidden="true" />
