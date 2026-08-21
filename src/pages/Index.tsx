@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 import Hero from "@/components/sections/Hero";
 import Nosotros from "@/components/sections/Nosotros";
 import PorQueElegirnosPreview from "@/components/sections/PorQueElegirnosPreview";
-import Instalaciones from "@/components/sections/Instalaciones";
+
 import TiposIngreso from "@/components/sections/TiposIngreso";
 import EquipoPreview from "@/components/sections/EquipoPreview";
 import BlogReciente from "@/components/sections/BlogReciente";
@@ -67,8 +67,6 @@ const Index = () => {
       <Nosotros />
       <hr data-anim="fade-up" className="section-divider-line" />
       <PorQueElegirnosPreview />
-      <hr data-anim="fade-up" className="section-divider-line" />
-      <Instalaciones />
       <hr data-anim="fade-up" className="section-divider-line" />
       <TiposIngreso />
       <hr data-anim="fade-up" className="section-divider-line" />
