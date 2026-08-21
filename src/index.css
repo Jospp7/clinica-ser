@@ -17,6 +17,7 @@
 
 @layer base {
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; @apply border-border; }
+  html, body { overflow-x: hidden; max-width: 100%; }
   body { font-family: 'Source Sans 3', -apple-system, sans-serif; color: var(--color-text); @apply bg-background text-foreground; }
   h1, h2, h3, h4 { font-family: 'Source Sans 3', -apple-system, sans-serif; font-weight: 700; }
 
