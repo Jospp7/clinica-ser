@@ -118,11 +118,11 @@ const PorQueElegirnos = () => {
         .pqe-reasons__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: #003057; text-align: center; margin: 0 0 48px; }
         .pqe-reasons__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .pqe-reasons__grid > .pqe-reason:last-child:nth-child(3n+1) { grid-column: 2 / 3; }
-        .pqe-reason { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
-        .pqe-reason:hover { transform: translateY(-4px); }
+        .pqe-reason { display: flex; flex-direction: column; min-height: 270px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 32px; box-shadow: 0 12px 30px -20px hsl(var(--secondary) / 0.35); transition: transform .3s, box-shadow .3s; text-align: center; }
+        .pqe-reason:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px hsl(var(--secondary) / 0.5); }
         .pqe-reason__icon { font-size: 36px; font-weight: 800; color: #D9C756; display: block; margin-bottom: 16px; }
-        .pqe-reason__title { font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 700; color: #003057; margin: 0 0 8px; }
-        .pqe-reason__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+        .pqe-reason__title { font-family: 'Source Sans 3', sans-serif; font-size: 20px; font-weight: 700; color: var(--brand-navy); margin: 0 0 12px; line-height: 1.25; }
+        .pqe-reason__text { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: hsl(var(--muted-foreground)); line-height: 1.7; margin: 0; }
 
         .pqe-timeline { background: #F5F5F5; padding: clamp(64px,8vw,100px) clamp(24px, 5vw, 80px); }
         .pqe-timeline__container { max-width: 1100px; margin: 0 auto; }

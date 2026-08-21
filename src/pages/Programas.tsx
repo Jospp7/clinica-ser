@@ -55,7 +55,7 @@ const Programas = () => {
         <div className="pad-hero__overlay" />
         <div className="pad-hero__content" data-anim="fade-up">
           <span className="pad-hero__tag">PROGRAMAS QUE TRATAMOS</span>
-          <h1 className="pad-hero__title">Programas que atendemos</h1>
+          <h1 className="pad-hero__title">Nuestros programas</h1>
           <p className="pad-hero__sub">Adicciones atendidas en Clínica SER Puebla.</p>
         </div>
       </section>

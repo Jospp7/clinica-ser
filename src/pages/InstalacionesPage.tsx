@@ -51,7 +51,7 @@ const InstalacionesPage = () => {
         <div className="inst-pg__features-container">
           <div className="inst-pg__intro" data-anim="fade-up">
             <p className="inst-pg__intro-text">
-              El confort, seguridad y calidez se encuentran en cada espacio de nuestra Casa, ofreciendo a nuestros huéspedes zonas de recreo, esparcimiento, talleres y salones de terapia, habitaciones, comedores, áreas de consulta y mucho más, que fueron cuidadas hasta el máximo detalle para ofrecer el mejor espacio para su recuperación emocional.
+              El confort, seguridad y calidez se encuentran en cada espacio de nuestra clínica, ofreciendo a nuestros huéspedes zonas de recreo, esparcimiento, talleres y salones de terapia, habitaciones, comedores, áreas de consulta y mucho más, que fueron cuidadas hasta el máximo detalle para ofrecer el mejor espacio para su recuperación emocional.
             </p>
             <p className="inst-pg__intro-text">
               La seguridad de su ser querido es muy importante para nosotros, por ello contamos con instalaciones especiales únicas en México, traídas desde U.S.A., Brasil, España, Alemania e Italia, cumpliendo con estándares internacionales que nos hacen únicos.

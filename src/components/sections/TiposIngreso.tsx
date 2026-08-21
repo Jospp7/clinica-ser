@@ -43,7 +43,7 @@ const TiposIngreso = () => {
           <div>
             <span className="tipos-v2__tag"><CheckSquare size={16} aria-hidden="true" /> NUESTROS SERVICIOS</span>
             <h2 className="tipos-v2__title">
-              ¿Cómo podemos ayudarte en<br />la clínica de adicciones?
+              ¿Cómo podemos ayudarte en Clínica SER?
             </h2>
           </div>
         </div>

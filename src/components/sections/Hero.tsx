@@ -52,7 +52,7 @@ const Hero = () => {
 
       <style>{`
         .hero-v2 { position: relative; background: #FFFFFF; overflow: hidden; padding-top: 72px; }
-        .hero__container { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 40% 60%; align-items: stretch; min-height: clamp(520px, 78vh, 760px); }
+        .hero__container { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 50% 50%; align-items: stretch; min-height: clamp(520px, 78vh, 760px); }
 
         .hero__left { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: var(--brand-navy); padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 72px); opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; text-align: center; }
         .hero__left--visible { opacity: 1; transform: translateY(0); }

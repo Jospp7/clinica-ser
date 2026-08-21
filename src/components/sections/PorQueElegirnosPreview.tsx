@@ -25,7 +25,7 @@ const PorQueElegirnosPreview = () => {
   return (
     <section className="pqe-prev">
       <div className="pqe-prev__inner">
-        <h2 className="pqe-prev__title" data-anim="fade-up">Más de 58 años transformando vidas</h2>
+        <h2 className="pqe-prev__title" data-anim="fade-up">AQUÍ RECONSTRUIMOS VIDAS</h2>
         <p className="pqe-prev__sub" data-anim="fade-up">
           Estas son algunas de las razones por las que miles de familias han confiado en nosotros.
         </p>
