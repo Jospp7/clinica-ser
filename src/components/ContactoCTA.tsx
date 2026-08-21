@@ -43,7 +43,18 @@ const ContactoCTA = ({
       </div>
 
       <style>{`
-        .ccta { padding: clamp(22px,3vw,32px) 24px; }
+        .ccta {
+          padding: clamp(22px,3vw,32px) 24px;
+          /* Full-bleed: se extiende de borde a borde aunque esté dentro de un contenedor */
+          width: 100vw;
+          max-width: 100vw;
+          margin-left: calc(50% - 50vw);
+          margin-right: calc(50% - 50vw);
+          /* Margen para que no toque los elementos vecinos */
+          margin-top: clamp(40px,6vw,72px);
+          margin-bottom: clamp(40px,6vw,72px);
+          box-sizing: border-box;
+        }
         .ccta--azul { background: #003057; }
         .ccta--claro { background: #F2F6E0; border-top: 1px solid #E4E9CE; border-bottom: 1px solid #E4E9CE; }
         .ccta__inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
