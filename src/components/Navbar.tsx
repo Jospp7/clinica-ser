@@ -124,8 +124,8 @@ const Navbar = () => {
             .nav-ser__cta { display: none; }
             .nav-ser__menu-btn { display: inline-flex; }
             .nav-ser__bar { height: 72px; }
-            .nav-ser__logo-img { height: 58px; }
-            .nav-ser__logo { height: 58px; padding: 0; border-radius: 0; }
+            .nav-ser__logo-img { height: 29px; }
+            .nav-ser__logo { height: 29px; padding: 0; border-radius: 0; }
           }
         @media (min-width: 901px) { .nav-ser__menu-btn { display: none; } }
       `}</style>
