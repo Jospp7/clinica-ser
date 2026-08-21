@@ -79,6 +79,8 @@ const Programas = () => {
             })}
         </div>
 
+        <ContactoCTA ubicacion="PROGRAMAS" variant="azul" />
+
         <div className="pad-treatment-cta" data-anim="fade-up">
           <h2 className="pad-treatment-cta__title">Un mismo enfoque para cada padecimiento</h2>
           <Link
@@ -91,8 +93,6 @@ const Programas = () => {
           </Link>
         </div>
       </section>
-
-      <ContactoCTA ubicacion="PROGRAMAS" variant="azul" />
 
       <section className="pad-cta">
         <div className="pad-cta__inner" data-anim="fade-up">

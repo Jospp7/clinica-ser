@@ -61,6 +61,9 @@ const InstalacionesPage = () => {
           <div className="inst-pg__carrusel" data-anim="fade-up">
             <InstalacionesCarrusel />
           </div>
+
+          <ContactoCTA ubicacion="INSTALACIONES" variant="claro" />
+
           <div className="inst-pg__amen" data-anim="fade-up">
             <div className="inst-pg__amen-head">
               <h2 className="inst-pg__amen-title">Amenidades</h2>
@@ -77,8 +80,6 @@ const InstalacionesPage = () => {
           </div>
         </div>
       </section>
-
-      <ContactoCTA ubicacion="INSTALACIONES" variant="claro" />
 
       <section className="inst-pg__cta">
         <div className="inst-pg__cta-inner" data-anim="fade-up">

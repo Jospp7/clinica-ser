@@ -217,12 +217,11 @@ const PreguntasFrecuentes = () => {
                     <span className="faq__icon" aria-hidden>{isOpen ? "−" : "+"}</span>
                   </button>
                   {isOpen && <div className="faq__a">{f.a}</div>}
+                  {i === 3 && <ContactoCTA ubicacion="FAQ" variant="claro" />}
                 </div>
               );
             })}
           </section>
-
-          <ContactoCTA ubicacion="FAQ" variant="claro" />
 
           <section className="guia__cta">
             <h2>¿Necesitas hablar con nosotros?</h2>
