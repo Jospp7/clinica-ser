@@ -91,12 +91,12 @@ const Navbar = () => {
 
       <style>{`
         .nav-ser { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
-         .nav-ser__bar { display: flex; align-items: center; justify-content: space-between; height: 130px; padding: 0 clamp(16px,3vw,48px); background: #FFFFFF; backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); transition: all .3s ease; }
+         .nav-ser__bar { display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 clamp(16px,3vw,48px); background: #FFFFFF; backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); transition: all .3s ease; }
          .nav-ser__bar--scrolled { background: rgba(255, 255, 255, 0.99); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16); }
-         .nav-ser__logo { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; flex-shrink: 0; align-self: center; height: 187px; margin-left: 0; background: transparent; border: none; border-radius: 0; padding: 0; box-shadow: none; transition: background .3s ease; }
+         .nav-ser__logo { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; flex-shrink: 0; align-self: center; height: 72px; margin-left: 0; background: transparent; border: none; border-radius: 0; padding: 0; box-shadow: none; transition: background .3s ease; }
 
          .nav-ser__logo:hover { background: transparent; }
-         .nav-ser__logo-img { position: relative; z-index: 1; height: 187px; width: auto; display: block; }
+         .nav-ser__logo-img { position: relative; z-index: 1; height: 72px; width: auto; display: block; }
          .nav-ser__links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
          .nav-ser__link { font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--brand-navy); text-decoration: none; padding: 4px 0; position: relative; transition: color .2s ease; }
          .nav-ser__link:hover, .nav-ser__link--active { color: var(--brand-gold-dark); }
@@ -123,9 +123,9 @@ const Navbar = () => {
             .nav-ser__links { display: none; }
             .nav-ser__cta { display: none; }
             .nav-ser__menu-btn { display: inline-flex; }
-            .nav-ser__bar { height: 96px; }
-            .nav-ser__logo-img { height: 129px; }
-            .nav-ser__logo { height: 129px; padding: 0; border-radius: 0; }
+            .nav-ser__bar { height: 72px; }
+            .nav-ser__logo-img { height: 58px; }
+            .nav-ser__logo { height: 58px; padding: 0; border-radius: 0; }
           }
         @media (min-width: 901px) { .nav-ser__menu-btn { display: none; } }
       `}</style>
