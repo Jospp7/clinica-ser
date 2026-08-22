@@ -46,15 +46,6 @@ const Nosotros = () => {
           background: #FFFFFF;
         }
 
-        .nosotros-v2__accent-bar {
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 8px;
-          background: var(--brand-navy);
-        }
-
         .nosotros-v2__text-col {
           width: 100%;
           max-width: 600px;
