@@ -5,7 +5,6 @@ const Nosotros = () => {
     <section className="nosotros-v2" id="nosotros">
       <div className="nosotros-v2__split">
         <div className="nosotros-v2__text-wrap">
-          <div className="nosotros-v2__accent-bar" aria-hidden="true" />
           <div className="nosotros-v2__text-col" data-anim="fade-right">
             <h2 className="nosotros-v2__heading">
               Bienvenido a SER:<br />
@@ -39,7 +38,6 @@ const Nosotros = () => {
         }
 
         .nosotros-v2__text-wrap {
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: flex-start;
@@ -47,19 +45,9 @@ const Nosotros = () => {
           background: #FFFFFF;
         }
 
-        .nosotros-v2__accent-bar {
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 8px;
-          background: var(--brand-navy);
-        }
-
         .nosotros-v2__text-col {
           width: 100%;
           max-width: 600px;
-          padding-left: clamp(16px, 2vw, 32px);
         }
 
         .nosotros-v2__heading {
@@ -116,14 +104,6 @@ const Nosotros = () => {
           .nosotros-v2__text-wrap {
             justify-content: center;
             padding: 56px 24px;
-          }
-
-          .nosotros-v2__accent-bar {
-            width: 6px;
-          }
-
-          .nosotros-v2__text-col {
-            padding-left: 18px;
           }
 
           .nosotros-v2__img-col {
