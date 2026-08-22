@@ -108,10 +108,6 @@ const Nosotros = () => {
             padding: 56px 24px;
           }
 
-          .nosotros-v2__accent-bar {
-            width: 6px;
-          }
-
           .nosotros-v2__text-col {
             padding-left: 18px;
           }
