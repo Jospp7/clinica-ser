@@ -49,7 +49,6 @@ const Nosotros = () => {
         .nosotros-v2__text-col {
           width: 100%;
           max-width: 600px;
-          padding-left: clamp(16px, 2vw, 32px);
         }
 
         .nosotros-v2__heading {
