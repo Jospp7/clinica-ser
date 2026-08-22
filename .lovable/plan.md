@@ -6,26 +6,15 @@
 ## Objetivo
 Que la imagen ocupe exactamente la mitad del viewport, con estética y estructura tipo Hero (fondo sólido + imagen full-bleed), sin romper el resto de la landing.
 
-## Opción A — "Hero invertido" (más literal)
-- Eliminar el encabezado centrado actual.
-- Layout 50/50 de borde a borde, igual que el Hero.
-- Columna de texto con fondo azul marino (`--brand-navy`) y texto blanco/dorado, alineado a la izquierda o centrado verticalmente.
-- Columna de imagen al 50 % del viewport, `object-fit: cover`, tocando el borde derecho de la pantalla.
-- Título "Bienvenido a SER" se integra dentro de la columna azul, con el acento dorado.
-- En móvil: se apila texto arriba / imagen abajo, como el Hero.
-
-## Opción B — "Mitad imagen, mitad blanco con acento"
-- Mantener un encabezado mínimo o integrarlo en la columna de texto.
-- Layout 50/50, imagen full-bleed a la derecha.
-- Columna de texto con fondo blanco y una banda vertical decorativa azul/dorado a la izquierda para mantener la identidad sin oscurecer la sección.
+## Opción elegida: B — "Mitad imagen, mitad blanco con acento"
+- Layout 50/50 de borde a borde, imagen full-bleed a la derecha ocupando el 50 % del viewport.
+- Columna de texto con fondo blanco y una banda vertical decorativa azul marino (`--brand-navy`) a la izquierda para mantener la identidad sin oscurecer la sección.
+- Título "Bienvenido a SER" integrado en la columna de texto, alineado a la izquierda, con acento dorado en la segunda línea.
 - Tipografía y jerarquía inspiradas en el Hero, pero sobre fondo claro.
 - En móvil: imagen arriba, texto abajo.
 
-## Pregunta
-¿Cuál de las dos opciones construyo?
-
-## Pasos de implementación (una vez elegida)
+## Pasos de implementación
 1. Reescribir `src/components/sections/Nosotros.tsx` con el layout seleccionado.
-2. Ajustar estilos scoped para que la imagen ocupe 50 vw y toque el borde de la pantalla.
+2. Ajustar estilos scoped para que la imagen ocupe 50 vw y toque el borde derecho de la pantalla.
 3. Preservar animaciones `data-anim` existentes y el orden responsive.
 4. Verificar build y vista previa en escritorio y móvil.
