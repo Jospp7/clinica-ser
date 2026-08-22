@@ -5,7 +5,6 @@ const Nosotros = () => {
     <section className="nosotros-v2" id="nosotros">
       <div className="nosotros-v2__split">
         <div className="nosotros-v2__text-wrap">
-          <div className="nosotros-v2__accent-bar" aria-hidden="true" />
           <div className="nosotros-v2__text-col" data-anim="fade-right">
             <h2 className="nosotros-v2__heading">
               Bienvenido a SER:<br />
