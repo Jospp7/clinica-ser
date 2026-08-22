@@ -38,7 +38,6 @@ const Nosotros = () => {
         }
 
         .nosotros-v2__text-wrap {
-          position: relative;
           display: flex;
           align-items: center;
           justify-content: flex-start;
