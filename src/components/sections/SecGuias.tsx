@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, LifeBuoy } from "lucide-react";
+import { ArrowRight, BookOpen, LifeBuoy, HelpCircle } from "lucide-react";
 import ContactoCTA from "@/components/ContactoCTA";
 
 const GUIAS = [
@@ -17,6 +17,13 @@ const GUIAS = [
     title: "Guía de Intervención",
     text: "Cómo llevar a cabo una intervención cuando un ser querido sufre una adicción y se niega a recibir ayuda.",
   },
+  {
+    to: "/preguntas-frecuentes",
+    tag: "¿TIENES MÁS DUDAS?",
+    icon: HelpCircle,
+    title: "Preguntas frecuentes",
+    text: "Qué debe llevar el paciente, visitas, llamadas, acreditaciones del personal y las dudas más comunes antes del ingreso.",
+  },
 ];
 
 const SecGuias = () => {
@@ -28,9 +35,9 @@ const SecGuias = () => {
         <div className="guias-idx__hero-overlay" />
         <div className="guias-idx__hero-inner">
           <span className="guias-idx__tag">RECURSOS</span>
-          <h1 className="guias-idx__title">Guías para familias</h1>
+          <h1 className="guias-idx__title">Recursos para familias</h1>
           <p className="guias-idx__sub">
-            Elige la guía que necesitas para dar el siguiente paso.
+            Elige el recurso que necesitas para dar el siguiente paso.
           </p>
         </div>
       </section>
@@ -59,7 +66,8 @@ const SecGuias = () => {
         .guias-idx__title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px,5vw,52px); color: #fff; margin: 0 0 14px; }
         .guias-idx__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,0.85); margin: 0; }
         .guias-idx__grid-section { background: #FFFFFF; padding: clamp(48px,7vw,90px) 24px clamp(64px,8vw,110px); }
-        .guias-idx__grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .guias-idx__grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        @media (max-width: 991px) { .guias-idx__grid { grid-template-columns: 1fr; } }
         .guias-idx__card { display: flex; flex-direction: column; align-items: flex-start; background: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 18px; padding: 32px; text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,.06); transition: transform .25s ease, box-shadow .25s ease; }
         .guias-idx__card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,.12); }
         .guias-idx__card-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: #F2F6E0; color: #003057; margin-bottom: 18px; }
