@@ -71,7 +71,7 @@ const Hero = () => {
 
         .hero__right { position: relative; min-height: clamp(320px, 46vw, 760px); opacity: 0; transform: translateX(28px); transition: opacity 1s ease .25s, transform 1s ease .25s; }
         .hero__right--visible { opacity: 1; transform: translateX(0); }
-        .hero__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+        .hero__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
 
         @media (prefers-reduced-motion: reduce) {
           .hero__left, .hero__right { transition: none; }

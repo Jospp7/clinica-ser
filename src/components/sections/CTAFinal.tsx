@@ -45,7 +45,7 @@ const CTAFinal = () => {
         .cta-v2__call-btn:hover { background: #B8A63F; color: var(--brand-navy); transform: translateY(-2px); }
 
         .cta-v2__right { overflow: hidden; }
-        .cta-v2__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .cta-v2__img { width: 100%; height: 100%; min-height: 600px; object-fit: cover; object-position: center center; display: block; }
 
         @media (max-width: 900px) {
           .cta-v2__grid { grid-template-columns: 1fr; }
