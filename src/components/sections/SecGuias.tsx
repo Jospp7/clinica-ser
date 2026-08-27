@@ -35,7 +35,7 @@ const SecGuias = () => {
         <div className="guias-idx__hero-overlay" />
         <div className="guias-idx__hero-inner">
           <span className="guias-idx__tag">RECURSOS</span>
-          <h1 className="guias-idx__title">Recursos para familias</h1>
+          <h2 className="guias-idx__title">Recursos para familias</h2>
           <p className="guias-idx__sub">
             Elige el recurso que necesitas para dar el siguiente paso.
           </p>
@@ -48,7 +48,7 @@ const SecGuias = () => {
             <Link key={g.to} to={g.to} className="guias-idx__card" data-anim="fade-up">
               <span className="guias-idx__card-icon"><g.icon size={26} aria-hidden="true" /></span>
               <span className="guias-idx__card-tag">{g.tag}</span>
-              <h2 className="guias-idx__card-title">{g.title}</h2>
+              <h3 className="guias-idx__card-title">{g.title}</h3>
               <p className="guias-idx__card-text">{g.text}</p>
               <span className="guias-idx__card-cta">Leer la guía <ArrowRight size={16} aria-hidden="true" /></span>
             </Link>
@@ -59,12 +59,13 @@ const SecGuias = () => {
       <ContactoCTA ubicacion="GUIAS" variant="azul" />
 
       <style>{`
-        .guias-idx__hero { position: relative; background: url('/images/cta-fondo.jpg') center/cover; padding: clamp(120px,14vw,180px) 24px clamp(56px,7vw,90px); text-align: center; }
+        .guias-idx__hero { position: relative; background: url('/images/cta-fondo.jpg') center/cover; min-height: 260px; display: flex; align-items: center; padding: clamp(32px,4vw,48px) 24px; text-align: center; }
         .guias-idx__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .guias-idx__hero-inner { position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
         .guias-idx__tag { display: inline-block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #D9C756; margin-bottom: 14px; }
         .guias-idx__title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px,5vw,52px); color: #fff; margin: 0 0 14px; }
         .guias-idx__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,0.85); margin: 0; }
+        @media (max-width: 768px) { .guias-idx__hero { min-height: 200px; } }
         .guias-idx__grid-section { background: #FFFFFF; padding: clamp(48px,7vw,90px) 24px clamp(64px,8vw,110px); }
         .guias-idx__grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         @media (max-width: 991px) { .guias-idx__grid { grid-template-columns: 1fr; } }
