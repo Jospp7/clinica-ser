@@ -138,7 +138,7 @@ const Blog = () => {
               </div>
             )}
             <div className="blog-container">
-              {filtered.slice(0, visible).map((post, i) => (
+              {posts.map((post, i) => (
                 <article key={post.id} className="blog-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
                   <Link to={`/blog/${post.slug}`} className="blog-card__anchor">
                     {post.cover_image ? (
