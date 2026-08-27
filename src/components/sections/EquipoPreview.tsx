@@ -20,7 +20,7 @@ const DATOS_EQUIPO: Array<{ title: string; icon: LucideIcon }> = [
 
 const EquipoPreview = () => {
   return (
-    <section className="eq-prev">
+    <section id="un-equipo-medico-que-hace-la-diferencia" className="eq-prev">
       <div className="eq-prev__inner">
         <h2 className="eq-prev__title" data-anim="fade-up">
           Un equipo médico que hace la diferencia
