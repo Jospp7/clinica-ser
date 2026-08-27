@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "PROGRAMAS", href: "#programas" },
   { label: "TRATAMIENTOS", href: "#tratamiento" },
   { label: "INSTALACIONES", href: "#instalaciones" },
-  { label: "EQUIPO", href: "#equipo" },
+  { label: "EQUIPO", href: "/equipo" },
   { label: "GUÍAS", href: "#guias" },
   { label: "BLOG", href: "/blog" },
 ];
