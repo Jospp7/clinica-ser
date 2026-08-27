@@ -24,6 +24,10 @@ const PorQueElegirnosPreview = () => {
         .pqe-prev__sub { font-family: 'Source Sans 3', sans-serif; font-size: clamp(15px,1.6vw,18px); color: hsl(var(--muted-foreground)); line-height: 1.7; margin: 0 auto clamp(40px,5vw,56px); text-align: center; max-width: 640px; }
         .pqe-prev__media { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; margin-top: clamp(40px,5vw,64px); margin-bottom: clamp(40px,5vw,64px); box-shadow: 0 18px 40px -28px hsl(var(--secondary) / 0.5); }
         .pqe-prev__img { width: 100%; height: clamp(280px, 45vw, 560px); object-fit: cover; display: block; }
+        @media (max-width: 768px) {
+          .pqe-prev { padding-bottom: 24px; }
+          .pqe-prev__media { margin-top: 32px; margin-bottom: 0; }
+        }
       `}</style>
     </section>
   );
