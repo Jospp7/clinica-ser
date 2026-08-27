@@ -161,11 +161,11 @@ const Blog = () => {
                 </article>
               ))}
             </div>
-            {filtered.length === 0 && <p className="blog-state">No hay artículos en esta categoría.</p>}
-            {visible < filtered.length && (
+            {posts.length === 0 && <p className="blog-state">No hay artículos en esta categoría.</p>}
+            {hasMore && (
               <div className="blog-more">
-                <button className="blog-more__btn" onClick={() => setVisible((v) => v + PAGE_SIZE)}>
-                  VER MÁS ARTÍCULOS
+                <button className="blog-more__btn" onClick={loadMore} disabled={loadingMore}>
+                  {loadingMore ? "CARGANDO…" : "VER MÁS ARTÍCULOS"}
                 </button>
               </div>
             )}
