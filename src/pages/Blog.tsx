@@ -185,7 +185,7 @@ const Blog = () => {
       </section>
 
       <style>{`
-        .blog-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80') center/cover; }
+        .blog-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('/images/blog-fondo.jpg') center/cover; }
         .blog-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .blog-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
         .blog-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }

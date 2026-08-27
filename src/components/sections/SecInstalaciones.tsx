@@ -79,7 +79,7 @@ const SecInstalaciones = () => {
 
       <style>{`
         /* TODO: imagen del cliente para .inst-pg__hero (fondo neutro por defecto) */
-        .inst-pg__hero { position: relative; min-height: 260px; display: flex; align-items: center; background: url('/images/instalaciones-1.jpg') center/cover; }
+        .inst-pg__hero { position: relative; min-height: 260px; display: flex; align-items: center; background: url('/images/instalaciones-fondo.jpg') center/cover; }
         .inst-pg__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.85), rgba(26,26,46,.6)); }
         .inst-pg__hero-content { position: relative; z-index: 2; max-width: 700px; padding: clamp(32px,4vw,48px) clamp(24px,5vw,80px); }
         @media (max-width: 768px) { .inst-pg__hero { min-height: 200px; } }

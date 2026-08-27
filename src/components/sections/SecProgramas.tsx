@@ -73,7 +73,7 @@ const SecProgramas = () => {
 
       <style>{`
         /* TODO: imagen del cliente para .pad-hero (fondo neutro por defecto) */
-        .pad-hero { position: relative; min-height: 260px; display: flex; align-items: center; background: url('/images/nosotros.jpg') center/cover; }
+        .pad-hero { position: relative; min-height: 260px; display: flex; align-items: center; background: url('/images/programas-fondo.jpg') center/cover; }
         .pad-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .pad-hero__content { position: relative; z-index: 2; max-width: 700px; padding: clamp(32px,4vw,48px) clamp(24px,5vw,80px); }
         .pad-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
