@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
@@ -20,50 +20,77 @@ const Blog = () => {
   useScrollToTop();
   const [posts, setPosts] = useState<PostCard[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [visible, setVisible] = useState(PAGE_SIZE);
+  const [hasMore, setHasMore] = useState(false);
   const [activeCat, setActiveCat] = useState<string | null>(null);
+  const [categories, setCategories] = useState<{ cat: string; total: number }[]>([]);
 
+  const buildQuery = (cat: string | null) => {
+    let q = supabase
+      .from("posts")
+      .select("id, title, slug, excerpt, category, cover_image, created_at")
+      .eq("status", "published");
+    if (cat) q = q.eq("category", cat);
+    return q.order("created_at", { ascending: false });
+  };
+
+  // Lista de categorías: consulta aparte, independiente de la paginación
   useEffect(() => {
     let active = true;
     (async () => {
-      const { data, error } = await supabase
-        .from("posts")
-        .select("id, title, slug, excerpt, category, cover_image, created_at")
-        .eq("status", "published")
-        .order("created_at", { ascending: false });
-      if (!active) return;
-      if (error) setError(error.message);
-      else setPosts(data ?? []);
-      setLoading(false);
+      const { data } = await supabase.from("posts").select("category").eq("status", "published");
+      if (!active || !data) return;
+      const counts = new Map<string, number>();
+      data.forEach((p) => {
+        const c = p.category;
+        if (!c || c.trim() === "") return;
+        counts.set(c, (counts.get(c) ?? 0) + 1);
+      });
+      setCategories(
+        Array.from(counts.entries())
+          .sort((a, b) => a[0].localeCompare(b[0], "es"))
+          .map(([cat, total]) => ({ cat, total }))
+      );
     })();
     return () => {
       active = false;
     };
   }, []);
 
-  const categories = useMemo(() => {
-    const counts = new Map<string, number>();
-    posts.forEach((p) => {
-      const c = p.category;
-      if (!c || c.trim() === "") return;
-      counts.set(c, (counts.get(c) ?? 0) + 1);
-    });
-    return Array.from(counts.entries())
-      .filter(([, total]) => total > 0)
-      .sort((a, b) => a[0].localeCompare(b[0], "es"))
-      .map(([cat, total]) => ({ cat, total }));
-  }, [posts]);
+  // Primera página (o recarga al cambiar de categoría)
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    (async () => {
+      const { data, error } = await buildQuery(activeCat).range(0, PAGE_SIZE - 1);
+      if (!active) return;
+      if (error) setError(error.message);
+      else {
+        setError(null);
+        setPosts(data ?? []);
+        setHasMore((data?.length ?? 0) === PAGE_SIZE);
+      }
+      setLoading(false);
+    })();
+    return () => {
+      active = false;
+    };
+  }, [activeCat]);
 
-  const filtered = useMemo(
-    () => (activeCat ? posts.filter((p) => p.category === activeCat) : posts),
-    [posts, activeCat]
-  );
-
-  const selectCat = (cat: string | null) => {
-    setActiveCat(cat);
-    setVisible(PAGE_SIZE);
+  const loadMore = async () => {
+    setLoadingMore(true);
+    const from = posts.length;
+    const { data, error } = await buildQuery(activeCat).range(from, from + PAGE_SIZE - 1);
+    if (!error && data) {
+      setPosts((prev) => [...prev, ...data]);
+      setHasMore(data.length === PAGE_SIZE);
+    }
+    setLoadingMore(false);
   };
+
+  const selectCat = (cat: string | null) => setActiveCat(cat);
+
 
   return (
     <main>
@@ -84,8 +111,8 @@ const Blog = () => {
       <section className="blog-grid-section">
         {loading && <p className="blog-state">Cargando artículos…</p>}
         {!loading && error && <p className="blog-state">No se pudieron cargar los artículos: {error}</p>}
-        {!loading && !error && posts.length === 0 && <p className="blog-state">Aún no hay artículos publicados.</p>}
-        {!loading && !error && posts.length > 0 && (
+        {!loading && !error && posts.length === 0 && !activeCat && <p className="blog-state">Aún no hay artículos publicados.</p>}
+        {!loading && !error && (posts.length > 0 || activeCat) && (
           <>
             {categories.length > 0 && (
               <div className="blog-filters" role="group" aria-label="Filtrar artículos por categoría">
@@ -111,7 +138,7 @@ const Blog = () => {
               </div>
             )}
             <div className="blog-container">
-              {filtered.slice(0, visible).map((post, i) => (
+              {posts.map((post, i) => (
                 <article key={post.id} className="blog-card" data-anim="fade-up" data-anim-delay={`${(i % 3) * 0.12}s`}>
                   <Link to={`/blog/${post.slug}`} className="blog-card__anchor">
                     {post.cover_image ? (
@@ -134,11 +161,11 @@ const Blog = () => {
                 </article>
               ))}
             </div>
-            {filtered.length === 0 && <p className="blog-state">No hay artículos en esta categoría.</p>}
-            {visible < filtered.length && (
+            {posts.length === 0 && <p className="blog-state">No hay artículos en esta categoría.</p>}
+            {hasMore && (
               <div className="blog-more">
-                <button className="blog-more__btn" onClick={() => setVisible((v) => v + PAGE_SIZE)}>
-                  VER MÁS ARTÍCULOS
+                <button className="blog-more__btn" onClick={loadMore} disabled={loadingMore}>
+                  {loadingMore ? "CARGANDO…" : "VER MÁS ARTÍCULOS"}
                 </button>
               </div>
             )}
