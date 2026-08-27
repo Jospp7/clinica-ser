@@ -149,8 +149,8 @@
 /* Navegación por anclas (one-page) */
 html { scroll-behavior: smooth; }
 #inicio, #por-que-elegirnos, #programas, #tratamiento,
-#instalaciones, #equipo, #guias { scroll-margin-top: 88px; }
+#instalaciones, #guias { scroll-margin-top: 88px; }
 @media (max-width: 900px) {
   #inicio, #por-que-elegirnos, #programas, #tratamiento,
-  #instalaciones, #equipo, #guias { scroll-margin-top: 72px; }
+  #instalaciones, #guias { scroll-margin-top: 72px; }
 }

@@ -8,7 +8,7 @@ import SecProgramas from "@/components/sections/SecProgramas";
 import SecTratamiento from "@/components/sections/SecTratamiento";
 import SecInstalaciones from "@/components/sections/SecInstalaciones";
 import EquipoPreview from "@/components/sections/EquipoPreview";
-import SecEquipo from "@/components/sections/SecEquipo";
+
 import TiposIngreso from "@/components/sections/TiposIngreso";
 import SecGuias from "@/components/sections/SecGuias";
 import BlogReciente from "@/components/sections/BlogReciente";
@@ -83,7 +83,6 @@ const Index = () => {
       <SecInstalaciones />
       <hr data-anim="fade-up" className="section-divider-line" />
       <EquipoPreview />
-      <SecEquipo />
       <hr data-anim="fade-up" className="section-divider-line" />
       <TiposIngreso />
       <hr data-anim="fade-up" className="section-divider-line" />

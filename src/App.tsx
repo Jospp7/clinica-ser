@@ -15,6 +15,7 @@ import Index from "./pages/Index.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import GuiaIngreso from "./pages/GuiaIngreso.tsx";
+import Equipo from "./pages/Equipo.tsx";
 import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
 import AvisoPrivacidad from "./pages/AvisoPrivacidad.tsx";
@@ -41,6 +42,7 @@ const AppContent = () => {
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/guia-ingreso" element={<GuiaIngreso />} />
       <Route path="/guia-intervencion" element={<GuiaIntervencion />} />
+      <Route path="/equipo" element={<Equipo />} />
       <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
       <Route path="/aviso-privacidad" element={<AvisoPrivacidad />} />
       {/* Catch-all al final: redirige slugs heredados de WordPress a /blog/[slug] */}
