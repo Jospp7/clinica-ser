@@ -6,18 +6,19 @@ import NotFound from "./NotFound";
 // Rutas reales del sitio: nunca deben tratarse como slug heredado de WordPress.
 const KNOWN_ROUTES = new Set([
   "",
-  "tratamiento",
-  "instalaciones",
-  "programas",
-  "padecimientos",
-  "guias",
+  "admin",
+  "aviso-privacidad",
+  "blog",
   "equipo",
-  "por-que-elegirnos",
+  "guias",
   "guia-ingreso",
   "guia-intervencion",
+  "instalaciones",
+  "padecimientos",
+  "por-que-elegirnos",
   "preguntas-frecuentes",
-  "blog",
-  "admin",
+  "programas",
+  "tratamiento",
 ]);
 
 type State = "checking" | "not-found";
