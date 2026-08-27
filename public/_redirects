@@ -53,5 +53,6 @@
 /testing                        /   301
 
 # --- Páginas retiradas por decisión del cliente -> inicio ---
-/aviso-privacidad               /   301
 /contacto                       /   301
+
+/*    /index.html    200
