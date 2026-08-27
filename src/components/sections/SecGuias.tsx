@@ -59,7 +59,7 @@ const SecGuias = () => {
       <ContactoCTA ubicacion="GUIAS" variant="azul" />
 
       <style>{`
-        .guias-idx__hero { position: relative; background: url('/images/cta-fondo.jpg') center/cover; min-height: 260px; display: flex; align-items: center; padding: clamp(32px,4vw,48px) 24px; text-align: center; }
+        .guias-idx__hero { position: relative; background: url('/images/guias-fondo.jpg') center/cover; min-height: 260px; display: flex; align-items: center; padding: clamp(32px,4vw,48px) 24px; text-align: center; }
         .guias-idx__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
         .guias-idx__hero-inner { position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
         .guias-idx__tag { display: inline-block; font-family: 'Source Sans 3', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: #D9C756; margin-bottom: 14px; }

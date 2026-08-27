@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const HERO_IMG = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80";
+const HERO_IMG = "/images/intro-fondo.jpg";
 const SESSION_KEY = "ser_intro_done";
 
 interface Props { onComplete: () => void; }
