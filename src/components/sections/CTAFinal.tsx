@@ -1,7 +1,7 @@
 import { trackCTAClick } from "@/hooks/useTracking";
 import { SITE } from "@/lib/site";
 
-const CTA_IMG = "/images/cta-fondo.jpg";
+const CTA_IMG = "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80";
 
 const CTAFinal = () => {
   return (
@@ -48,7 +48,7 @@ const CTAFinal = () => {
         .cta-v2__img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
 
         @media (max-width: 900px) {
-          .cta-v2 { background: var(--brand-navy); position: relative; overflow: hidden; }
+          .cta-v2 { background: url('${CTA_IMG}') center center / cover no-repeat; position: relative; overflow: hidden; }
           .cta-v2::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,48,87,.25), rgba(0,48,87,.65)); z-index: 1; }
           .cta-v2__grid { grid-template-columns: 1fr; min-height: 92vh; position: relative; z-index: 2; }
           .cta-v2__left { justify-content: flex-end; text-shadow: 0 2px 14px rgba(0,0,0,.45); position: relative; z-index: 2; }
