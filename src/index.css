@@ -145,3 +145,12 @@
 .side-band--gold { background: #D9C756; }
 .side-band--full { top: 0; height: 100%; }
 @media (min-width: 1200px) { .side-band { display: block; } }
+
+/* Navegación por anclas (one-page) */
+html { scroll-behavior: smooth; }
+#inicio, #por-que-elegirnos, #programas, #tratamiento,
+#instalaciones, #equipo, #guias { scroll-margin-top: 88px; }
+@media (max-width: 900px) {
+  #inicio, #por-que-elegirnos, #programas, #tratamiento,
+  #instalaciones, #equipo, #guias { scroll-margin-top: 72px; }
+}

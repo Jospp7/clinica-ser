@@ -12,16 +12,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index.tsx";
-import Tratamiento from "./pages/Tratamiento.tsx";
-import InstalacionesPage from "./pages/InstalacionesPage.tsx";
-import Programas from "./pages/Programas.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import GuiaIngreso from "./pages/GuiaIngreso.tsx";
 import GuiaIntervencion from "./pages/GuiaIntervencion.tsx";
-import Guias from "./pages/Guias.tsx";
-import PorQueElegirnos from "./pages/PorQueElegirnos.tsx";
-import Equipo from "./pages/Equipo.tsx";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.tsx";
 import AvisoPrivacidad from "./pages/AvisoPrivacidad.tsx";
 import LegacySlugRedirect from "./pages/LegacySlugRedirect.tsx";
@@ -42,17 +36,11 @@ const AppContent = () => {
   return (
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/tratamiento" element={<Tratamiento />} />
-      <Route path="/instalaciones" element={<InstalacionesPage />} />
-      <Route path="/programas" element={<Programas />} />
-      <Route path="/padecimientos" element={<Navigate to="/programas" replace />} />
+      <Route path="/padecimientos" element={<Navigate to="/#programas" replace />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/guia-ingreso" element={<GuiaIngreso />} />
       <Route path="/guia-intervencion" element={<GuiaIntervencion />} />
-      <Route path="/guias" element={<Guias />} />
-      <Route path="/por-que-elegirnos" element={<PorQueElegirnos />} />
-      <Route path="/equipo" element={<Equipo />} />
       <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
       <Route path="/aviso-privacidad" element={<AvisoPrivacidad />} />
       {/* Catch-all al final: redirige slugs heredados de WordPress a /blog/[slug] */}
@@ -62,9 +50,13 @@ const AppContent = () => {
 };
 
 const App = () => {
-  const [introDone, setIntroDone] = useState(
-    () => Boolean(sessionStorage.getItem("ser_intro_done"))
-  );
+  const [introDone, setIntroDone] = useState(() => {
+    if (window.location.hash) {
+      sessionStorage.setItem("ser_intro_done", "1");
+      return true;
+    }
+    return Boolean(sessionStorage.getItem("ser_intro_done"));
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
