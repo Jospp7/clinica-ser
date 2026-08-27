@@ -1,6 +1,4 @@
-import { SITE, waLink } from "@/lib/site";
-import { Phone, MessageCircle } from "lucide-react";
-import ContactoCTA from "@/components/ContactoCTA";
+import { SITE } from "@/lib/site";
 
 const REASONS = [
   { num: "1", title: "Costos accesibles y facilidades de pago.", desc: "Considerando nuestra experiencia, instalaciones, profesionalismo y casos de éxito." },
@@ -26,16 +24,7 @@ const STATS = [
 const SecPorQueElegirnos = () => {
 
   return (
-    <section id="por-que-elegirnos">
-      {/* TODO: imagen del cliente — hero de la página */}
-      <section className="pqe-hero">
-        <div className="pqe-hero__overlay" />
-        <div className="pqe-hero__content" data-anim="fade-up">
-          <span className="pqe-hero__tag">POR QUÉ ELEGIRNOS</span>
-          <h1 className="pqe-hero__title">Centro de Rehabilitación en Puebla — 7 razones para elegir Clínica SER</h1>
-        </div>
-      </section>
-
+    <section>
       <section className="pqe-intro-section side-bands">
         <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
         <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
@@ -57,11 +46,9 @@ const SecPorQueElegirnos = () => {
         </div>
       </section>
 
-      <ContactoCTA ubicacion="POR_QUE_ELEGIRNOS" variant="claro" />
-
       <section className="pqe-reasons">
         <div className="pqe-reasons__container">
-          <h2 className="pqe-reasons__title" data-anim="fade-up">7 razones para elegir Clínica SER</h2>
+          <h3 className="pqe-reasons__title" data-anim="fade-up">7 razones para elegir Clínica SER</h3>
           <div className="pqe-reasons__grid">
             {REASONS.map((r, i) => (
               <div key={i} className="pqe-reason" data-anim="fade-up" data-anim-delay={`${(i % 4) * 0.1}s`}>
@@ -80,24 +67,7 @@ const SecPorQueElegirnos = () => {
         <p className="pqe-closing__text" data-anim="fade-up">Elige ser feliz... estás a sólo unos pasos. ¡Vive sin ataduras!</p>
       </section>
 
-      <section className="pqe-cta">
-        <div className="pqe-cta__inner" data-anim="fade-up">
-          <h2 className="pqe-cta__title">Da el primer paso hoy</h2>
-          <p className="pqe-cta__text">Tu llamada es confidencial. Estamos aquí para ayudarte.</p>
-          <div className="pqe-cta__btns">
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="pqe-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="pqe-cta__btn pqe-cta__btn--wa" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
-          </div>
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
-        </div>
-      </section>
-
       <style>{`
-        .pqe-hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('/images/por-que-elegirnos.jpg') center/cover; }
-        .pqe-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.6)); }
-        .pqe-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
-        .pqe-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
-        .pqe-hero__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
         .pqe-intro-section { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; }
         .pqe-intro-container { max-width: 900px; margin: 0 auto; }
         .pqe-intro { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px,1.4vw,18px); color: #333; line-height: 1.8; margin: 0; }
@@ -129,16 +99,6 @@ const SecPorQueElegirnos = () => {
 
         .pqe-closing { background: #FFFFFF; padding: clamp(48px,6vw,80px) 24px; text-align: center; }
         .pqe-closing__text { font-family: 'Source Sans 3', sans-serif; font-size: clamp(18px,2vw,24px); font-weight: 600; color: #003057; margin: 0; font-style: italic; }
-
-        .pqe-cta { background: #003057; padding: clamp(64px,8vw,100px) clamp(24px, 5vw, 80px); text-align: center; }
-        .pqe-cta__inner { max-width: 600px; margin: 0 auto; }
-        .pqe-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
-        .pqe-cta__text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
-        .pqe-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .pqe-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #D9C756; color: #003057; padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
-        .pqe-cta__btn:hover { background: #B8A63F; color: #003057; }
-        .pqe-cta__btn--wa { background: #25D366; color: white; }
-        .pqe-cta__btn--wa:hover { background: #1DB954; }
 
         @media (max-width: 900px) {
           .pqe-reasons__grid { grid-template-columns: repeat(2,1fr); }
