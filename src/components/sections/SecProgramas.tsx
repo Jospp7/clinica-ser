@@ -81,7 +81,8 @@ const SecProgramas = () => {
         .pad-hero__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
         @media (max-width: 768px) { .pad-hero { min-height: 200px; } }
 
-        .pad-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) clamp(24px, 5vw, 80px); }
+        .pad-grid-section { background: #FFFFFF; padding: clamp(64px,8vw,120px) clamp(24px, 5vw, 80px) 0; }
+        .pad-grid-section .ccta { margin-bottom: 0; }
          .pad-container { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
           .pad-card { display: flex; flex-direction: column; min-height: 270px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 32px; box-shadow: 0 12px 30px -20px hsl(var(--secondary) / 0.35); transition: transform .3s, box-shadow .3s; }
           .pad-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px hsl(var(--secondary) / 0.5); }
