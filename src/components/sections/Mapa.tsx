@@ -37,7 +37,7 @@ const Mapa = () => {
         .map-v2__visit-btn:hover { background: #B8A63F; color: #003057; }
 
         @media (max-width: 600px) {
-          .map-v2__overlay-bar { left: 16px; right: 16px; bottom: 16px; flex-direction: column; gap: 12px; padding: 16px 20px; }
+          .map-v2__overlay-bar { display: none; }
         }
       `}</style>
     </section>
