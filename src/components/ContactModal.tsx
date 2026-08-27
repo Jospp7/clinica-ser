@@ -16,16 +16,31 @@ const ContactModal = ({ open, onClose, source }: Props) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
   const [sent, setSent] = useState(false);
   const [consent, setConsent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   if (!open) return null;
 
+  const startCooldown = () => {
+    setCooldown(true);
+    setTimeout(() => setCooldown(false), 30000);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg(null);
+    if (cooldown) return;
+    // Honeypot: bot detectado, no enviamos nada pero mostramos éxito
+    if (website.trim() !== "") {
+      setSent(true);
+      startCooldown();
+      setTimeout(() => { onClose(); setSent(false); }, 2000);
+      return;
+    }
     if (!phone.trim() && !email.trim()) {
       setErrorMsg("Necesitamos al menos un medio de contacto: teléfono o correo electrónico.");
       return;
@@ -37,8 +52,16 @@ const ContactModal = ({ open, onClose, source }: Props) => {
     setSending(true);
     try {
       const consentLine = `[Aviso de Privacidad aceptado: ${new Date().toISOString()}]`;
-      const messageWithConsent = message ? `${consentLine}\n${message}` : consentLine;
-      const { error } = await supabase.from("contacts").insert({ name: name || null, phone: phone || null, email: email || null, message: messageWithConsent, source, status: "nuevo" });
+      const trimmedMessage = message.trim().slice(0, 1000);
+      const messageWithConsent = trimmedMessage ? `${consentLine}\n${trimmedMessage}` : consentLine;
+      const { error } = await supabase.from("contacts").insert({
+        name: name.trim().slice(0, 100) || null,
+        phone: phone.trim().slice(0, 20) || null,
+        email: email.trim().slice(0, 150) || null,
+        message: messageWithConsent,
+        source,
+        status: "nuevo",
+      });
       if (error) {
         console.error("[ContactModal] insert failed:", error);
         setSending(false);
@@ -47,6 +70,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
       }
       setSending(false);
       setSent(true);
+      startCooldown();
       trackFormSubmit(source);
       setTimeout(() => { onClose(); setSent(false); setName(""); setPhone(""); setEmail(""); setMessage(""); setConsent(false); }, 2000);
     } catch (err) {
@@ -55,6 +79,7 @@ const ContactModal = ({ open, onClose, source }: Props) => {
       setErrorMsg(`No pudimos enviar tu mensaje. Por favor llámanos al ${SITE.telefonos[0]} o escríbenos por WhatsApp.`);
     }
   };
+
 
   const inputStyle = { width: "100%", padding: "10px 14px", border: "1px solid #E8E8E8", borderRadius: 8, fontSize: 14, boxSizing: "border-box" as const, fontFamily: "'Source Sans 3',sans-serif" };
 
