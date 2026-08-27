@@ -5,7 +5,6 @@ import {
   Tv, UtensilsCrossed,
 } from "lucide-react";
 import InstalacionesCarrusel from "@/components/InstalacionesCarrusel";
-import ContactoCTA from "@/components/ContactoCTA";
 
 // TODO: imagen del cliente — reemplazar cada amenidad con foto real (16 amenidades)
 const AMENIDADES = [
@@ -35,7 +34,7 @@ const SecInstalaciones = () => {
         <div className="inst-pg__hero-overlay" />
         <div className="inst-pg__hero-content" data-anim="fade-up">
           <span className="inst-pg__tag">NUESTRAS INSTALACIONES</span>
-          <h1 className="inst-pg__hero-title">Conoce nuestras modernas instalaciones</h1>
+          <h2 className="inst-pg__hero-title">Conoce nuestras modernas instalaciones</h2>
           <p className="inst-pg__hero-sub">Instalaciones de primer nivel en el corazón de Puebla.</p>
         </div>
       </section>
@@ -54,12 +53,9 @@ const SecInstalaciones = () => {
             <InstalacionesCarrusel />
           </div>
 
-          <ContactoCTA ubicacion="INSTALACIONES" variant="claro" />
-
           <div className="inst-pg__amen" data-anim="fade-up">
             <div className="inst-pg__amen-head">
-              <h2 className="inst-pg__amen-title">Amenidades</h2>
-              <p className="inst-pg__amen-claim">Somos expertos recuperando vidas.</p>
+              <h3 className="inst-pg__amen-title">Amenidades</h3>
             </div>
             <ul className="inst-pg__amen-list">
               {AMENIDADES.map(({ nombre, Icon }) => (
@@ -75,7 +71,7 @@ const SecInstalaciones = () => {
 
       <section className="inst-pg__cta">
         <div className="inst-pg__cta-inner" data-anim="fade-up">
-          <h2 className="inst-pg__cta-title">Agenda una visita</h2>
+          <h3 className="inst-pg__cta-title">Agenda una visita</h3>
           <p className="inst-pg__cta-text">Conoce nuestras instalaciones y resuelve todas tus dudas con nuestro equipo.</p>
           <a href={`tel:${SITE.telefonoTel[0]}`} className="inst-pg__cta-btn"><Phone size={18} aria-hidden="true" /> Llamar para agendar</a>
         </div>
@@ -83,9 +79,10 @@ const SecInstalaciones = () => {
 
       <style>{`
         /* TODO: imagen del cliente para .inst-pg__hero (fondo neutro por defecto) */
-        .inst-pg__hero { position: relative; min-height: 50vh; display: flex; align-items: center; background: url('/images/instalaciones-1.jpg') center/cover; }
+        .inst-pg__hero { position: relative; min-height: 260px; display: flex; align-items: center; background: url('/images/instalaciones-1.jpg') center/cover; }
         .inst-pg__hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.85), rgba(26,26,46,.6)); }
-        .inst-pg__hero-content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
+        .inst-pg__hero-content { position: relative; z-index: 2; max-width: 700px; padding: clamp(32px,4vw,48px) clamp(24px,5vw,80px); }
+        @media (max-width: 768px) { .inst-pg__hero { min-height: 200px; } }
         .inst-pg__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
         .inst-pg__hero-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
         .inst-pg__hero-sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0; }
@@ -107,8 +104,7 @@ const SecInstalaciones = () => {
          .inst-pg__amen { display: grid; grid-template-columns: minmax(240px,1fr) 2fr; gap: clamp(32px,5vw,64px); align-items: start; }
          .inst-pg__amen-head { align-self: center; padding-inline: clamp(12px,2vw,32px); }
          .inst-pg__amen-title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(32px,4.5vw,56px); font-weight: 700; color: var(--brand-navy); margin: 0 0 16px; line-height: 1.1; }
-         .inst-pg__amen-claim { font-family: 'Source Sans 3', sans-serif; font-size: clamp(16px,1.6vw,20px); font-weight: 600; color: #444; margin: 0; }
-        .inst-pg__amen-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
+                 .inst-pg__amen-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
         .inst-pg__amen-item { display: inline-flex; align-items: center; gap: 12px; font-family: 'Source Sans 3', sans-serif; font-size: 16px; font-weight: 600; color: var(--brand-navy); }
         .inst-pg__amen-item svg { color: var(--brand-gold-dark); flex: 0 0 auto; }
         .inst-pg__feature { background: rgba(255,255,255,0.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .3s; }
