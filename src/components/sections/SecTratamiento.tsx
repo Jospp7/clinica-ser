@@ -1,5 +1,5 @@
 import { SITE, waLink } from "@/lib/site";
-import { Phone, MessageCircle, Brain, Repeat, Users } from "lucide-react";
+import { Brain, Repeat, Users } from "lucide-react";
 
 // Bloques de la sección "Tratamiento para adicciones de Clínica SER" — texto literal del cliente.
 const BLOQUES: { title: string; desc?: string; items?: string[] }[] = [
@@ -48,7 +48,7 @@ const SecTratamiento = () => {
         <div className="trat-hero__overlay" />
         <div className="trat-hero__content" data-anim="fade-up">
           <span className="trat-hero__tag">NUESTROS TRATAMIENTOS</span>
-          <h1 className="trat-hero__title">Descubre nuestro tratamiento para adicciones</h1>
+          <h2 className="trat-hero__title">Descubre nuestro tratamiento para adicciones</h2>
           <p className="trat-hero__sub">En Clínica SER, estamos a la vanguardia en la rehabilitación de adicciones como alcoholismo y drogadicción.</p>
           <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-hero__btn" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`Agenda tu evaluación por WhatsApp · ${SITE.whatsappHorario}`}>AGENDA TU EVALUACIÓN</a>
         </div>
@@ -58,7 +58,7 @@ const SecTratamiento = () => {
         <span className="side-band side-band--l side-band--navy" aria-hidden="true" />
         <span className="side-band side-band--r side-band--navy" aria-hidden="true" />
         <div className="trat-process__container">
-          <h2 className="trat-process__title" data-anim="fade-up">Programa de Tratamiento Integral SER®</h2>
+          <h3 className="trat-process__title" data-anim="fade-up">Programa de Tratamiento Integral SER®</h3>
           <div className="trat-intro" data-anim="fade-up">
             <p className="trat-intro__p">En la clínica de rehabilitación SER, sumamos al modelo Hazelden —anteriormente llamado modelo Minnesota para tratamiento de adicciones— y al programa de los 12 pasos, nuestra experiencia de más de {SITE.aniosExperiencia} años en el área de la salud mental.</p>
             <p className="trat-intro__p">Nuestro Programa de Tratamiento Integral SER®, proporciona una evaluación clínica y médica completa, desintoxicación y atención primaria por parte de especialistas en psiquiatría, con soporte médico y de enfermería disponible las 24 horas del día.</p>
@@ -70,7 +70,7 @@ const SecTratamiento = () => {
       <section className="trat-grid-section">
         <div className="trat-grid__container">
           <span className="trat-grid__tag" data-anim="fade-up">NUESTRO PROGRAMA</span>
-          <h2 className="trat-grid__title" data-anim="fade-up">Tratamiento para adicciones de Clínica SER</h2>
+          <h3 className="trat-grid__title" data-anim="fade-up">Tratamiento para adicciones de Clínica SER</h3>
           <div className="trat-grid">
             {/* TODO: imagen del cliente — cada bloque necesita imagen real; por ahora sin img. */}
             {BLOQUES.map((b, i) => (
@@ -95,20 +95,20 @@ const SecTratamiento = () => {
           <div className="trat-pillars__grid">
             <article className="trat-pillar" data-anim="fade-up">
               <Brain className="trat-pillar__icon" size={40} strokeWidth={1.7} aria-hidden="true" />
-              <h2 className="trat-pillar__title">Enfoque integral</h2>
+              <h3 className="trat-pillar__title">Enfoque integral</h3>
               <p className="trat-pillar__p">En el centro de rehabilitación Clínica SER, ofrecemos un enfoque clínico integral que aborda simultáneamente problemas de salud mental y el tratamiento de adicciones tan comunes como alcoholismo y drogadicción. Si no se trata el trastorno coexistente, como la depresión, la ansiedad o el estrés postraumático, junto con la adicción al alcohol o las drogas, la sobriedad se ve comprometida y aumenta significativamente el riesgo de recaída.</p>
               <p className="trat-pillar__p">Cada persona que busca ayuda en el centro de adicciones Clínica SER, trae consigo una historia personal única y un contexto específico. Nuestro tratamiento para adicciones aborda al individuo en su totalidad, basándose en un diagnóstico mental preciso, la sustancia adictiva, su historia familiar, salud física, género y otras variables relevantes. De esta manera, establecemos un plan de tratamiento individualizado que no solo promueve la rehabilitación, sino que también sostiene la sobriedad a largo plazo.</p>
             </article>
             <article className="trat-pillar" data-anim="fade-up" data-anim-delay="0.1s">
               <Repeat className="trat-pillar__icon" size={40} strokeWidth={1.7} aria-hidden="true" />
-              <h2 className="trat-pillar__title">Tratamiento continuo para el paciente</h2>
+              <h3 className="trat-pillar__title">Tratamiento continuo para el paciente</h3>
               <p className="trat-pillar__p">En Clínica SER, nuestros pacientes no están solos. Brindamos seguimiento continuo después de finalizado el tratamiento primario de 35 o 42 días, a través de nuestro programa Tratamiento Continuo.</p>
               <p className="trat-pillar__p">En Clínica SER, ofrecemos nuestro programa de atención externa en nuestras instalaciones, sin ningún costo ni tiempo límite. Contamos con sesiones grupales dos veces por semana, guiadas por nuestros expertos calificados en psicología.</p>
               <p className="trat-pillar__p">Si vives o estás fuera de Puebla, no te preocupes. Nuestro innovador programa te permite participar a través de videoconferencia en línea desde cualquier lugar de México y el mundo.</p>
             </article>
             <article className="trat-pillar" data-anim="fade-up" data-anim-delay="0.2s">
               <Users className="trat-pillar__icon" size={40} strokeWidth={1.7} aria-hidden="true" />
-              <h2 className="trat-pillar__title">Programa para la familia del adicto</h2>
+              <h3 className="trat-pillar__title">Programa para la familia del adicto</h3>
               <p className="trat-pillar__p">En Clínica SER, apoyamos a las familias para que identifiquen nuevas maneras de afrontar la adicción y mejorar sus relaciones.</p>
               <p className="trat-pillar__p">Durante y después del programa, los familiares de nuestros pacientes pueden asistir a reuniones familiares en Clínica SER® dos veces por semana, dirigidas por uno de nuestros expertos en Psicología. Estas sesiones son gratuitas y no tienen límite de tiempo.</p>
             </article>
@@ -120,7 +120,7 @@ const SecTratamiento = () => {
         <span className="side-band side-band--l side-band--gold" aria-hidden="true" />
         <span className="side-band side-band--r side-band--gold" aria-hidden="true" />
         <div className="trat-process__container">
-          <h2 className="trat-process__title" data-anim="fade-up">Duración de tratamiento</h2>
+          <h3 className="trat-process__title" data-anim="fade-up">Duración de tratamiento</h3>
           <div className="trat-duracion" data-anim="fade-up">
             <table className="trat-duracion__table">
               <thead>
@@ -143,22 +143,12 @@ const SecTratamiento = () => {
         </div>
       </section>
 
-      <section className="trat-cta">
-        <div className="trat-cta__inner" data-anim="fade-up">
-          <h2 className="trat-cta__title">¿Necesitas ayuda?</h2>
-          <p className="trat-cta__text">Nuestro equipo está disponible las 24 horas para orientarte.</p>
-          <div className="trat-cta__btns">
-            <a href={`tel:${SITE.telefonoTel[0]}`} className="trat-cta__btn"><Phone size={18} aria-hidden="true" /> Llamar ahora</a>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="trat-cta__btn trat-cta__btn--wa" title={`WhatsApp · ${SITE.whatsappHorario}`} aria-label={`WhatsApp · ${SITE.whatsappHorario}`}><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
-          </div>
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.85)", marginTop: 12 }}>WhatsApp: {SITE.whatsappHorario}</p>
-        </div>
-      </section>
 
       <style>{`
-        .trat-hero { position: relative; min-height: 60vh; display: flex; align-items: center; background: url('/images/tratamiento.jpg') center/cover; }
+        .trat-hero { position: relative; min-height: 260px; display: flex; align-items: center; background: url('/images/tratamiento.jpg') center/cover; }
         .trat-hero__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,46,.88), rgba(26,26,46,.65)); }
-        .trat-hero__content { position: relative; z-index: 2; max-width: 700px; padding: 120px clamp(24px,5vw,80px) 80px; }
+        .trat-hero__content { position: relative; z-index: 2; max-width: 700px; padding: clamp(32px,4vw,48px) clamp(24px,5vw,80px); }
+        @media (max-width: 768px) { .trat-hero { min-height: 200px; } }
         .trat-hero__tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: #D9C756; display: block; margin-bottom: 16px; }
         .trat-hero__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,48px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
         .trat-hero__sub { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.7; margin: 0 0 32px; }
@@ -184,15 +174,6 @@ const SecTratamiento = () => {
          .trat-card__list { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.8; margin: 12px 0 0; padding-left: 18px; }
          .trat-card__list li::marker { color: var(--brand-gold); }
 
-        .trat-cta { background: #003057; padding: clamp(64px,8vw,100px) 24px; text-align: center; }
-        .trat-cta__inner { max-width: 600px; margin: 0 auto; }
-        .trat-cta__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; margin: 0 0 16px; }
-        .trat-cta__text { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: rgba(255,255,255,.6); margin: 0 0 32px; }
-        .trat-cta__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .trat-cta__btn { display: inline-flex; align-items: center; gap: 8px; background: #D9C756; color: #003057; padding: 14px 32px; border-radius: 60px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
-        .trat-cta__btn:hover { background: #B8A63F; color: #003057; }
-        .trat-cta__btn--wa { background: #25D366; color: white; }
-        .trat-cta__btn--wa:hover { background: #1DB954; }
 
         .trat-duracion { max-width: 700px; margin: 0 auto; }
         .trat-duracion__table { width: 100%; border-collapse: collapse; font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #444; }
