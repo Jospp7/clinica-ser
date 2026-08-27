@@ -95,13 +95,13 @@ const Footer = () => {
             <div className="footer-v2__sitemap">
               <div>
                 <Link to="/" className="footer-v2__sitemap-link">Inicio</Link>
-                <Link to="/instalaciones" className="footer-v2__sitemap-link">Instalaciones</Link>
+                <a href="/#instalaciones" className="footer-v2__sitemap-link">Instalaciones</a>
                 <Link to="/equipo" className="footer-v2__sitemap-link">Nuestro Equipo</Link>
               </div>
               <div>
-                <Link to="/por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</Link>
-                <Link to="/programas" className="footer-v2__sitemap-link">Programas</Link>
-                <Link to="/guias" className="footer-v2__sitemap-link">Guías</Link>
+                <a href="/#por-que-elegirnos" className="footer-v2__sitemap-link">Por qué elegirnos</a>
+                <a href="/#programas" className="footer-v2__sitemap-link">Programas</a>
+                <a href="/#guias" className="footer-v2__sitemap-link">Guías</a>
                 <Link to="/guia-intervencion" className="footer-v2__sitemap-link">Guía de Intervención</Link>
                 <Link to="/guia-ingreso" className="footer-v2__sitemap-link">Guía de Ingreso</Link>
                 <Link to="/preguntas-frecuentes" className="footer-v2__sitemap-link">Preguntas Frecuentes</Link>
