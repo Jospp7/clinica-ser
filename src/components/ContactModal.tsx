@@ -100,17 +100,27 @@ const ContactModal = ({ open, onClose, source }: Props) => {
           <form onSubmit={handleSubmit}>
             <h3 style={{ fontSize: 18, fontWeight: 700, color: "#003057", marginBottom: 4 }}>Contáctanos</h3>
             <p style={{ color: "#888", fontSize: 13, marginBottom: 20 }}>Completa tus datos y nos comunicaremos contigo.</p>
+            <input
+              type="text"
+              name="website"
+              value={website}
+              onChange={e => setWebsite(e.target.value)}
+              tabIndex={-1}
+              aria-hidden="true"
+              autoComplete="off"
+              style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+            />
             <div style={{ marginBottom: 12 }}>
-              <input value={name} onChange={e => setName(e.target.value)} placeholder="Tu nombre" style={inputStyle} required />
+              <input value={name} onChange={e => setName(e.target.value)} placeholder="Tu nombre" maxLength={100} style={inputStyle} required />
             </div>
             <div style={{ marginBottom: 12 }}>
-              <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="Teléfono" type="tel" style={inputStyle} />
+              <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="Teléfono" type="tel" maxLength={20} style={inputStyle} />
             </div>
             <div style={{ marginBottom: 12 }}>
-              <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" style={inputStyle} />
+              <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" maxLength={150} style={inputStyle} />
             </div>
             <div style={{ marginBottom: 20 }}>
-              <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="¿Cómo podemos ayudarte?" rows={3} style={{ ...inputStyle, resize: "vertical" }} />
+              <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="¿Cómo podemos ayudarte?" rows={3} maxLength={1000} style={{ ...inputStyle, resize: "vertical" }} />
             </div>
             {errorMsg && (
               <div role="alert" style={{ marginBottom: 12, padding: "10px 12px", background: "#FFEBEE", border: "1px solid #F5C2C7", borderRadius: 8, fontSize: 13, color: "#8A1F1F" }}>
