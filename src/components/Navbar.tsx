@@ -1,26 +1,30 @@
 import { useEffect, useState, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { trackCTAClick } from "@/hooks/useTracking";
 import logoSer from "@/assets/logo-ser.png";
 import { SITE } from "@/lib/site";
 import { Phone, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "INICIO", href: "/" },
-  { label: "POR QUÉ ELEGIRNOS", href: "/por-que-elegirnos" },
-  { label: "PROGRAMAS", href: "/programas" },
-  { label: "TRATAMIENTOS", href: "/tratamiento" },
-  { label: "INSTALACIONES", href: "/instalaciones" },
-  { label: "EQUIPO", href: "/equipo" },
-  { label: "GUÍAS", href: "/guias" },
+  { label: "INICIO", href: "#inicio" },
+  { label: "POR QUÉ ELEGIRNOS", href: "#por-que-elegirnos" },
+  { label: "PROGRAMAS", href: "#programas" },
+  { label: "TRATAMIENTOS", href: "#tratamiento" },
+  { label: "INSTALACIONES", href: "#instalaciones" },
+  { label: "EQUIPO", href: "#equipo" },
+  { label: "GUÍAS", href: "#guias" },
   { label: "BLOG", href: "/blog" },
 ];
+
+const SECTION_IDS = NAV_LINKS.filter((l) => l.href.startsWith("#")).map((l) => l.href.slice(1));
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY >= 80);
@@ -45,10 +49,53 @@ const Navbar = () => {
 
   useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
+  // Sección visible actual (para resaltar el enlace del navbar)
+  useEffect(() => {
+    if (location.pathname !== "/") { setActiveSection(""); return; }
+    const els = SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!els.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-88px 0px -55% 0px", threshold: [0.05, 0.25, 0.5] }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  // Scroll al ancla cuando se llega con hash desde otra página
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    let tries = 0;
+    const tick = () => {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+      if (tries++ < 30) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [location.pathname, location.hash]);
+
+  const goToSection = (href: string) => {
+    const id = href.slice(1);
+    if (location.pathname !== "/") { navigate(`/#${id}`); return; }
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `/#${id}`);
+    }
+  };
+
   const isActive = (href: string) =>
-    href === "/guias"
-      ? location.pathname.startsWith("/guia")
-      : location.pathname === href;
+    href.startsWith("#")
+      ? location.pathname === "/" && activeSection === href.slice(1)
+      : location.pathname.startsWith(href);
 
   return (
     <nav aria-label="Navegación principal" className="nav-ser">
@@ -65,7 +112,15 @@ const Navbar = () => {
         <ul className="nav-ser__links">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <Link to={link.href} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`nav-ser__link ${isActive(link.href) ? "nav-ser__link--active" : ""}`}>{link.label}</Link>
+              {link.href.startsWith("#") ? (
+                <a
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); goToSection(link.href); }}
+                  className={`nav-ser__link ${isActive(link.href) ? "nav-ser__link--active" : ""}`}
+                >{link.label}</a>
+              ) : (
+                <Link to={link.href} className={`nav-ser__link ${isActive(link.href) ? "nav-ser__link--active" : ""}`}>{link.label}</Link>
+              )}
             </li>
           ))}
         </ul>
@@ -82,7 +137,15 @@ const Navbar = () => {
         <ul className="nav-ser__dropdown-list">
           {NAV_LINKS.map((link, i) => (
             <li key={link.href} style={{ animationDelay: menuOpen ? `${i * 0.06}s` : "0s" }}>
-              <Link to={link.href} onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="nav-ser__dropdown-link">{link.label}</Link>
+              {link.href.startsWith("#") ? (
+                <a
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); goToSection(link.href); }}
+                  className={`nav-ser__dropdown-link ${isActive(link.href) ? "nav-ser__link--active" : ""}`}
+                >{link.label}</a>
+              ) : (
+                <Link to={link.href} onClick={() => setMenuOpen(false)} className="nav-ser__dropdown-link">{link.label}</Link>
+              )}
             </li>
           ))}
         </ul>
