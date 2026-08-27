@@ -3,9 +3,14 @@ import { SITE } from "@/lib/site";
 import Hero from "@/components/sections/Hero";
 import Nosotros from "@/components/sections/Nosotros";
 import PorQueElegirnosPreview from "@/components/sections/PorQueElegirnosPreview";
-
-import TiposIngreso from "@/components/sections/TiposIngreso";
+import SecPorQueElegirnos from "@/components/sections/SecPorQueElegirnos";
+import SecProgramas from "@/components/sections/SecProgramas";
+import SecTratamiento from "@/components/sections/SecTratamiento";
+import SecInstalaciones from "@/components/sections/SecInstalaciones";
 import EquipoPreview from "@/components/sections/EquipoPreview";
+import SecEquipo from "@/components/sections/SecEquipo";
+import TiposIngreso from "@/components/sections/TiposIngreso";
+import SecGuias from "@/components/sections/SecGuias";
 import BlogReciente from "@/components/sections/BlogReciente";
 import Testimonios from "@/components/sections/Testimonios";
 import CTAFinal from "@/components/sections/CTAFinal";
@@ -62,15 +67,27 @@ const Index = () => {
         path="/"
         jsonLd={jsonLd}
       />
-      <Hero />
+      <div id="inicio">
+        <Hero />
+      </div>
       <hr data-anim="fade-up" className="section-divider-line" />
       <Nosotros />
       <hr data-anim="fade-up" className="section-divider-line" />
       <PorQueElegirnosPreview />
+      <SecPorQueElegirnos />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <SecProgramas />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <SecTratamiento />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <SecInstalaciones />
+      <hr data-anim="fade-up" className="section-divider-line" />
+      <EquipoPreview />
+      <SecEquipo />
       <hr data-anim="fade-up" className="section-divider-line" />
       <TiposIngreso />
       <hr data-anim="fade-up" className="section-divider-line" />
-      <EquipoPreview />
+      <SecGuias />
       <hr data-anim="fade-up" className="section-divider-line" />
       <BlogReciente />
       <hr data-anim="fade-up" className="section-divider-line" />
