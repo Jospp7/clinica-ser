@@ -73,7 +73,9 @@ const Index = () => {
       <hr data-anim="fade-up" className="section-divider-line" />
       <Nosotros />
       <hr data-anim="fade-up" className="section-divider-line" />
-      <PorQueElegirnosPreview />
+      <div id="por-que-elegirnos">
+        <PorQueElegirnosPreview />
+      </div>
       <SecPorQueElegirnos />
       <hr data-anim="fade-up" className="section-divider-line" />
       <SecProgramas />
