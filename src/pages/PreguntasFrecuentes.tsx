@@ -52,8 +52,8 @@ const FAQS: FaqItem[] = [
         <p>
           Recomendamos que, antes de tomar cualquier decisión de internamiento,
           visiten las clínicas de adicciones que consideren apropiadas,
-          conozcan sus <Link to="/instalaciones">instalaciones</Link> y{" "}
-          <Link to="/tratamiento">programas</Link>, platiquen con sus
+          conozcan sus <a href="/#instalaciones">instalaciones</a> y{" "}
+          <a href="/#tratamiento">programas</a>, platiquen con sus
           terapeutas y soliciten las acreditaciones pertinentes de su personal,
           con el fin de comprobar la preparación de las personas que estarán a
           cargo de tu ser querido.
