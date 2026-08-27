@@ -2,12 +2,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const IMAGENES = [
-  { src: "/images/instalaciones-1.jpg", alt: "Gimnasio equipado de Clínica SER" },
-  { src: "/images/instalaciones-2.jpg", alt: "Habitación con camas y escritorio de Clínica SER" },
-  { src: "/images/instalaciones-3.jpg", alt: "Área deportiva con cancha de básquetbol de Clínica SER" },
-  { src: "/images/instalaciones-4.jpg", alt: "Salón para sesiones grupales de Clínica SER" },
-  { src: "/images/instalaciones-5.jpg", alt: "Cama preparada en habitación de Clínica SER" },
-  { src: "/images/instalaciones-6.jpg", alt: "Áreas para sesión individual de Clínica SER" },
+  { src: "/images/instalaciones-1.jpg", alt: "Habitación con camas de Clínica SER" },
+  { src: "/images/instalaciones-2.jpg", alt: "Comedor amplio de Clínica SER" },
+  { src: "/images/instalaciones-3.jpg", alt: "Gimnasio con acceso a patio de Clínica SER" },
+  { src: "/images/instalaciones-4.jpg", alt: "Cancha de básquetbol y vóleibol de Clínica SER" },
+  { src: "/images/instalaciones-5.jpg", alt: "Área de comedor de Clínica SER" },
+  { src: "/images/instalaciones-6.jpg", alt: "Ropa de cama de Clínica SER" },
+  { src: "/images/instalaciones-7.jpg", alt: "Habitación del área de desintoxicación de Clínica SER" },
 ];
 
 const InstalacionesCarrusel = () => {
