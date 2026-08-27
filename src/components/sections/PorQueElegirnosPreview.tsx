@@ -25,8 +25,8 @@ const PorQueElegirnosPreview = () => {
         .pqe-prev__media { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; margin-top: clamp(40px,5vw,64px); margin-bottom: clamp(40px,5vw,64px); box-shadow: 0 18px 40px -28px hsl(var(--secondary) / 0.5); }
         .pqe-prev__img { width: 100%; height: clamp(280px, 45vw, 560px); object-fit: cover; display: block; }
         @media (max-width: 768px) {
-          .pqe-prev { padding-bottom: 24px; }
-          .pqe-prev__media { margin-top: 32px; margin-bottom: 0; }
+          .pqe-prev { padding-bottom: 8px; }
+          .pqe-prev__media { margin-top: 24px; margin-bottom: 0; }
         }
       `}</style>
     </section>
