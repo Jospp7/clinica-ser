@@ -38,6 +38,11 @@ const AppContent = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/padecimientos" element={<Navigate to="/#programas" replace />} />
+      <Route path="/por-que-elegirnos" element={<Navigate to="/#por-que-elegirnos" replace />} />
+      <Route path="/programas" element={<Navigate to="/#programas" replace />} />
+      <Route path="/tratamiento" element={<Navigate to="/#tratamiento" replace />} />
+      <Route path="/instalaciones" element={<Navigate to="/#instalaciones" replace />} />
+      <Route path="/guias" element={<Navigate to="/#guias" replace />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/guia-ingreso" element={<GuiaIngreso />} />
