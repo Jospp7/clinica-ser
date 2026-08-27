@@ -123,7 +123,7 @@ const GuiaIngreso = () => {
               En nuestra clínica de rehabilitación, contarás con el apoyo y la
               profesionalidad de nuestros especialistas desde el primer día,
               quienes tendrán a su cargo la valiosa labor de estabilizar y{" "}
-              <Link to="/tratamiento">desintoxicar</Link> a tu ser querido, con
+              <a href="/#tratamiento">desintoxicar</a> a tu ser querido, con
               el respeto que todo ser humano merece.
             </p>
             <p>

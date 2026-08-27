@@ -4,25 +4,32 @@
 # Por eso las reglas específicas van ANTES que cualquier patrón general.
 # ============================================================
 
+# --- One-page: rutas eliminadas -> anclas del home ---
+/por-que-elegirnos    /#por-que-elegirnos    301
+/programas            /#programas            301
+/tratamiento          /#tratamiento          301
+/instalaciones        /#instalaciones        301
+/guias                /#guias                301
+
 # --- Páginas core renombradas ---
-/porque-elegir-ser              /por-que-elegirnos   301
+/porque-elegir-ser              /#por-que-elegirnos   301
 /pagina-de-inicio               /                    301
 
-/padecimientos                  /programas            301
+/padecimientos                  /#programas           301
 
 # --- 12 páginas de padecimientos -> /programas ---
-/adiccion-a-los-opiaceos-senales-de-alerta                                      /programas   301
-/tratamiento-del-trastorno-por-consumo-de-opiaceos                             /programas   301
-/centros-de-rehabilitacion-para-medicamentos-psicotropicos                     /programas   301
-/tratamiento-de-adiccion-de-los-medicamentos-psicotropicos                     /programas   301
-/tratamiento-del-alcoholismo                                                   /programas   301
-/programa-de-tratamiento-y-rehabilitacion-del-alcohol                          /programas   301
-/atencion-al-juego-compulsivo                                                  /programas   301
-/tratamiento-y-rehabilitacion-de-la-ludopatia                                  /programas   301
-/centros-de-rehabilitacion-para-adictos-a-internet                             /programas   301
-/centros-de-rehabilitacion-para-adictos-al-celular                             /programas   301
-/centro-de-desintoxicacion-para-drogas                                         /programas   301
-/clinicas-de-rehabilitacion-de-adicciones-un-refugio-de-esperanza-y-transformacion   /programas   301
+/adiccion-a-los-opiaceos-senales-de-alerta                                      /#programas   301
+/tratamiento-del-trastorno-por-consumo-de-opiaceos                             /#programas   301
+/centros-de-rehabilitacion-para-medicamentos-psicotropicos                     /#programas   301
+/tratamiento-de-adiccion-de-los-medicamentos-psicotropicos                     /#programas   301
+/tratamiento-del-alcoholismo                                                   /#programas   301
+/programa-de-tratamiento-y-rehabilitacion-del-alcohol                          /#programas   301
+/atencion-al-juego-compulsivo                                                  /#programas   301
+/tratamiento-y-rehabilitacion-de-la-ludopatia                                  /#programas   301
+/centros-de-rehabilitacion-para-adictos-a-internet                             /#programas   301
+/centros-de-rehabilitacion-para-adictos-al-celular                             /#programas   301
+/centro-de-desintoxicacion-para-drogas                                         /#programas   301
+/clinicas-de-rehabilitacion-de-adicciones-un-refugio-de-esperanza-y-transformacion   /#programas   301
 
 # --- 16 perfiles individuales del equipo -> /equipo ---
 /dra-nadia-ivette-ibarias-cortes                        /equipo   301
