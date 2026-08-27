@@ -111,8 +111,8 @@ const Blog = () => {
       <section className="blog-grid-section">
         {loading && <p className="blog-state">Cargando artículos…</p>}
         {!loading && error && <p className="blog-state">No se pudieron cargar los artículos: {error}</p>}
-        {!loading && !error && posts.length === 0 && <p className="blog-state">Aún no hay artículos publicados.</p>}
-        {!loading && !error && posts.length > 0 && (
+        {!loading && !error && posts.length === 0 && !activeCat && <p className="blog-state">Aún no hay artículos publicados.</p>}
+        {!loading && !error && (posts.length > 0 || activeCat) && (
           <>
             {categories.length > 0 && (
               <div className="blog-filters" role="group" aria-label="Filtrar artículos por categoría">
