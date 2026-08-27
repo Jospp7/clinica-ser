@@ -261,7 +261,7 @@ const PreguntasFrecuentes = () => {
         .guia__title { font-family: 'Source Sans 3', sans-serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: white; line-height: 1.2; margin: 0 0 16px; }
         .guia__lead { font-family: 'Source Sans 3', sans-serif; font-size: 17px; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
 
-        .guia__body { max-width: 820px; margin: 0 auto; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Source Sans 3', sans-serif; color: #003057; }
+        .guia__body { max-width: 820px; margin: 0; padding: clamp(48px,6vw,80px) clamp(20px,4vw,32px); font-family: 'Source Sans 3', sans-serif; color: #003057; }
 
         .faq__list { display: flex; flex-direction: column; gap: 12px; }
         .faq__item { border: 1px solid #E5E7EB; border-radius: 12px; background: #FFFFFF; overflow: hidden; transition: box-shadow .2s, border-color .2s; }
