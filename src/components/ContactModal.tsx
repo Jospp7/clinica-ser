@@ -150,9 +150,9 @@ const ContactModal = ({ open, onClose, source }: Props) => {
                 </Link>
               </label>
             </div>
-            <button type="submit" disabled={sending || !consent}
-              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: consent && !sending ? "pointer" : "not-allowed", opacity: consent ? 1 : 0.55 }}>
-              {sending ? "Enviando..." : "Enviar"}
+            <button type="submit" disabled={sending || !consent || cooldown}
+              style={{ width: "100%", padding: "12px", background: "#D9C756", color: "#003057", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: consent && !sending && !cooldown ? "pointer" : "not-allowed", opacity: consent && !cooldown ? 1 : 0.55 }}>
+              {sending ? "Enviando..." : cooldown ? "Mensaje enviado" : "Enviar"}
             </button>
           </form>
         )}
